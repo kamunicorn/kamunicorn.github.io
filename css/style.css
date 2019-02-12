@@ -1,0 +1,281 @@
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+header {
+	background-color: #3a7dfd;
+	padding-top: 60px;
+	padding-bottom: 22px;
+	color: white;
+	font-size: 18px;
+	background-image: linear-gradient(-147deg, #3a7dfd 0%, #1157db 100%);
+}
+img {
+	max-width: 100%;
+}
+.header-pretitle {
+	font-weight: 700;
+	margin-top: 60px;
+	margin-bottom: 0;
+}
+header h1 {
+	font-weight: 700;
+	font-size: 48px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+header img {
+	margin: 0 auto;
+	width: 80%;
+	margin-left: 50px;
+}
+.header-description {
+	font-weight: 400;
+	margin: 0;
+}
+.header-connect-block {
+	margin-top: 33px;
+	max-width: 201px;
+}
+.header-connect-block a {
+	/* Кнопка */
+	padding: 15px 60px 10px;
+	box-shadow: 10px 17px 34px 6px rgba(18, 61, 145, 0.83);
+	border-radius: 25px;
+	background-color: #fff;
+	border: none;
+	text-decoration: none;
+	/* Текст Связаться */
+	color: #072b6f;
+	font-weight: 700;
+	font-size: inherit;
+	text-align: center;
+}
+.header-connect-block a:hover {
+	box-shadow: none;
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+.header-connect-block small {
+	/* Подпись под кнопкой */
+	margin-top: 15px;
+	font-size: 12px;
+	text-align: center;
+	display: block;
+}
+
+/* Секция портфолио */
+.portfolio-section {
+	background-color: #ddd;
+	padding-top: 45px;
+	padding-bottom: 70px;
+}
+.portfolio-block {
+	background-color: #fff;
+	padding: 1px 50px 0px;
+}
+/* Стиль заголовка портфолио */
+.portfolio-header {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.portfolio-header, .portfolio-block h3 {
+	color: #072b6f;
+	font-weight: 700;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+/* Блоки с портфолио */
+.portfolio-block h3 {
+	/* Такой же, как и .portfolio-header */
+	margin-top: 16px;
+	margin-bottom: 20px;
+}
+.portfolio-block p {
+	color: #8f8f8f;
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.portfolio-block a {
+	color: #072b6f;
+	font-size: 14px;
+	font-weight: 400;
+	text-decoration: underline;
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+/* Мои работы */
+p.portfolio-subtitle {
+	/* Мои работы */
+	color: #7bb9ff;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+	background-color: #3a7dfd;
+	color: white;
+	font-size: 18px;
+	font-weight: 400;
+	padding: 60px 0px 112px;
+}
+.footer-description {
+	padding-left: 50px;
+	padding-top: 15px;
+}
+.footer-description h4 {
+	font-weight: 700;
+	font-size: 24px;
+	margin-top: 0;
+	margin-bottom: 7px;
+}
+.footer-description p { margin: 0; }
+.footer-socials  { text-align: center; }
+.footer-socials img {
+	margin: 20px 15px 0px;
+}
+.footer-connect {
+	margin: auto;
+	text-align: center;
+}
+.footer-connect a {
+	padding: 13px 0px 6px;
+	text-decoration: none;
+	border: 1px solid #fff;
+	border-radius: 25px;
+	display: block;
+	background-color: transparent;
+	margin-top: 13px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 210px;
+	height: 50px;
+	color: inherit;
+	font: inherit;
+}
+.footer-connect a:hover {
+	color: #3a7dfd;
+	background-color: #fff;
+	font-weight: bold;
+	-webkit-transition: 0.2s;
+	-o-transition: 0.2s;
+	transition: 0.2s;
+}
+
+/* Адаптация под разные экраны */
+@media (max-width: 1200px) {
+	.header-pretitle {	margin-top: 40px;}
+	header h1 { font-size: 36px; }
+	footer { padding: 50px 0px 80px;}
+}
+@media (max-width: 992px) {
+	header {
+		padding-bottom: 30px;
+	}
+	header img {
+		margin: 0 auto;
+		width: 90%;
+		margin-left: 50px;
+	}
+	.header-block {
+		padding-left: 0px;
+		padding-right: 20px;
+	}
+	.header-pretitle {	margin-top: 0px;}
+	footer {
+		font-size: 14px;
+		padding: 40px 0px 60px;
+	}
+	.footer-description {	padding-top: 0px; }
+	.footer-description h4 {	font-size: 18px; }
+	.footer-socials { padding-left: 30px; }
+	.footer-socials img {
+		margin: 10px 10px 0px;
+		width: 35px;
+	}
+	.footer-connect { max-width: 200px; }
+	.footer-connect a {
+		width: 150px;
+		height: 40px;
+		padding: 10px 10px 4px;
+		margin-top: 10px;
+	}
+}
+@media (max-width: 767px) {
+	header img {	display: none; }
+	.header-block { padding-left: 50px; }
+	footer {
+		font-size: 18px;
+		padding: 40px 0px 20px;
+	}
+	.footer-description, .footer-socials, .footer-connect {
+		padding: 0;
+		padding-bottom: 40px;
+	}
+	.footer-description {
+		padding-top: 0px;
+		text-align: center;
+	}
+	.footer-description h4 {	font-size: 24px; }
+	.footer-socials img {
+		margin: 10px 13px 0px;
+		width: 40px;
+	}
+	.footer-connect a {
+		padding: 13px 10px 10px;
+		width: 200px;
+		height: 50px;
+		margin-top: 10px;
+	}
+}
+@media (max-width: 576px) {
+	header {
+		font-size: 14px;
+		padding-top: 40px;
+		padding-bottom: 30px;
+	}
+	.header-block { padding-left: 25px; padding-right: 25px; }
+	header h1 {
+		font-size: 26px;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	.header-connect-block {
+		margin-top: 20px;
+		max-width: 150px;
+	}	
+	.header-connect-block small {
+		/* Подпись под кнопкой */
+		margin-top: 12px;
+		font-size: 10px;
+	}
+	.header-connect-block a { padding: 12px 40px 10px;	}
+	.portfolio-section {
+		padding-top: 30px;
+		padding-bottom: 45px;
+	}
+
+	.portfolio-block {
+		padding: 1px 25px 0px;
+}
+	.portfolio-header {
+		margin-top: 25px;
+		margin-bottom: 8px;
+	}
+	p.portfolio-subtitle {
+		font-size: 14px;
+		margin-top: 8px;
+		margin-bottom: 20px;
+	}
+}
