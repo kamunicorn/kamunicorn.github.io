@@ -86,8 +86,8 @@
                         <img src="img/works/works-irvas.jpg" class="case__preview"></img>
                         <p class="case__text">Мой дипломный проект на курсе «Javascript» Академии верстки.</p>
                         <div class="case__links">
-                            <a href="#">Подробнее</a>
-                            <a href="/windows">Смотреть работу</a>
+                            <a class="case__more-info" id="irvas" href="#">Подробнее</a>
+                            <a href="/irvas/">Смотреть работу</a>
                         </div>
                     </div>
                     <!-- /.case -->
@@ -100,7 +100,7 @@
                         <img src="img/works/works-budget.jpg" class="case__preview"></img>
                         <p class="case__text">Сайт для расчета дневного бюджета в рамках курса «Javascript».</p>
                         <div class="case__links">
-                            <a href="#">Подробнее</a>
+                            <a class="case__more-info" id="budget" href="#">Подробнее</a>
                             <a href="/budget">Смотреть работу</a>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                         <img src="img/works/works-yoga.jpg" class="case__preview"></img>
                         <p class="case__text">Сайт «Йога-туры в Индию» реализован в рамках курса «Javascript» Академии верстки.</p>
                         <div class="case__links">
-                            <a href="#">Подробнее</a>
+                            <a class="case__more-info" id="yoga" href="#">Подробнее</a>
                             <a href="/yoga">Смотреть работу</a>
                         </div>
                     </div>
@@ -125,10 +125,10 @@
                 <div class="col-xl-6">
                     <div class="case">
                         <h4 class="case__title">Информационная система предприятия</h4>
-                        <img src="img/works/works-isystem.jpg" class="case__preview"></img>
+                        <img src="img/works/works-system.jpg" class="case__preview"></img>
                         <p class="case__text">Доработка информационной системы предприятия с разработкой новых модулей на основе языков javascript и php.</p>
                         <div class="case__links">
-                            <a href="#">Подробнее</a>
+                            <a class="case__more-info" id="system" href="#">Подробнее</a>
                         </div>
                     </div>
                     <!-- /.case -->
@@ -162,6 +162,91 @@
         
         
     </footer>
+    <!-- /.footer -->
+
+    <div class="popup budget">
+        <div class="popup__content text-center">
+            <button class="popup__close">&times;</button>
+
+            <h3 class="project__title">Калькулятор бюджета</h3>
+            <img src="/img/works/works-budget.jpg" alt="" class="project__preview">
+            <p class="project__info">Сайт для расчета дневного бюджета был создан в рамках курса «Javascript». Мне был дан полностью сверстанный сайт. Моей задачей было добавить функционал калькулятору. Присутствуют проверки вводимых данных и автозамена.</p>
+            <a href="/budget/" class="project__link">Смотреть работу</a>
+            
+        </div>
+    </div>
+    <!-- /.popup.budget -->
+
+    <div class="popup irvas">
+        <div class="popup__content text-center">
+            <button class="popup__close">&times;</button>
+
+            <h3 class="project__title">Ирвас окна</h3>
+            <img src="/img/works/works-irvas.jpg" alt="Ирвас окна" class="project__preview">
+
+            <p class="project__info">Сайт «Ирвас окна» - мой дипломный проект на курсе «Javascript» Академии верстки. Мне был дан полностью сверстанный сайт, сделанный адаптивно. Моей задачей было добавить интерактив сайту в соответствии с требованиями технического задания. Было реализовано:</p>
+            
+            <ul class="project__info-list">
+                <li>-	появление модальных окон с формой обратной связи;</li>
+                <li>-	отправка данных пользователя через несколько форм обратной связи;</li>
+                <li>-	два слайдера с информацией;</li>
+                <li>-	таймер обратного отсчета;</li>
+                <li>-	калькулятор расчета стоимости с отправкой данных для расчета.</li>
+            </ul>
+            
+            <p class="project__info">Процесс работы над сайтом велся в сервисе Trello.</p>
+
+            <a href="/irvas/" class="project__link">Смотреть работу</a>
+
+        </div>
+    </div>
+    <!-- /.popup.irvas -->
+
+    <div class="popup system">
+        <div class="popup__content text-center">
+            <button class="popup__close">&times;</button>
+
+            <h3 class="project__title">Информационная система предприятия</h3>
+            <img src="/img/works/works-system.jpg" alt="Информационная система предприятия" class="project__preview">
+
+            <p class="project__info">Доработка информационной системы предприятия с разработкой новых модулей на основе языков javascript и php:</p>
+            
+            <ul class="project__info-list">
+                <li>-	авторизация пользователя (2 уровня доступа);</li>
+                <li>-	редактирование таблицы базы данных из браузера с использованием плагина на jQuery;</li>
+                <li>-	SQL-запрос формируется динамически на основе данных от пользователя;</li>
+                <li>-	получение данных от сервера приходят в формате json;</li>
+                <li>-	рисование таблицы на основе полученных данных с учетом содержания этих данных (выделение цветом некоторых строк и т.д.)</li>
+            </ul>
+            
+            <p class="project__info">За более подробной информацией и скриншотами просьба обращаться в личном сообщении.</p>
+
+        </div>
+    </div>
+    <!-- /.popup.system -->
+
+    <div class="popup yoga">
+        <div class="popup__content text-center">
+            <button class="popup__close">&times;</button>
+
+            <h3 class="project__title">Йога-туры в Индию</h3>
+            <img src="/img/works/works-yoga.jpg" alt="Йога-туры в Индию" class="project__preview">
+
+            <p class="project__info">Сайт «Йога-туры в Индию» реализован в рамках курса «Javascript» Академии верстки. Мне был дан полностью сверстанный сайт. Моей задачей было добавить интерактив сайту в соответствии с домашними заданиями на курсе. Было реализовано:</p>
+
+            <ul class="project__info-list">
+                <li>-	появление модальных окон с формой обратной связи;</li>
+                <li>-	отправка данных пользователя через две формы обратной связи;</li>
+                <li>-	слайдер с фотографиями;</li>
+                <li>-	таймер обратного отсчета;</li>
+                <li>-	калькулятор расчета стоимости тура.</li>
+            </ul>
+            <a href="/yoga/" class="project__link">Смотреть работу</a>
+            
+        </div>
+    </div>
+    <!-- /.popup.yoga -->
+    
 </body>
 
 </html>
