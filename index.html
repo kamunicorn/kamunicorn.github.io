@@ -16,10 +16,13 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet">
+
+    <script src="js/script.js"></script>
 </head>
 
 <body>
     <header>
+        <!-- Плашка наверху - картинка, краткая информация, навигация -->
         <div class="navbar">
             <div class="container">
             <div class="row align-items-center">
@@ -74,61 +77,62 @@
         <!-- /.about -->
     </header>
 
+    <!-- Портфолио -->
     <section class="works" id="works">
         <div class="container">
             <h3 class="works__title">Портфолио</h3>
             <p class="works__subtitle">Мои работы</p>
             <div class="row">
 
-                <div class="col-xl-6">
+                <div class="col-md-6">
                     <div class="case">
                         <h4 class="case__title">Ирвас окна</h4>
                         <img src="img/works/works-irvas.jpg" class="case__preview"></img>
                         <p class="case__text">Мой дипломный проект на курсе «Javascript» Академии верстки.</p>
                         <div class="case__links">
-                            <a class="case__more-info" id="irvas" href="#">Подробнее</a>
-                            <a href="/irvas/">Смотреть работу</a>
+                            <a class="case__link case__more-info" id="irvas" href="">Подробнее</a>
+                            <a class="case__link" href="/irvas/" target="_blank">Смотреть работу</a>
                         </div>
                     </div>
                     <!-- /.case -->
                 </div>
                 <!-- /.col-xl-6 -->
 
-                <div class="col-xl-6">
+                <div class="col-md-6">
                     <div class="case">
                         <h4 class="case__title">Калькулятор бюджета</h4>
                         <img src="img/works/works-budget.jpg" class="case__preview"></img>
                         <p class="case__text">Сайт для расчета дневного бюджета в рамках курса «Javascript».</p>
                         <div class="case__links">
-                            <a class="case__more-info" id="budget" href="#">Подробнее</a>
-                            <a href="/budget">Смотреть работу</a>
+                            <a class="case__link case__more-info" id="budget" href="">Подробнее</a>
+                            <a class="case__link" href="/budget" target="_blank">Смотреть работу</a>
                         </div>
                     </div>
                     <!-- /.case -->
                 </div>
                 <!-- /.col-xl-6 -->
 
-                <div class="col-xl-6">
+                <div class="col-md-6">
                     <div class="case">
                         <h4 class="case__title">Йога-туры в Индию</h4>
                         <img src="img/works/works-yoga.jpg" class="case__preview"></img>
                         <p class="case__text">Сайт «Йога-туры в Индию» реализован в рамках курса «Javascript» Академии верстки.</p>
                         <div class="case__links">
-                            <a class="case__more-info" id="yoga" href="#">Подробнее</a>
-                            <a href="/yoga">Смотреть работу</a>
+                            <a class="case__link case__more-info" id="yoga" href="">Подробнее</a>
+                            <a class="case__link" href="/yoga" target="_blank">Смотреть работу</a>
                         </div>
                     </div>
                     <!-- /.case -->
                 </div>
                 <!-- /.col-xl-6 -->
 
-                <div class="col-xl-6">
+                <div class="col-md-6">
                     <div class="case">
                         <h4 class="case__title">Информационная система предприятия</h4>
                         <img src="img/works/works-system.jpg" class="case__preview"></img>
                         <p class="case__text">Доработка информационной системы предприятия с разработкой новых модулей на основе языков javascript и php.</p>
                         <div class="case__links">
-                            <a class="case__more-info" id="system" href="#">Подробнее</a>
+                            <a class="case__link case__more-info" id="system" href="">Подробнее</a>
                         </div>
                     </div>
                     <!-- /.case -->
@@ -164,20 +168,21 @@
     </footer>
     <!-- /.footer -->
 
-    <div class="popup budget">
+    <!-- Описание работ в модальных окнах -->
+    <div class="popup budget fade">
         <div class="popup__content text-center">
             <button class="popup__close">&times;</button>
 
             <h3 class="project__title">Калькулятор бюджета</h3>
             <img src="/img/works/works-budget.jpg" alt="" class="project__preview">
             <p class="project__info">Сайт для расчета дневного бюджета был создан в рамках курса «Javascript». Мне был дан полностью сверстанный сайт. Моей задачей было добавить функционал калькулятору. Присутствуют проверки вводимых данных и автозамена.</p>
-            <a href="/budget/" class="project__link">Смотреть работу</a>
+            <a href="/budget/" class="project__link" target="_blank">Смотреть работу</a>
             
         </div>
     </div>
     <!-- /.popup.budget -->
 
-    <div class="popup irvas">
+    <div class="popup irvas fade">
         <div class="popup__content text-center">
             <button class="popup__close">&times;</button>
 
@@ -196,13 +201,13 @@
             
             <p class="project__info">Процесс работы над сайтом велся в сервисе Trello.</p>
 
-            <a href="/irvas/" class="project__link">Смотреть работу</a>
+            <a href="/irvas/" class="project__link" target="_blank">Смотреть работу</a>
 
         </div>
     </div>
     <!-- /.popup.irvas -->
 
-    <div class="popup system">
+    <div class="popup system fade">
         <div class="popup__content text-center">
             <button class="popup__close">&times;</button>
 
@@ -220,12 +225,11 @@
             </ul>
             
             <p class="project__info">За более подробной информацией и скриншотами просьба обращаться в личном сообщении.</p>
-
         </div>
     </div>
     <!-- /.popup.system -->
 
-    <div class="popup yoga">
+    <div class="popup yoga fade">
         <div class="popup__content text-center">
             <button class="popup__close">&times;</button>
 
@@ -241,7 +245,7 @@
                 <li>-	таймер обратного отсчета;</li>
                 <li>-	калькулятор расчета стоимости тура.</li>
             </ul>
-            <a href="/yoga/" class="project__link">Смотреть работу</a>
+            <a href="/yoga/" class="project__link" target="_blank">Смотреть работу</a>
             
         </div>
     </div>
