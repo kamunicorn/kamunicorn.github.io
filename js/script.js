@@ -7,8 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     linksMoreInfo.forEach( (link) => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector('.popup.' + this.id).style.display = 'block';
             document.body.style.overflow = 'hidden';
+
+            let popup = document.querySelector('.popup.' + this.id);
+            popup.style.display = 'block';
+
+            popup.animate([
+                {"opacity": 0},
+                {"opacity": 1}
+            ], {
+                duration: 1000
+            });
         });
     });
 
@@ -45,6 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function closePopup(popup) {
-    popup.style.display = 'none';
-    document.body.style.overflow = '';
+    popup.animate([
+        {"opacity": 1},
+        {"opacity": 0}
+    ], {
+        duration: 500
+    });
+    setTimeout( () => {
+        popup.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 500);
 }
