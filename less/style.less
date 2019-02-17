@@ -55,7 +55,6 @@ body {
         display: inline-block;
         position:relative;
     }
-
         &__link:after {
             display: block;
             content: "";
@@ -72,8 +71,7 @@ body {
             -moz-transform:translateX(-50%);
             transform:translateX(-50%);
         }
-        &__link:hover:after,
-        &__link:focus:after {
+        &__link:hover:after {
             width: 100%;
         }
 }
@@ -90,8 +88,7 @@ body {
         margin-right: 0;
     }
     &__hello {
-        font-weight: 400;
-        font-size: 26px;
+        font-size: 24px;
         margin-bottom: 15px;
     }
     &__family {
@@ -100,7 +97,7 @@ body {
         margin-top: 15px;
     }
     &__job, &__job-list {
-        font-size: 20px;
+        font-size: 24px;
     }
     &__job-list {
         list-style-type: circle;
@@ -111,7 +108,7 @@ body {
         padding: 5px 10px;
     }
     &__buttons {
-        margin: 20px 20px 0px;
+        margin: 20px 20px 0px 0px;
         display: flex;
         -ms-flex-pack: justify;
         justify-content: space-between;
@@ -171,6 +168,39 @@ body {
     }
 }
 
+.case, .project {
+    &__preview {
+        width: 100%;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(40, 40, 40, 0.5);
+        -moz-box-shadow:    0px 0px 5px 0px rgba(40, 40, 40, 0.5);
+        box-shadow:         0px 0px 5px 0px rgba(40, 40, 40, 0.5);
+    }
+    &__title {
+        text-transform: uppercase;
+        color: @textDark;
+        font-weight: 800;
+    }
+    &__link {
+        text-decoration: none;
+        border-bottom: 1px dotted @textDark;
+        font-weight: 600;
+        font-style: italic;
+        color: @textDark;
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    
+        &:first-child {
+            margin-right: 50px;
+        }
+        &:hover, &:active, &:focus {
+            color: darken(@accentLight, 10%);
+            border-bottom: 1px dotted darken(@accentLight, 10%);
+            transition: 0.3s;
+        }
+    }
+}
+
 .case {
     padding: 20px 30px 30px 30px;
     margin: 15px auto;
@@ -191,44 +221,31 @@ body {
         text-align: left;
     }
 }
-.project__title {
-    text-align: center;
-    margin-top: 10px;
-}
 
-.case, .project {
-    &__preview {
-        width: 100%;
-        -webkit-box-shadow: 0px 0px 5px 0px rgba(40, 40, 40, 0.5);
-        -moz-box-shadow:    0px 0px 5px 0px rgba(40, 40, 40, 0.5);
-        box-shadow:         0px 0px 5px 0px rgba(40, 40, 40, 0.5);
-    }
+.project {
     &__title {
-        text-transform: uppercase;
-        color: @textDark;
-        font-weight: 800;
+        text-align: center;
+        margin-top: 10px;
     }
-    &__link {
-        text-decoration: none;
-        border-bottom: 1px dotted @textDark;
-        font-weight: 600;
-        font-style: italic;
-        color: @textDark;
-        display: inline-block;
-    
-        &:first-child {
-            margin-right: 50px;
+    &__info-list {
+        padding-left: 30px;
+        list-style-type: none;
+        position: relative;
+        li {
+            margin-bottom: 5px;
         }
-        &:hover, &:active, &:focus {
-            color: darken(@accentLight, 10%);
-            border-bottom: 1px dotted darken(@accentLight, 10%);
-            transition: 0.3s;
+        li:before {
+            content: "–";
+            font-size: 20px;
+            position: absolute;
+            left: 0px;
         }
     }
 }
 
 .popup {
     position: fixed;
+    overflow: auto;
     top: 0;
     left: 0;
     width: 100%;
@@ -240,11 +257,18 @@ body {
         display: none;
     }
     &__content {
-        position: fixed;
+        /* position: fixed;
         top: 5%;
         left: 50%;
         -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
+        transform: translateX(-50%); */
+        position: relative;
+        display: block;
+        /* margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        margin-bottom: 5%; */
+        margin: 5% auto;
         width: 40rem;
         padding: 40px;
         background-color: lighten(@bgLight, 2%);
@@ -252,14 +276,22 @@ body {
     
     &__close {
         position: absolute;
-        top: -2.2rem;
+        /* top: -2.2rem;
         right: -5rem;
         font-size: 4rem;
-        color: #ffffff;
+        color: #ffffff; */
+        top: 0rem;
+        right: 0.5rem;
+        font-size: 3rem;
+        color: @textDark;
         border: none;
         background: transparent;
         cursor: pointer;
     }
+}
+
+.popup.system .project__info {
+    margin-bottom: 0;
 }
 
 .footer {
@@ -269,7 +301,7 @@ body {
     padding-bottom: 50px;
 
     &__info {
-        padding-left: 40px;
+        padding-left: 20px;
     }
     &__author {
         font-size: 22px;
@@ -302,7 +334,7 @@ body {
     &__connect .c-button {
         display: block;
         margin-left: auto;
-        margin-right: 20px;
+        margin-right: 10px;
         border-color: @textLight;
         background-color: transparent;
         color: @bgLight;
@@ -327,7 +359,7 @@ body {
         font-size: 18px;
     }
     .footer__connect {
-        margin-right: 30px;
+        margin-right: 0px;
         margin-left: auto;
     }
 }
@@ -336,13 +368,18 @@ body {
         padding-top: 17px;
         padding-bottom: 20px;
     }
-    .about__family {
-        font-size: 40px;
-        margin-top: 10px;
-        margin-bottom: 30px;
-    }
-    .about__buttons {
-        display: block;
+    .about {
+        &__hello, &__job, &__job-list {
+            font-size: 20px;
+        }
+        &__family {
+            font-size: 40px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        &__buttons {
+            display: block;
+        }
     }
     .footer {
         padding-top: 10px;
@@ -355,19 +392,21 @@ body {
         &__socials img {
             height: 32px;
         }
+        &__connect {
+            margin-right: 10px;
+        }
         &__connect .c-button {
             font-size: 16px;
             font-weight: 400;
             border-width: 2px;
-            // margin-right: 0;
         }
     }
-    .popup__close {
+    /* .popup__close {
         top: 0rem;
         right: 0.5rem;
         font-size: 3rem;
         color: @textDark;
-    }
+    } */
 }
 @media (max-width: 767px) {
     .navbar__menu {
@@ -377,6 +416,9 @@ body {
     .navbar__link {
         margin-left: 40px;
         font-size: 17px;
+    }
+    .navbar__link:first-child {
+        margin-left: 0px;
     }
     .about {
         &__buttons {
@@ -405,7 +447,7 @@ body {
             // margin-left: auto;
         }
         &__connect .c-button {
-            margin-right: 20px;
+            margin-right: 0px;
         }
     }
     .popup__content {
@@ -429,36 +471,38 @@ body {
             display: inline-block;
         }
         &__foto {
-            width: 95%;
+            // width: 95%;
             margin-top: 20px;
-            margin-right: auto;
+            // margin-right: auto;
         }
     }
     .popup__content {
         width: 100%;
-        height: 100%;
-        // position: fixed;
-        top: 0%;
-        left: 0%;
-        -webkit-transform: none;
+        min-height: 100%;
+        margin: auto;
+        padding: 30px 20px;
+        // height: 100%;
+        // top: 0%;
+        // left: 0%;
+        /* -webkit-transform: none;
         transform: none;
-        overflow: auto;
+        overflow: auto; */
     }
-    /* .popup__close {
-        top: 0rem;
-        right: 0.5rem;
-    } */
+    .popup__close {
+        font-size: 2.5rem;
+        right: 0.3rem;
+    }
 }
 @media (max-width: 480px) {
     .navbar__menu {
         margin-top: 10px;
     }
-    .navbar__link:first-child {
-        margin-left: 10px;
-    }
     .about {
         &__hello {
-            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        &__hello, &__job, &__job-list {
+            font-size: 18px;
         }
         &__family {
             font-size: 30px;
