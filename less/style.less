@@ -398,6 +398,22 @@ body {
         }
     }
 }
+@media screen {
+    .about__foto_big {
+        display: block;
+    }
+    .about__foto_small {
+        display: none;
+    }
+}
+@media not screen {
+    .about__foto_big {
+        display: none;
+    }
+    .about__foto_small {
+        display: block;
+    }
+}
 @media (max-width: 767px) {
     .navbar__menu {
         text-align: left;
@@ -413,12 +429,6 @@ body {
     .about {
         &__foto {
             margin-top: 20px;
-        }
-        &__foto_big {
-            display: none;
-        }
-        &__foto_small {
-            display: block;
         }
         &__buttons {
             margin-top: 10px;
