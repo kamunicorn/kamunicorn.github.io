@@ -56,8 +56,8 @@ body {
         text-transform: uppercase;
         display: inline-block;
         position:relative;
-    }
-        &__link:after {
+
+        &:after {
             display: block;
             content: "";
             background-color: @accentLight;
@@ -66,16 +66,17 @@ body {
             top: 120%;
             left: 50%;
             position:absolute;
-            -webkit-transition: width .3s ease-in-out;
-            -moz--transition: width .3s ease-in-out;
-            transition: width .3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz--transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
             -webkit-transform:translateX(-50%);
             -moz-transform:translateX(-50%);
             transform:translateX(-50%);
         }
-        &__link:hover:after {
+        &:hover:after {
             width: 100%;
         }
+    }
 }
 
 .about {
@@ -126,9 +127,9 @@ body {
         -webkit-box-shadow: 0px 10px 30px 0px @shadowDark;
         -moz-box-shadow:    0px 10px 30px 0px @shadowDark;
         box-shadow:         0px 10px 30px 0px @shadowDark;
+        transition: all .5s ease-in-out;
         &:hover, &:active {
             box-shadow: none;
-            transition: .7s;
         }
     }
     &__connect {
@@ -195,14 +196,13 @@ body {
         display: inline-block;
         margin-top: 5px;
         margin-bottom: 5px;
-    
+        transition: 0.3s;
         &:first-child {
             margin-right: 50px;
         }
         &:hover, &:active, &:focus {
             color: darken(@accentLight, 10%);
             border-bottom: 1px dotted darken(@accentLight, 10%);
-            transition: 0.3s;
         }
     }
 }
@@ -216,12 +216,11 @@ body {
     -webkit-box-shadow: 0px 0px 15px 0px @shadowDark;
     -moz-box-shadow:    0px 0px 15px 0px @shadowDark;
     box-shadow:         0px 0px 15px 0px @shadowDark;
-    
+    transition: 0.3s;
     &:hover, &:active {
         -webkit-box-shadow: 0px 2px 30px 0px @shadowLight;
         -moz-box-shadow:    0px 2px 30px 0px @shadowLight;
         box-shadow:         0px 2px 30px 0px @shadowLight;
-        transition: 0.3s;
     }
     &__title {
         text-align: left;
@@ -311,8 +310,8 @@ body {
     &__socials img {
         height: 40px;
         border-radius: 50%;
+        transition: 0.3s;
         &:hover, &:focus {
-            transition: 0.3s;
             box-shadow: 0px 0px 14px 1px @shadowLight;
             -webkit-box-shadow:0px 0px 14px 1px @shadowLight;
             -moz-box-shadow:0px 0px 14px 1px @shadowLight;
@@ -331,11 +330,11 @@ body {
         border-color: @textLight;
         background-color: transparent;
         color: @textLight;
+        -webkit-transition: .5s;
+        -moz--transition: .5s;
+        transition: .5s;
         &:hover, &:active {
             background-color: @textLight;
-            -webkit-transition: .5s;
-            -moz--transition: .5s;
-            transition: .5s;
             color: @bgDark;
         }
     }
