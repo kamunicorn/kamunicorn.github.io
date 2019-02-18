@@ -2,6 +2,7 @@
 @textLight: #eee;
 @textDark: #2e2d2d;
 @bgLight: rgb(236, 245, 255);
+@bgDark: #191919;
 @shadowLight: rgba(42, 152, 172, 0.95);
 @shadowDark: rgba(40, 60, 80, 0.4);
 
@@ -21,15 +22,16 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
-
+    // Плашка меню наверху
 .navbar {
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #eee;
+    background-color: @bgDark;
+    color: @textLight;
     padding-top: 25px;
     padding-bottom: 25px;
 
-    &__img {
-        height: 70%;
+    &__logo {
+        max-width: 100%;
+        max-height: 100%;
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -83,9 +85,14 @@ body {
 
     &__foto {
         width: 100%;
-        display: block;
         margin: auto;
         margin-right: 0;
+        &_big {
+            display: block;
+        }
+        &_small {
+            display: none;
+        }
     }
     &__hello {
         font-size: 24px;
@@ -125,27 +132,26 @@ body {
         }
     }
     &__connect {
-        background-color: @textDark;
+        background-color: @bgDark;
         color: @textLight;
-        border-color: @textDark;
+        border-color: @bgDark;
     }
     &__resume {
-        background-color: transparent;
-        color: @textDark;
-        border-color: @textDark;
+        background-color: lighten(@bgLight, 2%);
+        color: @bgDark;
+        border-color: @bgDark;
     }
     .icon-resume {
-        padding: 10px 0px 10px 40px;
+        padding: 6px 0 6px 32px;
+        margin-right: 14px;
+        margin-left: 6px;
         position: relative;
-        img {
-            position: absolute;
-            height: 34px;
-            top: 10%;
-            left: 0;
-        }
+        background-image: url("../img/file.png");
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }
-
+    // Блок портфолио
 .works {
     background-color: @bgLight;
     padding-top: 20px;
@@ -200,7 +206,7 @@ body {
         }
     }
 }
-
+    //  Информация о работе (проекте) на главной странице
 .case {
     padding: 20px 30px 30px 30px;
     margin: 15px auto;
@@ -221,7 +227,7 @@ body {
         text-align: left;
     }
 }
-
+    // Информация о работе (проекте) в модальном окне
 .project {
     &__title {
         text-align: center;
@@ -242,7 +248,7 @@ body {
         }
     }
 }
-
+    // Modals
 .popup {
     position: fixed;
     overflow: auto;
@@ -257,17 +263,8 @@ body {
         display: none;
     }
     &__content {
-        /* position: fixed;
-        top: 5%;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%); */
         position: relative;
         display: block;
-        /* margin-left: auto;
-        margin-right: auto;
-        margin-top: 5%;
-        margin-bottom: 5%; */
         margin: 5% auto;
         width: 40rem;
         padding: 40px;
@@ -276,10 +273,6 @@ body {
     
     &__close {
         position: absolute;
-        /* top: -2.2rem;
-        right: -5rem;
-        font-size: 4rem;
-        color: #ffffff; */
         top: 0rem;
         right: 0.5rem;
         font-size: 3rem;
@@ -289,14 +282,14 @@ body {
         cursor: pointer;
     }
 }
-
+    // В модалке про инф. систему предприятия нет ссылки "смотреть работу"
 .popup.system .project__info {
     margin-bottom: 0;
 }
 
 .footer {
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #eee;
+    background-color: @bgDark;
+    color: @textLight;
     padding-top: 50px;
     padding-bottom: 50px;
 
@@ -337,14 +330,13 @@ body {
         margin-right: 10px;
         border-color: @textLight;
         background-color: transparent;
-        color: @bgLight;
-        font-weight: 600;
+        color: @textLight;
         &:hover, &:active {
-            background-color: @bgLight;
+            background-color: @textLight;
             -webkit-transition: .5s;
             -moz--transition: .5s;
             transition: .5s;
-            color: @textDark;
+            color: @bgDark;
         }
     }
 }
@@ -355,7 +347,6 @@ body {
     }
     .c-button {
         padding: 10px 35px;
-        border-radius: 30px;
         font-size: 18px;
     }
     .footer__connect {
@@ -364,6 +355,13 @@ body {
     }
 }
 @media (max-width: 991px) {
+    .c-button {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .about__resume {
+        font-weight: 600;
+    }
     .navbar {
         padding-top: 17px;
         padding-bottom: 20px;
@@ -380,6 +378,9 @@ body {
         &__buttons {
             display: block;
         }
+        .icon-resume {
+            margin-left: 0px;
+        }
     }
     .footer {
         padding-top: 10px;
@@ -395,18 +396,7 @@ body {
         &__connect {
             margin-right: 10px;
         }
-        &__connect .c-button {
-            font-size: 16px;
-            font-weight: 400;
-            border-width: 2px;
-        }
     }
-    /* .popup__close {
-        top: 0rem;
-        right: 0.5rem;
-        font-size: 3rem;
-        color: @textDark;
-    } */
 }
 @media (max-width: 767px) {
     .navbar__menu {
@@ -421,14 +411,28 @@ body {
         margin-left: 0px;
     }
     .about {
+        &__foto {
+            margin-top: 20px;
+        }
+        &__foto_big {
+            display: none;
+        }
+        &__foto_small {
+            display: block;
+        }
         &__buttons {
             margin-top: 10px;
             margin-bottom: 20px;
+            display: flex;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
         }
-    
-        .icon-resume img {
-            height: 30px;
-            top: 15%;
+        &__buttons .c-button {
+            display: inline-block;
+        }
+        .icon-resume {
+            padding: 5px 0 5px 30px;
+            margin-right: 12px;
         }
     }
     .case {
@@ -444,7 +448,6 @@ body {
         &__connect {
             justify-content: right;
             margin-right: 0;
-            // margin-left: auto;
         }
         &__connect .c-button {
             margin-right: 0px;
@@ -460,20 +463,15 @@ body {
         border-radius: 30px;
         font-size: 16px;
     }
+    .navbar__logo {
+        max-width: 70%;
+    }
     .about {
         padding-top: 15px;
-        &__buttons {
-            display: flex;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-        }
-        &__buttons .c-button {
-            display: inline-block;
-        }
-        &__foto {
-            // width: 95%;
-            margin-top: 20px;
-            // margin-right: auto;
+        padding-bottom: 20px;
+        .icon-resume {
+            padding: 3px 0 3px 30px;
+            margin-right: 7px;
         }
     }
     .popup__content {
@@ -481,19 +479,13 @@ body {
         min-height: 100%;
         margin: auto;
         padding: 30px 20px;
-        // height: 100%;
-        // top: 0%;
-        // left: 0%;
-        /* -webkit-transform: none;
-        transform: none;
-        overflow: auto; */
     }
     .popup__close {
         font-size: 2.5rem;
         right: 0.3rem;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 479px) {
     .navbar__menu {
         margin-top: 10px;
     }

@@ -1,10 +1,10 @@
 'use strict';
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     let popups = document.querySelectorAll('.popup'),
         linksMoreInfo = document.querySelectorAll('.case__more-info');
 
         // открытие модалки
-    linksMoreInfo.forEach( (link) => {
+    linksMoreInfo.forEach( function (link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             document.body.style.overflow = 'hidden';
@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
         // закрытие модалки
-    popups.forEach( (popup) => {
+    popups.forEach( function (popup) {
         let close = popup.querySelector('.popup__close');
         
-        close.addEventListener('click', () => {
+        close.addEventListener('click', function () {
             closePopup(popup);
         });
         popup.addEventListener('click', function(event) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // плавная прокрутка по клику на ссылке из меню
     let navbarMenu = document.querySelector('.navbar__menu');
 
-    navbarMenu.addEventListener('click', (e) => {
+    navbarMenu.addEventListener('click', function (e) {
         e.preventDefault();
         if (e.target.classList.contains('navbar__link')) {
             let id = e.target.getAttribute('href');
@@ -60,7 +60,7 @@ function closePopup(popup) {
     ], {
         duration: 500
     });
-    setTimeout( () => {
+    setTimeout( function () {
         popup.style.display = 'none';
         document.body.style.overflow = '';
     }, 500);

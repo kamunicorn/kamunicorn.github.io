@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet">
 
-    <script src="js/script.js"></script>
+    <!-- Полифиллы для работы в Internet Explorer -->
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.forEach%2CElement.prototype.classList%2CWebAnimations%2CNodeList.prototype.forEach"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
             <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-2 col-3">
-                    <img class="navbar__img" src="img/008-code-1.png" alt="Веб-разработка">
+                    <img class="navbar__logo" src="img/008-code-1.png" alt="Веб-разработка">
                 </div>
                 <div class="col-md-4 col-9">
                     <p class="navbar__title">Вера Перелыгина</p>
@@ -47,7 +48,7 @@
         <div class="about">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="about__info col-sm-7">
+                    <div class="about__info col-md-7">
                         <p class="about__hello">Привет, меня зовут</p>
                         <h2 class="about__family">Вера Перелыгина</h2>
                         <p class="about__job">Я разрабатываю сайты:</p>
@@ -59,16 +60,16 @@
                         <div class="about__buttons">
                             <a href="https://vk.me/vera_perelygina" class="c-button about__connect">Написать мне</a>
                             <a href="Perelygina-Vera_resume.docx" class="c-button about__resume">
-                                <i class="icon-resume"><img src="img/doc-word.png" alt="Документ Microsoft Word"></i>
-                                
+                                <i class="icon-resume"></i>
                                 Моё резюме
                             </a>
                         </div>
                         
                     </div>
                     <!-- /.about__info -->
-                    <div class="col-sm-5">
-                        <img class="about__foto" src="img/SAM_7846.JPG" alt="Вера Перелыгина">
+                    <div class="col-md-5">
+                        <img class="about__foto about__foto_big" src="img/SAM_7846-big.JPG" alt="Вера Перелыгина">
+                        <img class="about__foto about__foto_small" src="img/SAM_7846-small.JPG" alt="Вера Перелыгина">
                     </div>
                 </div>
             </div>
@@ -251,6 +252,7 @@
     </div>
     <!-- /.popup.yoga -->
     
+    <script src="js/script.js"></script>
 </body>
 
 </html>
