@@ -144,8 +144,6 @@ popupBudget.addEventListener('input', function () {
 });
 
 popupDate.addEventListener('input', function () {
-    console.log(this.value);
-
     verifyPopupCompleteness();
 });
 
@@ -167,7 +165,6 @@ function clearAndDisable() {
     startBtn.removeAttribute('disabled');
     resultValues.forEach( (div) => {div.textContent = '';} );
     allDataInputs.forEach( (inp) => {inp.value = '';} );
-    // console.log(appData);
 }
 
     // Кнопка Рассчитать (дневной бюджет и уровень дохода)
