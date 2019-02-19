@@ -27,6 +27,13 @@ let expensesInps = document.getElementsByClassName('expenses-item'),
     incomeResult = document.getElementsByClassName('income-value')[0],
     monthSavingsResult = document.getElementsByClassName('monthsavings-value')[0],
     yearSavingsResult = document.getElementsByClassName('yearsavings-value')[0];
+
+    // Инпуты и кнопка подтвердить в модальном кнопка, где вводятся начальные данные для расчета
+let popup = document.querySelector('.popup'),
+    popupClose = popup.querySelector('.popup-close'),
+    popupBudget = popup.querySelector('input#popup-budget'),
+    popupDate = popup.querySelector('input#popup-date'),
+    popupSubmit = popup.querySelector('button');
     
     // Наш главный глобальный объект
 let appData = {
@@ -85,33 +92,27 @@ document.querySelectorAll('.result-table div').forEach( (item) => {
 window.addEventListener('DOMContentLoaded', function() {
     allDataInputs.forEach( (inp) => {inp.setAttribute('disabled', true);} );
     clearAndDisable();
+    popup.style.display = 'none';
 });
 
-    /* Кнопка Начать расчет: Получение значений бюджета (общий), строки даты, и последующая запись всего этого в поля справа */
+    /* Кнопка Начать расчет: открытие модального окна, в котором вводятся значения бюджета и даты */
 startBtn.addEventListener('click', () => {
-    let money, dateStr;
-    while (true) {
-        money = prompt('Ваш бюджет на месяц?', '');
-        if (isContainOnlyDigits(money)) {
-            break;
-        } else {
-            alert('Нужно ввести число.');
-        }
-    }
-    while (true) {
-        dateStr = prompt('Введите дату в формате YYYY-MM-DD', '');
-        if (isDate(dateStr)) {
-            break;
-        } else {
-            alert('Нужно ввести дату в формате YYYY-MM-DD.');
-        }
-    }
-    appData.reset();
-    money = +money;
-    appData.budget = money;
-    clearAndDisable();
+    popup.style.display = 'block';
+    popupBudget.value = '';
+    popupDate.value = '';
+    popupSubmit.setAttribute('disabled', true);
+});
+
+    // Кнопка Подтвердить в модальном окне: Получение значений бюджета (общий), строки даты, и последующая запись всего этого в поля справа, обнуление предыдущих значений appData и отключение инпутов и кнопок
+popupSubmit.addEventListener('click', () => {
     
-    appData.timeData = new Date(dateStr);
+    appData.reset();
+    clearAndDisable();
+
+    appData.budget = +popupBudget.value;
+    budgetResult.textContent = appData.budget;
+
+    appData.timeData = new Date(popupDate.value);
     yearValue.value = appData.timeData.getFullYear();
     monthValue.value = appData.timeData.getMonth() + 1;
     dayValue.value = appData.timeData.getDate();
@@ -120,8 +121,46 @@ startBtn.addEventListener('click', () => {
     savingsSumInp.setAttribute('disabled', true);
     savingsPercentInp.setAttribute('disabled', true);
     savingsChekbox.checked = false;
-    budgetResult.textContent = appData.budget;
+
+    popup.style.display = 'none';
 });
+
+    // Закрытие модального окна
+popupClose.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+    // при клике на подложку
+popup.addEventListener('click', function(event) {
+    let e = event || window.event;
+    if (e.target == this) {
+        popup.style.display = 'none';
+    }
+});
+
+    // Ввод значений в поля модального окна
+popupBudget.addEventListener('input', function () {
+    this.value = +removeNotDigits(this.value);
+    verifyPopupCompleteness();
+});
+
+popupDate.addEventListener('input', function () {
+    console.log(this.value);
+
+    verifyPopupCompleteness();
+});
+
+    // Проверка значений в полях модального окна
+function verifyPopupCompleteness() {
+    let d = popupDate.value,
+        m = popupBudget.value;
+
+    if (m != '' && m != '0' && new Date(d) != 'Invalid Date' && d != '' && isValidDate(d)) {
+        popupSubmit.removeAttribute('disabled');
+    } else {
+        popupSubmit.setAttribute('disabled', true);
+    }
+}
+    
 
 function clearAndDisable() {
     allDataButtons.forEach((btn) => {btn.setAttribute('disabled', true);});
@@ -189,7 +228,7 @@ for (let i = 0; i < expensesInps.length; i++) {
             } else {
                 expensesBtn.setAttribute('disabled', true);
             }
-            console.log(expComplete);
+            // console.log(expComplete);
         });
     } else {    // нечетные инпуты - значение расходов
         expensesInps[i].addEventListener('input', () =>{
@@ -205,7 +244,7 @@ for (let i = 0; i < expensesInps.length; i++) {
             } else {
                 expensesBtn.setAttribute('disabled', true);
             }
-            console.log(expComplete);
+            // console.log(expComplete);
         });
     }
 }
@@ -223,7 +262,7 @@ for (let i = 0; i < optExpensesInps.length; i++) {
         } else {
             optExpensesBtn.setAttribute('disabled', true);
         }
-        console.log(optExpComplete);
+        // console.log(optExpComplete);
     });
 }
 

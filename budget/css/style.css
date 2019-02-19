@@ -82,7 +82,7 @@ a:active {
   padding-left: 10px;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #a7a7a7;
+  color: #777;
 }
 
 .data .expenses-item::-webkit-input-placeholder, .data .optionalexpenses-item::-webkit-input-placeholder, .data .choose-income::-webkit-input-placeholder, .data .choose-sum::-webkit-input-placeholder, .data .choose-percent::-webkit-input-placeholder {
@@ -238,8 +238,100 @@ a:active {
   padding-left: 10px;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #a7a7a7;
+  color: #777;
   width: 80px;
   height: 30px;
   margin-left: 25px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup .popup-content {
+  background-color: #faf8f5;
+  width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  position: relative;
+  padding: 2.5rem 3rem;
+}
+
+.popup .popup-content * {
+  display: block;
+}
+
+.popup .popup-content .popup-close {
+  font-weight: 400;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0.8rem;
+  cursor: pointer;
+}
+
+.popup .popup-content .popup-title {
+  margin: 13px 0px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #262626;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.popup .popup-content label {
+  color: #666;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.popup .popup-content input {
+  height: 35px;
+  width: calc((100%/2) - 4px);
+  border-radius: 2.5px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+          box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+  border: none;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #777;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.popup .popup-content button {
+  width: 70px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 2.5px;
+  background-color: #ff8a33;
+  -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+          box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+  color: #fff;
+  font-weight: 100;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+
+.popup .popup-content button:disabled {
+  background-color: #e9ac69;
 }

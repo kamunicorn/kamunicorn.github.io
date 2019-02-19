@@ -53,12 +53,10 @@ a
         @include input
         &::placeholder
             opacity: .8
-    // .inp-disabled
     input:disabled
         background-color:  #f5f5f5
     .expenses-item-btn, .optionalexpenses-btn, .count-budget-btn
         @include btn
-    // .btn-disabled
     button:disabled
         background-color:  #e9ac69
     .optionalexpenses-item
@@ -121,3 +119,57 @@ a
             width: 80px
             height: 30px
             margin-left: 25px
+
+.popup
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.5)
+
+    .popup-content
+        background-color: #faf8f5
+        width: 22rem
+        margin-left: auto
+        margin-right: auto
+        margin-top: 20%
+        position: relative
+        padding: 2.5rem 3rem
+
+        *
+            display: block
+        
+        .popup-close
+            font-weight: 400
+            font-size: 3rem
+            position: absolute
+            top: 0
+            right: 0.8rem
+            cursor: pointer
+        .popup-title
+            @include header
+            font-size: 20px
+            margin-top: 10px
+            margin-bottom: 25px
+
+        label
+            color: #666
+            font-size: 16px
+            margin-top: 20px
+            margin-bottom: 5px
+        input
+            @include input
+            width: 100%
+            margin-top: 5px
+        button
+            @include btn
+            // width: 8rem
+            width: 100%
+            height: 40px
+            font-size: 18px
+            font-weight: 400
+            margin-top: 30px
+        button:disabled
+            background-color:  #e9ac69
