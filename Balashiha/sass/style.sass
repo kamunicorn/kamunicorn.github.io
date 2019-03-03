@@ -13,12 +13,12 @@ a, button, input
     // Шрифт Nokia для названия сайта в шапке
 @font-face
     font-family: 'Nokia'
-    src: url('/fonts/Nokia-Sans-S60-Regular.ttf') format('truetype')
+    src: url('../fonts/Nokia-Sans-S60-Regular.ttf') format('truetype')
     font-weight: normal
     font-style: normal
 
 .bar
-    background-image: url('/img/back-rect-1-small.png')
+    background-image: url('../img/back-rect-1-small.png')
     height: 85px
     &__logo
         height: 85px
@@ -120,11 +120,11 @@ a, button, input
             color: #2f2f2f
     
     &__name
-        background-image: url('/img/icon-name.png')
+        background-image: url('../img/icon-name.png')
     &__mail
-        background-image: url('/img/icon-mail.png')
+        background-image: url('../img/icon-mail.png')
     &__phone
-        background-image: url('/img/icon-tel.png')
+        background-image: url('../img/icon-tel.png')
 
     &__submit
         height: 57px
@@ -165,7 +165,7 @@ a, button, input
     
     // &::before
     //     position: absolute
-    //     content: url('/img/header-offer-shadow.png')
+    //     content: url('../img/header-offer-shadow.png')
     //     bottom: -8px
     //     left: 50%
     //     transform: translateX(-50%)
@@ -174,7 +174,7 @@ a, button, input
         position: absolute
         height: 300px
         width: 18vw
-        background: url('/img/header-grains.png') no-repeat right bottom
+        background: url('../img/header-grains.png') no-repeat right bottom
         background-size: contain
         content: ''
         bottom: 10%
@@ -197,9 +197,9 @@ a, button, input
             margin-top: 12px
 
 .middle-offer
-    background-image: url('/img/back-rect-7-small.png')
+    background-image: url('../img/back-rect-7-small.png')
     .section__subtitle-image
-        background-image: url('/img/subtitle-logo-white.png')
+        background-image: url('../img/subtitle-logo-white.png')
     .section__title
         color: white
     .offer-confident
@@ -231,7 +231,7 @@ a, button, input
         display: block
         margin: 7px auto 20px
         height: 20px
-        background: url('/img/subtitle-logo.png') no-repeat center center
+        background: url('../img/subtitle-logo.png') no-repeat center center
         background-size: 40px
 
 .our-foto
@@ -250,7 +250,7 @@ a, button, input
         padding-right: 20px
         &::before
             position: absolute
-            content: url('/img/slider-back-grains-1.png')
+            content: url('../img/slider-back-grains-1.png')
             z-index: -1
             bottom: 5px
             right: -10px
@@ -271,7 +271,7 @@ a, button, input
     &__video
         position: relative
         &::after
-            content: url('/img/advantages-grains.png')
+            content: url('../img/advantages-grains.png')
             position: absolute
             left: 82%
             bottom: 10%
@@ -360,7 +360,7 @@ a, button, input
     &__video
         text-align: center
         margin-top: 30px
-        background: url('/img/about-video-back.png') no-repeat center bottom
+        background: url('../img/about-video-back.png') no-repeat center bottom
         img
             max-width: 100%
             margin-left: auto
@@ -383,7 +383,7 @@ a, button, input
 .map
     width: 100%
     height: 500px
-    background: url('/img/map.png') center center no-repeat
+    background: url('../img/map.png') center center no-repeat
     background-size: cover
     display: block
     img
@@ -408,25 +408,15 @@ footer
     position: relative
     display: inline-block
     width: fit-content
-    // &::after
-    //     position: absolute
-    //     content: ''
-    //     z-index: -1
-    //     width: 109%
-    //     height: 80px
-    //     bottom: 5px
-    //     left: 50%
-    //     transform: translateX(-50%)
-    //     background: url('/img/shadow-left.png') left bottom no-repeat, url('/img/shadow-right.png') right bottom no-repeat
     &::before
         position: absolute
-        content: url('/img/shadow-left.png')
+        content: url('../img/shadow-left.png')
         bottom: 0
         left: -25px
         z-index: 0
     &::after
         position: absolute
-        content: url('/img/shadow-right.png')
+        content: url('../img/shadow-right.png')
         bottom: 0
         right: -25px
         z-index: 0

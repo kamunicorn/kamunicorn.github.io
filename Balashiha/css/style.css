@@ -16,13 +16,13 @@ a, button, input {
 
 @font-face {
   font-family: 'Nokia';
-  src: url("/fonts/Nokia-Sans-S60-Regular.ttf") format("truetype");
+  src: url("../fonts/Nokia-Sans-S60-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 .bar {
-  background-image: url("/img/back-rect-1-small.png");
+  background-image: url("../img/back-rect-1-small.png");
   height: 85px;
 }
 
@@ -158,15 +158,15 @@ a, button, input {
 }
 
 .offer__name {
-  background-image: url("/img/icon-name.png");
+  background-image: url("../img/icon-name.png");
 }
 
 .offer__mail {
-  background-image: url("/img/icon-mail.png");
+  background-image: url("../img/icon-mail.png");
 }
 
 .offer__phone {
-  background-image: url("/img/icon-tel.png");
+  background-image: url("../img/icon-tel.png");
 }
 
 .offer__submit {
@@ -222,7 +222,7 @@ a, button, input {
   position: absolute;
   height: 300px;
   width: 18vw;
-  background: url("/img/header-grains.png") no-repeat right bottom;
+  background: url("../img/header-grains.png") no-repeat right bottom;
   background-size: contain;
   content: '';
   bottom: 10%;
@@ -252,11 +252,11 @@ a, button, input {
 }
 
 .middle-offer {
-  background-image: url("/img/back-rect-7-small.png");
+  background-image: url("../img/back-rect-7-small.png");
 }
 
 .middle-offer .section__subtitle-image {
-  background-image: url("/img/subtitle-logo-white.png");
+  background-image: url("../img/subtitle-logo-white.png");
 }
 
 .middle-offer .section__title {
@@ -305,7 +305,7 @@ a, button, input {
   display: block;
   margin: 7px auto 20px;
   height: 20px;
-  background: url("/img/subtitle-logo.png") no-repeat center center;
+  background: url("../img/subtitle-logo.png") no-repeat center center;
   background-size: 40px;
 }
 
@@ -330,7 +330,7 @@ a, button, input {
 
 .our-foto__slider::before {
   position: absolute;
-  content: url("/img/slider-back-grains-1.png");
+  content: url("../img/slider-back-grains-1.png");
   z-index: -1;
   bottom: 5px;
   right: -10px;
@@ -357,7 +357,7 @@ a, button, input {
 }
 
 .plus-in-video__video::after {
-  content: url("/img/advantages-grains.png");
+  content: url("../img/advantages-grains.png");
   position: absolute;
   left: 82%;
   bottom: 10%;
@@ -480,7 +480,7 @@ a, button, input {
 .about__video {
   text-align: center;
   margin-top: 30px;
-  background: url("/img/about-video-back.png") no-repeat center bottom;
+  background: url("../img/about-video-back.png") no-repeat center bottom;
 }
 
 .about__video img {
@@ -513,7 +513,7 @@ a, button, input {
 .map {
   width: 100%;
   height: 500px;
-  background: url("/img/map.png") center center no-repeat;
+  background: url("../img/map.png") center center no-repeat;
   background-size: cover;
   display: block;
 }
@@ -550,7 +550,7 @@ footer img {
 
 .shadow-bottom::before {
   position: absolute;
-  content: url("/img/shadow-left.png");
+  content: url("../img/shadow-left.png");
   bottom: 0;
   left: -25px;
   z-index: 0;
@@ -558,7 +558,7 @@ footer img {
 
 .shadow-bottom::after {
   position: absolute;
-  content: url("/img/shadow-right.png");
+  content: url("../img/shadow-right.png");
   bottom: 0;
   right: -25px;
   z-index: 0;
