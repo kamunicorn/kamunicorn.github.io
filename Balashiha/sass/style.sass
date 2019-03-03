@@ -1,0 +1,650 @@
+$accent: #f64747
+$backBrown: #fcf2d1
+
+html
+    font-family: 'Roboto', sans-serif
+body
+    margin: 0
+a
+    text-decoration: none
+a, button, input
+    outline: none
+
+    // Шрифт Nokia для названия сайта в шапке
+@font-face
+    font-family: 'Nokia'
+    src: url('/fonts/Nokia-Sans-S60-Regular.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+.bar
+    background-image: url('/img/back-rect-1-small.png')
+    height: 85px
+    &__logo
+        height: 85px
+    &__logo img
+        max-width: 100%
+        display: block
+        margin-left: auto
+        margin-right: 0
+        border-left: 4px white solid
+        border-right: 4px white solid
+    &__site-name
+        font-family: 'Nokia', 'Roboto', Arial, sans-serif
+        color: #393939
+        font-size: 26px
+        font-weight: 700
+        text-transform: uppercase
+        margin-top: 15px
+        margin-bottom: 0px
+    &__site-subtitle
+        margin-top: 0px
+        font-family: Roboto
+        font-size: 14px
+        font-weight: 300
+        color: $accent
+
+    .call-me
+        text-align: right
+        margin-top: 15px
+        &__phone
+            color: #393939
+            font-weight: 400
+            font-size: 16px
+        &__phone_big
+            font-size: 1.3em
+            font-weight: bold
+
+        &__icon, &__arrow, &__text
+            display: inline
+            margin-left: 2px
+            height: 15px
+            margin-top: 0
+            padding-top: 0
+        &__icon
+            width: 15px
+        &__arrow
+            color: $accent
+            font-size: 20px
+        &__text
+            font-size: 14px
+            font-weight: 300
+            color: $accent
+            border-bottom: 1px dashed $accent
+            &:hover
+                border-style: none
+                cursor: pointer
+
+.header
+    padding-bottom: 70px
+    &__title
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
+        text-align: center
+        margin-top: 40px
+        margin-bottom: 10px
+        text-align: center
+        color: #7d3803
+        font-size: 56px
+        font-weight: 600
+    &__subtitle
+        text-align: center
+        margin-top: 10px
+        color: #272727
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
+        font-size: 22px
+        font-weight: 600
+        text-transform: uppercase
+
+    &__main-image
+        position: relative
+        img
+            position: absolute
+            top: 0
+            right: 20px
+            width: 750px
+    
+// Общий стиль для всех офферов (форм)
+.offer
+    input, button
+        border-radius: 5px
+        border: none 
+    input
+        height: 45px
+        color: #292929
+        font-size: 14px
+        margin-bottom: 7px
+        padding: 10px 40px 10px 15px
+        background-position: 95% center
+        background-repeat: no-repeat
+        &:placeholder
+            color: #2f2f2f
+    
+    &__name
+        background-image: url('/img/icon-name.png')
+    &__mail
+        background-image: url('/img/icon-mail.png')
+    &__phone
+        background-image: url('/img/icon-tel.png')
+
+    &__submit
+        height: 57px
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
+        color: #ffffff
+        font-size: 18px
+        font-weight: 600
+        text-transform: uppercase
+        transition: .9s
+        box-shadow: 0 -30px 40px 0 rgba(2,150,120,1) inset
+        background-color: #13efcb
+        &:hover
+            box-shadow: 0 -40px 50px 0 rgba(2,174,149,.05) inset
+
+    &-confident
+        margin: 15px auto 10px
+        height: 30px
+        text-align: center
+        *
+            display: inline-block
+            vertical-align: middle
+            text-align: center
+            margin-left: auto
+            margin-right: auto
+        &__text
+            margin: 0 3px
+            color: #ffffff
+            font-size: 11px
+            font-weight: 400
+            width: 75%
+
+.top-offer
+    width: 315px
+    border: 5px solid #fdf1cf
+    background-color: $accent
+    padding: 10px 20px 20px
+    position: relative
+    
+    // &::before
+    //     position: absolute
+    //     content: url('/img/header-offer-shadow.png')
+    //     bottom: -8px
+    //     left: 50%
+    //     transform: translateX(-50%)
+    //     z-index: -1
+    &::before
+        position: absolute
+        height: 300px
+        width: 18vw
+        background: url('/img/header-grains.png') no-repeat right bottom
+        background-size: contain
+        content: ''
+        bottom: 10%
+        left: 236px
+        z-index: -2
+    &__title
+        text-align: center
+        color: #fdf1cf
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
+        font-size: 16px
+        text-transform: uppercase
+    .offer-confident
+        width: 100%
+
+    form
+        input, button
+            display: block
+            width: 100%
+        button
+            margin-top: 12px
+
+.middle-offer
+    background-image: url('/img/back-rect-7-small.png')
+    .section__subtitle-image
+        background-image: url('/img/subtitle-logo-white.png')
+    .section__title
+        color: white
+    .offer-confident
+        width: 265px
+    form
+        text-align: center
+        input, button
+            width: 265px
+        input
+            display: inline-block
+            margin: 12px
+        button
+            display: block
+            margin: 12px auto 0
+    
+.section
+    padding-top: 50px
+    padding-bottom: 50px
+    &__title
+        margin-top: 0
+        margin-bottom: 10px
+        text-align: center
+        text-transform: uppercase
+        color: #1b1b1b
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
+        font-size: 32px
+        font-weight: 400
+    &__subtitle-image
+        display: block
+        margin: 7px auto 20px
+        height: 20px
+        background: url('/img/subtitle-logo.png') no-repeat center center
+        background-size: 40px
+
+.our-foto
+    background-color: $backBrown
+    &__text
+        color: #1b1b1b
+        font-family: Roboto
+        font-size: 16px
+        font-weight: 300
+        margin-top: 30px
+
+    &__slider
+        position: relative
+        z-index: 2
+        text-align: right
+        padding-right: 20px
+        &::before
+            position: absolute
+            content: url('/img/slider-back-grains-1.png')
+            z-index: -1
+            bottom: 5px
+            right: -10px
+        img
+            border: 5px solid white
+            max-width: 100%
+
+.plus-in-video
+
+    &__left-side
+        position: relative
+        img
+            position: absolute
+            bottom: -60px
+            right: 0
+            z-index: -1
+
+    &__video
+        position: relative
+        &::after
+            content: url('/img/advantages-grains.png')
+            position: absolute
+            left: 82%
+            bottom: 10%
+            z-index: -1
+        img
+            display: block
+            max-width: 100%
+            border: 3px #fff solid
+            border-radius: 5px
+
+.advantages
+    background-color: $backBrown
+    &__item
+        color: #1b1b1b
+        margin-bottom: 30px
+        padding-left: 10px
+        padding-right: 10px
+    &__icon
+        float: left
+        margin-top: 7px
+    &__title
+        font-size: 18px
+        font-weight: bold
+        width: 77%
+        margin: 5px 0 8px auto
+    &__text
+        font-size: 15px
+        font-weight: 300
+        margin-top: 8px
+        margin-left: auto
+        margin-right: 0
+        width: 77%
+
+.catalog
+    .section__subtitle-image
+        margin-bottom: 5px
+    &__card
+        padding: 10px 15px 23px
+        transition: .4s
+        border: 1px solid transparent
+        &:hover
+            border-color: #d6d6d6
+
+.section.catalog, .section.advantages
+    padding-bottom: 30px
+
+.product
+    text-align: center
+    &__image
+        max-width: 100%
+        height: 120px
+    &__name
+        font-size: 18px
+        font-weight: bold
+        text-transform: uppercase
+        margin-top: 5px
+        margin-bottom: 5px
+    &__text
+        color: #1b1b1b
+        font-size: 15px
+        font-weight: 300
+        
+        margin-top: 5px
+    &__button
+        padding: 15px 20px
+        margin-top: 5px
+        background-color: transparent
+        border: 1px solid $accent
+        color: $accent
+        font-size: 14px
+        font-weight: bold
+        text-transform: uppercase
+        transition: .4s
+        &:hover
+            background-color: $accent
+            color: #ffffff
+
+.about
+    background-color: $backBrown
+    .section__subtitle-image
+        margin-bottom: 10px
+    &__text
+        margin-top: 10px
+        margin-bottom: 12px
+
+    &__video
+        text-align: center
+        margin-top: 30px
+        background: url('/img/about-video-back.png') no-repeat center bottom
+        img
+            max-width: 100%
+            margin-left: auto
+            margin-right: auto
+            display: block
+            border-radius: 5px
+            border: 3px solid white
+            width: 450px
+
+.many-bread
+    &__item
+        margin-bottom: -5px
+    img
+        width: 100%
+        transition: .6s
+        filter: grayscale(80%)
+        &:hover
+            filter: grayscale(0%)
+
+.map
+    width: 100%
+    height: 500px
+    background: url('/img/map.png') center center no-repeat
+    background-size: cover
+    display: block
+    img
+        width: 100%
+        display: none
+
+footer
+    padding-top: 35px
+    padding-bottom: 40px
+    min-height: 150px
+    background-color: #363636
+    color: #fefefe
+    font-size: 15px
+    font-weight: 300
+    text-align: center
+    img
+        margin-top: 30px
+        margin-left: auto
+        margin-right: auto
+
+.shadow-bottom
+    position: relative
+    display: inline-block
+    width: fit-content
+    // &::after
+    //     position: absolute
+    //     content: ''
+    //     z-index: -1
+    //     width: 109%
+    //     height: 80px
+    //     bottom: 5px
+    //     left: 50%
+    //     transform: translateX(-50%)
+    //     background: url('/img/shadow-left.png') left bottom no-repeat, url('/img/shadow-right.png') right bottom no-repeat
+    &::before
+        position: absolute
+        content: url('/img/shadow-left.png')
+        bottom: 0
+        left: -25px
+        z-index: 0
+    &::after
+        position: absolute
+        content: url('/img/shadow-right.png')
+        bottom: 0
+        right: -25px
+        z-index: 0
+
+@media (max-width: 1419px)
+    // адаптация псевдоэлементов и вылезания за рамки картинок
+    .top-offer::before, .our-foto__slider::before, .plus-in-video__video::after
+        content: none
+
+    .top-offer
+        width: 100%
+    
+    .plus-in-video
+        &__left-side img
+            right: -120px
+            width: 140%
+        &__video img
+            margin-left: auto
+            margin-right: 0
+
+    .advantages
+        &__item
+            padding-left: 0
+            padding-right: 0
+        &__icon
+            width: 17%
+        &__title
+            width: 80%
+        &__text
+            width: 80%
+
+@media (max-width: 1199px)
+    .header
+        &__main-image img
+            display: block
+            position: relative
+            margin-right: auto
+            margin-left: auto
+            width: 100%
+        &__title
+            font-size: 45px
+        &__subtitle
+            font-size: 18px
+    .top-offer
+        width: 100%
+        display: block
+        margin-left: auto
+        margin-right: auto
+    
+    .our-foto
+        &__text
+            margin-top: 20px
+        &__slider img
+            margin-right: auto
+
+    .plus-in-video__left-side img
+        right: -20px
+        width: 120%
+
+    .many-bread__item:nth-child(3n)
+        display: none
+    .map
+        height: 400px
+
+@media (max-width: 991px)
+    .top-offer
+        width: 320px
+
+    .middle-offer form input
+        display: block
+        margin: 0px auto 12px
+
+    .plus-in-video
+        &__left-side
+            display: none
+        &__video img
+            margin-right: auto
+
+    .our-foto__slider, .plus-in-video__video, .header__offer
+        text-align: center
+        padding-right: 15px
+        padding-left: 15px
+
+    .about__video
+        background-size: contain
+
+@media (max-width: 767px)
+    .bar
+        &__logo img
+            margin-right: auto
+        &__site-name
+            margin-top: 10px
+            font-size: 23px
+        &__site-subtitle
+            font-size: 12px
+        .call-me
+            margin-top: 15px
+            padding: 0
+            font-size: 14px
+            &__icon, &__arrow
+                display: none
+    .top-offer
+        max-width: 500px
+        &::before
+            content: none
+
+    .about__video
+        background: none
+        img
+            width: 100%
+
+    .many-bread__item:nth-child(3n)
+        display: block
+    .many-bread__item:nth-child(2n)
+        display: none
+
+    .map
+        height: 350px
+
+@media (max-width: 575px)
+    .shadow-bottom::after, .shadow-bottom::before
+        content: none
+    .bar
+        height: 80px
+        &__site-name
+            margin-top: 15px
+            margin-left: -15px
+        &__site-subtitle
+            display: none
+        .call-me
+            padding: 0 15px
+            margin-left: auto
+            margin-right: 15px
+            margin-top: -40px
+            text-align: left
+        .call-me__phone
+            font-size: 12px
+        .call-me__request
+            display: none
+
+    .header__title
+        font-size: 35px
+    .header__subtitle
+        font-size: 16px
+        text-transform: none
+
+    .about__video
+        margin-top: 15px
+    .section
+        padding-bottom: 40px
+        &__title
+            font-size: 25px
+
+@media (max-width: 479px)
+    .header
+        padding-bottom: 40px
+        &__title
+            font-size: 26px
+            margin-top: 25px
+        &__main-image
+            display: none
+        &__bar
+            height: 75px
+            .bar__logo
+                height: 75px
+                img
+                    max-width: 90%
+            .bar__site-name
+                margin-top: 15px
+                margin-left: -15px
+                font-size: 20px
+            .call-me
+                padding-left: 0
+            .call-me__request
+                display: none
+    .top-offer
+        width: 100%
+    .middle-offer form
+        input, button
+            max-width: 100%
+    .offer-confident
+        margin-bottom: 0
+        &__text
+            margin: 0 auto
+            width: 100%
+        img
+            display: none
+    
+    .section
+        padding-top: 35px
+        padding-bottom: 25px
+        &__title
+            font-size: 28px
+            font-weight: 500
+            text-transform: none
+        &__subtitle-image
+            margin-bottom: 10px
+
+    .our-foto
+        &__text
+            font-size: 14px
+
+    .advantages
+        text-align: center
+        &__icon
+            width: 30%
+            float: none
+        &__title
+            font-size: 20px
+            font-weight: normal
+        &__title, &__text
+            width: auto
+            margin-left: auto
+
+    // .many-bread__item
+    //     width: 33.33%
+    //     &:nth-child(2)
+    //         display: none
+
+    .map
+        height: 250px

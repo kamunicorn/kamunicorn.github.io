@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Информация об Авторе и описание проекта -->
+    <meta name="description" content="Хлебобулочный завод в Балашихе">
+    <!-- <meta name="author" content="Вера Перелыгина"> -->
+
+    <!-- Иконка, которая будет на вкладке в браузере -->
+    <link rel="icon" href="/img/favicon.png">
+    <title>Балашихинский хлеб</title>
+
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Шрифты Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,400i,500,500i,700,900&amp;subset=cyrillic" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+        <!-- Бар - полоска наверху с логотипом, контактами -->
+        <div class="bar">
+            <div class="container">
+                <div class="row">
+
+                    <div class="bar__logo col-md-3 col-sm-3 col-5">
+                        <img src="img/bar-logo.png" alt="Логотип">
+                    </div>
+
+                    <div class="col-md-5 col-sm-5 col-7">
+                        <h3 class="bar__site-name">Балашиха хлеб</h3>
+                        <p class="bar__site-subtitle">Хлебобулочные и кондитеские изделия</p>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-4 col-7 call-me">
+                        <a href="+74957771100" class="call-me__phone">8 (495) <span class="call-me__phone_big">777-11-00</span></a>
+
+                        <div class="call-me__request">
+                            <img class="call-me__icon" src="img/icon-calling-phone.png" alt="Перезвоните мне">
+                            <div class="call-me__arrow">&#8594;</div>
+                            <p class="call-me__text">Перезвоните мне!</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.header__bar -->
+
+        <!-- Первый экран, форма с коммерческим предложением -->
+        <div class="container">
+
+            <h1 class="header__title">Уникальные коммерческие условия</h1>
+            <h4 class="header__subtitle">по поставкам хлебобулочных и кондитерских изделий от крупнейшего хлебозавода в МО</h4>
+
+            <div class="row">
+                <div class="col-lg-8 col-md-12 header__main-image">
+                    <img src="img/header-main-img.png" alt="Балашиха хлеб">
+                </div>
+
+                <div class="col-lg-4 col-md-12 header__offer">
+                    <div class="shadow-bottom">
+                        <div class="top-offer offer">
+                            <p class="top-offer__title">Получите персональное коммерческое предложение</p>
+
+                            <form action="" method="post" class="offer-form">
+                                <input type="text" class="offer__name" placeholder="Ваше имя">
+                                <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
+                                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
+                                
+                                <button type="submit" class="offer__submit">Получить КП!</button> 
+                            </form>
+
+                            <div class="offer-confident">
+                                <img src="img/icon-confident.png" alt="Конфиденциально">
+                                <p class="offer-confident__text">Ваши данные не будут переданы третьим лицам, согласно законам РФ</p>
+                                <img src="img/icon-confident.png" alt="Конфиденциально">
+                            </div>
+                        </div>
+                        <!-- /.offer -->
+                        
+                    </div>
+                </div>
+                <!-- /.col-md-12 col-lg-4 -->
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </header>
+    <!-- /header -->
+
+    <!-- Фотографии нашего завода, слайдер -->
+    <section class="section our-foto">
+        <div class="container">
+            <h3 class="section__title">Фотографии нашего завода</h3>
+            <div class="section__subtitle-image"></div>
+            
+            <div class="row">
+                <div class="our-foto__slider col-xl-7 col-lg-6">
+                    <div class="shadow-bottom">
+                        <img src="/img/slider.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6">
+                        <p class="our-foto__text">Мы изготавливаем хлеб на ОАО «Балашиха Хлеб». Это одно из крупнейших предприятий пищевой промышленности Московского региона, входящее в тройку ведущих производителей хлебобулочной продукции.</p>
+                        <p class="our-foto__text">Мощности комбината изо дня в день модернизируются, позволяя сохранять неизменно высокий уровень качества. Наше оборудование – из России, Чехии, Германии, Голландии и Франции. Наша гордость – наша продукция, которая давно стала визитной карточкой края.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.our-foto -->
+
+    <!-- Наши преимущества в видео -->
+    <section class="section plus-in-video">
+        <div class="container">
+            <div class="section__title">Главные преимущества за 1 минуту</div>
+            <div class="section__subtitle-image"></div>
+            
+            <div class="row">
+                <div class="plus-in-video__left-side col-xl-4 col-lg-5">
+                    <img src="/img/advantages-baker.png" alt="Пекарь">
+                </div>
+                <!-- /.plus-in-video__left-side col-lg-4 -->
+
+                <div class="plus-in-video__video col-xl-8 col-lg-7">
+                        <div class="shadow-bottom">
+                            <img src="/img/video-advantages.png" alt="Наши преимущества за 1 минуту">
+                        </div>
+                </div>
+                <!-- /.plus-in-video__video col-lg-7 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.plus-in-video -->
+
+    <!-- Список-лист Наши преимущества -->
+    <section class="advantages section">
+        <div class="container">
+            <h3 class="section__title">Наши преимущества</h3>
+            <div class="section__subtitle-image"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="advantages__item">
+                        <img src="img/icon-circle-1.png" alt="Честность" class="advantages__icon">
+                        <h5 class="advantages__title">Честность</h5>
+                        <p class="advantages__text">- в мыслях, суждениях и делах – это наше кредо. Мы считаем своим долгом поддерживать надежность и прямоту во взаимоотношениях с клиентами и партнерами по бизнесу.</p>
+                    </div>
+                    <div class="advantages__item">
+                        <img src="img/icon-circle-2.png" alt="Новаторство" class="advantages__icon">
+                        <h5 class="advantages__title">Новаторство</h5>
+                        <p class="advantages__text">- основа деятельности компании. Мы внедряем в производство новейшие технологии, ищем нестандартные пути и эффективные решения, и достигаем успеха.</p>
+                    </div>
+                    <div class="advantages__item">
+                        <img src="img/icon-circle-3.png" alt="Друзья и партнеры" class="advantages__icon">
+                        <h5 class="advantages__title">Друзья и партнеры </h5>
+                        <p class="advantages__text">Недорогой, так называемый, «социальный», хлеб также отличается высоким качеством. Его с удовольствием едят защитники нашего Отечества самых разных родов войск.</p>
+                    </div>
+                </div>
+                <!-- /.col-md-6 -->
+
+                <div class="col-md-6">
+                    <div class="advantages__item">
+                        <img src="img/icon-circle-4.png" alt="Профессионализм" class="advantages__icon">
+                        <h5 class="advantages__title">Профессионализм</h5>
+                        <p class="advantages__text">в нашем понимании - это не только доскональное знание всех тонкостей любимой работы, но и непрерывное движение вперед, к новым знаниям и достижениям.</p>
+                    </div>
+                    <div class="advantages__item">
+                        <img src="img/icon-circle-5.png" alt="Уникальные технологии" class="advantages__icon">
+                        <h5 class="advantages__title">Уникальные технологии</h5>
+                        <p class="advantages__text">Несмотря на свои уникальные качества, этот хлеб является «линейным», то есть его цена ненамного выше цены обыкновенных ржано-пшеничных сортов типа «Дарницкого».</p>
+                    </div>
+                    <div class="advantages__item">
+                        <img src="img/icon-circle-6.png" alt="Социальные программы" class="advantages__icon">
+                        <h5 class="advantages__title">Социальные программы</h5>
+                        <p class="advantages__text">Мы не можем пройти мимо тех, кому нужна помощь. Мимо тех, кто в силу ряда обстоятельств много лишен. Потому мы помогаем Ногинскому Благочинию, Богоявленскому собору.</p>
+                    </div>
+                </div>
+                <!-- /.col-md-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.advantages-list -->
+
+    <!-- Каталог продукции -->
+    <section class="section catalog">
+        <div class="container">
+            <h3 class="section__title">Каталог продукции</h3>
+            <div class="section__subtitle-image"></div>
+        
+            <div class="row">
+                <div class="catalog__card product col-12 col-sm-6 col-lg-4">
+                    <img src="/img/catalog-1.png" alt="Хлеб" class="product__image">
+                    <h5 class="product__name">Хлеб</h5>
+                    <p class="product__text">Хлеб всему голова. Древние египтяне высоко чтили хлеб. На письме он обозначался тем же иероглифом, что и солнце — круг, по центру которого точка.</p>
+                    <button class="product__button">Посмотреть</button>
+                </div>
+                <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
+                <div class="catalog__card product col-12 col-sm-6 col-lg-4">
+                    <img src="/img/catalog-2.png" alt="Хлебушки" class="product__image">
+                    <h5 class="product__name">Хлебушки</h5>
+                    <p class="product__text">Русские пекли хлеб, а немцы сдобные булки. Со временем словом «булка» стали определять любой хлеб и выпечку. Мы и сегодня говорим: «булка хлеба».</p>
+                    <button class="product__button">Посмотреть</button>
+                </div>
+                <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
+                <div class="catalog__card product col-12 col-sm-6 col-lg-4">
+                    <img src="/img/catalog-3.png" alt="Булочки" class="product__image">
+                    <h5 class="product__name">Булочки</h5>
+                    <p class="product__text">Булочные изделия (изделия массой менее 500 г) - это изделия плетеные, в виде батонов, булок, булочек, калачей, ватрушек, пирожков, пышек, плюшек, рогаликов и пр.</p>
+                    <button class="product__button">Посмотреть</button>
+                </div>
+                <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
+                <div class="catalog__card product col-12 col-sm-6 col-lg-4">
+                    <img src="/img/catalog-4.png" alt="Кондитерские" class="product__image">
+                    <h5 class="product__name">Кондитерские</h5>
+                    <p class="product__text">Характеризуются высокой пищевой и энергетической ценностью. Низкая влажность этих изделий позволяет хранить их длительное время.</p>
+                    <button class="product__button">Посмотреть</button>
+                </div>
+                <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
+                <div class="catalog__card product col-12 col-sm-6 col-lg-4">
+                    <img src="/img/catalog-5.png" alt="Хлебцы" class="product__image">
+                    <h5 class="product__name">Хлебцы</h5>
+                    <p class="product__text">Полезные хлебцы изготавливаются из цельного зерна и отрубей. В хлебцы добавляют семена кунжута, тыквы, подсолнуха, а также сухофрукты.</p>
+                    <button class="product__button">Посмотреть</button>
+                </div>
+                <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
+                <div class="catalog__card product col-12 col-sm-6 col-lg-4">
+                    <img src="/img/catalog-6.png" alt="Мюсли" class="product__image">
+                    <h5 class="product__name">Мюсли</h5>
+                    <p class="product__text">Мюсли – продукт для здорового питания. Обращайте внимание на наличие в составе сахара и пальмового масла, способных снизить полезные свойства мюсли.</p>
+                    <button class="product__button">Посмотреть</button>
+                </div>
+                <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.section.catalog -->
+
+    <!-- О Балашиха хлеб -->
+    <section class="section about">
+        <div class="container">
+            <h3 class="section__title">О «Балашиха хлеб»</h3>
+            <div class="section__subtitle-image"></div>
+
+            <p class="about__text">Мы изготавливаем хлеб на ОАО «Балашиха Хлеб». Это одно из крупнейших предприятий пищевой промышленности Московского региона, входящее в тройку ведущих производителей хлебобулочной продукции. Мощности комбината изо дня в день модернизируются, позволяя сохранять неизменно высокий уровень качества. Наше оборудование – из России, Чехии, Германии, Голландии и Франции. Наша продукция – наша гордость, которая давно стала визитной карточкой края.</p>
+            <p class="about__text"><b>А это – более 100 видов хлебобулочных изделий, которые ежедневно попадают на стол наших покупателей.</b></p>
+            <p class="about__text">На нашем комбинате трудится более 700 человек. Это не просто люди, которые  приходят сюда из-за стабильной зарплаты, это – хлебопеки, которые приходят сюда по зову сердца. А потому наш хлеб не только качественный и вкусный, но ещё и изготавливается с любовью.</p>
+
+            <div class="about__video">
+                <div class="shadow-bottom">
+                    <img src="/img/about-video.png" alt="Видео о нас">
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.section.about -->
+
+    <!-- Получите персональное предложение -->
+    <section class="section offer middle-offer">
+        <div class="container">
+            <h3 class="section__title">Получите персональное предложение</h3>
+            <div class="section__subtitle-image"></div>
+
+            <div class="middle-offer__form">
+                <form action="" method="post">
+                    <input type="text" class="offer__name" placeholder="Ваше имя">
+                    <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
+                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
+                    
+                    <button type="submit" class="offer__submit">Получить сейчас!</button> 
+                </form>
+            </div>
+
+            <div class="offer-confident">
+                <img src="img/icon-confident.png" alt="Конфиденциально">
+                <p class="offer-confident__text">Ваши данные не будут переданы третьим лицам, согласно законам РФ</p>
+                <img src="img/icon-confident.png" alt="Конфиденциально">
+            </div>
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.section middle-offer -->
+    
+    <!-- Полоска с фотографиями хлеба (просто для красоты) -->
+    <section class="many-bread container-fluid p-0">
+        <div class="row m-0">
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-1.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-2.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-3.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-4.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-5.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-6.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-7.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-8.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-9.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-10.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-11.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+            <div class="col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item"><img src="/img/many-bread/many-12.jpg" alt=""></div>
+            <!-- /.col-xl-2 col-3 col-md-3 col-4 p-0 many-bread__item -->
+        </div>
+        <!-- /.row m-0 -->
+    </section>
+    <!-- /.many-bread container-fluid -->
+
+    <!-- Карта -->
+    <section class="map">
+        <img src="/img/map.png" alt="Карта">
+    </section>
+    <!-- /.map -->
+
+    <!-- Подвал страницы -->
+    <footer>
+        <div class="container">
+            © 1994-2014 «Балашиха Хлеб», ИНН: 7708757552, ОГРН: 1127746150080,<br>
+            Адрес: г. Москва, ул. Неверовского, д. 9<br>
+            <img src="/img/footer-socials.png" alt="Лайки в социальных сетях">
+        </div>
+        <!-- /.container -->
+    </footer>
+    <!-- /footer -->
+</body>
+
+</html>
