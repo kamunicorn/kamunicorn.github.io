@@ -176,8 +176,10 @@ a, button, input {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  -webkit-transition: .9s;
-  transition: .9s;
+  -webkit-transition: -webkit-box-shadow .9s;
+  transition: -webkit-box-shadow .9s;
+  transition: box-shadow .9s;
+  transition: box-shadow .9s, -webkit-box-shadow .9s;
   -webkit-box-shadow: 0 -30px 40px 0 #029678 inset;
           box-shadow: 0 -30px 40px 0 #029678 inset;
   background-color: #13efcb;
@@ -189,7 +191,7 @@ a, button, input {
 }
 
 .offer-confident {
-  margin: 15px auto 10px;
+  margin: 15px auto 0;
   height: 30px;
   text-align: center;
 }
@@ -318,17 +320,18 @@ a, button, input {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
-  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
-.our-foto__slider {
+.our-foto__left-side {
   position: relative;
   z-index: 2;
   text-align: right;
   padding-right: 20px;
 }
 
-.our-foto__slider::before {
+.our-foto__left-side::before {
   position: absolute;
   content: url("../img/slider-back-grains-1.png");
   z-index: -1;
@@ -336,9 +339,88 @@ a, button, input {
   right: -10px;
 }
 
-.our-foto__slider img {
+.our-foto__left-side img {
   border: 5px solid white;
   max-width: 100%;
+}
+
+.our-foto .slider {
+  width: 550px;
+  height: 320px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.our-foto .slider__item {
+  margin-left: auto;
+  margin-right: auto;
+  width: 550px;
+  height: 320px;
+}
+
+.our-foto .slider__item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.our-foto .slider__dots {
+  list-style: none;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 3px 20px;
+  border-radius: 3px;
+  width: 160px;
+}
+
+.our-foto .slider__dots li {
+  display: inline;
+  margin: 0 4px;
+}
+
+.our-foto .slider__dots button {
+  color: #fff;
+  background-color: #fff;
+  font-size: 10.5px;
+  border: none;
+  height: 12px;
+  width: 12px;
+}
+
+.our-foto .slider__dots .slick-active button {
+  color: #f64747;
+  background-color: #f64747;
+}
+
+.our-foto .slider__arrow {
+  position: absolute;
+  z-index: 99;
+  width: 23px;
+  height: 23px;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  bottom: 18px;
+}
+
+.our-foto .slider__prev {
+  left: 50%;
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
+  background: url(../img/arrow-prev.png) center no-repeat;
+}
+
+.our-foto .slider__next {
+  right: 50%;
+  -webkit-transform: translateX(80px);
+          transform: translateX(80px);
+  background: url(../img/arrow-next.png) center no-repeat;
 }
 
 .plus-in-video__left-side {
@@ -352,21 +434,21 @@ a, button, input {
   z-index: -1;
 }
 
-.plus-in-video__video {
+.plus-in-video__video-block {
   position: relative;
 }
 
-.plus-in-video__video::after {
+.plus-in-video__video-block::after {
   content: url("../img/advantages-grains.png");
   position: absolute;
-  left: 82%;
+  left: 81%;
   bottom: 10%;
   z-index: -1;
 }
 
-.plus-in-video__video img {
-  display: block;
-  max-width: 100%;
+.plus-in-video__video-item {
+  width: 600px;
+  height: 450px;
   border: 3px #fdf1cf solid;
   border-radius: 5px;
 }
@@ -477,20 +559,17 @@ a, button, input {
   margin-bottom: 12px;
 }
 
-.about__video {
+.about__video-block {
   text-align: center;
   margin-top: 30px;
   background: url("../img/about-video-back.png") no-repeat center bottom;
 }
 
-.about__video img {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.about__video-item {
+  width: 600px;
+  height: 450px;
+  border: 3px #fdf1cf solid;
   border-radius: 5px;
-  border: 3px solid white;
-  width: 450px;
 }
 
 .many-bread__item {
@@ -513,14 +592,48 @@ a, button, input {
 .map {
   width: 100%;
   height: 500px;
-  background: url("../img/map.png") center center no-repeat;
-  background-size: cover;
-  display: block;
 }
 
-.map img {
+.placemark {
+  color: #363636;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.placemark__image {
+  display: inline-block;
+  width: 33%;
+}
+
+.placemark__image img {
   width: 100%;
-  display: none;
+}
+
+.placemark__info {
+  width: 63%;
+  font-size: 16px;
+  font-weight: 300;
+  display: inline-block;
+  margin-left: 4%;
+}
+
+.placemark__title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.placemark__text {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.placemark__tel {
+  color: #363636;
+}
+
+.placemark__mail {
+  color: #f64747;
+  text-decoration: underline;
 }
 
 footer {
@@ -565,7 +678,7 @@ footer img {
 }
 
 @media (max-width: 1419px) {
-  .top-offer::before, .our-foto__slider::before, .plus-in-video__video::after {
+  .top-offer::before, .our-foto__left-side::before, .plus-in-video__video-block::after {
     content: none;
   }
   .top-offer {
@@ -575,9 +688,8 @@ footer img {
     right: -120px;
     width: 140%;
   }
-  .plus-in-video__video img {
-    margin-left: auto;
-    margin-right: 0;
+  .plus-in-video__video-block {
+    text-align: center;
   }
   .advantages__item {
     padding-left: 0;
@@ -614,15 +726,26 @@ footer img {
     margin-left: auto;
     margin-right: auto;
   }
-  .our-foto__text {
-    margin-top: 20px;
+  .our-foto__left-side {
+    padding-right: 15px;
   }
-  .our-foto__slider img {
-    margin-right: auto;
+  .our-foto__text {
+    margin-bottom: 20px;
+  }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 400px;
+    height: 235px;
+  }
+  .our-foto .slider {
+    max-width: 100%;
   }
   .plus-in-video__left-side img {
     right: -20px;
     width: 120%;
+  }
+  .plus-in-video__video-item, .about-video__video-item {
+    width: 52vw;
+    height: 39vw;
   }
   .many-bread__item:nth-child(3n) {
     display: none;
@@ -643,15 +766,29 @@ footer img {
   .plus-in-video__left-side {
     display: none;
   }
-  .plus-in-video__video img {
+  .plus-in-video__video-block {
+    text-align: center;
+  }
+  .about__video__video-item, .plus-in-video__video-item {
+    width: 80vw;
+    height: 50vw;
+  }
+  .our-foto__text:first-child {
+    margin-top: 20px;
+  }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 550px;
+    height: 320px;
+  }
+  .our-foto .slider {
     margin-right: auto;
   }
-  .our-foto__slider, .plus-in-video__video, .header__offer {
+  .our-foto__left-side, .plus-in-video__video-block, .header__offer {
     text-align: center;
     padding-right: 15px;
     padding-left: 15px;
   }
-  .about__video {
+  .about__video-block {
     background-size: contain;
   }
 }
@@ -681,11 +818,16 @@ footer img {
   .top-offer::before {
     content: none;
   }
-  .about__video {
-    background: none;
+  .our-foto .slider, .our-foto .slider__item {
+    width: 510px;
+    height: 290px;
   }
-  .about__video img {
-    width: 100%;
+  .plus-in-video__video-item, .about__video-item {
+    width: 90vw;
+    height: 65vw;
+  }
+  .about__video-block {
+    background: none;
   }
   .many-bread__item:nth-child(3n) {
     display: block;
@@ -695,6 +837,14 @@ footer img {
   }
   .map {
     height: 350px;
+  }
+  .placemark__image {
+    width: 30%;
+  }
+  .placemark__info {
+    width: 67%;
+    font-size: 13px;
+    margin-left: 3%;
   }
 }
 
@@ -732,7 +882,11 @@ footer img {
     font-size: 16px;
     text-transform: none;
   }
-  .about__video {
+  .our-foto .slider, .our-foto .slider__item {
+    width: 430px;
+    height: 260px;
+  }
+  .about__video-block {
     margin-top: 15px;
   }
   .section {
@@ -740,6 +894,11 @@ footer img {
   }
   .section__title {
     font-size: 25px;
+  }
+  .placemark__info {
+    width: 64%;
+    font-size: 12px;
+    margin-left: 3%;
   }
 }
 
@@ -805,6 +964,24 @@ footer img {
   .our-foto__text {
     font-size: 14px;
   }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 290px;
+    height: 200px;
+  }
+  .our-foto .slider__dots {
+    bottom: -5px;
+  }
+  .our-foto .slider__dots li {
+    font-size: 12px;
+  }
+  .our-foto .slider__dots button {
+    height: 11px;
+    width: 11px;
+    padding: 0;
+  }
+  .our-foto .slider__arrow {
+    bottom: 13px;
+  }
   .advantages {
     text-align: center;
   }
@@ -822,5 +999,17 @@ footer img {
   }
   .map {
     height: 250px;
+  }
+  .placemark {
+    padding: 0;
+  }
+  .placemark__image {
+    width: 27%;
+  }
+  .placemark__text {
+    margin-top: 5px;
+  }
+  .placemark__info {
+    width: 68%;
   }
 }
