@@ -17,13 +17,16 @@
     <!-- Шрифты Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,400i,500,500i,700,900&amp;subset=cyrillic" rel="stylesheet">
 
+    <!-- Стили -->
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
+    <!-- Скрипты мои и сторонние -->
     <script src="js/playerjs.js"></script>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    
+    <script src="js/functions.js"></script>
+
     <!-- API соцсетей -->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9c0254fc-b560-4b57-9b85-d3b36ca89ee5"></script>
     <script src="https://vk.com/js/api/openapi.js?160"></script>
@@ -79,10 +82,10 @@
                         <div class="top-offer offer">
                             <p class="top-offer__title">Получите персональное коммерческое предложение</p>
 
-                            <form action="" method="post" class="offer-form">
-                                <input type="text" class="offer__name" placeholder="Ваше имя">
-                                <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
-                                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
+                            <form action="server.php" method="post" class="offer-form">
+                                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
+                                <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
+                                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                                 
                                 <button type="submit" class="offer__submit">Получить КП!</button> 
                             </form>
@@ -230,42 +233,42 @@
                     <img src="img/catalog-1.png" alt="Хлеб" class="product__image">
                     <h5 class="product__name">Хлеб</h5>
                     <p class="product__text">Хлеб всему голова. Древние египтяне высоко чтили хлеб. На письме он обозначался тем же иероглифом, что и солнце — круг, по центру которого точка.</p>
-                    <button class="product__button">Посмотреть</button>
+                    <button class="product__button" id="bread-1">Посмотреть</button>
                 </div>
                 <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
                 <div class="catalog__card product col-12 col-sm-6 col-lg-4">
                     <img src="img/catalog-2.png" alt="Хлебушки" class="product__image">
                     <h5 class="product__name">Хлебушки</h5>
                     <p class="product__text">Русские пекли хлеб, а немцы сдобные булки. Со временем словом «булка» стали определять любой хлеб и выпечку. Мы и сегодня говорим: «булка хлеба».</p>
-                    <button class="product__button">Посмотреть</button>
+                    <button class="product__button" id="bread-2">Посмотреть</button>
                 </div>
                 <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
                 <div class="catalog__card product col-12 col-sm-6 col-lg-4">
                     <img src="img/catalog-3.png" alt="Булочки" class="product__image">
                     <h5 class="product__name">Булочки</h5>
                     <p class="product__text">Булочные изделия (изделия массой менее 500 г) - это изделия плетеные, в виде батонов, булок, булочек, калачей, ватрушек, пирожков, пышек, плюшек, рогаликов и пр.</p>
-                    <button class="product__button">Посмотреть</button>
+                    <button class="product__button" id="bread-3">Посмотреть</button>
                 </div>
                 <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
                 <div class="catalog__card product col-12 col-sm-6 col-lg-4">
                     <img src="img/catalog-4.png" alt="Кондитерские" class="product__image">
                     <h5 class="product__name">Кондитерские</h5>
                     <p class="product__text">Характеризуются высокой пищевой и энергетической ценностью. Низкая влажность этих изделий позволяет хранить их длительное время.</p>
-                    <button class="product__button">Посмотреть</button>
+                    <button class="product__button" id="bread-4">Посмотреть</button>
                 </div>
                 <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
                 <div class="catalog__card product col-12 col-sm-6 col-lg-4">
                     <img src="img/catalog-5.png" alt="Хлебцы" class="product__image">
                     <h5 class="product__name">Хлебцы</h5>
                     <p class="product__text">Полезные хлебцы изготавливаются из цельного зерна и отрубей. В хлебцы добавляют семена кунжута, тыквы, подсолнуха, а также сухофрукты.</p>
-                    <button class="product__button">Посмотреть</button>
+                    <button class="product__button" id="bread-5">Посмотреть</button>
                 </div>
                 <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
                 <div class="catalog__card product col-12 col-sm-6 col-lg-4">
                     <img src="img/catalog-6.png" alt="Мюсли" class="product__image">
                     <h5 class="product__name">Мюсли</h5>
                     <p class="product__text">Мюсли – продукт для здорового питания. Обращайте внимание на наличие в составе сахара и пальмового масла, способных снизить полезные свойства мюсли.</p>
-                    <button class="product__button">Посмотреть</button>
+                    <button class="product__button" id="bread-6">Посмотреть</button>
                 </div>
                 <!-- /.catalog__card.product.col-12.col-sm-6.col-lg-4 -->
             </div>
@@ -303,10 +306,10 @@
             <div class="section__subtitle-image"></div>
 
             <div class="middle-offer__form">
-                <form action="" method="post">
-                    <input type="text" class="offer__name" placeholder="Ваше имя">
-                    <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
-                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
+                <form action="server.php" method="post" class="offer-form">
+                    <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
+                    <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
+                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                     
                     <button type="submit" class="offer__submit">Получить сейчас!</button> 
                 </form>
@@ -364,34 +367,123 @@
             © 1994-2014 «Балашиха Хлеб», ИНН: 7708757552, ОГРН: 1127746150080,<br>
             Адрес: г. Москва, ул. Неверовского, д. 9<br>
             <div class="socials-like">
-                <div id="fb-root"></div>
+                <!-- <div id="fb-root"></div>
                 <script>(function(d, s, id) {
                   var js, fjs = d.getElementsByTagName(s)[0];
                   if (d.getElementById(id)) return;
                   js = d.createElement(s); js.id = id;
                   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
                   fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));</script>
+                }(document, 'script', 'facebook-jssdk'));</script> -->
               
-                <div class="socials-like__item fb-like" 
+                <!-- <div class="socials-like__item fb-like" 
                     data-href="https://kamunicorn.github.io/projects/balashiha/index.html" 
                     data-layout="box-count" 
                     data-action="like" 
                     data-show-faces="true">
-                </div>
+                </div> -->
 
                 <div id="vk-like" class="socials-like__item"></div>
 
             </div>
-            <img src="img/footer-socials.png" alt="Лайки в социальных сетях">
+            <!-- <img src="img/footer-socials.png" alt="Лайки в социальных сетях"> -->
         </div>
         <!-- /.container -->
     </footer>
     <!-- /footer -->
 
+    <!-- Модалки -->
+    <!-- с информацией о продукте -->
+    <div class="popup product-info bread-1">
+        <div class="product-info__content popup__content">
+            <button class="popup__close">&times;</button>
+
+            <h4 class="product-info__title">Хлеб</h4>
+            <img src="img/catalog-1.png" alt="Хлеб" class="product-info__image">
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Beatae porro dolores, aliquam dolorum quisquam molestiae natus deleniti placeat voluptates pariatur suscipit enim explicabo deserunt sequi quibusdam delectus omnis perspiciatis?</p>
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, impedit.</p>
+        </div>
+    </div>
+    <div class="popup product-info bread-2">
+        <div class="product-info__content popup__content">
+            <button class="popup__close">&times;</button>
+            <h4 class="product-info__title">Хлебушки</h4>
+            <img src="img/catalog-2.png" alt="Хлебушки" class="product-info__image">
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Beatae porro dolores, aliquam dolorum quisquam molestiae natus deleniti placeat voluptates pariatur suscipit enim explicabo deserunt sequi quibusdam delectus omnis perspiciatis?</p>
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, impedit.</p>
+        </div>
+    </div>
+    <div class="popup product-info bread-3">
+        <div class="product-info__content popup__content">
+            <button class="popup__close">&times;</button>
+            <h4 class="product-info__title">Булочки</h4>
+            <img src="img/catalog-3.png" alt="Булочки" class="product-info__image">
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Beatae porro dolores, aliquam dolorum quisquam molestiae natus deleniti placeat voluptates pariatur suscipit enim explicabo deserunt sequi quibusdam delectus omnis perspiciatis?</p>
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, impedit.</p>
+        </div>
+    </div>
+    <div class="popup product-info bread-4">
+        <div class="product-info__content popup__content">
+            <button class="popup__close">&times;</button>
+            <h4 class="product-info__title">Кондитерские</h4>
+            <img src="img/catalog-4.png" alt="Кондитерские" class="product-info__image">
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Beatae porro dolores, aliquam dolorum quisquam molestiae natus deleniti placeat voluptates pariatur suscipit enim explicabo deserunt sequi quibusdam delectus omnis perspiciatis?</p>
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, impedit.</p>
+        </div>
+    </div>
+    <div class="popup product-info bread-5">
+        <div class="product-info__content popup__content">
+            <button class="popup__close">&times;</button>
+            <h4 class="product-info__title">Хлебцы</h4>
+            <img src="img/catalog-5.png" alt="Хлебцы" class="product-info__image">
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Beatae porro dolores, aliquam dolorum quisquam molestiae natus deleniti placeat voluptates pariatur suscipit enim explicabo deserunt sequi quibusdam delectus omnis perspiciatis?</p>
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, impedit.</p>
+        </div>
+    </div>
+    <div class="popup product-info bread-6">
+        <div class="product-info__content popup__content">
+            <button class="popup__close">&times;</button>
+
+            <h4 class="product-info__title">Мюсли</h4>
+            <img src="img/catalog-6.png" alt="Мюсли" class="product-info__image">
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Beatae porro dolores, aliquam dolorum quisquam molestiae natus deleniti placeat voluptates pariatur suscipit enim explicabo deserunt sequi quibusdam delectus omnis perspiciatis?</p>
+            <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, impedit.</p>
+        </div>
+    </div>
+    <!-- Окно благодарности -->
+    <div class="popup thanks">
+        <div class="thanks__content popup__content">
+            <div class="popup__close">&times;</div>
+            <div class="thanks__header">
+                <h4 class="thanks__title"></h4>
+            </div>
+            <p class="thanks__text"></p>
+        </div>
+    </div>
+    <!-- Перезвоните мне -->
+    <div class="popup call-offer offer popup-form">
+        <div class="call-offer__content popup__content">
+            <div class="popup__close">&times;</div>
+            <h4 class="call-offer__title">Введите свои данные</h4>
+            
+            <form action="server.php" method="post" class="offer-form popup-form">
+                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
+                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
+                
+                <button type="submit" class="offer__submit">Оставить заявку</button>
+            </form>
+            <div class="offer-confident">
+                <img src="img/icon-confident.png" alt="Конфиденциально">
+                <p class="offer-confident__text">Ваши данные не будут переданы третьим лицам, согласно законам РФ</p>
+                <img src="img/icon-confident.png" alt="Конфиденциально">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modals.js"></script>
+    <script src="js/forms.js"></script>
     <!-- Яндекс карты -->
     <script src="js/map.js"></script>
-
     <!-- Кнопки Нравится Вконтакте -->
     <script>
         VK.init({apiId: 6886610, onlyWidgets: true});
@@ -419,7 +511,7 @@
             $('.our-foto .slider').slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                // autoplay: true,
+                autoplay: true,
                 infinite: true,
                 autoplaySpeed: 3000,
                 adaptiveHeight: false,
