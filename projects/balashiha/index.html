@@ -19,11 +19,12 @@
 
     <!-- Стили -->
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
 
     <!-- Скрипты мои и сторонние -->
-    <script src="js/playerjs.js"></script>
+    <!-- <script src="js/playerjs.js"></script> -->
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/functions.js"></script>
 
@@ -152,16 +153,18 @@
                 </div>
                 
                 <div class="plus-in-video__video-block col-xl-8 col-lg-7">
-                        <div class="shadow-bottom">
-                            <!-- <div class="plus-in-video__video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/S10cjFrenZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
-                            <!-- <iframe class="plus-in-video__video-item" src="https://www.youtube.com/embed/S10cjFrenZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen poster="img/video-preview-1.png"></iframe> -->
-                            <!-- <div id="video-advantages" class="plus-in-video__video-item"></div> -->
-                            <div class="plus-in-video__video-item"><div id="video-advantages" style="width:100%;height:100%"></div></div>
-                            <!-- <div class="plus-in-video__video-item"><video src="video/1.mp4" controls poster="img/video-preview-1.png"></video></div> -->
-                            
-                            
-                            <!-- <img class="plus-in-video__video-item" src="img/video-advantages.png" alt="Наши преимущества за 1 минуту"> -->
-                        </div>
+                    <div class="shadow-bottom">
+                        <!-- <div class="plus-in-video__video-item"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/S10cjFrenZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
+                        <!-- <div class="plus-in-video__video-item"><div id="video-advantages" style="width:100%;height:100%"></div></div> -->
+                        
+                        <!-- <div class="plus-in-video__video-item"></div> -->
+                        <video id='video-advantages' width="620" height="400" class='video-js vjs-big-play-centered plus-in-video__video-item' controls preload='auto' poster='img/video-preview-1.png' data-setup='{}'>
+                            <source src='video/best.mp4' type='video/mp4'>
+                            <p class='vjs-no-js'>
+                                Для просмотра видео включите JavaScript, и обновите браузер до <a href='https://videojs.com/html5-video-support/' target='_blank'>поддержки HTML5 video</a>
+                            </p>
+                        </video>
+                    </div>
                 </div>
                 <!-- /.plus-in-video__video col-lg-7 -->
             </div>
@@ -290,8 +293,14 @@
 
             <div class="about__video-block">
                 <div class="shadow-bottom">
-                    <div class="about__video-item"><div id="video-about" style="width:100%;height:100%"></div></div>
-                    <!-- <img src="img/about-video.png" alt="Видео о нас"> -->
+                    <!-- <div class="about__video-item"> -->
+                        <video id='video-about' class='video-js vjs-big-play-centered about__video-item' controls preload='auto' width='460' height='265' poster='img/video-preview-2.png' data-setup='{}'>
+                            <source src='video/about.mp4' type='video/mp4'>
+                            <p class='vjs-no-js'>
+                                Для просмотра видео включите JavaScript, и обновите браузер до <a href='https://videojs.com/html5-video-support/' target='_blank'>поддержки HTML5 video</a>
+                            </p>
+                        </video>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -480,10 +489,11 @@
         </div>
     </div>
 
-    <script src="js/modals.js"></script>
-    <script src="js/forms.js"></script>
+    <script src="js/bundle.js"></script>
+    <!-- <script src="js/modals.js"></script>
+    <script src="js/forms.js"></script> -->
     <!-- Яндекс карты -->
-    <script src="js/map.js"></script>
+    <!-- <script src="js/map.js"></script> -->
     <!-- Кнопки Нравится Вконтакте -->
     <script>
         VK.init({apiId: 6886610, onlyWidgets: true});
@@ -491,7 +501,7 @@
     </script>
 
     <!-- Видеоплеер playerjs -->
-    <script>
+    <!-- <script>
         let player1 = new Playerjs({
             id: 'video-advantages',
             file: 'video/1.mp4',
@@ -502,7 +512,8 @@
             file: 'video/1.mp4',
             poster: 'img/video-preview-2.png'
         });
-    </script>
+    </script> -->
+    <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
 
     <!-- slick slider -->
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
