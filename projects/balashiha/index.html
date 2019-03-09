@@ -7,7 +7,7 @@
 
     <!-- Информация об Авторе и описание проекта -->
     <meta name="description" content="Хлебобулочный завод в Балашихе">
-    <meta property="og:url" content="https://kamunicorn.github.io/projects/balashiha/index.html"/>
+    <!-- <meta property="og:url" content="https://kamunicorn.github.io/projects/balashiha/index.html"/> -->
     <meta name="author" content="Вера Перелыгина">
 
     <!-- Иконка, которая будет на вкладке в браузере -->
@@ -15,23 +15,14 @@
     <title>Балашихинский хлеб</title>
 
     <!-- Шрифты Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
 
     <!-- Стили -->
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
-
+    
     <!-- Скрипты мои и сторонние -->
-    <!-- <script src="js/playerjs.js"></script> -->
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/functions.js"></script>
-
-    <!-- API соцсетей -->
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9c0254fc-b560-4b57-9b85-d3b36ca89ee5"></script>
-    <script src="https://vk.com/js/api/openapi.js?160"></script>
-    <!-- <script>VK.init({apiId: 6886596, onlyWidgets: true});</script> -->
 
 </head>
 <body>
@@ -91,7 +82,8 @@
                                 <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
                                 <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                                 
-                                <button type="submit" class="offer__submit">Получить КП!</button> 
+                                <button type="submit" class="offer__submit">Получить КП!</button>
+                                <div class="status"></div>
                             </form>
 
                             <div class="offer-confident">
@@ -323,7 +315,8 @@
                     <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
                     <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                     
-                    <button type="submit" class="offer__submit">Получить сейчас!</button> 
+                    <button type="submit" class="offer__submit">Получить сейчас!</button>
+                    <div class="status"></div>
                 </form>
             </div>
 
@@ -369,8 +362,11 @@
     </section>
     <!-- /.many-bread container-fluid -->
 
-    <!-- Карта -->
-    <section class="map" id="map"></section>
+    <!-- Карта Яндекса -->
+    <section class="map-container">
+        <div class="loader loader-default"></div>
+        <div id="map-yandex"></div>
+    </section><!-- .map-container -->
     <!-- /.map -->
 
     <!-- Подвал страницы -->
@@ -483,6 +479,7 @@
                 <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                 
                 <button type="submit" class="offer__submit">Оставить заявку</button>
+                <div class="status"></div>
             </form>
             <div class="offer-confident">
                 <img src="img/icon-confident.png" alt="Конфиденциально">
@@ -492,21 +489,29 @@
         </div>
     </div>
 
+    <!-- Скрипты -->
     <script src="js/bundle.js"></script>
-    <!-- <script src="js/modals.js"></script>
-    <script src="js/forms.js"></script> -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Яндекс карты -->
-    <!-- <script src="js/map.js"></script> -->
+    <!-- <script src="../src/parts/map.js"></script> -->
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;loadByRequire=1&amp;apikey=9c0254fc-b560-4b57-9b85-d3b36ca89ee5"></script> -->
+    
     <!-- Кнопки Нравится Вконтакте -->
+    <script src="https://vk.com/js/api/openapi.js?160"></script>
+    <!-- Инициализация кнопок Вконтакте -->
     <script>
         VK.init({apiId: 6886610, onlyWidgets: true});
         VK.Widgets.Like("vk-like", {type: "button", height: 20});
     </script>
 
+    <!-- Плеер videojs -->
+    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
     <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
 
     <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Инициализация слайдера -->
     <script>
         $(document).ready(function(){
             $('.our-foto .slider').slick({
@@ -526,6 +531,6 @@
 
 
     </script>
-</body>
 
+</body>
 </html>

@@ -54,8 +54,7 @@ let statusMessage = {
 
     // отправляет данные в formData, атрибут data - необязателен (данные, которые надо отправить дополнительно к данным с формы), форма - this
 function submitForm(form, data) {
-    let formInputs = form.querySelectorAll('input'),
-        formData = new FormData(form);
+    let formData = new FormData(form);
 
          // append Object to FormData
     if (data) {
@@ -94,18 +93,20 @@ function submitForm(form, data) {
         }
     };
 
-    formInputs.forEach( (input) => input.value = '' );
+    // formInputs.forEach( (input) => input.value = '' );
 }
 
 function setStatus(type, form) {
+    let statusBox = form.querySelector('.status'),
+        formInputs = form.querySelectorAll('input');
+    
     if (type == 'loading') {
-        let statusBox = document.createElement('div');
-        statusBox.classList.add('status');
-        form.appendChild(statusBox);
-        statusBox.innerHTML = statusMessage.loading;
-        setTimeout(() => statusBox.remove(), 3000);
+        statusBox.innerText = statusMessage.loading;
+        // setTimeout(() => statusBox.innerText = '', 3000);
 
     } else if (type == 'success' || type == 'failure') {
+        statusBox.innerText = '';
+        formInputs.forEach( (input) => input.value = '' );
 
         if (form.classList.contains('popup-form')) {
             let popup = document.querySelector('.popup.popup-form');

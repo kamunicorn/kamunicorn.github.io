@@ -162,7 +162,7 @@ a, button, input {
   font-family: 'Roboto Condensed', 'Roboto', sans-serif;
   color: #ffffff;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   -webkit-transition: -webkit-box-shadow .9s;
   transition: -webkit-box-shadow .9s;
@@ -586,9 +586,110 @@ a, button, input {
           filter: grayscale(0%);
 }
 
-.map {
+.map-container {
   width: 100%;
   height: 500px;
+}
+
+.map-container {
+  position: relative;
+  cursor: pointer;
+  background: url("../img/map-before-load.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.map-container #map-yandex {
+  position: relative;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.map-container .loader {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  -webkit-transition: opacity .7s ease;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.map-container .loader:after, .map-container .loader:before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.map-container .loader.is-active {
+  top: 0;
+  opacity: 1;
+  z-index: 15;
+}
+
+.map-container .loader-default:after {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+  left: 50%;
+  -webkit-transform: translateX(-24px);
+          transform: translateX(-24px);
+  width: 48px;
+  height: 48px;
+  content: '';
+  -webkit-animation: rotation 1s linear infinite;
+          animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .placemark {
@@ -893,7 +994,7 @@ footer img {
   .many-bread__item:nth-child(3n) {
     display: none;
   }
-  .map {
+  .map-container {
     height: 400px;
   }
 }
@@ -978,7 +1079,7 @@ footer img {
   .many-bread__item:nth-child(2n) {
     display: none;
   }
-  .map {
+  .map-container {
     height: 350px;
   }
   .placemark__image {
@@ -1156,7 +1257,7 @@ footer img {
     width: auto;
     margin-left: auto;
   }
-  .map {
+  .map-container {
     height: 250px;
   }
   .placemark {
