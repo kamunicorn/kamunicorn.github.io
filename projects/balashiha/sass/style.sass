@@ -14,14 +14,14 @@ a, button, input
     outline: none
 
     // Шрифт Nokia для названия сайта в шапке
-@font-face
-    font-family: 'Nokia'
-    src: url('../fonts/Nokia-Sans-S60-Regular.ttf') format('truetype')
-    font-weight: normal
-    font-style: normal
+// @font-face
+//     font-family: 'Nokia'
+//     src: url('../fonts/Nokia-Sans-S60-Regular.ttf') format('truetype')
+//     font-weight: normal
+//     font-style: normal
 
 .bar
-    background-image: url('../img/back-rect-1-small.png')
+    background-image: url('../img/back-rect-1-small.jpg')
     height: 85px
     &__logo
         height: 85px
@@ -33,11 +33,11 @@ a, button, input
         border-left: 4px white solid
         border-right: 4px white solid
     &__site-name
-        font-family: 'Nokia', 'Roboto', Arial, sans-serif
-        color: #393939
-        font-size: 26px
-        font-weight: 700
-        text-transform: uppercase
+        // font-family: 'Nokia', 'Roboto', Arial, sans-serif
+        // color: #393939
+        // font-size: 26px
+        // font-weight: 700
+        // text-transform: uppercase
         margin-top: 15px
         margin-bottom: 0px
     &__site-subtitle
@@ -88,14 +88,14 @@ a, button, input
         text-align: center
         color: #7d3803
         font-size: 56px
-        font-weight: 600
+        font-weight: 700
     &__subtitle
         text-align: center
         margin-top: 10px
         color: #272727
         font-family: 'Roboto Condensed', 'Roboto', sans-serif
         font-size: 22px
-        font-weight: 600
+        font-weight: 700
         text-transform: uppercase
 
     &__main-image
@@ -172,7 +172,7 @@ a, button, input
         position: absolute
         height: 300px
         width: 18vw
-        background: url('../img/header-grains.png') no-repeat right bottom
+        background: url('../img/header-grains.jpg') no-repeat right bottom
         background-size: contain
         content: ''
         bottom: 10%
@@ -197,7 +197,7 @@ a, button, input
             color: #fff
 
 .middle-offer
-    background-image: url('../img/back-rect-7-small.png')
+    background-image: url('../img/back-rect-2-small.jpg')
     .section__subtitle-image
         background-image: url('../img/subtitle-logo-white.png')
     .section__title
@@ -332,7 +332,7 @@ a, button, input
     &__video-block
         position: relative
         &::after
-            content: url('../img/advantages-grains.png')
+            content: url('../img/advantages-grains.jpg')
             position: absolute
             left: 81%
             bottom: 10%
@@ -570,10 +570,9 @@ footer
 
 .call-offer
     &__content
-        background-image: url('../img/back-rect-7-small.png')
+        background-image: url('../img/back-rect-2-small.jpg')
         width: 380px
         padding: 40px 50px
-        // background-color: darken($backBrown, 20%)
 
     .popup__close
         color: white
@@ -607,7 +606,7 @@ footer
         color: #fff
         font-size: 2rem
     &__header
-        background-image: url('../img/back-rect-7-small.png')
+        background-image: url('../img/back-rect-2-small.jpg')
         padding: 1px 40px
     &__title
         text-align: center
@@ -785,6 +784,8 @@ footer
         &__site-name
             margin-top: 15px
             margin-left: -15px
+            img
+                height: 18px
         &__site-subtitle
             display: none
         .call-me
@@ -835,20 +836,21 @@ footer
             margin-top: 25px
         &__main-image
             display: none
-        &__bar
+    .bar
+        height: 75px
+        &__logo
             height: 75px
-            .bar__logo
-                height: 75px
-                img
-                    max-width: 90%
-            .bar__site-name
-                margin-top: 15px
-                margin-left: -15px
-                font-size: 20px
-            .call-me
-                padding-left: 0
-            .call-me__request
-                display: none
+            img
+                max-width: 90%
+        &__site-name
+            margin-top: 15px
+            margin-left: -15px
+            img
+                height: 15px
+        .call-me
+            margin-top: -30px
+        .call-me__request
+            display: none
     .top-offer
         width: 100%
     .middle-offer form
@@ -867,7 +869,7 @@ footer
         padding-bottom: 25px
         &__title
             font-size: 28px
-            font-weight: 500
+            font-weight: 700
             text-transform: none
         &__subtitle-image
             margin-bottom: 10px

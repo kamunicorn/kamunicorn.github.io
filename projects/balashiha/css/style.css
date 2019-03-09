@@ -14,15 +14,8 @@ a, button, input {
   outline: none;
 }
 
-@font-face {
-  font-family: 'Nokia';
-  src: url("../fonts/Nokia-Sans-S60-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .bar {
-  background-image: url("../img/back-rect-1-small.png");
+  background-image: url("../img/back-rect-1-small.jpg");
   height: 85px;
 }
 
@@ -40,11 +33,6 @@ a, button, input {
 }
 
 .bar__site-name {
-  font-family: 'Nokia', 'Roboto', Arial, sans-serif;
-  color: #393939;
-  font-size: 26px;
-  font-weight: 700;
-  text-transform: uppercase;
   margin-top: 15px;
   margin-bottom: 0px;
 }
@@ -114,7 +102,7 @@ a, button, input {
   text-align: center;
   color: #7d3803;
   font-size: 56px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .header__subtitle {
@@ -123,7 +111,7 @@ a, button, input {
   color: #272727;
   font-family: 'Roboto Condensed', 'Roboto', sans-serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -224,7 +212,7 @@ a, button, input {
   position: absolute;
   height: 300px;
   width: 18vw;
-  background: url("../img/header-grains.png") no-repeat right bottom;
+  background: url("../img/header-grains.jpg") no-repeat right bottom;
   background-size: contain;
   content: '';
   bottom: 10%;
@@ -258,7 +246,7 @@ a, button, input {
 }
 
 .middle-offer {
-  background-image: url("../img/back-rect-7-small.png");
+  background-image: url("../img/back-rect-2-small.jpg");
 }
 
 .middle-offer .section__subtitle-image {
@@ -447,7 +435,7 @@ a, button, input {
 }
 
 .plus-in-video__video-block::after {
-  content: url("../img/advantages-grains.png");
+  content: url("../img/advantages-grains.jpg");
   position: absolute;
   left: 81%;
   bottom: 10%;
@@ -765,7 +753,7 @@ footer img {
 }
 
 .call-offer__content {
-  background-image: url("../img/back-rect-7-small.png");
+  background-image: url("../img/back-rect-2-small.jpg");
   width: 380px;
   padding: 40px 50px;
 }
@@ -812,7 +800,7 @@ footer img {
 }
 
 .thanks__header {
-  background-image: url("../img/back-rect-7-small.png");
+  background-image: url("../img/back-rect-2-small.jpg");
   padding: 1px 40px;
 }
 
@@ -1017,6 +1005,9 @@ footer img {
     margin-top: 15px;
     margin-left: -15px;
   }
+  .bar__site-name img {
+    height: 18px;
+  }
   .bar__site-subtitle {
     display: none;
   }
@@ -1079,24 +1070,26 @@ footer img {
   .header__main-image {
     display: none;
   }
-  .header__bar {
+  .bar {
     height: 75px;
   }
-  .header__bar .bar__logo {
+  .bar__logo {
     height: 75px;
   }
-  .header__bar .bar__logo img {
+  .bar__logo img {
     max-width: 90%;
   }
-  .header__bar .bar__site-name {
+  .bar__site-name {
     margin-top: 15px;
     margin-left: -15px;
-    font-size: 20px;
   }
-  .header__bar .call-me {
-    padding-left: 0;
+  .bar__site-name img {
+    height: 15px;
   }
-  .header__bar .call-me__request {
+  .bar .call-me {
+    margin-top: -30px;
+  }
+  .bar .call-me__request {
     display: none;
   }
   .top-offer {
@@ -1121,7 +1114,7 @@ footer img {
   }
   .section__title {
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: none;
   }
   .section__subtitle-image {
