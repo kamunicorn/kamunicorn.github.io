@@ -1,5 +1,5 @@
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 body {
@@ -95,7 +95,7 @@ a, button, input {
 }
 
 .header__title {
-  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', 'Roboto';
   text-align: center;
   margin-top: 40px;
   margin-bottom: 10px;
@@ -109,7 +109,7 @@ a, button, input {
   text-align: center;
   margin-top: 10px;
   color: #272727;
-  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', 'Roboto';
   font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
@@ -159,7 +159,7 @@ a, button, input {
 
 .offer__submit {
   height: 57px;
-  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', 'Roboto';
   color: #ffffff;
   font-size: 18px;
   font-weight: 700;
@@ -223,7 +223,7 @@ a, button, input {
 .top-offer__title {
   text-align: center;
   color: #fdf1cf;
-  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', 'Roboto';
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -294,7 +294,7 @@ a, button, input {
   text-align: center;
   text-transform: uppercase;
   color: #1b1b1b;
-  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', 'Roboto';
   font-size: 32px;
   font-weight: 400;
 }
@@ -637,11 +637,11 @@ a, button, input {
 .map-container .loader-default:after {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 50%;
-  -webkit-transform: translateX(-24px);
-          transform: translateX(-24px);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 48px;
   height: 48px;
   content: '';
@@ -866,7 +866,7 @@ footer img {
 
 .call-offer__title {
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   font-size: 22px;
   color: white;
   text-align: center;
@@ -908,7 +908,7 @@ footer img {
 .thanks__title {
   text-align: center;
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   font-size: 22px;
   color: #fff;
   margin-top: 15px;

@@ -20,9 +20,6 @@
     <!-- Стили -->
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.min.css">
-    
-    <!-- Скрипты мои и сторонние -->
-    <script src="js/functions.js"></script>
 
 </head>
 <body>
@@ -79,7 +76,7 @@
 
                             <form action="server.php" method="post" class="offer-form">
                                 <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
-                                <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
+                                <input type="email" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
                                 <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                                 
                                 <button type="submit" class="offer__submit">Получить КП!</button>
@@ -312,7 +309,7 @@
             <div class="middle-offer__form">
                 <form action="server.php" method="post" class="offer-form">
                     <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
-                    <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
+                    <input type="email" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
                     <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                     
                     <button type="submit" class="offer__submit">Получить сейчас!</button>
@@ -463,7 +460,7 @@
         <div class="thanks__content popup__content">
             <div class="popup__close">&times;</div>
             <div class="thanks__header">
-                <h4 class="thanks__title"></h4>
+                <div class="thanks__title"></div>
             </div>
             <p class="thanks__text"></p>
         </div>
@@ -489,48 +486,26 @@
         </div>
     </div>
 
-    <!-- Скрипты -->
-    <script src="js/bundle.js"></script>
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Яндекс карты -->
-    <!-- <script src="../src/parts/map.js"></script> -->
     <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;loadByRequire=1&amp;apikey=9c0254fc-b560-4b57-9b85-d3b36ca89ee5"></script> -->
     
-    <!-- Кнопки Нравится Вконтакте -->
-    <script src="https://vk.com/js/api/openapi.js?160"></script>
-    <!-- Инициализация кнопок Вконтакте -->
-    <script>
-        VK.init({apiId: 6886610, onlyWidgets: true});
-        VK.Widgets.Like("vk-like", {type: "button", height: 20});
-    </script>
-
-    <!-- Плеер videojs -->
-    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
-    <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
+    <!-- Скрипты -->
+    <script defer src="js/functions.js"></script>
+    <script defer src="js/bundle.js"></script>
+    <script defer src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <!-- slick slider -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- Инициализация слайдера -->
-    <script>
-        $(document).ready(function(){
-            $('.our-foto .slider').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                infinite: true,
-                autoplaySpeed: 3000,
-                adaptiveHeight: false,
-                dots: true,
-                dotsClass: 'slider__dots',
-                fade: true,
-                prevArrow: '<button class="slider__prev slider__arrow"></button>',
-                nextArrow: '<button class="slider__next slider__arrow"></button>'
-            });
-        });
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <script defer src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Кнопки Нравится Вконтакте -->
+    <script defer src="https://vk.com/js/api/openapi.js?160"></script>
 
-
-    </script>
+    <!-- Инициализация слайдера и кнопок Вконтакте-->
+    <script defer src="js/plugins.js"></script>
+    
+    <!-- Плеер videojs -->
+    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+    <script async src="https://vjs.zencdn.net/7.4.1/video.js"></script>
 
 </body>
 </html>

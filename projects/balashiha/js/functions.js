@@ -19,15 +19,19 @@ function removeNotLetters(str) {
 
 function showPopup(popupClass) {
     let popup = document.querySelector('.popup.' + popupClass);
+    popup.animate([
+        {"opacity": 0},
+        {"opacity": 1}
+    ], {
+        duration: 600
+    });
     showElem.call(popup);
     document.body.style.overflow = 'hidden';
-    // console.log('множ.назначение события shoPopup');
 }
 
 function closePopup(popup) {
     hideElem.call(popup);
     document.body.style.overflow = '';
-    // console.log('множ.назначение события closePopup');
 }
 
 function showElem() {
@@ -85,18 +89,18 @@ function submitForm(form, data) {
     
     request.onreadystatechange = function() {
         if (request.readyState < 4) {
-            setStatus('loading', form);
+            showStatus('loading', form);
         } else if (request.readyState === 4 && request.status === 200) {
-            setStatus('success', form);
+            showStatus('success', form);
         } else {
-            setStatus('failure', form);
+            showStatus('failure', form);
         }
     };
 
     // formInputs.forEach( (input) => input.value = '' );
 }
 
-function setStatus(type, form) {
+function showStatus(type, form) {
     let statusBox = form.querySelector('.status'),
         formInputs = form.querySelectorAll('input');
     
