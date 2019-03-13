@@ -1,0 +1,984 @@
+$accentRed: #f64747
+$backBrown: #fcf2d1
+$accentLight: #fdf1cf
+$backBrown: $accentLight
+$textDark: #1b1b1b
+
+html
+    font-family: 'Roboto', Arial, sans-serif
+    margin: 0
+    padding: 0
+body
+    margin: 0
+a
+    text-decoration: none
+a, button, input
+    outline: none
+
+.bar
+    background-image: url('../img/back-rect-1-small.jpg')
+    height: 85px
+    &__logo
+        height: 85px
+    &__logo img
+        max-width: 100%
+        display: block
+        margin-left: auto
+        margin-right: 0
+        border-left: 4px white solid
+        border-right: 4px white solid
+    &__site-name
+        margin-top: 15px
+        margin-bottom: 0px
+    &__site-subtitle
+        margin-top: 0px
+        font-family: Roboto
+        font-size: 14px
+        font-weight: 300
+        color: $accentRed
+
+    .call-me
+        text-align: right
+        margin-top: 15px
+        &__phone
+            color: #393939
+            font-weight: 400
+            font-size: 16px
+        &__phone_big
+            font-size: 1.3em
+            font-weight: bold
+
+        &__icon, &__arrow, &__text
+            display: inline
+            margin-left: 2px
+            height: 15px
+            margin-top: 0
+            padding-top: 0
+        &__icon
+            width: 15px
+        &__arrow
+            color: $accentRed
+            font-size: 20px
+        &__text
+            font-size: 14px
+            font-weight: 300
+            color: $accentRed
+            border-bottom: 1px dashed $accentRed
+            &:hover
+                border-style: none
+                cursor: pointer
+
+.header
+    padding-bottom: 70px
+    &__title
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
+        text-align: center
+        margin-top: 40px
+        margin-bottom: 10px
+        text-align: center
+        color: #7d3803
+        font-size: 56px
+        font-weight: 700
+    &__subtitle
+        text-align: center
+        margin-top: 10px
+        color: #272727
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
+        font-size: 22px
+        font-weight: 700
+        text-transform: uppercase
+
+    &__main-image
+        position: relative
+        img
+            position: absolute
+            top: 0
+            right: 20px
+            width: 750px
+    
+// Общий стиль для всех офферов (форм)
+.offer
+    input, button
+        border-radius: 5px
+        border: none 
+    input
+        height: 45px
+        color: #292929
+        font-size: 14px
+        margin-bottom: 7px
+        padding: 10px 40px 10px 15px
+        background-position: 95% center
+        background-repeat: no-repeat
+        &:placeholder
+            color: #2f2f2f
+    
+    &__name
+        background-image: url('../img/icon-name.png')
+    &__mail
+        background-image: url('../img/icon-mail.png')
+    &__phone
+        background-image: url('../img/icon-tel.png')
+
+    &__submit
+        height: 57px
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
+        color: #ffffff
+        font-size: 18px
+        font-weight: 700
+        text-transform: uppercase
+        transition: box-shadow .9s
+        box-shadow: 0px -2px 4px 0 #028678 inset, 0 -30px 40px 0 rgba(2,150,120,0.9) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset
+        background-color: #0fd9b6
+        &:hover
+            box-shadow: 0px -1px 3px 0 #028678 inset, 0 -20px 30px 0 rgba(2,150,120,0.2) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset
+
+    &-confident
+        margin: 15px auto 0
+        height: 30px
+        text-align: center
+        *
+            display: inline-block
+            vertical-align: middle
+            text-align: center
+            margin-left: auto
+            margin-right: auto
+        &__text
+            margin: 0 3px
+            color: #ffffff
+            font-size: 11px
+            font-weight: 400
+            width: 75%
+
+.top-offer
+    width: 315px
+    border: 5px solid $accentLight
+    background-color: $accentRed
+    padding: 10px 20px 20px
+    position: relative
+    
+    &::before
+        position: absolute
+        height: 300px
+        width: 18vw
+        background: url('../img/header-grains.jpg') no-repeat right bottom
+        background-size: contain
+        content: ''
+        bottom: 10%
+        left: 236px
+        z-index: -2
+    &__title
+        text-align: center
+        color: $accentLight
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
+        font-size: 16px
+        text-transform: uppercase
+    .offer-confident
+        width: 100%
+
+    form
+        input, button
+            display: block
+            width: 100%
+        button
+            margin-top: 12px
+        .status
+            color: #fff
+
+.middle-offer
+    background-image: url('../img/back-rect-2-small.jpg')
+    .section__subtitle-image
+        background-image: url('../img/subtitle-logo-white.png')
+    .section__title
+        color: white
+    .offer-confident
+        width: 265px
+    form
+        text-align: center
+        input, button
+            width: 265px
+        input
+            display: inline-block
+            margin: 12px
+        button
+            display: block
+            margin: 12px auto 0
+        .status
+            color: #fff
+    
+.section
+    padding-top: 50px
+    padding-bottom: 50px
+    &__title
+        margin-top: 0
+        margin-bottom: 10px
+        text-align: center
+        text-transform: uppercase
+        color: $textDark
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
+        font-size: 32px
+        font-weight: 400
+    &__subtitle-image
+        display: block
+        margin: 7px auto 20px
+        height: 20px
+        background: url('../img/subtitle-logo.png') no-repeat center center
+        background-size: 40px
+
+.our-foto
+    background-color: $backBrown
+    &__text
+        color: $textDark
+        font-family: Roboto
+        font-size: 16px
+        font-weight: 300
+        margin-bottom: 30px
+        margin-top: 10px
+
+    &__left-side
+        position: relative
+        z-index: 2
+        text-align: right
+        padding-right: 20px
+        &::before
+            position: absolute
+            content: url('../img/slider-back-grains-1.png')
+            z-index: -1
+            bottom: 5px
+            right: -10px
+        img
+            border: 5px solid white
+            max-width: 100%
+    
+    .slider
+        width: 550px
+        height: 320px
+        margin-left: auto
+        margin-right: 0
+        &__item
+            margin-left: auto
+            margin-right: auto
+            width: 550px
+            height: 320px
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover   
+        &__dots
+            list-style: none
+            position: absolute
+            bottom: 0px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: rgba(0,0,0,.5)
+            text-align: center
+            padding: 4px 25px
+            border-radius: 3px
+            width: 170px
+            li
+                display: inline
+                margin: 0 4px
+                padding: 0
+            button
+                color: transparent
+                margin: 0
+                padding: 0
+                background-color: #fff
+                font-size: 11px
+                border: none
+                height: 12px
+                width: 12px
+            .slick-active button
+                background-color: $accentRed
+
+        &__arrow
+            position: absolute
+            z-index: 99
+            width: 23px
+            height: 23px
+            border: none
+            padding-top: 5px
+            padding-bottom: 5px
+            bottom: 18px
+        &__prev
+            left: 50%
+            transform: translateX(-85px)
+            background: url(../img/arrow-prev.png) center no-repeat
+            
+        &__next
+            right: 50%
+            transform: translateX(85px)
+            background: url(../img/arrow-next.png) center no-repeat
+
+.plus-in-video
+
+    &__left-side
+        position: relative
+        img
+            position: absolute
+            bottom: -60px
+            right: 0
+            z-index: -1
+
+    &__video-block
+        position: relative
+        &::after
+            content: url('../img/advantages-grains.jpg')
+            position: absolute
+            left: 81%
+            bottom: 10%
+            z-index: -1
+    &__video-item
+        width: 620px
+        height: 400px
+        border: 3px $accentLight solid
+        border-radius: 5px
+
+.advantages
+    background-color: $backBrown
+    &__item
+        color: $textDark
+        margin-bottom: 30px
+        padding-left: 10px
+        padding-right: 10px
+    &__icon
+        float: left
+        margin-top: 7px
+    &__title
+        font-size: 18px
+        font-weight: bold
+        width: 77%
+        margin: 5px 0 8px auto
+    &__text
+        font-size: 15px
+        font-weight: 300
+        margin-top: 8px
+        margin-left: auto
+        margin-right: 0
+        width: 77%
+
+.catalog
+    .section__subtitle-image
+        margin-bottom: 5px
+    &__card
+        padding: 10px 15px 23px
+        transition: .4s
+        border: 1px solid transparent
+        &:hover
+            border-color: #d6d6d6
+
+.section.catalog, .section.advantages
+    padding-bottom: 30px
+
+.product
+    text-align: center
+    &__image
+        max-width: 100%
+        height: 120px
+    &__name
+        font-size: 18px
+        font-weight: bold
+        text-transform: uppercase
+        margin-top: 5px
+        margin-bottom: 5px
+    &__text
+        color: $textDark
+        font-size: 15px
+        font-weight: 300
+        
+        margin-top: 5px
+    &__button
+        padding: 15px 20px
+        margin-top: 5px
+        background-color: transparent
+        border: 1px solid $accentRed
+        color: $accentRed
+        font-size: 14px
+        font-weight: bold
+        text-transform: uppercase
+        transition: .4s
+        cursor: pointer
+        &:hover
+            background-color: $accentRed
+            color: #ffffff
+
+.about
+    background-color: $backBrown
+    .section__subtitle-image
+        margin-bottom: 10px
+    &__text
+        margin-top: 10px
+        margin-bottom: 12px
+
+    &__video-block
+        text-align: center
+        margin-top: 30px
+        background: url('../img/about-video-back.png') no-repeat center bottom
+    &__video-item
+        width: 460px
+        height: 265px
+        border: 3px $accentLight solid
+        border-radius: 5px
+
+.many-bread
+    &__item
+        margin-bottom: -5px
+    img
+        width: 100%
+        transition: .6s
+        filter: grayscale(80%)
+        &:hover
+            filter: grayscale(0%)
+
+.map-container
+    width: 100%
+    height: 500px
+
+// Блок-обертка, где мы задаем фоновое изображение скриншотом как на карте
+.map-container
+    position: relative
+    cursor: pointer
+    background: url('../img/map-before-load.jpg') center center no-repeat
+    // background-position: center center
+    background-size: cover
+    // box-shadow: 0 0 2em  0 rgba(0,0,0,.2)
+ 
+    // Блок, в котором появится Яндекс.Карта
+    #map-yandex
+        position: relative
+        z-index: 7
+        width: 100%
+        height: 100%
+        cursor: pointer
+        background-color: transparent
+
+    .loader
+        position: absolute
+        z-index: 6
+        top: 0
+        left: 0
+        box-sizing: border-box
+        width: 100%
+        height: 100%
+        color: #000000
+        transition: opacity .7s ease
+        opacity: 0
+        background-color: rgba(0,0,0,.55)
+    
+        &:after, &:before
+            box-sizing: border-box
+        
+        &.is-active
+            top: 0
+            opacity: 1
+            z-index: 15
+        
+        &-default:after
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 50%
+            transform: translateX(-50%)
+            width: 48px
+            height: 48px
+            content: ''
+            animation: rotation 1s linear infinite
+            border: solid 8px #ffffff
+            border-left-color: transparent
+            border-radius: 50%
+ 
+@keyframes rotation
+    from
+        transform: rotate(0)
+    to
+        transform: rotate(359deg)
+ 
+@keyframes blink
+    from
+        opacity: .5
+    to
+        opacity: 1
+
+
+.placemark
+    color: #363636
+    padding-top: 15px
+    padding-bottom: 10px
+    
+    &__image
+        display: inline-block
+        width: 33%
+        img
+            width: 100%
+    &__info
+        width: 63%
+        font-size: 16px
+        font-weight: 300
+        display: inline-block
+        margin-left: 4%
+    &__title
+        font-weight: bold
+        text-transform: uppercase
+    &__text
+        margin-top: 10px
+        margin-bottom: 0
+    &__tel
+        color: #363636
+    &__mail
+        color: $accentRed
+        text-decoration: underline
+
+footer
+    padding-top: 35px
+    padding-bottom: 40px
+    min-height: 150px
+    background-color: #363636
+    color: #fefefe
+    font-size: 15px
+    font-weight: 300
+    text-align: center
+    
+    .socials-like
+        margin-top: 30px
+        margin-left: auto
+        margin-right: auto
+        width: fit-content
+        max-width: 700px
+        min-width: 300px
+        #vk-like
+            // height: 30px
+
+    .socials-like__item
+        display: inline-block
+        width: 40%
+
+    img
+        margin-top: 30px
+        margin-left: auto
+        margin-right: auto
+
+.shadow-bottom
+    position: relative
+    display: inline-block
+    width: fit-content
+    &::before
+        position: absolute
+        content: url('../img/shadow-left.png')
+        bottom: 0
+        left: -25px
+        z-index: 0
+    &::after
+        position: absolute
+        content: url('../img/shadow-right.png')
+        bottom: 0
+        right: -25px
+        z-index: 0
+
+    // Modals
+
+.popup 
+    position: fixed
+    overflow: auto
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 9
+    background-color: rgba(0, 0, 0, 0.5)
+    display: none
+    &__content
+        position: relative
+        display: block
+        margin: 30px auto
+        max-width: 100%
+    &__close 
+        position: absolute
+        top: 0rem
+        right: 1rem
+        font-size: 3rem
+        color: black
+        border: none
+        background: transparent
+        cursor: pointer
+
+.product-info
+    color: $textDark
+    display: none
+    &__content 
+        width: 600px
+        padding: 40px
+        background-color: white
+    
+    &__title
+        text-transform: uppercase
+        font-size: 25px
+        margin-top: 5px
+        margin-bottom: 15px
+        text-align: center
+    &__image
+        max-width: 100%
+        width: 400px
+        margin-left: auto
+        margin-right: auto
+        display: block
+    &__text
+        margin-top: 10px
+        margin-bottom: 10px
+
+.call-offer
+    &__content
+        background-image: url('../img/back-rect-2-small.jpg')
+        width: 380px
+        padding: 40px 50px
+
+    .popup__close
+        color: white
+        font-size: 2rem
+    &__title
+        font-weight: 300
+        font-size: 22px
+        color: white
+        text-align: center
+        text-transform: none
+        margin-top: 5px
+        margin-bottom: 20px
+
+    form
+        input, button
+            display: block
+            width: 100%
+            margin-bottom: 12px
+        button
+            margin-top: 20px
+        .status
+            color: white
+
+.thanks
+    &__content
+        width: 320px
+        background-color: #fff
+        padding-bottom: 1px
+    .popup__close
+        color: #fff
+        font-size: 2rem
+    &__header
+        background-image: url('../img/back-rect-2-small.jpg')
+        padding: 1px 40px
+    &__title
+        text-align: center
+        font-weight: 400
+        font-size: 22px
+        color: #fff
+        margin-top: 15px
+        margin-bottom: 10px
+    &__text
+        padding-left: 40px
+        padding-right: 40px
+        margin-bottom: 30px
+
+
+@media (max-width: 1419px)
+    // адаптация псевдоэлементов и вылезания за рамки картинок
+    .top-offer::before, .our-foto__left-side::before, .plus-in-video__video-block::after
+        content: none
+
+    .top-offer
+        width: 100%
+    
+    .plus-in-video
+        &__left-side img
+            right: -120px
+            width: 140%
+        &__video-block
+            text-align: center
+
+    .advantages
+        &__item
+            padding-left: 0
+            padding-right: 0
+        &__icon
+            width: 17%
+        &__title
+            width: 80%
+        &__text
+            width: 80%
+
+@media (max-width: 1199px)
+    .header
+        &__main-image img
+            display: block
+            position: relative
+            margin-right: auto
+            margin-left: auto
+            width: 100%
+        &__title
+            font-size: 45px
+        &__subtitle
+            font-size: 18px
+    .top-offer
+        width: 100%
+        display: block
+        margin-left: auto
+        margin-right: auto
+    
+    .our-foto
+        &__left-side
+            padding-right: 15px
+        &__text
+            margin-bottom: 20px
+        .slider, .slider__item
+            width: 400px
+            height: 235px
+        .slider
+            max-width: 100%
+
+    .plus-in-video__left-side img
+        right: -20px
+        width: 120%
+    .plus-in-video__video-item
+        width: 50vw
+        height: 32vw
+
+    .many-bread__item:nth-child(3n)
+        display: none
+    .map-container
+        height: 400px
+
+@media (max-width: 991px)
+    .top-offer
+        width: 320px
+
+    .middle-offer form input
+        display: block
+        margin: 0px auto 12px
+
+    .plus-in-video
+        &__left-side
+            display: none
+        &__video-block
+            text-align: center
+    .plus-in-video__video-item
+        width: 78vw
+        height: 50vw
+
+    .our-foto
+        &__text:first-child
+            margin-top: 20px
+        .slider, .slider__item
+            width: 550px
+            height: 320px
+        .slider
+            margin-right: auto
+
+    .our-foto__left-side, .plus-in-video__video-block, .header__offer
+        text-align: center
+        padding-right: 15px
+        padding-left: 15px
+
+    .about__video-block
+        background-size: contain
+
+@media (max-width: 767px)
+    .bar
+        &__logo img
+            margin-right: auto
+        &__site-name
+            margin-top: 10px
+            font-size: 23px
+        &__site-subtitle
+            font-size: 12px
+        .call-me
+            margin-top: 15px
+            padding: 0
+            font-size: 14px
+            &__icon, &__arrow
+                display: none
+    .top-offer
+        max-width: 500px
+        &::before
+            content: none
+
+    .our-foto 
+        .slider, .slider__item
+            width: 510px
+            height: 290px
+
+    .plus-in-video__video-item
+        // width: 80vw
+        // height: 50vw
+    .about__video-item
+        width: 80vw
+        height: 46vw
+    .about__video-block
+        background: none
+
+    .many-bread__item:nth-child(3n)
+        display: block
+    .many-bread__item:nth-child(2n)
+        display: none
+
+    .map-container
+        height: 350px
+    .placemark
+        &__image
+            width: 30%
+        &__info
+            width: 67%
+            font-size: 13px
+            margin-left: 3%
+
+    .product-info
+        &__content
+            margin: 0
+
+@media (max-width: 575px)
+    .shadow-bottom::after, .shadow-bottom::before
+        content: none
+    .bar
+        height: 80px
+        &__site-name
+            margin-top: 15px
+            margin-left: -15px
+            img
+                height: 18px
+        &__site-subtitle
+            display: none
+        .call-me
+            padding: 0 15px
+            margin-left: auto
+            margin-right: 15px
+            margin-top: -40px
+            text-align: left
+        .call-me__phone
+            font-size: 12px
+        .call-me__request
+            display: none
+
+    .header__title
+        font-size: 35px
+    .header__subtitle
+        font-size: 16px
+        text-transform: none
+
+    .our-foto
+        .slider, .slider__item
+            width: 430px
+            height: 260px
+
+    .about__video-block
+        margin-top: 15px
+    .plus-in-video__video-item
+        width: 90vw
+        height: 58vw
+    .about__video-item
+        width: 90vw
+        height: 52vw
+    .section
+        padding-bottom: 40px
+        &__title
+            font-size: 25px
+
+    .placemark__info
+        width: 64%
+        font-size: 12px
+        margin-left: 3%
+
+@media (max-width: 479px)
+    .header
+        padding-bottom: 40px
+        &__title
+            font-size: 26px
+            margin-top: 25px
+        &__main-image
+            display: none
+    .bar
+        height: 75px
+        &__logo
+            height: 75px
+            img
+                max-width: 90%
+        &__site-name
+            margin-top: 15px
+            margin-left: -15px
+            img
+                height: 15px
+        .call-me
+            margin-top: -30px
+        .call-me__request
+            display: none
+    .top-offer
+        width: 100%
+    .middle-offer form
+        input, button
+            max-width: 100%
+    .offer-confident
+        margin-bottom: 0
+        &__text
+            margin: 0 auto
+            width: 100%
+        img
+            display: none
+    
+    .section
+        padding-top: 35px
+        padding-bottom: 25px
+        &__title
+            font-size: 28px
+            font-weight: 700
+            text-transform: none
+        &__subtitle-image
+            margin-bottom: 10px
+
+    .our-foto
+        &__text
+            font-size: 14px
+        .slider, .slider__item
+            width: 290px
+            height: 200px
+        .slider__dots
+            bottom: -5px
+            li
+                font-size: 12px
+            button
+                height: 11px
+                width: 11px
+                padding: 0
+        .slider__arrow
+            bottom: 13px
+
+    .advantages
+        text-align: center
+        &__icon
+            width: 30%
+            float: none
+        &__title
+            font-size: 20px
+            font-weight: normal
+        &__title, &__text
+            width: auto
+            margin-left: auto
+
+    .map-container
+        height: 250px
+    .placemark
+        padding: 0
+        &__image
+            width: 27%
+        &__text
+            margin-top: 5px
+        &__info
+            width: 68%
+
+    .thanks
+        &__content
+            width: 300px
+            max-width: 90%
+        &__header
+            padding: 1px 25px
+        &__title
+            font-size: 20px
+            margin-top: 12px
+            margin-bottom: 7px
+        &__text
+            padding-left: 30px
+            padding-right: 30px
+            margin-bottom: 20px

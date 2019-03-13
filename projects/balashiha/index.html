@@ -22,9 +22,11 @@
     <link rel="stylesheet" href="css/style.min.css">
 
     <!-- Полифиллы для работы в Internet Explorer -->
-    <!-- [if lt IE]> -->
+    <![if IE]>
     <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.forEach%2CElement.prototype.classList%2CWebAnimations%2CNodeList.prototype.forEach"></script>
-    <!-- <![endif] -->
+    <![endif]>
+    
+    
 </head>
 <body>
 
@@ -490,22 +492,40 @@
         </div>
     </div>
 
-    <!-- Яндекс карты -->
-    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;loadByRequire=1&amp;apikey=9c0254fc-b560-4b57-9b85-d3b36ca89ee5"></script> -->
-    
     <!-- Скрипты -->
     <script src="js/functions.js"></script>
+    <![if IE]><script src="js/functions_ie.js"></script><![endif]>
     <script src="js/bundle.js"></script>
-    <script defer src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <!-- slick slider -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <script defer src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- Кнопки Нравится Вконтакте -->
-    <script defer src="https://vk.com/js/api/openapi.js?160"></script>
+    <script src="https://vk.com/js/api/openapi.js?160"></script>
 
     <!-- Инициализация слайдера и кнопок Вконтакте-->
-    <script defer src="js/plugins.js"></script>
+    <!-- <script defer src="js/plugins.js"></script> -->
+    <script>
+        $(document).ready(function(){
+            $('.our-foto .slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                infinite: true,
+                autoplaySpeed: 3000,
+                adaptiveHeight: false,
+                dots: true,
+                dotsClass: 'slider__dots',
+                fade: true,
+                prevArrow: '<button class="slider__prev slider__arrow"></button>',
+                nextArrow: '<button class="slider__next slider__arrow"></button>'
+            });
+        });
+
+        VK.init({apiId: 6886610, onlyWidgets: true});
+        VK.Widgets.Like("vk-like", {type: "button", height: 20});
+    </script>
     
     <!-- Плеер videojs -->
     <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
