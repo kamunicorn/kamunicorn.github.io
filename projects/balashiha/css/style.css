@@ -1,5 +1,7 @@
 html {
   font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -95,7 +97,7 @@ a, button, input {
 }
 
 .header__title {
-  font-family: 'Roboto Condensed', 'Roboto';
+  font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 10px;
@@ -109,7 +111,7 @@ a, button, input {
   text-align: center;
   margin-top: 10px;
   color: #272727;
-  font-family: 'Roboto Condensed', 'Roboto';
+  font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
   font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
@@ -159,7 +161,7 @@ a, button, input {
 
 .offer__submit {
   height: 57px;
-  font-family: 'Roboto Condensed', 'Roboto';
+  font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
   color: #ffffff;
   font-size: 18px;
   font-weight: 700;
@@ -223,7 +225,7 @@ a, button, input {
 .top-offer__title {
   text-align: center;
   color: #fdf1cf;
-  font-family: 'Roboto Condensed', 'Roboto';
+  font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -294,7 +296,7 @@ a, button, input {
   text-align: center;
   text-transform: uppercase;
   color: #1b1b1b;
-  font-family: 'Roboto Condensed', 'Roboto';
+  font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
   font-size: 32px;
   font-weight: 400;
 }
@@ -370,27 +372,29 @@ a, button, input {
           transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  padding: 3px 20px;
+  padding: 4px 25px;
   border-radius: 3px;
-  width: 160px;
+  width: 170px;
 }
 
 .our-foto .slider__dots li {
   display: inline;
   margin: 0 4px;
+  padding: 0;
 }
 
 .our-foto .slider__dots button {
-  color: #fff;
+  color: transparent;
+  margin: 0;
+  padding: 0;
   background-color: #fff;
-  font-size: 10.5px;
+  font-size: 11px;
   border: none;
   height: 12px;
   width: 12px;
 }
 
 .our-foto .slider__dots .slick-active button {
-  color: #f64747;
   background-color: #f64747;
 }
 
@@ -407,15 +411,15 @@ a, button, input {
 
 .our-foto .slider__prev {
   left: 50%;
-  -webkit-transform: translateX(-80px);
-          transform: translateX(-80px);
+  -webkit-transform: translateX(-85px);
+          transform: translateX(-85px);
   background: url(../img/arrow-prev.png) center no-repeat;
 }
 
 .our-foto .slider__next {
   right: 50%;
-  -webkit-transform: translateX(80px);
-          transform: translateX(80px);
+  -webkit-transform: translateX(85px);
+          transform: translateX(85px);
   background: url(../img/arrow-next.png) center no-repeat;
 }
 
@@ -866,7 +870,6 @@ footer img {
 
 .call-offer__title {
   font-weight: 300;
-  font-family: 'Roboto';
   font-size: 22px;
   color: white;
   text-align: center;
@@ -908,7 +911,6 @@ footer img {
 .thanks__title {
   text-align: center;
   font-weight: 400;
-  font-family: 'Roboto';
   font-size: 22px;
   color: #fff;
   margin-top: 15px;
