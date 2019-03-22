@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,9 +83,9 @@
                             <p class="top-offer__title">Получите персональное коммерческое предложение</p>
 
                             <form action="server.php" method="post" class="offer-form">
-                                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
-                                <input type="email" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
-                                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
+                                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name" required>
+                                <input type="email" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail" required>
+                                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone" required>
                                 
                                 <button type="submit" class="offer__submit">Получить КП!</button>
                                 <div class="status"></div>
@@ -316,9 +316,9 @@
 
             <div class="middle-offer__form">
                 <form action="server.php" method="post" class="offer-form">
-                    <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
-                    <input type="email" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
-                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
+                    <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name" required>
+                    <input type="email" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail" required>
+                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone" required>
                     
                     <button type="submit" class="offer__submit">Получить сейчас!</button>
                     <div class="status"></div>
@@ -480,8 +480,8 @@
             <h4 class="call-offer__title">Введите свои данные</h4>
             
             <form action="server.php" method="post" class="offer-form popup-form">
-                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
-                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
+                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name" required>
+                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone" required>
                 
                 <button type="submit" class="offer__submit">Оставить заявку</button>
                 <div class="status"></div>
@@ -496,8 +496,6 @@
 
     <!-- Скрипты -->
     <script src="js/functions.js"></script>
-    <![if IE]><script src="js/functions_ie.js"></script><![endif]>
-    <!--[if IE]><script src="js/functions_ie.js"></script><![endif]-->
     <script src="js/bundle.js"></script>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -508,7 +506,6 @@
     <script src="https://vk.com/js/api/openapi.js?160"></script>
 
     <!-- Инициализация слайдера и кнопок Вконтакте-->
-    <!-- <script defer src="js/plugins.js"></script> -->
     <script>
         $(document).ready(function(){
             $('.our-foto .slider').slick({

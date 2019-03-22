@@ -192,19 +192,21 @@ button {
         font-weight: 800;
     }
     &__link {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        &:first-child {
+            margin-right: 50px;
+        }
+    }
+    &__link, &__layout {
         text-decoration: none;
         border-bottom: 1px dotted @textDark;
         font-weight: 600;
         font-style: italic;
         color: @textDark;
         display: inline-block;
-        margin-top: 5px;
-        margin-bottom: 5px;
         -webkit-transition: 0.3s;
         transition: 0.3s;
-        &:first-child {
-            margin-right: 50px;
-        }
         &:hover, &:active, &:focus {
             color: darken(@accentLight, 10%);
             border-bottom: 1px dotted darken(@accentLight, 10%);
@@ -261,10 +263,11 @@ button {
     height: 100%;
     z-index: 9;
     background-color: rgba(0, 0, 0, 0.5);
+    display: none;
 
-    &.budget, &.irvas, &.system, &.yoga {
-        display: none;
-    }
+    // &.budget, &.irvas, &.system, &.yoga {
+        // display: none;
+    // }
     &__content {
         position: relative;
         display: block;
