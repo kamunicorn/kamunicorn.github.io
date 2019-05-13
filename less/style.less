@@ -412,22 +412,7 @@ button {
         }
     }
 }
-@media screen {
-    .about__foto_big {
-        display: block;
-    }
-    .about__foto_small {
-        display: none;
-    }
-}
-@media not screen {
-    .about__foto_big {
-        display: none;
-    }
-    .about__foto_small {
-        display: block;
-    }
-}
+
 @media (max-width: 767px) {
     .navbar__menu {
         text-align: left;
@@ -442,7 +427,8 @@ button {
     }
     .about {
         &__foto {
-            margin-top: 20px;
+            // margin-top: 20px;
+            display: none;
         }
         &__buttons {
             margin-top: 10px;
