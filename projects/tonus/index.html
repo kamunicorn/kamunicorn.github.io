@@ -8,12 +8,12 @@
 
     <meta property="og:title" content="«Тонус» - хлеб без муки на Камчатке">
     <meta property="og:description" content="Цельнозерновой хлеб без муки из пророщенной пшеницы">
-    <meta property="og:url" content="Ссылка на страницу">
-    <meta property="og:image" content="/img/bread.jpeg">
+    <meta property="og:url" content="kam-tonus.ru">
+    <meta property="og:image" content="img/bread.jpeg">
 
     <meta name="title" content="«Тонус» - хлеб без муки на Камчатке">
     <meta name="description" content="Цельнозерновой хлеб без муки из пророщенной пшеницы">
-    <link rel="image_src" href="/img/bread.jpeg">
+    <link rel="image_src" href="img/bread.jpeg">
 
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
@@ -57,7 +57,7 @@
                 <div class="main__subtitle-line">цельнозерновой хлеб без муки <br>из пророщенной пшеницы </div>
                 на Камчатке с 2018 года
             </h3>
-            <button class="main__button">Где купить</button>
+            <button class="main__button c-button">Где купить</button>
         </div>
     </main>
 
@@ -181,9 +181,26 @@
         <h4 class="section__title share-offer__title">Нравится наш хлебушек?</h4>
         <div class="share-offer__text">Расскажите о нас знакомым!</div>
         <div class="share-offer__buttons">
+            <!-- <div class="pluso" data-background="transparent" data-options="big,round,line,horizontal,counter,theme=01" data-services="vkontakte,odnoklassniki,facebook,moimir" data-url="kam-tonus.ru" data-title="Тонус"></div> -->
             <!-- uSocial -->
-            <div class="uSocial-Share" data-pid="075f1be4d9af624d38b06c582a5cde56" data-type="share" data-options="round,style1,default,absolute,horizontal,size48,counter1,counter-after,nomobile" data-social="vk,fb,ok,mail,spoiler"></div>
-            <!-- /uSocial -->
+            <!-- <div class="uSocial-Share" data-pid="075f1be4d9af624d38b06c582a5cde56" data-type="share" data-options="round,style1,default,absolute,horizontal,size48,counter1,counter-after,nomobile" data-social="vk,fb,ok,mail,spoiler"> -->
+            <!-- uSocial -->
+
+            
+    <script>(function(w,doc) {
+        if (!w.__utlWdgt ) {
+            w.__utlWdgt = true;
+            var d = doc, s = d.createElement('script'), g = 'getElementsByTagName';
+            s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+            s.src = ('https:' == w.location.protocol ? 'https' : 'http')  + '://w.uptolike.com/widgets/v1/uptolike.js';
+            var h=d[g]('body')[0];
+            h.appendChild(s);
+        }})(window,document);
+    </script>
+    <div data-mobile-view="true" data-share-size="30" data-like-text-enable="false" data-background-alpha="0.0" data-pid="1845044" data-mode="share" data-background-color="#ffffff" data-share-shape="round" data-share-counter-size="12" data-icon-color="#ffffff" data-mobile-sn-ids="fb.vk.ok.wh.tm.vb." data-text-color="#000000" data-buttons-color="#FFFFFF" data-counter-background-color="#ffffff" data-share-counter-type="disable" data-orientation="horizontal" data-following-enable="false" data-sn-ids="fb.vk.ok.wh.mr.em." data-preview-mobile="false" data-selection-enable="true" data-exclude-show-more="false" data-share-style="1" data-counter-background-alpha="1.0" data-top-button="false" class="uptolike-buttons" ></div>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cf4d80ca83337fa"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
         </div>
     </section>
 
@@ -252,12 +269,22 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-7 col-md-6 contact__map" id="contact__map-container"></div>
-                <div class="col-lg-5 col-md-6 contact__info">
-                    Мы находимся по адресу:<br>
-                    Камчатский край, с. Сосновка, ул. Центральная, д. 2а<br>
-                    Телефон: <a class="s-text_linked" target="_blank" href="tel:+79004372070">+7 900 437-2070</a><br>
-                    E-mail: <a class="s-text_linked" target="_blank" href="mailto:lorem@gmail.com">lorem@gmail.com</a><br>
-                    Instagram: <a class="s-text_linked" target="_blank" href="https://www.instagram.com/hleb.tonus/">@hleb.tonus</a>
+                <div class="col-lg-5 col-md-6">
+                    <div class="contact__info">
+                        Мы находимся по адресу:<br>
+                        Камчатский край, с. Сосновка, ул. Центральная, д. 2а<br>
+                        Телефон: <a class="s-text_linked" target="_blank" href="tel:+79004372070">+7 900 437-2070</a><br>
+                        E-mail: <a class="s-text_linked" target="_blank" href="mailto:profit-service@rambler.ru">profit-service@rambler.ru</a><br>
+                        Instagram: <a class="s-text_linked" target="_blank" href="https://www.instagram.com/hleb.tonus/">@hleb.tonus</a>
+                    </div>
+                    <form action="mail/mailer.php" class="contact__form" method="POST">
+                        <div class="contact__offer">Вы можете написать нам!</div>
+                        <input type="text" class="contact__form-item" placeholder="Как вас зовут" name="name" required maxlength="50" minlength="3">
+                        <input type="text" class="contact__form-item" placeholder="Тема письма" name="subject" required maxlength="50" minlength="3">
+                        <textarea class="contact__message contact__form-item" name="message" rows="5" placeholder="Текст сообщения" required maxlength="500" minlength="10"></textarea>
+                        <button type="submit" type="submit" class="contact__button c-button contact__form-item">Отправить</button>
+                        <div class="contact__status status"></div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -265,24 +292,26 @@
 
     <footer class="footer">
         <p class="footer__main">© 2018-2019 «Родной хлеб», ИНН: 123456789, ОГРН: 123456789,<br> Юридический адрес: г. Петропавловск-Камчатский, пр. 50 лет Октября, 10,1-42</p>
-        <p class="footer__webmaster">Разработка сайта – <a class="footer__webmaster-link" href="http://kamunicorn.ru">Перелыгина Вера</a></p>
+        <p class="footer__webmaster">Разработка сайта – <a class="footer__webmaster-link" href="http://kamunicorn.ru" target="_blank">Перелыгина Вера</a></p>
     </footer>
 
     <!-- Скрипты -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 
     <!-- slick slider -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- Для кнопок Поделиться -->
-    <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial" charset="utf-8"></script>
-    
+    // <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial" charset="utf-8"></script>
+
     <!-- Вставка карты в секцию контакты -->
     <!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab06bb44b524a0d258788d93de0c8aa620ad63855be66d55439e01bed98a7b09c&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true&amp;id=contact__map-container"></script> -->
     
     <script src="js/script.js"></script>
+    <script src="js/maps.js"></script>
+
 
 </body>
 </html>

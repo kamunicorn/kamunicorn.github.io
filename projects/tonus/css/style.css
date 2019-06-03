@@ -25,6 +25,20 @@ html {
   text-decoration: underline;
 }
 
+.c-button {
+  background-color: #739535;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.c-button:hover {
+  background-color: #82a83c;
+}
+
 .nav {
   background-color: rgba(61, 38, 18, 0.65);
   color: #ffffff;
@@ -150,10 +164,6 @@ html {
   border-radius: 50%;
 }
 
-.nav__share:hover {
-  border-radius: 50%;
-}
-
 .main {
   background: #988574 url("../img/main-bg.jpg") right bottom no-repeat;
   background-size: cover;
@@ -189,24 +199,12 @@ html {
 }
 
 .main__button {
-  background-color: #739535;
-  color: #ffffff;
-  border: none;
-  outline: none;
-  cursor: pointer;
   font-size: 30px;
   padding: 20px 70px;
   margin-top: 53px;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-}
-
-.main__button:hover {
-  background-color: #82a83c;
 }
 
 .about {
-  background-color: #f5ede796;
   font-size: 18px;
   padding-top: 70px;
 }
@@ -268,10 +266,6 @@ html {
   text-align: justify;
 }
 
-.awards {
-  background-color: #f5ede796;
-}
-
 .awards__postscript {
   text-align: center;
 }
@@ -327,6 +321,7 @@ html {
 
 .share-offer {
   background: #9d5724 url("../img/share-bg.jpg") center center no-repeat;
+  background-size: cover;
   color: #ffffff;
 }
 
@@ -350,7 +345,7 @@ html {
 }
 
 .shops__city {
-  background-color: #d0d0d0;
+  background-color: #ddd;
   color: #282828;
   cursor: pointer;
   padding: 15px 10px 15px 35px;
@@ -360,12 +355,12 @@ html {
 }
 
 .shops__city .active, .shops__city:hover {
-  background-color: #b9b9b9;
+  background-color: #c4c4c4;
 }
 
 .shops__city:after {
   content: '\002B';
-  color: #333;
+  color: #0f0f0f;
   font-weight: bold;
   float: left;
   width: 40px;
@@ -399,13 +394,36 @@ html {
   min-height: 400px;
 }
 
-.contact__info {
+.contact__info, .contact__form {
   line-height: 1.7;
   padding: 20px;
 }
 
+.contact__form-item {
+  max-width: 100%;
+  width: 400px;
+  min-width: 280px;
+  display: block;
+  margin: 15px 0 0;
+  padding: 10px 15px;
+}
+
+.contact__offer {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.contact__button {
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
 .footer {
-  background-color: #3c2d1f;
+  background-color: #5c4530;
   text-align: center;
   padding: 40px 40px 46px;
   color: #ffffff;
@@ -508,6 +526,9 @@ html {
   .advantages__item {
     padding: 20px 25px;
   }
+  .share-offer {
+    background-image: url("../img/share-bg-mobile.jpg");
+  }
   .share-offer__text {
     font-size: 20px;
   }
@@ -582,6 +603,12 @@ html {
   .about__foto-item_short {
     display: none;
   }
+  .contact__offer {
+    text-align: center;
+  }
+  .contact__form-item {
+    margin: 15px auto 0;
+  }
 }
 
 @media (max-width: 575px) {
@@ -589,7 +616,7 @@ html {
     font-size: 30px;
   }
   .main {
-    background: #3d2713 url("../img/main-bg-mobile.jpg") center bottom no-repeat;
+    background: #3d2713 url("../img/main-bg-mobile-small.jpg") right bottom no-repeat;
     padding-top: 170px;
   }
   .main__title {
