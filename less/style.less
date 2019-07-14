@@ -12,6 +12,7 @@ html {
 }
 body {
     margin: 0;
+    background-color: @bgLight;
 }
 button {
     outline: none;
@@ -158,25 +159,39 @@ button {
     }
 }
     // Блок портфолио
-.works {
-    background-color: @bgLight;
+.section {
     padding-top: 20px;
     padding-bottom: 20px;
 
-    .works__title {
+    &__title {
         font-size: 22px;
         text-transform: uppercase;
         text-align: center;
         font-weight: 800;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
-    .works__subtitle {
-        font-size: 16px;
-        font-weight: 600;
-        text-align: center;
-        color: darken(@accentLight, 10%);
-        margin-top: 15px;
-        margin-bottom: 10px;
+}
+
+.docs {
+    &__item {
+        width: 100%;
+        padding: 0 8px 15px;
+        a {width: 100%;}
+        img {max-width: 100%;}
+    }
+}
+
+.comments {
+    &__item {
+        width: 100%;
+        padding: 0 8px 15px;
+        max-height: 400px;
+        a {width: 100%;}
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
 
