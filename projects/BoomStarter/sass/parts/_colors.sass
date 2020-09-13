@@ -1,0 +1,31 @@
+@import '../service/service'
+
+@each $color-name, $color-value in $colors
+    .bg-#{$color-name}
+        background-color: $color-value
+        &.ui-button:hover
+            background-color: darken($color-value, 8%)
+
+    
+// градиенты
+.bg-gradient-blue-cyan
+    @include bg-gradient(color(blue), color(cyan))
+
+.bg-gradient-peach-beige
+    @include bg-gradient(color(peach), color(beige))
+
+.bg-gradient-yellow-light-beige
+    @include bg-gradient(color(yellow-light), color(beige))
+
+.bg
+    &-yellow,
+    &-yellow-light,
+    &-peach,
+    &-beige,
+    &-cyan,
+    &-gradient-peach-beige,
+    &-gradient-yellow-light-yellow
+        color: color(black)
+    &-blue,
+    &-gradient-blue-cyan
+        color: color(white)
