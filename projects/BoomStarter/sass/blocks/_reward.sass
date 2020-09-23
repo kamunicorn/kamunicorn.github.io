@@ -9,7 +9,6 @@
         border-radius: $radius-card $radius-card 0 0
         overflow: hidden
         a
-            // display: block
             overflow: hidden
             display: flex
             justify-content: center
@@ -28,9 +27,9 @@
             margin-bottom: 8px
     &__title
         @include font(700, 20px)
-        // @include line-limit(3)
-        a:hover
-            color: color(primary)
+        @media (min-width: 920px)
+            a:hover
+                color: color(primary)
     &__desc
         // @include line-limit(5)
     &__author
@@ -44,13 +43,13 @@
         padding-top: 30px
         &-old
             @include font(300, 14px)
-            color: color(grey)
+            color: color(grey-dark)
             margin-left: 5px
             text-decoration: line-through    
     &__buy
         font-size: 20px
         margin: 23px 0 0
-        text-transform: uppercase
+        text-transform: capitalize
         color: color(primary)
 
 @media (max-width: 575px)
@@ -59,7 +58,6 @@
             font-size: 12px
         &__money
             font-size: 20px
-            // padding-top: 20px
         &__buy
             font-size: 16px
 
