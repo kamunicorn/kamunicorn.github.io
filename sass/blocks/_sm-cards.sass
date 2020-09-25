@@ -1,3 +1,4 @@
+@import '../service/service'
 
 .sm-cards
     display: grid
@@ -9,8 +10,9 @@
         display: grid
         grid-template-columns: 78px auto
         grid-gap: 14px
-        &:hover a
-            color: color(blue)
+        @media (hover: hover)
+            a:hover
+                color: color(primary)
         a::after
             position: absolute
             content: ''
@@ -24,13 +26,13 @@
         object-fit: cover
         border-radius: $radius-banner
     &__info
-        font-size: 16px
+        // font-size: 16px
     &__title
         font-weight: 700
         margin-bottom: 7px
         // для проставления ... если название слишком длинное
         @include line-limit(2)
-    &__title + div
+    &__author
         font-weight: 100
 
 @media (max-width: 1199px)
@@ -38,14 +40,19 @@
         grid-template-columns: 1fr 1fr
         padding-top: 0
 
+@media (max-width: 767px)
+    .sm-cards__title
+        -webkit-line-clamp: 3
 @media (max-width: 575px)
     .sm-cards
         grid-template-columns: 117px
-        grid-gap: 15px
-        padding-top: 0;
-        overflow-x: auto;
-        grid-auto-flow: column;
-        grid-auto-columns: 117px
+        grid-auto-columns: minmax(117px, auto)
+        padding-top: 0
+        overflow-x: auto
+        grid-auto-flow: column
+        // чтобы не обрезалось по краям экрана
+        margin: 0 -14px
+        padding: 0 14px
         img
             width: 116px
             height: 116px
@@ -54,5 +61,5 @@
             grid-gap: 8px
         &__info
             font-size: 12px
-        &__title
-            -webkit-line-clamp: 3
+        
+    
