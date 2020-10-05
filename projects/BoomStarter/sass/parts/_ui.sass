@@ -26,7 +26,8 @@
     
 .ui
     // может быть кнопкой или ссылкой, выглядящей как кнопка
-    &-button
+    &-button,
+    &-input
         display: inline-block
         width: 270px
         min-width: 180px
@@ -45,7 +46,7 @@
             font-size: 14px
         @media (max-width: 479px)
             width: 100%
-        &.has-emoji
+        &.has-image
             display: flex
             justify-content: center
             align-items: center
@@ -55,14 +56,20 @@
             .emoji
                 margin-left: 0.7em
 
-    // модификации кнопки
+    // модификации
     &-button._outlined
-        padding: 9px 13px
         font-weight: 300
         background-color: transparent
         color: color(primary)
         border: 1px solid
-
+    &-input
+        font-weight: 300
+        background-color: transparent
+        color: color(black)
+        border: 1px solid color(primary)
+        &:hover
+            background-color: transparent
+    
     // поле поиска
     &-search
         display: flex
