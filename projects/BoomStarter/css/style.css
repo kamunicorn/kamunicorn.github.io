@@ -2451,7 +2451,7 @@ nav:nth-child(2) {
     width: 275px;
     height: 390px;
     right: auto;
-    top: 32%;
+    top: 34.5%;
     left: 50%;
     -webkit-transform: translatex(-50%);
         -ms-transform: translatex(-50%);
@@ -2496,6 +2496,14 @@ nav:nth-child(2) {
     top: 33%;
     width: 464px;
     height: 710px;
+  }
+}
+
+@media (max-width: 575px) {
+  .spec-hero__infographics,
+  .spec-hero .infographics {
+    width: 100%;
+    padding-left: 0;
   }
 }
 
