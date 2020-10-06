@@ -493,6 +493,24 @@ ul {
   src: local("Museo Sans Cyrl 900 Italic"), local("MuseoSansCyrl-900Italic"), url("../fonts/MuseoSansCyrl-900Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/MuseoSansCyrl-900Italic.woff") format("woff"), url("../fonts/MuseoSansCyrl-900Italic.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Rotonda';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/RotonBold.eot");
+  src: url("../fonts/RotonBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RotonBold.woff") format("woff"), url("../fonts/RotonBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Rotonda';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/RotonReg.eot");
+  src: url("../fonts/RotonReg.eot?#iefix") format("embedded-opentype"), url("../fonts/RotonReg.woff") format("woff"), url("../fonts/RotonReg.ttf") format("truetype");
+}
+
 /* COLORS */
 @-webkit-keyframes rotation {
   0% {
@@ -2414,7 +2432,6 @@ nav:nth-child(2) {
   }
   .spec-hero__author-desc {
     font-size: 12px;
-    width: 105px;
   }
   .spec-hero .ui-button {
     font-size: 13px;
