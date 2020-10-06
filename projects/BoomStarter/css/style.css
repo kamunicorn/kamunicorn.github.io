@@ -2465,7 +2465,7 @@ nav:nth-child(2) {
     margin: 14px 0 16px;
   }
   .spec-hero__button {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
   .spec-hero__name {
     font-size: 31px;
@@ -2500,6 +2500,10 @@ nav:nth-child(2) {
 }
 
 @media (max-width: 575px) {
+  .spec-hero__image {
+    width: 265px;
+    height: 370px;
+  }
   .spec-hero__infographics,
   .spec-hero .infographics {
     width: 100%;
