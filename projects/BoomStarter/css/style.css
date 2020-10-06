@@ -2294,7 +2294,7 @@ nav:nth-child(2) {
   position: absolute;
   top: 45px;
   right: 7px;
-  max-width: 140px;
+  max-width: 130px;
   color: #53565A;
   font-family: "Rotonda", "Roboto", Arial, sans-serif;
   z-index: 8;
@@ -2414,6 +2414,7 @@ nav:nth-child(2) {
   }
   .spec-hero__author-desc {
     font-size: 12px;
+    width: 105px;
   }
   .spec-hero .ui-button {
     font-size: 13px;
