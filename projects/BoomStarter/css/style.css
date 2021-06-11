@@ -3980,12 +3980,9 @@ nav:nth-child(2) {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-left: -2.1875rem;
-  margin-right: -2.1875rem;
-}
-
-.partners__item {
-  margin: 1.875rem 2.1875rem 1.875rem;
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+  grid-gap: 3.75rem;
 }
 
 .partners__item a {
@@ -4009,11 +4006,9 @@ nav:nth-child(2) {
 
 @media (max-width: 575px) {
   .partners {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
-  }
-  .partners__item {
-    margin: 1.5625rem 1.25rem 1.5625rem;
+    padding-top: 1.5625rem;
+    padding-bottom: 1.5625rem;
+    grid-gap: 2.5rem;
   }
   .partners__item img {
     max-height: 3.75rem;
