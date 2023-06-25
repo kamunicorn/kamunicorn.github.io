@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!--[if IE]> 
+<html lang="ru" id="modernizrcom" class="no-js ie">
+<![endif]-->
+<![if !IE]>
+<html lang="ru" id="modernizrcom" class="no-js">
+<![endif]>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Авторизация - Официальный информационный портал Государственной итоговой аттестации выпускников Камчатского
+        края</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link href="/img/favicons/portal-64.png" sizes="64x64" rel="apple-touch-icon">
+    <link href="/img/favicons/portal-48.png" sizes="48x48" rel="apple-touch-icon">
+    <link href="/img/favicons/portal-32.png" sizes="32x32" rel="apple-touch-icon">
+    <link href="/img/favicons/portal.ico" rel="shortcut icon" />
+
+    <meta property="og:site_name"
+        content="Официальный информационный портал Государственной итоговой аттестации выпускников Камчатского края" />
+    <meta property="og:title" content="Авторизация" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="http://www.gia41.ru/" />
+    <style>
+        [bg="footer"] {
+            background-color: #2a4635
+        }
+
+        [bg="primary"] {
+            background-color: #066b2e
+        }
+
+        [bg="secondary"] {
+            background-color: #913f08
+        }
+
+        [bg="primary-light"] {
+            background-color: #13813f
+        }
+
+        [bg="secondary-light"] {
+            background-color: #a35119
+        }
+
+        [bg="white"] {
+            background-color: #ffffff
+        }
+
+        [bg="light"] {
+            background-color: #e6e6e6
+        }
+
+        [bg="gray"] {
+            background-color: #5e5e5e
+        }
+
+        [bg="dark"] {
+            background-color: #333333
+        }
+
+        [bg="black"] {
+            background-color: #000000
+        }
+
+        [bg="page"] {
+            background-color: #ffffff
+        }
+
+        [bg-active="primary"].active {
+            background-color: #066b2e
+        }
+
+        [bg-active="secondary"].active {
+            background-color: #913f08
+        }
+
+        [bg-active="primary-light"].active {
+            background-color: #13813f
+        }
+
+        [bg-active="secondary-light"].active {
+            background-color: #a35119
+        }
+
+        [bg-active="white"].active {
+            background-color: #ffffff
+        }
+
+        [bg-active="light"].active {
+            background-color: #e6e6e6
+        }
+
+        [bg-active="gray"].active {
+            background-color: #5e5e5e
+        }
+
+        [bg-active="dark"].active {
+            background-color: #333333
+        }
+
+        [bg-active="black"].active {
+            background-color: #000000
+        }
+
+        [bg-active="page"].active {
+            background-color: #ffffff
+        }
+
+        [bg-hover="secondary"]:hover {
+            background-color: #066b2e
+        }
+
+        [bg-hover="primary"]:hover {
+            background-color: #913f08
+        }
+
+        [bg-hover="primary-light"]:hover {
+            background-color: #13813f
+        }
+
+        [bg-hover="secondary-light"]:hover {
+            background-color: #a35119
+        }
+
+        [bg-hover="white"]:hover {
+            background-color: #ffffff
+        }
+
+        [bg-hover="light"]:hover {
+            background-color: #e6e6e6
+        }
+
+        [bg-hover="gray"]:hover {
+            background-color: #5e5e5e
+        }
+
+        [bg-hover="dark"]:hover {
+            background-color: #333333
+        }
+
+        [bg-hover="black"]:hover {
+            background-color: #000000
+        }
+
+        [bg-hover="page"]:hover {
+            background-color: #ffffff
+        }
+
+        [font="primary"] {
+            color: #066b2e
+        }
+
+        [font="secondary"] {
+            color: #913f08
+        }
+
+        [font="white"] {
+            color: #ffffff
+        }
+
+        [font="light"] {
+            color: #e6e6e6
+        }
+
+        [font="gray"] {
+            color: #5e5e5e
+        }
+
+        [font="dark"] {
+            color: #333333
+        }
+
+        [font="black"] {
+            color: #000000
+        }
+
+        [font="page"] {
+            color: #ffffff
+        }
+
+        [font="white"].no-invert-font {
+            color: #fff
+        }
+
+        [border="primary"] {
+            border-color: #066b2e
+        }
+
+        [border="secondary"] {
+            border-color: #913f08
+        }
+
+        [border="white"] {
+            border-color: #ffffff
+        }
+
+        [border="light"] {
+            border-color: #e6e6e6
+        }
+
+        [border="gray"] {
+            border-color: #5e5e5e
+        }
+
+        [border="dark"] {
+            border-color: #333333
+        }
+
+        [border="black"] {
+            border-color: #000000
+        }
+
+        [border="page"] {
+            border-color: #ffffff
+        }
+
+        [font-active="primary"].active {
+            color: #066b2e
+        }
+
+        [font-active="secondary"].active {
+            color: #913f08
+        }
+
+        [font-active="white"].active {
+            color: #ffffff
+        }
+
+        [font-active="light"].active {
+            color: #e6e6e6
+        }
+
+        [font-active="gray"].active {
+            color: #5e5e5e
+        }
+
+        [font-active="dark"].active {
+            color: #333333
+        }
+
+        [font-active="black"].active {
+            color: #000000
+        }
+
+        [font-active="white"].active.no-invert-font {
+            color: #fff
+        }
+
+        [font-hover="primary"]:hover {
+            color: #066b2e
+        }
+
+        [font-hover="secondary"]:hover {
+            color: #913f08
+        }
+
+        [font-hover="white"]:hover {
+            color: #ffffff
+        }
+
+        [font-hover="light"]:hover {
+            color: #e6e6e6
+        }
+
+        [font-hover="gray"]:hover {
+            color: #5e5e5e
+        }
+
+        [font-hover="dark"]:hover {
+            color: #333333
+        }
+
+        [font-hover="black"]:hover {
+            color: #000000
+        }
+
+        [font-hover="white"]:hover.no-invert-font {
+            color: #fff
+        }
+
+        [outline="primary"]:focus {
+            outline-color: #066b2e;
+            outline-color: rgba(6, 107, 46, 0.7)
+        }
+
+        [outline="primary"]:-moz-focusring {
+            outline: 0.2rem solid rgba(6, 107, 46, 0.7)
+        }
+
+        [outline="secondary"]:focus {
+            outline-color: #913f08;
+            outline-color: rgba(145, 63, 8, 0.7)
+        }
+
+        [outline="secondary"]:-moz-focusring {
+            outline: 0.2rem solid rgba(145, 63, 8, 0.7)
+        }
+
+        [outline="light"]:focus {
+            outline-color: #e6e6e6;
+            outline-color: rgba(230, 230, 230, 0.7)
+        }
+
+        [outline="light"]:-moz-focusring {
+            outline: 0.2rem solid rgba(230, 230, 230, 0.7)
+        }
+
+        [outline="dark"]:focus {
+            outline-color: #333333;
+            outline-color: rgba(51, 51, 51, 0.7)
+        }
+
+        [outline="dark"]:-moz-focusring {
+            outline: 0.2rem solid rgba(51, 51, 51, 0.7)
+        }
+
+        [outline="gray"]:focus {
+            outline-color: #5e5e5e;
+            outline-color: rgba(94, 94, 94, 0.7)
+        }
+
+        [outline="gray"]:-moz-focusring {
+            outline: 0.2rem solid rgba(94, 94, 94, 0.7)
+        }
+
+        [outline="black"]:focus {
+            outline-color: #000000;
+            outline-color: rgba(0, 0, 0, 0.7)
+        }
+
+        [outline="black"]:-moz-focusring {
+            outline: 0.2rem solid rgba(0, 0, 0, 0.7)
+        }
+
+        [outline="white"]:focus {
+            outline-color: #ffffff;
+            outline-color: rgba(255, 255, 255, 0.7)
+        }
+
+        [outline="white"]:-moz-focusring {
+            outline: 0.2rem solid rgba(255, 255, 255, 0.7)
+        }
+
+        [outline="white"].no-invert-font:focus,
+        [outline="light"].no-invert-font:focus {
+            outline-color: #fff;
+            outline-color: rgba(255, 255, 255, 0.7)
+        }
+
+        [outline="white"].no-invert-font:-moz-focusring,
+        [outline="light"].no-invert-font:-moz-focusring {
+            outline: 0.2rem solid rgba(255, 255, 255, 0.7)
+        }
+
+        [outline] {
+            outline-width: 3px;
+            outline-width: 0.2rem;
+            outline-style: solid;
+            outline-color: transparent;
+            outline-offset: 0
+        }
+
+        [blackout] {
+            opacity: .50;
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50)
+        }
+
+        .tile.small:hover [blackout] {
+            opacity: .35;
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=35)
+        }
+
+        [blackout="primary"] {
+            background-color: #003013
+        }
+
+        [blackout="secondary"] {
+            background-color: #421a00
+        }
+
+        [bg-hover] {
+            -webkit-transition: 0.3s;
+            transition: 0.3s
+        }
+
+        [border] {
+            border-style: solid;
+            border-width: 1px
+        }
+
+        a:active {
+            background-color: rgba(6, 107, 46, 0.2)
+        }
+
+        main a:not(.no-visited):visited {
+            color: #3d591f
+        }
+
+        img.bright-less-in-dark {
+            -webkit-filter: brightness(1.0);
+            filter: brightness(1.0)
+        }
+    </style>
+    <link rel="stylesheet" href="css/template.min.css" />
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="/css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="/js/polyfill/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="/js/polyfill/html5shiv.js"></script> <![endif]-->
+</head>
+
+<body font="black" bg="page">
+
+    <a href="#main" class="sr-only">Перейти к основному содержимому</a>
+    <a href="#navigation" class="sr-only">Перейти к навигации</a>
+
+    <!-- верхний колонтитул страницы -->
+    <div class="container">
+        <header role="banner" class="header row space-beetween">
+            <!-- логотип, ссылка на главную -->
+            <div class="header__logo xs-hidden col-1 col-lg-2 col-md-2">
+                <a class="d-inline-block" title="Перейти на основной сайт" outline="primary"
+                    href="http://arm-73.gia41.ru/main.htm">
+                    <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                </a>
+            </div>
+
+            <!-- название сайта, ссылки -->
+            <div class="col-10 col-xl-11 col-lg-10 col-xs-12">
+                <div class="header__logo_xs hidden xs-visible">
+                    <a class="d-block" title="Перейти на основной сайт" outline="primary" href="site-main">
+                        <img aria-hidden="true" src="/img/logo-gia.svg" alt="Логотип">
+                    </a>
+                </div>
+                <div font="gray" class="header__small-title fz-100 font-heading">Официальный информационный портал</div>
+                <div class="header__title uppercase fz-180 font-heading">государственной итоговой аттестации выпускников
+                    Камчатского&nbsp;края</div>
+
+                <div class="header__links">
+                    <div class="link-wrapper">
+                        <a outline="primary" href="#">
+                            <span font="dark" class="fz-130 icon icon__eye-plus"></span>
+                            <span class="underlined-link">Версия для слабовидящих</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <a class="sr-only" name="navigation"></a>
+
+    <main role="main">
+        <div class="container row">
+            <a class="sr-only" name="main"></a>
+            <form action="login.htm" method="POST">
+
+                <input type="hidden" name="referer" value="" />
+                <input type="hidden" name="back" value="" />
+                <input name="cmd" type="hidden" value="login">
+
+                <fieldset role="group" aria-describedby="participant-group-feedback">
+                    <legend class="sr-only">Форма авторизации</legend>
+
+                    <div class="ui-input__wrapper">
+                        <input class="ui-input" id="login" type="text" name="login" border="primary" outline="primary" bg="white" placeholder=" " required>
+                        <label for="login" class="ui-input__label fz-90" font="gray">Логин</label>
+                    </div>
+
+                    <div class="ui-input__wrapper">
+                        <input class="ui-input" id="password" type="password" name="password" border="primary" outline="primary" bg="white" placeholder=" " required>
+                        <label for="password" class="ui-input__label fz-90" font="gray">Пароль</label>
+                    </div>
+
+                    <label class="ui-checkbox">
+                        <input type="checkbox" name="saveMe">
+                        <div class="ui-checkbox__custom" border="primary" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <span class="ui-checkbox__text">Запомнить меня</span>
+                        <div class="ui-checkbox__outline" border="primary"></div>
+                    </label>
+                </fieldset>
+
+                <button class="ui-submit no-invert-font margin-top" type="submit" outline="primary" bg="primary" bg-hover="primary-light" font="white">Войти</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer no-invert-font" font="white" bg="footer">
+        <div class="container fz-90 text-center">
+            <p><a class="underlined-link" href="http://arm-73.gia41.ru/main.htm">Перейти на основной сайт</a></p>
+            <div class="sr-only">название и адрес организации</div>
+            <p class="footer__ps-text">
+                <span role="text" aria-labelledby="kgau">КГАУ</span>
+                &nbsp;«Камчатский центр информатизации и оценки качества образования»
+                <br>Отдел организационно-технологического обеспечения государственной итоговой аттестации
+            </p>
+            <address aria-hidden="true">683023,&nbsp;г.&nbsp;Петропавловск-Камчатский,
+                ул.&nbsp;Кавказская,&nbsp;д.&nbsp;40</address>
+            <address class="sr-only">Адрес организации: город Петропавловск-Камчатский, улица Кавказская, дом 40, индекс
+                683 023</address>
+        </div>
+    </footer>
+
+</body>
+
+</html>

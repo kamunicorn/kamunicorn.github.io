@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+
+    <!-- IE bugs fix -->
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <title>Подать апелляцию</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- контент -->
+    <div class="container">
+       
+        <!-- основное содержание страницы -->
+        <main id="main" class="content">
+            <h1 class="content__title">Подать апелляцию о несогласии с выставленными баллами</h1>
+            <p><a href="#" outline="primary" class="underlined-link bold" font="primary">
+                Общая информация об апелляциях
+                <span class="icon__look-next" aria-hidden="true"></span>
+            </a></p>
+
+            <!-- блок показывается, когда прошел срок подачи апелляций -->
+            <!-- тогда форма подачи апелляций не показывается -->
+            <div class="info-notice relative" border="secondary">
+                <div class="info-notice__icon bold" border="secondary" bg="white" font="secondary" aria-hidden="true">!</div>
+                <p class="info-notice__text m0 bold fz-120" font="secondary">Подача апелляций на данный момент невозможна, т.к. истек срок подачи апелляций. </p>
+            </div>
+
+            <div class="info-notice relative" border="secondary">
+                <div class="info-notice__icon bold" border="secondary" bg="white" font="secondary" aria-hidden="true">!</div>
+                <p class="info-notice__text m0">Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов <span role="text" aria-labelledby="abbr-gia">ГИА</span>. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в таблице “Даты объявления результатов и подачи апелляций”, то дни приема апелляций также сдвигаются.</p>
+            </div>
+
+            <div class="info-notice relative" border="secondary">
+                <div class="info-notice__icon bold" border="secondary" bg="white" font="secondary" aria-hidden="true">!</div>
+                <p class="info-notice__text m0"><span role="text" aria-labelledby="abbr-ooto-gia">ООТО ГИА</span>, выполняющий функции <span role="text" aria-labelledby="abbr-rcoi">РЦОИ</span> на территории Камчатского края, не несет ответственности за неточности в информации и невозможность предоставления информации отдельным учащимся по техническим причинам.</p>
+            </div>
+            
+            <form action="#" aria-label="подача апелляции">
+
+                <div class="row">
+                    <!-- инпуты с инфо про экзамен, данные участника -->
+                    <div class="col-3 col-xl-4 col-md-5 col-sm-12 col-xs-12">
+                        <!-- группа с данными экзамена - список с предметами и датой проведения -->
+                        <fieldset role="group">
+                            <legend class="padding-top padding-left">Экзамен</legend>
+                            <div class="ui-select invalid" font="primary" bg="white">
+                                <select class="ui-select__control" 
+                                    font="black" border="primary" outline="primary" bg="white"
+                                    name="subject" id="select-subject"
+                                    aria-describedby="select-feedback">
+                                    
+                                    <option bg="white" value="default">-- Выберите предмет --</option>
+                                    <option bg="white" value="lit">Литература   20.03.2020</option>
+                                    <option bg="white" value="rus">Русский язык   23.03.2020</option>
+                                    <option bg="white" value="math">Математика базовая   27.03.2020</option>
+                                    <option bg="white" value="phys">Физика   30.03.2020</option>
+                                    <option bg="white" value="info">Информатика и ИКТ   03.04.2020</option>
+                                    <option bg="white" value="info">История   06.04.2020</option>
+                                </select>
+                                
+                                <label class="ui-select__label fz-90" for="select-subject" font="gray">Предмет и дата</label>
+
+                                <!-- обратная связь для сообщения об ошибках -->
+                                <div class="ui-select__feedback fz-90" id="select-feedback" font="secondary" border="secondary" id="passport-feedback-error" role="alert" aria-live="assertive">По данному предмету подача апелляции невозможна, так как истек срок подачи апелляций.</div>
+
+                                <!-- крутилка загрузочная -->
+                                <div class="ui-spinner__wrapper">
+                                    <div class="ui-spinner__overlay" bg="primary"></div>
+                                    <div class="ui-spinner fz-150">
+                                        <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+
+                                <!-- сюда вставляются сообщения о состоянии загрузки -->
+                                <div class="sr-only" id="loading-notice" role="status" aria-live="polite"></div>
+                            </div>
+                        </fieldset>
+
+                        <!-- группа с данными участника - фамилия, номер паспорта, список мест обучения -->
+                        <fieldset role="group" aria-describedby="participant-group-feedback">
+                            <legend class="padding-top padding-left">Данные участника</legend>
+                            <!-- поле Фамилия -->
+                            <div class="ui-input__wrapper valid">
+                                <input class="ui-input" id="family" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="input-family-feedback">
+                                <label for="family" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                                
+                                <!-- иконки-подсказки -->
+                                <div class="ui-input__hint-icon valid" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <div class="ui-input__hint-icon invalid" font="secondary">
+                                    <span class="icon icon__error"></span>
+                                </div>
+
+                                <!-- обратная связь для сообщения об ошибках -->
+                                <div class="ui-input__feedback fz-90" font="secondary" border="secondary" id="input-family-feedback" role="alert" aria-live="assertive">Неверно введена фамилия</div>
+                            </div>
+                            
+                            <!-- поле Номер документа -->
+                            <div class="ui-input__wrapper invalid">
+                                <input class="ui-input" id="passport-number" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="input-passport-feedback">
+                                <label for="passport-number" class="ui-input__label fz-90" font="gray">Номер документа (без серии)</label>
+                                
+                                <!-- иконки-подсказки -->
+                                <div class="ui-input__hint-icon valid" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <div class="ui-input__hint-icon invalid" font="secondary">
+                                    <span class="icon icon__error"></span>
+                                </div>
+                                
+                                <!-- обратная связь для сообщения об ошибках -->
+                                <div class="ui-input__feedback fz-90" id="input-passport-feedback" font="secondary" border="secondary" id="passport-feedback-error" role="alert" aria-live="assertive">Неверно введен номер паспорта</div>
+                            </div>
+                            
+                            <!-- обратная связь группы полей -->
+                            <div class="ui-form__group-feedback fz-90" font="secondary" border="secondary" id="participant-group-feedback" role="alert" aria-live="assertive">По указанным  фамилии и номеру документа не найден участник экзамена.<br>Проверьте данные участника.</div>    
+                        </fieldset>
+                        
+                        <!-- группа контакты участника - телефон, эл.почта -->
+                        <fieldset role="group">
+                            <legend class="padding-top padding-left">Контакты участника</legend>
+                            <!-- поле Телефон -->
+                            <div class="ui-input__wrapper">
+                                <input class="ui-input" id="phone" type="phone" border="primary" outline="primary" bg="white" placeholder=" " required>
+                                <label for="phone" class="ui-input__label fz-90" font="gray" aria-label="контактный телефон">Телефон</label>
+
+                                <!-- иконки-подсказки -->
+                                <div class="ui-input__hint-icon valid" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <div class="ui-input__hint-icon invalid" font="secondary">
+                                    <span class="icon icon__error"></span>
+                                </div>
+
+                                <!-- обратная связь для сообщения об ошибках -->
+                                <div class="ui-input__feedback fz-90" font="secondary" id="passport-feedback-error" role="alert" aria-live="assertive"></div>
+                            </div>
+                            <!-- поле Email -->
+                            <div class="ui-input__wrapper">
+                                <input class="ui-input" id="email" type="email" border="primary" outline="primary" bg="white" placeholder=" " required>
+                                <label for="email" class="ui-input__label fz-90" font="gray" aria-label="адрес электронной почты" >Email</label>
+
+                                <!-- иконки-подсказки -->
+                                <div class="ui-input__hint-icon valid" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <div class="ui-input__hint-icon invalid" font="secondary">
+                                    <span class="icon icon__error"></span>
+                                </div>
+
+                                <!-- обратная связь для сообщения об ошибках -->
+                                <div class="ui-input__feedback fz-90" font="secondary" id="passport-feedback-error" role="alert" aria-live="assertive"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <!-- радиокнопки Прошу рассмотреть апелляцию -->
+                    <div class="col-4 col-xl-5 col-md-6 col-sm-12 col-xs-12">
+
+                        <!-- группа Прошу рассмотреть апелляцию с радиокнопками - в присутствии и т.п. -->
+                        <fieldset role="radiogroup">
+                            <legend class="padding-top padding-left">Прошу рассмотреть апелляцию:</legend>
+
+                            <label class="ui-radio">
+                                <input id="presence-1" type="radio" name="appeal-type-presence" value="presence-1" required>
+                                <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                <div class="ui-radio__text">только в моём присутствии</div>
+                                <div class="ui-radio__outline" border="primary"></div>
+                            </label>
+                            <label class="ui-radio">
+                                <input id="presence-2" type="radio" name="appeal-type-presence" value="presence-2">
+                                <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                <div class="ui-radio__text">в моем присутствии, с участием лица, представляющего мои интересы</div>
+                                <div class="ui-radio__outline" border="primary"></div>
+                            </label>
+                            <label class="ui-radio">
+                                <input id="presence-3" type="radio" name="appeal-type-presence" value="presence-3">
+                                <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                <div class="ui-radio__text">без моего присутствия, но с присутствием лица, представляющего мои интересы</div>
+                                <div class="ui-radio__outline" border="primary"></div>
+                            </label>
+                            <label class="ui-radio">
+                                <input id="presence-4" type="radio" name="appeal-type-presence" value="presence-4">
+                                <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                <div class="ui-radio__text">без моего присутствия и без присутствия лица, представляющего мои интересы</div>
+                                <div class="ui-radio__outline" border="primary"></div>
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+                
+                <!-- обратная связь формы -->
+                <!-- красный цвет текста для сообщений об ошибках -->
+                <div class="form__feedback fz-90 margin-top" font="secondary" id="form-feedback-error" role="alert" aria-live="assertive"></div>
+                <!-- черный цвет текста для остальных сообщений -->
+                <div class="form__feedback fz-90 margin-top" font="black" id="form-feedback-good" role="alert" aria-live="assertive"></div>
+
+                <!-- кнопка сохраняет тот же размер, что и поля ввода наверху -->
+                <div class="col-3 col-xl-4 col-md-5 col-sm-12 margin-top">
+                    <button class="ui-submit no-invert-font" type="submit" outline="primary" bg="primary" bg-hover="primary-light" font="white">Отправить запрос</button>
+                </div>
+            </form>
+
+        </main>
+    </div>
+
+    <script>
+        let feedback = {
+            'verification': 'Идет проверка данных заявителя...',
+            'wrongData': 'По указанным  фамилии и номеру документа не найден участник экзамена.<br>Проверьте данные участника.',
+            'appealTimeout': 'Подача апелляций на данный момент невозможна, т.к. истек срок подачи апелляций.',
+            'resultOK': 'Аппеляция подана!'
+        };
+
+        let formFeedbackError = document.querySelector('#form-feedback-error'),
+            formFeedbackGood = document.querySelector('#form-feedback-good');
+
+        // setTimeout(function() {
+        //     formFeedbackGood.textContent = feedback.verification;
+        // }, 3000);
+        // setTimeout(function() {
+        //     formFeedbackGood.textContent = feedback.resultOK;
+        // }, 10000);
+
+        // setTimeout(function() {
+        //     formFeedbackGood.textContent = '';
+        // }, 20000);
+
+        // setTimeout(function() {
+        //     formFeedbackError.innerHTML = feedback.appealTimeout;
+        // }, 22000);
+        // setTimeout(function() {
+        //     formFeedbackError.innerHTML = feedback.wrongData;
+        // }, 29000);
+
+        let select = document.querySelector('.ui-select'),
+            selectControl = select.querySelector('.ui-select__control'),
+            selectOptions = selectControl.querySelectorAll('option'),
+            loadingNotice = select.querySelector('#loading-notice');
+        
+        setTimeout(function() {
+            select.classList.add('ajax-loading');
+            selectControl.setAttribute('aria-busy', true);
+            loadingNotice.textContent = 'Идёт загрузка списка предметов';
+        }, 7000);
+
+        setTimeout(function() {
+            select.classList.remove('ajax-loading');
+            // selectOptions[1].selected = true;
+            // selectOptions[0].remove();
+            selectControl.removeAttribute('aria-busy');
+            // selectControl.focus();
+            loadingNotice.textContent = 'Список предметов загружен!';
+        }, 15000);
+
+    </script>
+
+</body>
+</html>

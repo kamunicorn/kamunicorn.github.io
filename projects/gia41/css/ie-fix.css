@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/* IE8 не поддерживает:
+ * :not
+ * :empty
+ * :checked
+ * :last-child
+ * :first-child
+ * :nth-child
+ * и им подобные
+ * transform
+ * appearance (все IE)
+ * box-shadow (IE9 too)
+ * background-size
+ * transition
+
+ * псевдоселекторы after, before работают только с одним : (вместо ::)
+*/
+.container:before, .container:after,
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+
+.container:after,
+.row:after {
+  clear: both;
+}
+
+.row {
+  display: block;
+}
+
+.row > * {
+  display: inline-block;
+  float: left;
+}
+
+.row.no-wrap {
+  display: table;
+}
+
+.row.no-wrap > * {
+  display: table-cell;
+  float: none;
+}
+
+.row.direction-column {
+  display: block;
+}
+
+.row.direction-column > * {
+  display: block;
+  float: none;
+}
+
+.menu-bar .row {
+  display: table;
+  width: 100%;
+}
+
+.menu-bar__item {
+  display: table-cell;
+}
+
+.search-form .row {
+  display: table;
+}
+
+.search-form .row > * {
+  display: inline-block;
+}
+
+.search-form .ui-submit {
+  padding: 1.15em 1.5em !important;
+  float: right;
+}
+
+.slider__row {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.slider__row .slider__item {
+  display: inline-block;
+  margin-right: -0.3em;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.footer .row {
+  display: table;
+  width: 100%;
+}
+
+.footer .row > * {
+  display: table-cell;
+  float: none;
+}
+
+@media (max-width: 767px) {
+  .footer .row {
+    display: block;
+  }
+  .footer .row > * {
+    display: block;
+  }
+}
+
+.ui-close-category .icon__close {
+  top: 0.3em;
+  left: 0.3em;
+  -webkit-transform: none;
+      -ms-transform: none;
+       -o-transform: none;
+          transform: none;
+}
+
+.ui-radio,
+.ui-checkbox {
+  display: table;
+  width: 100%;
+}
+
+.ui-radio > *,
+.ui-checkbox > * {
+  display: table-cell;
+}
+
+.ui-radio__outline,
+.ui-checkbox__outline {
+  display: none;
+}
+
+.ui-radio input:focus,
+.ui-checkbox input:focus {
+  outline: none;
+}
+
+.ui-play {
+  top: 37%;
+  left: 40%;
+  -webkit-transform: none;
+      -ms-transform: none;
+       -o-transform: none;
+          transform: none;
+}
+
+.ui-play:after {
+  top: 20%;
+  left: 40%;
+  line-height: 1;
+  -webkit-transform: none;
+      -ms-transform: none;
+       -o-transform: none;
+          transform: none;
+}
+
+.row.videos-list > *,
+.row.blanks-list > * {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin-right: -0.3em;
+}
+
+.box-shadow {
+  border: 1px solid;
+}
+
+.hidden,
+[hidden] {
+  display: none;
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if IE]> 
+<html lang="ru" id="modernizrcom" class="no-js ie">
+<![endif]-->
+<![if !IE]>
+<html lang="ru" id="modernizrcom" class="no-js">
+<![endif]>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Настройки для слабовидящих - Официальный информационный портал Государственной итоговой аттестации выпускников Камчатского края</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link href="/img/favicons/portal-64.png" sizes="64x64" rel="apple-touch-icon">
+    <link href="/img/favicons/portal-48.png" sizes="48x48" rel="apple-touch-icon">
+    <link href="/img/favicons/portal-32.png" sizes="32x32" rel="apple-touch-icon">
+    <link  href="/img/favicons/portal.ico" rel="shortcut icon"/>
+
+    <meta property="og:site_name" content="Официальный информационный портал Государственной итоговой аттестации выпускников Камчатского края" />
+    <meta property="og:title" content="Настройки для слабовидящих" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:url" content="http://www.gia41.ru/" />
+    <!--meta property="og:image" content="http://www.gia41.ru/img/gia_logo.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="480" />
+    <meta property="og:image:height" content="480" /-->
+
+    <!--link rel="image_src" href="http://www.gia41.ru/img/gia_logo.jpg" /-->
+
+    <!-- Modernizr -->
+    <script>
+    (function(L){
+				document.documentElement.className='js'+L;
+				Modernizr = {};
+				var t = L.trim().split(' ');
+				for (var i = 0; i < t.length; i++) Modernizr[ t[i].replace('no-', '') ] = !t[i].startsWith('no-');
+            })(localStorage['Modernizr'])
+    </script>
+
+    <link rel="stylesheet" href="css/colors-light.min.css"/>
+    <link rel="stylesheet" href="css/template.min.css"/>
+    <link rel="stylesheet" href="css/lw-panel.min.css"/>
+    
+    <script>$=function(a){$.h.push(a)};$.h=[];$$=$</script>
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="/css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="/js/polyfill/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="/js/polyfill/html5shiv.js"></script> <![endif]-->
+
+    <script src="js/vue-2.6.0.min.js"></script>
+</head>
+
+<body font="black" bg="page">
+
+
+    <div class="container" style="max-width: 1200px;">
+        <!-- vue mount -->
+        <div id="low-vision-panel">
+
+            <h1 class="lw__title font-heading fz-180 bold text-center">Настройка сайта для слабовидящих</h1>
+
+            <!-- Цветовая схема -->
+            <section id="color-scheme-selector" class="lw__section row no-wrap" v-if="step == 'coloring'">
+                <div class="ui-stage active" font="gray" font-active="secondary" aria-hidden="true">
+                    <div class="ui-stage__head">
+                        <span class="ui-stage__head-text fz-120">1</span>
+                    </div>
+                    <div class="ui-stage__track"></div>
+                </div>
+                
+                <!-- содержание этапа -->
+                <div class="maximal-width">
+                    <h2 class="font-heading lw__step-title"><span class="sr-only">Шаг 1.</span>Настройка цветовой схемы</h2>
+
+                    <div class="row">
+                        <div class="col-6 col-sm-12">
+                            <div class="lw__ui-caption text-center">Выбор цветовой гаммы</div>
+                            <ui-color-wheel @change="colorChanged($event)" :hue1="color.hue1" :hue2="color.hue2">
+                            </ui-color-wheel>
+                        </div>
+                        
+                        <div class="col-6 col-sm-12">
+                            <div class="lw__ui-caption text-center">Образец страницы</div>
+                            <div class="lw__preview" border="gray">
+                                <iframe width="200%" height="640" disabled :src="previewPage"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Опции -->
+                    <fieldset class="margin-top">
+                        <legend class="lw__ui-caption text-indent">Опции цветовой схемы</legend>
+                        <div class="row">
+                            <label class="ui-checkbox">
+                                <input type="checkbox" v-model="color.light_version" />
+                                <div class="ui-checkbox__custom" border="primary" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <span class="ui-checkbox__text">Светлая версия</span>
+                                <div class="ui-checkbox__outline" border="primary"></div>
+                            </label>
+
+                            <label class="ui-checkbox">
+                                <input type="checkbox" v-model="color.color_background" />
+                                <div class="ui-checkbox__custom" border="primary" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <span class="ui-checkbox__text">Цветной фон</span>
+                                <div class="ui-checkbox__outline" border="primary"></div>
+                            </label>
+
+                            <label class="ui-checkbox">
+                                <input type="checkbox" v-model="color.monochrome" />
+                                <div class="ui-checkbox__custom" border="primary" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <span class="ui-checkbox__text">Черно-белая версия</span>
+                                <div class="ui-checkbox__outline" border="primary"></div>
+                            </label>
+
+                            <label class="ui-checkbox">
+                                <input type="checkbox" v-model="color.high_contrast" />
+                                <div class="ui-checkbox__custom" border="primary" font="primary">
+                                    <span class="icon icon__checkmark"></span>
+                                </div>
+                                <span class="ui-checkbox__text">Высокая контрастность</span>
+                                <div class="ui-checkbox__outline" border="primary"></div>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </section>
+            
+            <!-- Шрифт -->
+            <section id="font-family-selector" class="lw__section row no-wrap" v-if="step == 'font-family'">
+                <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                    <div class="ui-stage__head">
+                        <span class="ui-stage__head-text fz-120">2</span>
+                    </div>
+                    <div class="ui-stage__track"></div>
+                </div>
+
+                <!-- содержание этапа -->
+                <div class="maximal-width">
+                    <h2 class="font-heading lw__step-title"><span class="sr-only">Шаг 2.</span>Выбор шрифта</h2>
+                    <h3 class="lw__ui-caption">Основной шрифт сайта</h3>
+
+                    <div class="ui-select-box">
+                        <select v-model="font.family" @change="changeFont">
+                            <option v-for="font in fonts" v-if="font.visible" v-bind:value="font.family">{{ font.family }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Вес шрифта -->
+                    <fieldset role="radiogroup" v-if="isFontHasSomeWeights()">
+                        <legend class="sr-only">Вес шрифта</legend>
+                        <div class="row" v-bind:style="{ 'font-family': font.family }">
+                            <label class="ui-radio" v-for="weight in fontWeights" v-if="isFontHasWeight(weight.value)"
+                                v-bind:style="{ 'font-weight': weight.value }">
+                                <input type="radio" v-model="font.weight" :value="weight.value">
+                                <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                <div class="ui-radio__text">{{ weight.caption }}</div>
+                                <div class="ui-radio__outline" border="primary"></div>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <h3 class="text-indent bold fz-100">Образец текста</h3>
+
+                    <p aria-hidden="true" v-if="loader.state == 'wait'">{{ loader.status }}</p>
+                    <div class="ajax-loading relative" style="max-width: 25em; height: 5em;" v-if="loader.state == 'wait'">
+                        <div class="ui-spinner__wrapper">
+                            <div class="ui-spinner__overlay" bg="primary"></div>
+                            <div class="ui-spinner fz-150">
+                                <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="sr-only js-loading-notice" role="status" aria-live="polite">{{ loader.status }}</div>
+                    </div>
+
+                    <div class="info-notice relative" border="secondary" v-if="loader.state == 'fail'">
+                        <div class="info-notice__icon bold" border="secondary" bg="page" font="secondary" aria-hidden="true">!
+                        </div>
+                        <p class="info-notice__text m0">{{ loader.status }}</p>
+                    </div>
+
+                    <div v-if="loader.state == 'done'" v-bind:style="getFontStyle">
+                        <p v-html="samples[0]"></p>
+                        <p v-html="samples[1]"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Размер шрифта -->
+            <section id="font-size-selector" class="lw__section row no-wrap" v-if="step == 'font-size'">
+                <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                    <div class="ui-stage__head">
+                        <span class="ui-stage__head-text fz-120">3</span>
+                    </div>
+                    <div class="ui-stage__track"></div>
+                </div>
+
+                <!-- содержание этапа -->
+                <div class="maximal-width">
+                    <h2 class="font-heading lw__step-title"><span class="sr-only">Шаг 3.</span>Размер основного текста</h2>
+
+                    <h3 class="lw__ui-caption" id="range-font-size">Коэффициент увеличения</h3>
+                    <ui-slider :min="0.8" :max="1.5" :value="font.size" :accuracy="1" @change="font.size = $event"
+                        :labelby="'range-font-size'"></ui-slider>
+                    
+                    <h3 class="text-indent bold fz-100">Образец</h3>
+                    <div v-bind:style="getFontStyle">
+                        <p v-html="samples[0]"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- интервалы -->
+            <section id="font-effects-selector" class="lw__section row no-wrap" v-if="step == 'font-effects'">
+                <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                    <div class="ui-stage__head">
+                        <span class="ui-stage__head-text fz-120">4</span>
+                    </div>
+                    <div class="ui-stage__track"></div>
+                </div>
+
+                <!-- содержание этапа -->
+                <div class="maximal-width">
+
+                    <h2 class="font-heading lw__step-title"><span class="sr-only">Шаг 4.</span>Опции типографики</h2>
+
+                    <div class="row">
+                        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                            <h3 class="lw__ui-caption" id="range-line-spacing">Межстрочный интервал</h3>
+                            <ui-slider :min="1" :max="2.5" :value="font.line" :accuracy="1" @change="font.line = $event"
+                                :labelby="'range-line-spacing'"></ui-slider>
+                        </div>
+
+                        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                            <h3 class="lw__ui-caption" id="range-char-spacing">Межбуквенное расстояние</h3>
+                            <ui-slider :min="0" :max="0.6" :value="font.spacing" :accuracy="2" @change="font.spacing = $event"
+                                :labelby="'range-char-spacing'"></ui-slider>
+                        </div>
+                    </div>
+
+                    <h3 class="text-indent bold fz-100">Образец</h3>
+                    <div v-bind:style="getFontStyle">
+                        <p v-html="samples[2]"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- картинки -->
+            <section id="graphics-selector" class="lw__section row no-wrap" v-if="step == 'graphics'">
+                <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                    <div class="ui-stage__head">
+                        <span class="ui-stage__head-text fz-120">5</span>
+                    </div>
+                    <div class="ui-stage__track"></div>
+                </div>
+
+                <!-- содержание этапа -->
+                <div class="maximal-width">
+                    <h2 class="font-heading lw__step-title"><span class="sr-only">Шаг 5.</span>Графика и картинки</h2>
+
+                    <div class="row">
+                        <div class="col-6 col-sm-12">
+                            <fieldset>
+                                <legend class="lw__ui-caption text-indent">Видимость графики</legend>
+                                <label class="ui-checkbox">
+                                    <input type="checkbox" v-model="images.shading">
+                                    <div class="ui-checkbox__custom" border="primary" font="primary">
+                                        <span class="icon icon__checkmark"></span>
+                                    </div>
+                                    <span class="ui-checkbox__text">Приглушить яркость изображений</span>
+                                    <div class="ui-checkbox__outline" border="primary"></div>
+                                </label>
+
+                                <label class="ui-checkbox">
+                                    <input type="checkbox" v-model="images.important">
+                                    <div class="ui-checkbox__custom" border="primary" font="primary">
+                                        <span class="icon icon__checkmark"></span>
+                                    </div>
+                                    <span class="ui-checkbox__text">Оставить только важные изображения</span>
+                                    <div class="ui-checkbox__outline" border="primary"></div>
+                                </label>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-6 col-sm-12">
+                            <div class="lw__ui-caption text-center">Образец страницы</div>
+                            <div class="lw__preview" border="gray">
+                                <iframe width="200%" height="640" disabled :src="previewPage"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- кнопки подтверждения, отмены -->
+            <!-- <div class="row no-wrap margin-top margin-bottom"> -->
+            <section class="lw__section row no-wrap">
+                <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                    <div class="ui-stage__head">
+                        <span class="ui-stage__head-text icon icon__checkmark fz-90"></span>
+                    </div>
+                </div>
+                <div class="lw__submit-buttons row">
+                    <button type="button" class="ui-submit no-invert-font" bg="secondary" bg-hover="secondary-light" outline="secondary" font="white" v-if="isStepFirst" @click="reset()">Сбросить</button>
+
+                    <button type="button" class="ui-submit no-invert-font" bg="primary" bg-hover="primary-light" outline="primary" font="white" v-if="!isStepLast" @click="stepForward()">Продолжить</button>
+
+                    <button type="button" class="ui-submit no-invert-font" bg="primary" bg-hover="primary-light" outline="primary" font="white" v-if="isStepLast" @click="apply()">Готово!</button>
+                </div>
+            </section>
+            <!-- </div> -->
+        </div>
+    <!-- </div> -->
+
+        <!-- vue component templates -->
+        <div class="template" style="display: none;" hidden id="ui-color_wheel-template">
+            <div class="color_wheel" ref="wheel" @mousemove="doDrag" @mouseup="stopDrag">
+                <img src="img/color_wheel.png" />
+                <span class="marker main" ref="main" :style="getTransform(angle1)" @mousedown.prevent="startDrag('hue1')"
+                    @mousemove="doDrag" @mouseup="stopDrag"></span>
+                <span class="marker second" ref="second" :style="getTransform(angle2)"
+                    @mousedown.prevent="startDrag('hue2')" @mousemove="doDrag" @mouseup="stopDrag"></span>
+            </div>
+        </div>
+
+        <div class="template" style="display: none;" hidden id="ui-slider-template">
+            <div class="ui-range">
+                <div class="ui-range__slider" tabindex="0" outline="secondary" role="slider" ref="body"
+                    :aria-labelledby="labelby" :aria-valuemin="min" :aria-valuemax="max"
+                    :aria-valuenow="ceil(val, accuracy)" @mousedown.left.self="setPos" @mousemove="doDrag"
+                    @mouseup="dragging = false" @keydown.left="doLeft" @keydown.right="doRight">
+                    <div class="ui-range__track" bg="primary-light" @mousedown.left.self="setPos"></div>
+                    <div class="ui-range__indicator" bg="secondary-light" ref="btn" :style="{left: getPos() + 'px'}"
+                        @mousedown="startDrag" @mousemove="doDrag" @mouseup="dragging = false"></div>
+                </div>
+
+                <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                    <span class="float-left">{{ min }}</span>
+                    <span class="float-right">{{ max }}</span>
+                </div>
+
+                <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">{{ ceil(val, accuracy) }}</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script>(function(){var b=($$)?$$.h:[];$=jQuery;for(var c in b)b[c]($)})()</script>
+    <script src="js/lw/prefs.js"></script>
+    <script src="js/lw/font-detector.js"></script>
+    <script src="js/lw/vue-ui-slider-component.js"></script>
+    <script src="js/lw/vue-ui-color-wheel-component.js"></script>
+    <script src="js/lw/low-vision-panel.js"></script>
+</body>
+</html>
+    
+</body>
+</html>

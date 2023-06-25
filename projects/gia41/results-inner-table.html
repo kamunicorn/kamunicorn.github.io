@@ -1,0 +1,305 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <title>Посмотреть результаты ЕГЭ и ОГЭ</title>
+</head>
+<body font="black" bg="page">
+    <main role="main">
+        <div class="container">
+            <h1 class="content__title">
+                Посмотреть результаты по 
+                <span role="text" aria-labelledby="abbr-ege-parent">ЕГЭ</span> и <span role="text" aria-labelledby="abbr-oge-parent">ОГЭ</span>
+            </h1>
+            <form aria-label="получение предварительных результатов экзамена"
+                action="http://arm-73.gia41.ru/results.htm" enctype="multipart/form-data" method="POST" name="Results"
+                id="form"> <input type="Hidden" name="blk" value="10419041">
+                <input type="Hidden" name="g" value="search_form">
+                <fieldset role="group" aria-describedby="participant-group-feedback">
+                    <legend class="sr-only">Данные участника</legend>
+                    <!-- поле Фамилия -->
+                    <div class="ui-input__wrapper valid2">
+                        <input class="ui-input" id="surname" name="data(surname)" type="text" border="primary"
+                            outline="primary" bg="page" placeholder=" " required=""
+                            aria-describedby="input-surname-feedback">
+                        <label for="surname" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                        <!-- иконки-подсказки -->
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <span class="icon icon__error"></span>
+                        </div>
+                        <!-- обратная связь для сообщения об ошибках: Неверно введена фамилия -->
+                        <div class="ui-input__feedback fz-90" id="input-surname-feedback" font="secondary"
+                            border="secondary" role="alert" aria-live="assertive"></div>
+                    </div>
+                    <!-- поле Номер документа -->
+                    <div class="ui-input__wrapper invalid2">
+                        <input class="ui-input" id="passport" name="data(passport)" type="text" border="primary"
+                            outline="primary" bg="page" placeholder=" " required=""
+                            aria-describedby="input-passport-feedback">
+                        <label for="passport" class="ui-input__label fz-90" font="gray">Номер документа (без
+                            серии)</label>
+                        <!-- иконки-подсказки -->
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <span class="icon icon__error"></span>
+                        </div>
+                        <!-- обратная связь для сообщения об ошибках: Неверно введен номер паспорта -->
+                        <div class="ui-input__feedback fz-90" id="input-passport-feedback" font="secondary"
+                            border="secondary" role="alert" aria-live="assertive"></div>
+                    </div>
+                    <!-- обратная связь группы полей: По указанным  фамилии и номеру документа не найден участник экзамена.<br>Проверьте данные участника. -->
+                    <div class="ui-form__group-feedback fz-90" id="participant-group-feedback" font="secondary"
+                        border="secondary" role="alert" aria-live="assertive" style="display: none;"></div>
+                </fieldset> <button class="ui-submit no-invert-font margin-top margin-bottom relative" type="submit"
+                    outline="primary" bg="primary" bg-hover="primary-light" font="white">
+                    Получить результаты
+                    <!-- крутилка загрузочная -->
+                    <div class="ui-spinner__wrapper">
+                        <div class="ui-spinner__overlay" bg="white"></div>
+                        <div class="ui-spinner fz-150">
+                            <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <!-- сюда вставляются сообщения о состоянии загрузки -->
+                    <div class="sr-only" id="loading-notice" role="status" aria-live="polite"></div>
+                </button>
+            </form>
+            <div class="table__wrapper table margin-top">
+                <div class="overflow-horizontal" id="results_data">
+                    <table>
+                        <caption class="margin-top margin-bottom text-left fz-100">
+                            По введенным параметрам найдены следующие результаты экзаменов:
+                        </caption>
+                        <thead bg="dark" font="white">
+                            <tr>
+                                <th scope="col">Предмет</th>
+                                <th scope="col">Дата экзамена</th>
+                                <th scope="col">Тип экзамена</th>
+                                <th scope="col">Первичный балл</th>
+                                <th scope="col">Тестовый балл</th>
+                                <th scope="col">Данные обработки</th>
+                                <th scope="col">Апелляция</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr border="gray">
+                                <th scope="row">Тестовый 1</th>
+                                <td>22.02.2020</td>
+                                <td>ГВЭ-9</td>
+                                <td>26</td>
+                                <td>3</td>
+                                <td>
+                                    <button href="#" title="Посмотреть результат обработки по этому экзамену"
+                                        font="dark" outline="secondary" class="ui-disclosure js-show-advanced"
+                                        data-target="#exam-13622">
+                                        показать
+                                    </button>
+                                </td>
+                                <td>
+                                    <a href="http://arm-73.gia41.ru/appeals.htm?exam=13622@giaTestsResults#form"
+                                        title="Подать апелляцию" outline="secondary" font="secondary"
+                                        class="no-visited ui-icon-link" target="_blank">
+                                        <span class="icon icon__edit fz-150" font="secondary"></span>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            <tr id="exam-13622" role="presentation">
+                                <td colspan="7" class="p0">
+                                    <!-- Для предмета иностранные языки -->
+                                    <dl class="bold" role="list">
+                                        <div class="row margin" role="listitem">
+                                            <dt class="margin-right" font="dark">Первичный балл письменной части: </dt>
+                                            <dd class="text-left padding-left fz-110 col-xs-12" font="secondary">13</dd>
+                                            <span class="sr-only">.</span>
+                                        </div>
+
+                                        <div class="row margin" role="listitem">
+                                            <dt class="margin-right" font="dark">Первичный балл устной части: </dt>
+                                            <dd class="text-left padding-left fz-110 col-xs-12" font="secondary">61</dd>
+                                            <span class="sr-only">.</span>
+                                        </div>
+                                    </dl>
+
+                                    <table class="table-bordered" bg="light" border="gray" aria-hidden="true" style="width: 100%;">
+                                        <caption class="bold padding-top padding-bottom" font="dark">
+                                            Результаты обработки заданий с краткими ответами
+                                        </caption>
+                                        <thead>
+                                            <tr font="primary">
+                                                <th class="bold padding-right text-right" scope="row" bg="light" font="dark">№ задания</th>
+                                                <th scope="col">1</th>
+                                                <th scope="col">2</th>
+                                                <th scope="col">3</th>
+                                                <th scope="col">4</th>
+                                                <th scope="col">5</th>
+                                                <th scope="col">6</th>
+                                                <th scope="col">7</th>
+                                                <th scope="col">8</th>
+                                                <th scope="col">9</th>
+                                                <th scope="col">10</th>
+                                                <th scope="col">11</th>
+                                                <th scope="col">12</th>
+                                                <th scope="col">13</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="fz-130">
+                                                <th class="bold padding-right text-right" scope="row" bg="light" font="dark"></th>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>+</td>
+                                                <td>-</td>
+                                                <td>+</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>+</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- скрытая таблица для скринридеров -->
+                                    <div class="sr-only">
+                                        <table>
+                                            <caption>Результаты обработки заданий с краткими ответами (по предмету Тестовый 1)</caption>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Задание 1 не сдано.</td>
+                                                    <td>Задание 2 не сдано.</td>
+                                                    <td>Задание 3 не сдано.</td>
+                                                    <td>Задание 4 выполнено.</td>
+                                                    <td>Задание 5 не сдано.</td>
+                                                    <td>Задание 6 выполнено.</td>
+                                                    <td>Задание 7 не сдано.</td>
+                                                    <td>Задание 8 не сдано.</td>
+                                                    <td>Задание 9 не сдано.</td>
+                                                    <td>Задание 10: не сдано.</td>
+                                                    <td>Задание 11: выполнено.</td>
+                                                    <td>Задание 12: не сдано.</td>
+                                                    <td>Задание 13: не сдано.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <table class="table-bordered" bg="light" border="gray" aria-hidden="true" style="width: 100%;">
+                                        <caption class="bold padding-top padding-bottom" font="dark">
+                                            Результаты обработки заданий с развернутыми ответами
+                                        </caption>
+                                        <thead>
+                                            <tr font="primary">
+                                                <th class="bold padding-right text-right" scope="row" bg="light" font="dark">№ задания</th>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>4</td>
+                                                <td>5</td>
+                                                <td>6</td>
+                                                <td>7</td>
+                                                <td>8</td>
+                                                <td>9</td>
+                                                <td>10</td>
+                                                <td>11</td>
+                                                <td>12</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th class="bold text-right padding-right" scope="row" bg="light" font="dark">набр. балл</th>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="bold text-right padding-right" scope="row" bg="light" font="dark">макс. балл</th>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- скрытая таблица для скринридеров -->
+                                    <div class="sr-only">
+                                        <table>
+                                            <caption>Результаты обработки заданий с развернутыми ответами (по предмету Тестовый 1)</caption>
+                                            <tbody>
+                                                <tr>
+                                                    <td>По заданию 1 набрано 1 баллов из 2.</td>
+                                                    <td>По заданию 2 набрано 1 баллов из 3.</td>
+                                                    <td>По заданию 3 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 4 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 5 набрано 0 баллов из 3.</td>
+                                                    <td>По заданию 6 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 7 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 8 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 9 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 10 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 11 набрано 0 баллов из 2.</td>
+                                                    <td>По заданию 12 набрано 2 баллов из 2.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="margin-bottom"></div>
+                                </td>
+                            </tr>
+                            <tr border="gray">
+                                <th scope="row">Тестовый 2</th>
+                                <td>20.02.2020</td>
+                                <td>ГВЭ-9</td>
+                                <td>26</td>
+                                <td>2</td>
+                                <td>
+                                    <button href="#" title="Посмотреть результат обработки по этому экзамену"
+                                        font="dark" outline="secondary" class="ui-disclosure js-show-advanced"
+                                        data-target="#exam-13623">
+                                        показать
+                                    </button>
+                                </td>
+                                <td>
+                                    <a href="http://arm-73.gia41.ru/appeals/sent.htm?id=10419029@giaAppealPetition&amp;g=appeal"
+                                        title="Открыть поданную апелляцию" outline="primary" font="primary"
+                                        class="no-visited ui-icon-link" target="_blank">
+                                        <span class="icon icon__look fz-150"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

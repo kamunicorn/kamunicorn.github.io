@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <title>Посмотреть результаты ЕГЭ и ОГЭ</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- контент -->
+    <div class="container">
+        
+        <!-- основное содержание страницы -->
+        <main id="main" class="content">
+            <h1 class="content__title">Посмотреть результаты по <span role="text" aria-labeledby="abbr-ege">ЕГЭ</span> и <span role="text" aria-labelledby="abbr-oge">ОГЭ</span></h1>
+            <p><a href="#" outline="primary" class="underlined-link bold" font="primary">Общая информация о получении предварительных результатов 
+                <span role="text" aria-labelledby="abbr-gia">ГИА</span> 
+                <span class="icon__look-next" aria-hidden="true"></span>
+            </a></p>
+
+            <p>На данной странице Вы можете ознакомиться с предварительными результатами <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span> и <span role="text" aria-labelledby="abbr-oge">ОГЭ</span>.</p>
+
+            <p>Также с результатами <span role="text" aria-label="экзаменов">ЕГЭ и ОГЭ</span> вы можете ознакомиться на сайте <a outline="primary" href="//check.ege.ru" class="underlined-link" font="primary">check.ege.ru</a>, <a outline="primary" href="//gosuslugi.ru" class="underlined-link" font="primary">gosuslugi.ru</a>, <a outline="primary" href="//gosuslugi41.ru" class="underlined-link" font="primary">gosuslugi41.ru</a>.</p>
+            
+            <form action="" aria-label="получение результатов экзамена">
+                <fieldset role="group" aria-describedby="participant-group-feedback">
+                    <legend class="sr-only">Данные участника</legend>
+                    <!-- поле Фамилия -->
+                    <div class="ui-input__wrapper valid">
+                        <input class="ui-input" id="family" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="input-family-feedback">
+                        <label for="family" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                        
+                        <!-- иконки-подсказки -->
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <span class="icon icon__error"></span>
+                        </div>
+
+                        <!-- обратная связь для сообщения об ошибках -->
+                        <div class="ui-input__feedback fz-90" font="secondary" border="secondary" id="input-family-feedback" role="alert" aria-live="assertive">Неверно введена фамилия</div>
+                    </div>
+                    
+                    <!-- поле Номер документа -->
+                    <div class="ui-input__wrapper invalid">
+                        <input class="ui-input" id="passport-number" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="input-passport-feedback">
+                        <label for="passport-number" class="ui-input__label fz-90" font="gray">Номер документа (без серии)</label>
+                        
+                        <!-- иконки-подсказки -->
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <span class="icon icon__error"></span>
+                        </div>
+                        
+                        <!-- обратная связь для сообщения об ошибках -->
+                        <div class="ui-input__feedback fz-90" id="input-passport-feedback" font="secondary" border="secondary" id="passport-feedback-error" role="alert" aria-live="assertive">Неверно введен номер паспорта</div>
+                    </div>
+
+                    <!-- обратная связь группы полей -->
+                    <div class="ui-form__group-feedback fz-90" font="secondary" border="secondary" id="participant-group-feedback" role="alert" aria-live="assertive">По указанным  фамилии и номеру документа не найден участник экзамена.<br>Проверьте данные участника.</div>
+                </fieldset>
+
+                <button class="ui-submit no-invert-font margin-top margin-bottom relative" type="submit" outline="primary" bg="primary" bg-hover="primary-light" font="white">
+                    Получить результаты
+
+                    <!-- крутилка загрузочная -->
+                    <div class="ui-spinner__wrapper">
+                        <div class="ui-spinner__overlay" bg="white"></div>
+                        <div class="ui-spinner fz-150">
+                            <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- сюда вставляются сообщения о состоянии загрузки -->
+                    <div class="sr-only" id="loading-notice" role="status" aria-live="polite"></div>
+                </button>
+            </form>
+            
+            <div class="table__wrapper table margin-top">
+                <div class="overflow-horizontal">
+                    <table class="text-center">
+                        <caption class="margin-top margin-bottom text-left fz-100">
+                            Ваши результаты <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span>
+                        </caption>
+
+                        <thead bg="dark" font="white">
+                            <tr>
+                                <th scope="col">Предмет</th>
+                                <th scope="col">Дата экзамена</th>
+                                <th scope="col">Первичный балл</th>
+                                <th scope="col">Тестовый балл</th>
+                                <th scope="col">Статус экзамена</th>
+                                <th scope="col">Апелляция</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr border="gray">
+                                <th scope="row">Математика</th>
+                                <td>01.10.2019</td>
+                                <td>20</td>
+                                <td>32</td>
+                                <td>Зачет</td>
+                                <td>
+                                    Нет
+                                    <a href="#" title="Подать апелляцию" font="secondary" outline="secondary" font="gray" class="no-visited ui-icon-link">
+                                        <span class="icon icon__edit fz-150"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr border="gray">
+                                <th scope="row">Русский язык</th>
+                                <td>02.10.2019</td>
+                                <td>7</td>
+                                <td>20</td>
+                                <td>Экзамен обработан</td>
+                                <td>
+                                    Нет
+                                    <a href="#" title="Подать апелляцию" font="secondary" outline="secondary" font="gray" class="no-visited ui-icon-link">
+                                        <span class="icon icon__edit fz-150"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr border="gray">
+                                <th scope="row">Химия</th>
+                                <td>05.10.2019</td>
+                                <td>18</td>
+                                <td>45</td>
+                                <td>Незачет</td>
+                                <td>Была подана</td>
+                            </tr>
+                            <tr border="gray">
+                                <th scope="row">Информатика и ИКТ</th>
+                                <td>07.10.2019</td>
+                                <td>19</td>
+                                <td>55</td>
+                                <td>Зачет</td>
+                                <td>
+                                    Нет
+                                    <a href="#" title="Подать апелляцию" font="secondary" outline="secondary" font="gray" class="no-visited ui-icon-link">
+                                        <span class="icon icon__edit fz-150"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let feedback = {
+            'verification': 'Идет проверка данных участника...',
+            'loading': 'Идет загрузка результатов...',
+            'wrongData': 'Не найдены результаты экзаменов для участника с указанными фамилией и номером документа.<br>Проверьте введенные данные.',
+            'resultOK': 'Данные получены!'
+        };
+
+        let formFeedbackError = document.querySelector('#form-feedback-error'),
+            formFeedbackGood = document.querySelector('#form-feedback-good');
+    </script>
+
+</body>
+</html>

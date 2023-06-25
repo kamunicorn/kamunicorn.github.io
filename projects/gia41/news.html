@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <title>Архив новостей</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- верхний колонтитул страницы -->
+    <div class="container">
+        <header role="banner" class="header row space-beetween">
+            <!-- логотип, ссылка на главную -->
+            <div class="header__logo xs-hidden col-1 col-lg-2 col-md-2">
+                <a class="d-inline-block" title="На главную" outline="primary" href="/">
+                    <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                </a>
+            </div>
+
+            <!-- название сайта, ссылки -->
+            <div class="col-10 col-xl-11 col-lg-10 col-xs-12">
+                <div class="row space-between">    
+                    <div class="col-8 col-lg-12">
+                        <div class="header__logo_xs hidden xs-visible">
+                            <a class="d-block" title="На главную" outline="primary" href="/">
+                                <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                            </a>
+                        </div>
+                        <div font="gray" class="header__small-title fz-100 font-heading">Официальный информационный портал</div>
+                        <div class="header__title uppercase fz-180 font-heading">государственной итоговой аттестации выпускников Камчатского&nbsp;края</div>
+                    </div>
+
+                    <div class="col-4 col-lg-12 header__links">
+                        <div class="link-wrapper">
+                            <a outline="primary" href="#">
+                                <span font="dark" class="fz-130 icon icon__eye-plus"></span>
+                                <span class="underlined-link">Версия для слабовидящих</span>
+                            </a>
+                        </div>
+                        <div class="link-wrapper">
+                            <a outline="primary" href="#hot-line">
+                                <span font="dark" class="fz-130 icon icon__phone-call"></span>
+                                <span class="underlined-link">Горячая линия по вопросам <span role="text" aria-labelledby="abbr-gia">ГИА</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- навигационное меню -->
+    <nav class="menu-bar fz-110 no-invert-font" id="navigation" aria-label="главное меню сайта" bg="primary" font="white">
+        <div class="container p0">
+            <ul class="menu-bar__list d-flex no-wrap space-between">
+                <!-- ГИА-11 -->
+                <li class="menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" role="menuitem" aria-haspopup="true" tabindex="0">
+                        <span role="text" aria-labelledby="abbr-gia-11">
+                            ГИА-11 <span class="lg-hidden"> (ЕГЭ, ГВЭ-11)</span>
+                        </span>
+                    </div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Расписание</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Даты объявления результатов и подачи апелляций</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Посмотреть результаты <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Подать апелляцию по <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Информация</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- ГИА-9 -->
+                <li class="menu-bar__item active" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" role="menuitem" aria-haspopup="true" tabindex="0" aria-current="location">
+                        <span role="text" aria-labelledby="abbr-gia-9">
+                            ГИА-9<span class="lg-hidden"> (ОГЭ, ГВЭ-9)</span>
+                        </span>
+                    </div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Расписание</a>
+                        </li>
+                        <li class="dropdown__item active" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" aria-current="page">
+                            <a href="#" outline="secondary">Даты объявления результатов и подачи апелляций</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Посмотреть результаты <span role="text" aria-labelledby="abbr-ege">ОГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Подать апелляцию по <span role="text" aria-labelledby="abbr-oge">ОГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Информация</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Результаты -->
+                <li class="xs-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light" role="menuitem">
+                    <a class="menu-bar__head" outline="secondary" href="#">Результаты</a>
+                </li>
+                <!-- Апелляции -->
+                <li class="xs-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light" role="menuitem">
+                    <a class="menu-bar__head" outline="secondary" href="#">Апелляции</a>
+                </li>
+                <!-- Документы -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <a class="menu-bar__head" outline="secondary" href="#" aria-haspopup="true">Документы</a>
+                    <ul class="dropdown" bg="primary" role="presentation">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gia-9">ГИА-9</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gia-11">ГИА-11</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gis">ГИС</span> «Экзамен»</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Методики -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" aria-haspopup="true" tabindex="0">Методики</div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Итоговое сочинение (изложение)</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Инструкции <span role="text" aria-labelledby="abbr-gia">ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Презентации, видеоматериалы</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary"><span role="text" aria-labelledby="abbr-gia">ГИА</span> по иностранным языкам</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Обучение лиц, задействованных при проведении <span role="text" aria-labelledby="abbr-gia">ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Общественным наблюдателям <span role="text" aria-labelledby="abbr-ppe">ППЭ</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Контакты -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" aria-haspopup="true" tabindex="0">Контакты</div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Об <span role="text" aria-labelledby="abbr-ooto-gia">ООТО ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Контакты управлений образования</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Горячие линии</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Полезные ссылки</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!-- Поиск -->
+                <li class="menu-bar__item" bg-hover="secondary-light">
+                    <button class="menu-bar__head" id="open-search-form" outline="secondary" aria-label="Открыть поиск">
+                        <span class="icon icon__search"></span>
+                    </button>
+                </li>
+                <!-- меню-гамбургер - кнопка открытия -->
+                <li class="menu-bar__item sm-visible hidden" id="open-menu-ham" bg-hover="secondary-light">
+                    <button class="menu-bar__head" outline="secondary" aria-label="Открыть всё меню">
+                        <span class="icon icon__ham"></span>
+                    </button>
+                </li>
+            </ul>
+            <!-- .menu-bar__list -->
+        </div>
+    </nav>
+    
+    <!-- хлебные крошки -->
+    <div class="container">
+        <ul aria-label="вы находитесь здесь" role="navigation" class="breadcrumbs row fz-90">
+            <li class="breadcrumbs__item">
+                <a outline="primary" class="underlined-link" href="/">
+                    Главная
+                </a>
+            </li>
+            <li class="breadcrumbs__separator" role="separator"></li>
+            <li class="breadcrumbs__item" aria-current="page">
+                Новости
+            </li>
+        </ul>
+    </div>
+
+    <!-- контент -->
+    <div class="container row">
+
+        <!-- боковое меню aside -->
+        <div class="col-4 col-xl-4 md-hidden">
+            <aside border="gray" class="aside" role="complementary">
+                <div class="sr-only" role="heading">Фильтр новостей</div>
+
+                <div class="docs-filter sticky">
+                    <div class="docs-filter__caption" aria-hidden="true">Категория</div>
+                    <ul aria-label="отфильтровать новости по категории" class="docs-filter__list">
+                        <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                            <button outline="primary" class="to-underline">ГИА-9</button>
+                        </li>
+                        <li class="docs-filter__item" font-active="primary">
+                            <button outline="primary" class="to-underline">ГИА-11</button>
+                        </li>
+                        <li class="docs-filter__item" font-active="primary">
+                            <button outline="primary" class="to-underline">Обновления на сайте</button>
+                        </li>
+                    </ul>
+
+                    <!-- <div class="docs-filter__caption" aria-hidden="true">Административное деление</div>
+                    <ul aria-label="отфильтровать новости по административному делению" class="docs-filter__list">
+                        <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                            <button outline="primary" class="to-underline" >Краевые</button>
+                        </li>
+                        <li class="docs-filter__item" font-active="primary">
+                            <button outline="primary" class="to-underline">Федеральные</button>
+                        </li>
+                    </ul> -->
+                </div>
+            </aside>
+        </div>
+
+        <!-- main - основное содержание страницы -->
+        <div class="col-8 col-xl-8 col-md-12">
+            <main id="main" class="content">
+                <h1 class="fz-190 content__title">Новости</h1>
+    
+                <!-- фильтр -->
+                <div class="md-visible hidden relative">
+                    <button class="ui-filter" id="docs-filter-button" title="Открыть фильтр новостей" border="dark" font="dark" outline="gray" aria-label="Открыть фильтр документов">
+                        <span class="icon icon__filter fz-100"></span>
+                        <span aria-hidden="true">Фильтр</span>
+                    </button>
+
+                    <!-- выпадающее окно -->
+                    <div class="docs-filter box-shadow" id="docs-filter-dropdown" tabindex="-1" outline="gray" bg="white" font="gray" role="dialog">
+                        <div class="docs-filter__caption" aria-hidden="true">Категория</div>
+                        <ul aria-label="отфильтровать новсти по категориям" class="docs-filter__list">
+                            <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                                <button outline="primary" class="to-underline">ГИА-9</button>
+                            </li>
+                            <li class="docs-filter__item" font-active="primary">
+                                <button outline="primary" class="to-underline">ГИА-11</button>
+                            </li>
+                            <li class="docs-filter__item" font-active="primary">
+                                <button outline="primary" class="to-underline">Обновления на сайте</button>
+                            </li>
+                        </ul>
+
+                        <!-- <div class="docs-filter__caption" aria-hidden="true">Административное деление</div>
+                        <ul aria-label="отфильтровать новсти по административному делению" class="docs-filter__list">
+                            <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                                <button outline="primary" class="to-underline" >Краевые</button>
+                            </li>
+                            <li class="docs-filter__item" font-active="primary">
+                                <button outline="primary" class="to-underline">Федеральные</button>
+                            </li>
+                        </ul> -->
+
+                        <button id="close-filter" class="ui-close" aria-label="закрыть фильтр новостей" outline="primary" title="Закрыть фильтр документов">
+                            <span class="icon icon__close" font="dark"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- выбранные категории -->
+                <div class="docs-selected">
+                    <div font="gray" class="docs-selected__caption">
+                        <span class="sr-only">Выбраны категории</span>
+                        <span aria-hidden="true">Выбрано:</span>
+                    </div>
+
+                    <div font="primary" id="docs-selected-filter" class="docs-selected__value">
+                        <div id="selected-filter-2" class="docs-selected__filter">
+                            <span id="category-name-2">ГИА-9</span>
+                            <button class="ui-close-category" outline="secondary" bg="light" title="Убрать категорию из выбранных" aria-describedby="category-name-2">
+                                <span class="icon icon__close" font="dark"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- количество отфильтрованных новостей -->
+                <!-- <div class="docs-selected" aria-live="assertive" aria-atomic="true">
+                    <div font="gray" class="docs-selected__caption">
+                        <span class="sr-only">Отфильтровано новостей</span>
+                        <span aria-hidden="true">Новостей:</span>
+                    </div>
+                    <div font="primary" id="docs-selected-count" class="docs-selected__value">23</div>
+                </div> -->
+
+                <!-- Список новостей -->
+                <!-- NVDA нормально озвучивает дату в формате 01.01.2019 -->
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-1">Результаты ОГЭ по "Русскому языку" за 03.09.2019</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-1">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>В разделе "Апелляции, результаты" опубликованы результаты ОГЭ по "Русскому языку", состоявшемуся 03.09.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования. Официальный день объявления результатов - 06.09.2019. Прием апелляций осуществляется – 09.09.2019 и 10.09.2019.</p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-2">Информация об апелляциях и результатах экзаменов</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-2">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.03.2020
+                        </div>
+                    </div>
+                    <p>На вкладке "Информация - Документы - Министерство образования Камчатского края" можно ознакомиться с приказами "Об утвержении инструкций для проведения государственной итоговой аттестации по образовательным программам основного общего образования в Камчатском крае в 2020 году" и "Об утвержении инструкций по организации работы конфликтной и предметных комиссий Камчатского края при проведении государственной итоговой аттестации по образовательным программам основного общего образования и среднего общего образования в 2020 году".</p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-3">Информация об апелляциях и результатах экзаменов</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-3">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>На вкладке "Апелляции, результаты - Общая информация об апелляциях" размещена Информация о сроках, местах и порядке подачи и рассмотрения апелляций при проведении государственной итоговой аттестации по образовательным программам среднего общего образования в 2020 году, а также Информация о сроках, местах и порядке информирования о результатах экзаменов при проведении государственной итоговой аттестации по образовательным программам среднего общего образования в 2020 году.
+                    </p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-4">Места подачи заявлений и регистрации на ГИА-11</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-4">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>В разделе "ГИА-11 (ЕГЭ,ГВЭ) → Регистрация на ГИА-11" опубликована информация о местах подачи заявлений на ГИА-11 и местах регистрации на ЕГЭ в 2020 году.</p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-5">Итоговое сочинение (изложение)</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-5">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>В разделе "ГИА-11 (ЕГЭ, ГВЭ)" (подраздел "Итоговое сочинение (изложение)" обновлена информация о сроках проведения итогового сочинения (изложения), местах и сроках регистрации на итоговое сочинение (изложение) в 2019/20 учебном году.</p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-6">Диагностические работы иностранный язык для учащихся 7 классов</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-6">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>На технологической странице в разделе "Исследование качества знаний по английскому языку учащихся 7-х классов" размещены защищённые архивы с КИМ для проведения мониторингового исследования качества знаний по английскому языку учащихся 7-х классов общеобразовательных организаций Камчатского края, а также сопроводительные документы. Дата проведения - 22 октября 2019 года. Пароль к архивам будет предоставлен 22.10.2019 г. в 8:00.</p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-1">Рособрнадзор подготовил новые видеоролики и плакаты о процедурах ГИА</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-1">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>Федеральная служба по надзору в сфере образования и науки подготовила новые анимированные видеоролики и плакаты, рассказывающие о государственной итоговой аттестации.</p>
+                    <p>С их помощью выпускники смогут узнать об особенностях ЕГЭ по математике и иностранному языку, собеседовании по русскому языку в 9 классе, как зарегистрироваться на ЕГЭ и пересдать экзамены, правилах и процедуре ЕГЭ, заполнении бланков. Два видеоролика содержат советы для выпускников и их родителей, как лучше организовать подготовку к экзаменам.</p>
+                    <p>«Рособрнадзор традиционно уделяет большое внимание разъяснению правил и особенностей экзаменационных процедур выпускникам и их родителям. Ежегодно мы обновляем и дополняем наши разъяснительные материалы, снимаем видеоконсультации по подготовке к ЕГЭ с участием разработчиков экзаменационных заданий. Надеемся, что они будут полезны и помогут будущим выпускникам лучше сориентироваться в том, что их ждет на экзаменах», - рассказал руководитель Рособрнадзора Сергей Кравцов.</p>
+                    <p>Новые видеоролики опубликованы на Youtube-канале Рособрнадзора, плакаты – на сайте ведомства в разделе «Информационные материалы».</p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-1">О сроках, местах и порядке информирования о результатах экзаменов при проведении государственной итоговой аттестации по образовательным программам основного общего образования (ГИА-9)</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-1">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>Ознакомление обучающихся (участников ГИА-9) и их родителей (законных представителей) с результатами экзаменов осуществляется в течение одного рабочего дня после их утверждения государственной экзаменационной комиссией. Указанный день считается официальным днем объявления результатов ГИА-9.</p>
+                    <p>Для участников ГИА-9, относящихся к категории «выпускник текущего года», ознакомление с результатами экзаменов осуществляется в общеобразовательных организациях, в которых они были допущены к прохождению ГИА. Факт ознакомления участников ГИА-9 с результатами экзаменов по каждому учебному предмету подтверждается обязательной подписью участника ГИА-9 в протоколе ознакомления.</p>
+                    <p>Предварительное ознакомление с результатами основного государственного экзамена (ОГЭ) участников ГИА-9 осуществляется на:</p>
+                    <ul class="list">
+                        <li>- сайте Государственной итоговой аттестации выпускников Камчатского края (http://www.gia41.ru);</li>
+                        <li>- портале госуслуг (https://www.gosuslugi.ru).</li>
+                    </ul>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-1">О сроках и местах регистрации для повторного участия в сочинении (изложении) в дополнительный срок 06 мая 2020 года</span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-1">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p>06 мая 2020 года предоставляется возможность повторно принять участие в итоговом сочинении (изложении).</p>
+                    <p>В соответствии с Порядком проведения государственной итоговой аттестации по образовательным программам среднего общего образования (приказ Министерства просвещения Российской Федерации и Федеральной службы по надзору в сфере образования и науки от 07.11.2018 № 190/1512) повторно допускаются к написанию итогового сочинения (изложения) в дополнительные сроки в текущем учебном году следующие категории лиц:</p>
+                    <ul class="list">
+                        <li>обучающиеся XI (XII) классов, экстерны, получившие по итоговому сочинению (изложению) неудовлетворительный результат («незачет»);</li>
+                        <li>обучающиеся XI (XII) классов, экстерны, удаленные с итогового сочинения (изложения) за нарушение требований, установленных пунктом 27 Порядка ГИА-11;</li>
+                        <li>участники итогового сочинения (изложения), не явившиеся на итоговое сочинение (изложение) по уважительным причинам (болезнь или иные обстоятельства), подтвержденным документально;</li>
+                        <li>участники итогового сочинения (изложения), не завершившие написание итогового сочинения (изложения) по уважительным причинам (болезнь или иные обстоятельства), подтвержденным документально.</li>
+                    </ul>
+                    <p>Срок регистрации для участия в написании итогового сочинения (изложения) – до 22 апреля 2020 года.</p>
+                    <p>Более подробно о местах регистрации на итоговое сочинение (изложение) можно узнать по следующей ссылке.</p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article>
+                <!-- пустое -->
+                <!-- <article class="margin-top margin-bottom">
+                    <div class="d-flex no-wrap lg-visible margin-bottom">
+                        <h2 class="fz-120 text-indent font-heading m0 bold" font="dark">
+                            <span id="news-heading-1"></span>
+                            <a href="#" class="ui-icon-link no-visited" font="secondary" outline="secondary" aria-describedby="news-heading-1">
+                                <span class="sr-only">эта новость</span>
+                                <span class="icon icon__self-link" aria-hidden="true"></span>
+                            </a>
+                        </h2>
+                        <div class="margin-left-auto col-lg-12 fz-90 text-indent" font="gray" style="min-width: 14em;">
+                            Опубликовано 08.09.2019
+                        </div>
+                    </div>
+                    <p></p>
+                    <hr class="fz-150 margin-top margin-bottom" bg="gray">
+                </article> -->
+                
+                <!-- пагинация -->
+                <ul aria-label="навигация по страницам" class="pagination row fz-110">
+                    <li role="presentation" font-active="primary" class="pagination__item active">
+                        <a class="no-visited" outline="primary" href="#" aria-label="страница 1" aria-current="page">1</a>
+                    </li>
+                    <li role="presentation" font-active="primary" class="pagination__item">
+                        <a class="no-visited" outline="primary" href="#" aria-label="страница 2">2</a>
+                    </li>
+                    <li role="presentation" font-active="primary" class="pagination__item">
+                        <a class="no-visited" outline="primary" href="#" aria-label="страница 3">3</a>
+                    </li>
+                </ul>
+                <!-- .pagination -->
+            </main>
+        </div>
+    </div>
+
+    <script>
+        let filterButton = document.getElementById('docs-filter-button'),
+            filterDropdown = document.getElementById('docs-filter-dropdown');
+
+        filterButton.addEventListener('click', () => {
+            filterDropdown.classList.toggle('open');
+            if (filterDropdown.classList.contains('open')) {
+                filterButton.setAttribute('aria-expanded', 'true');
+                filterDropdown.focus();
+            } else {
+                filterButton.removeAttribute('aria-expanded');
+            }
+        });
+
+        setTimeout(function() {
+            document.querySelector('#docs-selected-count').textContent = "новое число";
+        }, 5000);
+    </script>
+
+</body>
+</html>

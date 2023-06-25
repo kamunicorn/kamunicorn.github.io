@@ -1,0 +1,14 @@
+{
+    "name": "Официальный информационный портал государственной итоговой аттестации выпускников Камчатского края",
+    "short_name": "Портал ГИА на Камчатке",
+    "display": "standalone",
+    "background_color": "#f5ede7",
+    "theme_color": "#004d80",
+    "start_url": "http://www.gia41.ru",
+    "description": "Официальный информационный портал государственной итоговой аттестации выпускников Камчатского края",
+    "lang": "ru-RU",
+    "icons": [{
+        "src": "img\/favicons\/favicon.jpg",
+        "type": "image\/png"
+    }]
+}

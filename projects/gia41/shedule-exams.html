@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/shedule-exams.min.css">
+
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+    
+	<title>Расписание ГИА-11 в 2019 году</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- для озвучки вместо сокращений -->
+    <div hidden>
+        <span id="abbr-ege">ЕГЭ (единый государственный экзамен)</span>
+        <span id="abbr-oge">ЕГЭ (основной государственный экзамен)</span>
+        <span id="abbr-gve">ГВЭ (государственный выпускной экзамен)</span>
+        <span id="abbr-gia">ГИА (государственная итоговая аттестации)</span>
+        
+        <span id="abbr-gve-9">ГВЭ-9 (государственный выпускной экзамен за девятый класс)</span>
+        <span id="abbr-gve-11">ГВЭ-11 (государственный выпускной экзамен за одиннадцатый класс)</span>
+        <span id="abbr-gia-9">ГИА-9 (государственная итоговая аттестации за девятый класс)</span>
+        <span id="abbr-gia-11">ГИА-11 (государственная итоговая аттестации за одиннадцатый класс)</span>
+        
+        <span id="abbr-gis">ГИС (государственная информационная система)</span>
+        <span id="abbr-ooto-gia">ООТО ГИА (Отдел организационно-технологического обеспечения государственной итоговой аттестации)</span>
+        <span id="abbr-rcoi">РЦОИ (Региональный центр обработки информации)</span>
+        <span id="abbr-ppe">ППЭ (пункт проведения экзаменов)</span>
+        <span id="abbr-gek">ГЭК (государственная экзаменнационная комиссия)</span>
+    </div>
+
+    <!-- контент -->
+    <div class="container">
+        
+        <!-- основное содержание страницы -->
+        <main id="main" class="content">
+            <h1 class="content__title" id="content-title">Расписание ГИА-11 в 2019 году</h1>
+            
+            <!-- блок показывается, если расписания нет в базе -->
+            <!-- тогда расписание не выводится (плашка с радиокнопками, вкладки, таблица) -->
+            <div class="info-notice relative" border="secondary">
+                <div class="info-notice__icon bold" border="secondary" bg="white" font="secondary" aria-hidden="true">!</div>
+                <p class="info-notice__text m0 bold fz-120" font="secondary">
+                    На 2020 год пока не загружено расписание. Попробуйте позднее.
+                </p>
+            </div>
+
+            <!-- плашка Периоды проведения экзаменов -->
+            <div class="period-info box-shadow" font="gray">
+                <h2 aria-hidden="true" class="period-info__title text-center bold fz-110 m0" font="dark">Периоды проведения экзаменов</h2>
+
+                <fieldset font="black" role="radiogroup">
+                    <legend>
+                        <h2 class="sr-only">Периоды проведения экзаменов</h2>
+                    </legend>
+                    <label class="ui-radio period-info__item" bg-active="light" font-active="secondary" border="light">
+                        <input type="radio" name="exam-period" value="period-1" aria-describedby="period-1-desc">
+                        <div class="ui-radio__custom" border="secondary" font="secondary"></div>
+                        <div class="ui-radio__text row">
+                            <span class="period-info__name">Досрочный</span>
+                            <span>с 20 марта по 15 мая</span>
+                        </div>
+                        <div class="ui-radio__outline" border="secondary"></div>
+                        <div aria-hidden="true" class="period-info__description sm-hidden" id="period-1-desc" bg="light" font="black" border="light">уже закончился</div>
+                    </label>
+                    <label class="ui-radio period-info__item" bg-active="light" font-active="secondary" border="light">
+                        <input type="radio" name="exam-period" value="period-2" aria-describedby="period-2-desc">
+                        <div class="ui-radio__custom" border="secondary" font="secondary"></div>
+                        <div class="ui-radio__text row">
+                            <span class="period-info__name">Основной</span>
+                            <span>с 24 мая по 2 июля</span>
+                        </div>
+                        <div class="ui-radio__outline" border="secondary"></div>
+                        <div aria-hidden="true" class="period-info__description sm-hidden" id="period-2-desc" bg="light" font="black" border="light">идёт сейчас</div>
+                    </label>
+                    <label class="ui-radio period-info__item active" bg-active="light" font-active="secondary" border="light">
+                        <input type="radio" name="exam-period" value="period-3" aria-describedby="period-3-desc">
+                        <div class="ui-radio__custom" border="secondary" font="secondary"></div>
+                        <div class="ui-radio__text row">
+                            <span class="period-info__name">Дополнительный</span>
+                            <span>с 3 сентября по 29 сентября</span>
+                        </div>
+                        <div class="ui-radio__outline" border="secondary"></div>
+                        <div aria-hidden="true" class="period-info__description sm-hidden" id="period-3-desc" bg="light" font="black" border="light">скоро начнётся</div>
+                    </label>
+                </fieldset>
+            </div>
+
+            <!-- Вкладки -->
+            <div class="tabbed">
+                <!-- Вкладки -->
+                <div class="overflow-horizontal">
+                    <ul class="ui-tablist content__tablist" font="black" border="secondary" role="tablist" aria-describedby="tablist-description">
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" id="tab-dates" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" target="tabpanel-dates" role="tab" tabindex="-1">
+                                По датам
+                                <span class="ui-tab-triangle" border="white"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" id="tab-subjects-ege" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" target="tabpanel-subjects-ege" role="tab" tabindex="-1">
+                                Предметы <span aria-labelledby="abbr-ege">ЕГЭ</span>
+                                <span class="ui-tab-triangle" border="white"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" id="tab-subjects-gve-11" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" target="tabpanel-subjects-gve-11" role="tab" tabindex="-1">
+                                Предметы <span aria-labelledby="abbr-gve-11">ГВЭ-11</span>
+                                <span class="ui-tab-triangle" border="white"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" id="tab-calendar" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" target="tabpanel-calendar" role="tab" tabindex="-1">
+                                Календарь
+                                <span class="ui-tab-triangle" border="white"></span>
+                            </button>
+                        </li>
+                    </ul>
+                    <div hidden id="tablist-description">Клавиши влево и вправо для выбора вкладки, клавиша вниз для перехода к содержимому вкладки</div>
+                </div>
+
+                <!-- содержание вкладки По датам -->
+                <section outline="gray" id="tabpanel-dates" tabindex="-1" role="tabpanel">
+                    <h2 class="sr-only">Расписание ГИА-11 по датам</h2>
+
+                    <!-- Расписание по датам -->
+                    <div class="table__wrapper">
+                        <h3 class="sr-only">Досрочный период сдачи экзаменов</h3>
+                        <div class="table__period-caption sm-visible hidden" aria-hidden="true">
+                            сейчас идет
+                            <div class="fz-110 bold" font="primary">Досрочный период</div>
+                        </div>
+                        <div class="overflow-horizontal">
+                            <table class="table shedule-exams-dates">
+                                <caption class="table__period-caption sm-hidden" aria-hidden="true">
+                                    сейчас идет
+                                    <div class="fz-110 bold" font="primary">Досрочный период</div>
+                                </caption>
+                                <thead bg="dark" font="white" aria-hidden="true">
+                                    <tr>
+                                        <th scope="col">Дата</th>
+                                        <th scope="col">Предметы ЕГЭ</th>
+                                        <th scope="col">Предметы ГВЭ-11</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody role="presentation">
+                                    <tr border="gray">
+                                        <th scope="row">
+                                            <div class="fz-110">20 марта</div>
+                                            <small font="primary">суббота</small>
+                                        </th>
+                                        <td>
+                                            <span class="sr-only">Предметы ЕГЭ:</span>
+                                            география, литература
+                                        </td>
+                                        <td>
+                                            <span class="sr-only">Предметы ГВЭ-11:</span>
+                                            география, литература
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th scope="row">
+                                            <div class="fz-110">27 марта</div>
+                                            <small font="primary">среда</small>
+                                        </th>
+                                        <td>
+                                            <span class="sr-only">Предметы ЕГЭ:</span>
+                                            математика базовая, профильная
+                                        </td>
+                                        <td>
+                                            <span class="sr-only">Предметы ГВЭ-11:</span>
+                                            Математика
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th scope="row">
+                                            <div class="fz-110">30 марта</div>
+                                            <small font="primary">вторник</small>
+                                        </th>
+                                        <td>
+                                            <span class="sr-only">Предметы ЕГЭ:</span>
+                                            Иностранные языки (кроме раздела "Говорение"), биология, физика
+                                        </td>
+                                        <td>
+                                            <span class="sr-only">Предметы ГВЭ-11:</span>
+                                            Иностранные языки, биология, физика
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th scope="row">
+                                            <div class="fz-110">1 апреля</div>
+                                            <small font="primary">четверг</small>
+                                        </th>
+                                        <td>
+                                            <span class="sr-only">Предметы ЕГЭ:</span>
+                                            иностранные языки (раздел "Говорение")
+                                        </td>
+                                        <td>
+                                            <span class="sr-only">Предметы ГВЭ-11: нет</span>
+                                            ‒
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th scope="row">
+                                            <div class="fz-110">8 апреля</div>
+                                            <small font="primary">понедельник</small>
+                                        </th>
+                                        <td>
+                                            <small font="secondary">резервный день</small><br>
+                                            география, химия, информатика и ИКТ, иностранные языки (раздел "Говорение"), история</td>
+                                        <td>
+                                            <small font="secondary">резервный день</small><br>
+                                            география, химия, информатика и ИКТ, история</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th scope="row">
+                                            <div class="fz-110">10 апреля</div>
+                                            <small font="primary">пятница</small>
+                                        </th>
+                                        <td>
+                                            <small font="secondary">резервный день</small><br>
+                                            иностранные языки (кроме раздела "Говорение"), литература, физика, обществознание, биология
+                                        </td>
+                                        <td>
+                                            <small font="secondary">резервный день</small><br>
+                                            иностранные языки, литература, физика, обществознание, биология
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th scope="row">
+                                            <div class="fz-110">13 апреля</div>
+                                            <small font="primary">вторник</small>
+                                        </th>
+                                        <td>
+                                            <small font="secondary">резервный день</small><br>
+                                            русский язык, математика базовая, математика профильная
+                                        </td>
+                                        <td>
+                                            <small font="secondary">резервный день</small><br>
+                                            русский язык, математика
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- содержание вкладки По предметам ЕГЭ -->
+                <section outline="gray" id="tabpanel-subjects-ege" tabindex="-1" role="tabpanel">
+                    <h2 class="sr-only">Расписание ГИА-11 по предметам ЕГЭ</h2>
+                    <!-- Расписание по предметам ЕГЭ -->
+                    <div class="table__wrapper">
+                        <h3 class="sr-only">Досрочный период сдачи экзаменов</h3>
+                        <div class="overflow-horizontal">
+                            <table class="table shedule-exams-subjects">
+                                <caption class="table__period-caption" aria-hidden="true">
+                                    сейчас идет
+                                    <div class="fz-110 bold" font="primary">Досрочный период</div>
+                                </caption>
+                                <thead bg="dark" font="white" aria-hidden="true">
+                                    <tr>
+                                        <th rowspan="2" scope="col">Предмет</th>
+                                        <th colspan="2" scope="colgroup">Дата проведения экзамена</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="normal" scope="col">
+                                            <small class="fz-90">основной день</small>
+                                        </th>
+                                        <th class="normal" scope="col">
+                                            <small class="fz-90">резервный день</small>
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody role="presentation">
+                                    <tr border="gray">
+                                        <th class="text-left">Математика</th>
+                                        <td class="bold">
+                                            21 апреля
+                                            <span class="sr-only">основной день сдачи экзаменов</span>
+                                        </td>
+                                        <td class="bold">
+                                            12 мая
+                                            <span class="sr-only">резервный день</span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="text-left">Русский язык</td>
+                                        <td class="bold">
+                                            24 апреля
+                                            <span class="sr-only">основной день сдачи экзаменов</span>
+                                        </td>
+                                        <td class="bold">
+                                            15 мая
+                                            <span class="sr-only">резервный день</span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="text-left">Химия</th>
+                                        <td class="bold">
+                                            27 сентября
+                                            <span class="sr-only">основной день сдачи экзаменов</span>
+                                        </td>
+                                        <td class="bold">
+                                            13 мая
+                                            <span class="sr-only">резервный день</span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="text-left">Иностранный язык</th>
+                                        <td class="bold">
+                                            6 апреля
+                                            <span class="sr-only">основной день сдачи экзаменов</span>
+                                        </td>
+                                        <td class="bold">
+                                            14 мая
+                                            <span class="sr-only">резервный день</span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="text-center" colspan="3">
+                                            <span class="fz-130 bold" font="secondary">15 мая  </span>
+                                            резерв по всем предметам
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- содержание вкладки По предметам ГВЭ-11 -->
+                <section outline="gray" id="tabpanel-subjects-gve-11" tabindex="-1" role="tabpanel">
+                </section>
+
+                <!-- содержание вкладки Календарь -->
+                <section outline="gray" id="tabpanel-calendar" tabindex="-1" role="tabpanel">
+                </section>
+            
+        </main>
+    </div>
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script src="js/tabs.js"></script>
+    
+</body>
+</html>

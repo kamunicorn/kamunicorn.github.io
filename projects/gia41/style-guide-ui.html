@@ -1,0 +1,1795 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Светлая тема по умолчанию -->
+    <link rel="stylesheet" href="css/colors.min.css">
+    <!-- Темная тема включается, если в ОС включена темная тема (если в браузере вообще доступен этот медиа-запрос), не включится при печати:) -->
+    <link rel="stylesheet" href="css/colors-dark.min.css" media="screen and (prefers-color-scheme: dark)">
+    <!-- Шаблон страницы, стили, применяемые часто, элементы UI -->
+    <link rel="stylesheet" href="css/template.min.css">
+    <!-- Стили этой страницы -->
+    <link rel="stylesheet" href="css/style-guide.css">
+    <!-- Снижение количества анимаций для людей, которые предпочитают их не использовать -->
+    <link rel="stylesheet" href="css/reduced-motion.min.css" media="screen and (prefers-reduced-motion: reduce)">
+
+	<title>Руководство стиля. User Interface</title>
+    
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/> -->
+</head>
+<body bg="page" font="black">
+
+	<!-- для озвучки вместо сокращений -->
+    <div hidden>
+        <span id="for-class-11">за одиннадцатый класс</span>
+        <span id="for-class-9">за девятый класс</span>
+
+        <!-- именительный падеж, кто-что? -->
+        <span id="abbr-ege">единый государственный экзамен</span>
+        <span id="abbr-oge">основной государственный экзамен</span>
+        <span id="abbr-gia">государственная итоговая аттестации</span>
+        <span id="abbr-gve">государственный выпускной экзамен</span>
+        
+        <span id="abbr-gis">государственная информационная система</span>
+        <span id="abbr-ooto-gia">Отдел организационно-технологического обеспечения государственной итоговой аттестации</span>
+        <span id="abbr-rcoi">Региональный центр обработки информации</span>
+        <span id="abbr-ppe">ППЭ (пункт проведения экзаменов)</span>
+        <span id="abbr-gek">ГЭК (государственная экзаменационная комиссия)</span>
+        
+        <!-- родительный падеж, (нет) кого-чего?  -->
+        <span id="abbr-ege-parent">единого государственного экзамена</span>
+        <span id="abbr-oge-parent">основного государственного экзамена</span>
+        <span id="abbr-gia-parent">государственной итоговой аттестации</span>
+        <span id="abbr-gve-parent">государственного выпускного экзамена</span>
+        <span id="abbr-gve9-parent">государственного выпускного экзамена за девятый класс</span>
+        <span id="abbr-gve11-parent">государственного выпускного экзамена за одиннадцатый класс</span>
+        
+        <span id="abbr-gis-parent">государственной информационной системы</span>
+        <span id="abbr-rcoi-parent">Регионального центра обработки информации</span>
+        
+        <!-- дательный падеж, (дать) кому-чему? -->
+        <span id="abbr-ege-dative">единому государственному экзамену</span>
+        <span id="abbr-oge-dative">основному государственному экзамену</span>
+        <span id="abbr-gia-dative">государственной итоговой аттестации</span>
+    </div>
+
+	<div class="container">
+    <main>
+        <div class="padding-top font-heading">
+            <h1 class="fz-200 bold">Сайт ГИА41. Руководство стиля</h1>
+            <h1 class="fz-150">Элементы User Interface</h1>
+        </div>
+
+        <p>Все исходные стили можно найти в scss/parts/_ui.scss, они собираются в scss/parts/template.scss</p>
+        
+        <!-- sg - префикс, сокращение от style guide -->
+        <ul class="accordion margin-top margin-bottom margin-negative js-accordion" id="style-guide-accordion" aria-label="компоненты с их примерами и описанием">
+            
+            <!-- Раскрывающийся блок -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-disclosure</code>
+                            <h2 class="sg-block__name font-heading">Раскрывающийся блок</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <h3 class="sg-block__subtitle">Описание взаимодействия</h3>
+                    <p>При инициализации всем кнопкам .ui-disclosure должен ставиться атрибут [aria-expanded="false"]. После открытия (клик по кнопке .ui-disclosure) кнопке должен ставиться атрибут [aria-expanded="true"]</p>
+                    <div class="ui-disclosure__wrapper js-disclosure-wrapper" aria-label="раскрыть содержание">
+                        <button class="ui-disclosure js-disclosure-open" font="dark" outline="dark">Заголовок раскрывающегося блока</button>
+                        <div class="ui-disclosure__body js-disclosure-body" border="gray" bg="light">
+                            <div>Текст раскрывающегося блока в div</div>
+                        </div>
+                    </div>
+
+                    <div class="ui-disclosure__wrapper js-disclosure-wrapper" aria-label="раскрыть содержание">
+                        <button class="ui-disclosure js-disclosure-open" font="dark" outline="dark">
+                            <h4 class="m0 fz-100 bold">Заголовок раскрывающегося блока в h4</h4>
+                        </button>
+                        <div class="ui-disclosure__body js-disclosure-body" border="gray" bg="light">
+                            <p>Текст раскрывающегося блока в p</p>
+                        </div>
+                    </div>
+
+                    <div class="ui-disclosure__wrapper js-disclosure-wrapper" aria-label="раскрыть содержание">
+                        <button class="ui-disclosure js-disclosure-open" font="dark" outline="dark">
+                            <h4 class="m0 fz-100 bold">Многострочный раскрывающийся блок</h4>
+                        </button>
+                        <div class="ui-disclosure__body js-disclosure-body" border="gray" bg="light">
+                            <p>Конфликтная комиссия не рассматривает апелляции по вопросам содержания и структуры контрольных измерительных материалов (КИМ) по учебным предметам, а также по вопросам, связанным с нарушением участником ГИА-11, в том числе в форме ЕГЭ, установленных требований к выполнению экзаменационной работы.</p>
+                            <p>При рассмотрении апелляции проверка изложенных в ней фактов не проводится лицами, принимавшими участие в организации и (или) проведении соответствующего экзамена либо ранее проверявшими экзаменационную работу участника ГИА-11, в том числе в форме ЕГЭ, подавшего апелляцию.</p>
+                            <p>При рассмотрении апелляции при желании присутствуют участник ГИА-11, в том числе в форме ЕГЭ, и (или) его родители (законные представители), а также общественные наблюдатели.</p>
+                        </div>
+                    </div>
+                
+                </div>
+            </li>
+
+            <!-- Этапы выполнения (вертикальные) -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-stage</code>
+                            <h2 class="sg-block__name">Этапы выполнения (вертикальные)</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.ui-stage >
+    .ui-stage__head > .ui-stage-text
+    .ui-stage__track
+</pre>
+                    </code>
+
+                    <p>Должно было применяться в панели настроек для слабовидящих, но не реализовано на сайте. Чисто декоративный элемент, не фокусабелен и скрыт из дерева доступности.</p>
+
+                    <div class="row no-wrap">
+                        <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                            <div class="ui-stage__head">
+                                <span class="ui-stage__head-text fz-120">1</span>
+                            </div>
+                            <div class="ui-stage__track"></div>
+                        </div>
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae explicabo quos aperiam libero nemo non impedit aspernatur perferendis enim reprehenderit asperiores a incidunt modi ipsam vero est, omnis eligendi mollitia repellat recusandae culpa consequatur commodi pariatur facilis. Placeat nesciunt aliquid autem possimus, natus impedit magnam, eveniet incidunt error adipisci eum ea in corrupti, dicta ad quo excepturi explicabo ullam. Tempore iste quasi corporis obcaecati consectetur provident cum asperiores quaerat sint cumque quidem fugiat non adipisci ipsum rerum, dolorum rem, similique dolore ut expedita aut? Illum ducimus fugiat excepturi placeat non laborum maxime consequuntur hic. Cupiditate, vero minima. Minima, aspernatur dicta.
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Активный (пройденный) этап</h3>
+                    <code>.ui-stage.active</code>
+                    <div class="row no-wrap">
+                        <div class="ui-stage active" font="gray" font-active="secondary" aria-hidden="true">
+                            <div class="ui-stage__head">
+                                <span class="ui-stage__head-text fz-120">1</span>
+                            </div>
+                            <div class="ui-stage__track"></div>
+                        </div>
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae explicabo quos aperiam libero nemo non impedit aspernatur perferendis enim reprehenderit asperiores a incidunt modi ipsam vero est, omnis eligendi mollitia repellat recusandae culpa consequatur commodi pariatur facilis. Placeat nesciunt aliquid autem possimus, natus impedit magnam, eveniet incidunt error adipisci eum ea in corrupti, dicta ad quo excepturi explicabo ullam. Tempore iste quasi corporis obcaecati consectetur provident cum asperiores quaerat sint cumque quidem fugiat non adipisci ipsum rerum, dolorum rem, similique dolore ut expedita aut? Illum ducimus fugiat excepturi placeat non laborum maxime consequuntur hic. Cupiditate, vero minima. Minima, aspernatur dicta.
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Завершающий этап с иконкой вместо цифры (и без полоски)</h3>
+                    <div class="row no-wrap">
+                        <div class="ui-stage active" font="gray" font-active="secondary" aria-hidden="true">
+                            <div class="ui-stage__head">
+                                <span class="ui-stage__head-text icon icon__checkmark fz-90"></span>
+                            </div>
+                        </div>
+                        <div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae explicabo quos aperiam libero nemo non impedit aspernatur perferendis enim reprehenderit asperiores a incidunt modi ipsam vero est, omnis eligendi mollitia repellat recusandae culpa consequatur commodi pariatur facilis. Placeat nesciunt aliquid autem possimus, natus impedit magnam, eveniet incidunt error adipisci eum ea in corrupti, dicta ad quo excepturi explicabo ullam. Tempore iste quasi corporis obcaecati consectetur provident cum asperiores quaerat sint cumque quidem fugiat non adipisci ipsum rerum, dolorum rem, similique dolore ut expedita aut? Illum ducimus fugiat excepturi placeat non laborum maxime consequuntur hic. Cupiditate, vero minima. Minima, aspernatur dicta.
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Несколько блоков друг за другом</h3>
+                    <!-- Активный -->
+                    <div class="row no-wrap margin-top margin-bottom">
+                        <div class="ui-stage active" font="gray" font-active="secondary" aria-hidden="true">
+                            <div class="ui-stage__head">
+                                <span class="ui-stage__head-text fz-120">1</span>
+                            </div>
+                            <div class="ui-stage__track"></div>
+                        </div>
+                        <div>
+                            <div>Активный</div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae explicabo quos aperiam libero nemo non impedit aspernatur perferendis enim reprehenderit asperiores a incidunt modi ipsam vero est, omnis eligendi mollitia repellat recusandae culpa consequatur commodi pariatur facilis. Placeat nesciunt aliquid autem possimus, natus impedit magnam, eveniet incidunt error adipisci eum ea in corrupti, dicta ad quo excepturi explicabo ullam. Tempore iste quasi corporis obcaecati consectetur provident cum asperiores quaerat sint cumque quidem fugiat non adipisci ipsum rerum, dolorum rem, similique dolore ut expedita aut? Illum ducimus fugiat excepturi placeat non laborum maxime consequuntur hic. Cupiditate, vero minima. Minima, aspernatur dicta.
+                        </div>
+                    </div>
+                    <!-- Непройденный -->
+                    <div class="row no-wrap margin-top margin-bottom">
+                        <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                            <div class="ui-stage__head">
+                                <span class="ui-stage__head-text fz-120">1</span>
+                            </div>
+                            <div class="ui-stage__track"></div>
+                        </div>
+                        <div>
+                            <div>Непройденный</div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae explicabo quos aperiam libero nemo non impedit aspernatur perferendis enim reprehenderit asperiores a incidunt modi ipsam vero est, omnis eligendi mollitia repellat recusandae culpa consequatur commodi pariatur facilis. Placeat nesciunt aliquid autem possimus, natus impedit magnam, eveniet incidunt error adipisci eum ea in corrupti, dicta ad quo excepturi explicabo ullam. Tempore iste quasi corporis obcaecati consectetur provident cum asperiores quaerat sint cumque quidem fugiat non adipisci ipsum rerum, dolorum rem, similique dolore ut expedita aut? Illum ducimus fugiat excepturi placeat non laborum maxime consequuntur hic. Cupiditate, vero minima. Minima, aspernatur dicta.
+                        </div>
+                    </div>
+                    <!-- Конечный -->
+                    <div class="row no-wrap margin-top margin-bottom">
+                        <div class="ui-stage" font="gray" font-active="secondary" aria-hidden="true">
+                            <div class="ui-stage__head">
+                                <span class="ui-stage__head-text icon icon__checkmark fz-90"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div>Конечный</div>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae explicabo quos aperiam libero nemo non impedit aspernatur perferendis enim reprehenderit asperiores a incidunt modi ipsam vero est, omnis eligendi mollitia repellat recusandae culpa consequatur commodi pariatur facilis. Placeat nesciunt aliquid autem possimus, natus impedit magnam, eveniet incidunt error adipisci eum ea in corrupti, dicta ad quo excepturi explicabo ullam. Tempore iste quasi corporis obcaecati consectetur provident cum asperiores quaerat sint cumque quidem fugiat non adipisci ipsum rerum, dolorum rem, similique dolore ut expedita aut? Illum ducimus fugiat excepturi placeat non laborum maxime consequuntur hic. Cupiditate, vero minima. Minima, aspernatur dicta.
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Ползунок -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-range</code>
+                            <h2 class="sg-block__name font-heading">Ползунок</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.ui-range >
+    .ui-range__slider[role="slider"] > (
+        .ui-range__track + 
+        .ui-range__indicator ) +
+    .ui-range__bottom-text +
+    .ui-range__tooltip</pre>
+                    </code>
+                    <p>Применяется в настройках версии для слабовидящих.</p>
+                    <!-- <div>test colors</div>
+
+                    <div class="relative margin-top margin-bottom" bg="primary-light" style="max-width: 10em;height: 5px;border-radius: 0.2em;">
+                        <div class="absolute" bg="secondary-light" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%"></div>
+                    </div>
+                    <br>
+
+                    <div class="relative margin-top margin-bottom" bg="primary-light" font="primary" style="max-width: 10em;height: 5px;border-radius: 0.2em;box-shadow: inset 0 0 2px 1px;">
+                        <div class="absolute" bg="secondary-light" font="secondary" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%;box-shadow: inset 0 0 3px 0px;"></div>
+                    </div>
+                    <br>
+
+                    <div class="relative margin-top margin-bottom" bg="secondary-light" style="max-width: 10em;height: 5px;border-radius: 0.2em;">
+                        <div class="absolute" bg="primary-light" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%"></div>
+                    </div>
+                    <br>
+
+                    <div class="relative margin-top margin-bottom" bg="secondary-light" font="secondary" style="max-width: 10em;height: 5px;border-radius: 0.2em;box-shadow: inset 0 0 2px 1px;">
+                        <div class="absolute" bg="primary-light" font="primary" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%;box-shadow: inset 0 0 3px 0px;"></div>
+                    </div>
+                    <br>
+
+                    with gray colors
+
+                    <div class="relative margin-top margin-bottom" bg="gray" font="gray" style="max-width: 10em;height: 5px;border-radius: 0.2em;box-shadow: inset 0 0 2px 1px;">
+                        <div class="absolute" bg="primary-light" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%;"></div>
+                    </div>
+                    <br>
+
+                    <div class="relative margin-top margin-bottom" bg="gray" font="gray" style="max-width: 10em;height: 5px;border-radius: 0.2em;box-shadow: inset 0 0 2px 1px;">
+                        <div class="absolute" bg="secondary-light" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%;"></div>
+                    </div>
+                    <br>
+
+                    <div class="relative margin-top margin-bottom" bg="light" font="gray" style="max-width: 10em;height: 5px;border-radius: 0.2em;box-shadow: inset 0 0 2px 1px;">
+                        <div class="absolute" bg="secondary-light" font="secondary" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%;box-shadow: inset 0 0 3px 1px;"></div>
+                    </div>
+                    <br>
+
+                    <div class="relative margin-top margin-bottom" bg="light" font="gray" style="max-width: 10em;height: 5px;border-radius: 0.2em;box-shadow: inset 0 0 2px 1px;">
+                        <div class="absolute" bg="primary-light" font="primary" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%;box-shadow: inset 0 0 3px 1px;"></div>
+                    </div>
+                    <br>
+
+                    <div class="relative margin-top margin-bottom" bg="light" font="gray" style="max-width: 10em;height: 5px;border-radius: 0.2em;box-shadow: inset 0 0 2px 1px;">
+                        <div class="absolute" bg="light" font="gray" style="border-radius: 50%; width: 1em; height: 1em;top: -100%; left: 30%;box-shadow: inset 0 0 3px 1px;"></div>
+                    </div> -->
+
+                    <h3 class="sg-block__subtitle">Примеры, стандартные расцветки</h3>
+
+                    <div class="padding-top bold italic fz-90 margin-top margin-bottom" id="range-font-size">Размер шрифта</div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-font-size" 
+                        aria-valuemin="10" aria-valuemax="30" aria-valuenow="18" aria-valuetext="18px">
+                            <div class="ui-range__track" bg="light" font="gray"></div>
+                            <div class="ui-range__indicator" bg="light" font="gray" style="left:40%"></div>
+                        </div>
+
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">10px</span>
+                            <span class="float-right">30px</span>
+                        </div>
+
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">18px</div>
+                    </div>
+
+                    <div class="padding-top bold italic fz-90 margin-top margin-bottom" id="range-line-spacing">Межстрочный интервал</div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-line-spacing" 
+                        aria-valuemin="0.7" aria-valuemax="3" aria-valuenow="1.5" aria-valuetext="1.5">
+                            <div class="ui-range__track" bg="primary-light"></div>
+                            <div class="ui-range__indicator" bg="secondary-light" style="left:50%"></div>
+                        </div>
+
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">0.7</span>
+                            <span class="float-right">3.0</span>
+                        </div>
+
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">1.5</div>
+                    </div>
+
+                    <!-- <div class="padding-top bold italic fz-90 margin-top margin-bottom" id="range-letter-spacing">Межбуквенный интервал</div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-letter-spacing" 
+                        aria-valuemin="-0.5" aria-valuemax="1" aria-valuenow="0" aria-valuetext="0">
+                            <div class="ui-range__track" bg="light" font="gray"></div>
+                            <div class="ui-range__indicator" bg="light" font="gray" style="left:5%"></div>
+                        </div>
+
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">0</div>
+                    </div> -->
+
+                    <h3 class="sg-block__subtitle">Описание взаимодействия</h3>
+                    <p>У всех слайдеров ( <code>[role="slider"]</code> ) есть aria-атрибуты минимального, максимального и текущего значений. При фокусе на слайдере озвучивается значение в [aria-valuenow] или [aria-valuetext] (расширенное описание), если есть.</p>
+                    <p>Клавиши влево-вправо, вверх-вниз изменяют положение индикатора и значение ползунка. Новое значение записывается:</p>
+                    <ul class="list">
+                        <li>в атрибут <code>[aria-valuenow]</code> элемента <code>.ui-range__slider</code></li>
+                        <li>в необязательный атрибут (но если он есть, то он озвучивается вместо <code>aria-valuenow</code>) <code>[aria-valuetext]</code> элемента <code>.ui-range__slider</code>. Пример: "18px в диапазоне от 10px до 30px"</li>
+                        <li>в элемент <code>.ui-range__tooltip</code></li>
+                    </ul>
+                    <p>После изменения значения меняется положение индикатора (свойство left). </p>
+
+                    <h3 class="sg-block__subtitle">Интерактивный пример</h3>
+                    <!-- пример-то нерабочий при других параметрах -->
+                    <button class="padding-left padding-right bold" bg="light" border="dark" outline="primary" onclick="rangeMove()">Передвинуть ползунок</button>
+                    <div class="padding-top bold italic fz-90 margin-top margin-bottom" id="range-interact-label">Шкала процентов</div>
+                    <div class="ui-range" id="range-interact">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-interact-label" 
+                        aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                        data-step="1" onclick="rangeMove()">
+                        <!-- атрибуты data-step и aria-valuetext не обязательны -->
+                            <div class="ui-range__track" bg="light" font="gray"></div>
+                            <div class="ui-range__indicator" bg="light" font="gray"></div>
+                        </div>
+
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">0%</span>
+                            <span class="float-right">100%</span>
+                        </div>
+
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">
+                            <span class="js-insert-here">0</span>%
+                        </div>
+                    </div>
+
+                    <!-- TODO: скрипт для демонстрации -->
+                    <script>
+                        var rangeExample = document.querySelector('#range-interact'),
+                            rangeSlider = rangeExample.querySelector('.ui-range__slider'),
+                            rangeIndicator = rangeSlider.querySelector('.ui-range__indicator'),
+                            rangeValue = rangeExample.querySelector('.ui-range__tooltip .js-insert-here'),
+                            rangeValueNow = 18,
+                            rangeMin = rangeSlider.getAttribute('aria-valuemin'),
+                            rangeMax = rangeSlider.getAttribute('aria-valuemax'),
+                            
+                            rangeStep = rangeSlider.getAttribute('data-step'),
+                            rangeStepsAll = rangeMax - rangeMin,
+                            indicatorPositionStart = -(rangeIndicator.offsetWidth / 2), // (px)
+                            stepRealValue = rangeSlider.offsetWidth / rangeStepsAll;
+                        
+                        function rangeMove() {
+                            var rangeValueText = rangeValueNow + '% в диапазоне от ' + rangeMin + ' до ' + rangeMax;
+                            
+                            rangeSlider.setAttribute('aria-valuenow', rangeValueNow);
+                            rangeSlider.setAttribute('aria-valuetext', rangeValueText);
+                            rangeValue.textContent = rangeValueNow;
+
+                            rangeIndicator.style.left = indicatorPositionStart + rangeValueNow * stepRealValue + 'px';
+                        };
+                    </script>
+
+                    <h3 class="sg-block__subtitle">Примеры в других цветах и размерах</h3>
+                    <div class="padding-top bold italic fz-90 margin-top margin-bottom" id="range-ex-1">Измененные размеры</div>
+                    <div class="ui-range fz-140">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-ex-1" 
+                        aria-valuemin="10" aria-valuemax="30" aria-valuenow="18" aria-valuetext="18px">
+                            <div class="ui-range__track" bg="light" font="gray"></div>
+                            <div class="ui-range__indicator" bg="light" font="gray" style="left:40%"></div>
+                        </div>
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">18px</div>
+                    </div>
+                    <div class="ui-range fz-90">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-ex-1" 
+                        aria-valuemin="10" aria-valuemax="30" aria-valuenow="18" aria-valuetext="18px">
+                            <div class="ui-range__track" bg="light" font="gray"></div>
+                            <div class="ui-range__indicator" bg="light" font="gray" style="left:40%"></div>
+                        </div>
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">18px</div>
+                    </div>
+
+                    <div class="padding-top bold italic fz-90 margin-top margin-bottom" id="range-ex-2">Без обводок или в других цветах</div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-ex-2" 
+                        aria-valuemin="-0.5" aria-valuemax="1" aria-valuenow="0" aria-valuetext="0">
+                            <div class="ui-range__track" bg="gray"></div>
+                            <div class="ui-range__indicator" bg="black" style="left:5%"></div>
+                        </div>
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">0</div>
+                    </div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="primary" 
+                        role="slider" aria-labelledby="range-ex-2" 
+                        aria-valuemin="0.7" aria-valuemax="3" aria-valuenow="1.5" aria-valuetext="1.5">
+                            <div class="ui-range__track" bg="white" font="primary"></div>
+                            <div class="ui-range__indicator" bg="white" font="primary" style="left:50%"></div>
+                        </div>
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">1.5</div>
+                    </div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-ex-2" 
+                        aria-valuemin="0.7" aria-valuemax="3" aria-valuenow="1.5" aria-valuetext="1.5">
+                            <div class="ui-range__track" bg="white" font="secondary"></div>
+                            <div class="ui-range__indicator" bg="white" font="secondary" style="left:50%"></div>
+                        </div>
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">1.5</div>
+                    </div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-ex-2" 
+                        aria-valuemin="0.7" aria-valuemax="3" aria-valuenow="1.5" aria-valuetext="1.5">
+                            <div class="ui-range__track" bg="primary-light" font="primary"></div>
+                            <div class="ui-range__indicator" bg="secondary-light" font="secondary" style="left:50%"></div>
+                        </div>
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">1.5</div>
+                    </div>
+                    <div class="ui-range">
+                        <div class="ui-range__slider" tabindex="0" outline="secondary" 
+                        role="slider" aria-labelledby="range-ex-2" 
+                        aria-valuemin="0.7" aria-valuemax="3" aria-valuenow="1.5" aria-valuetext="1.5">
+                            <div class="ui-range__track" bg="primary-light"></div>
+                            <div class="ui-range__indicator" bg="secondary-light" style="left:50%"></div>
+                        </div>
+                        <div class="ui-range__bottom-text fz-80" font="dark" aria-hidden="true">
+                            <span class="float-left">меньше</span>
+                            <span class="float-right">больше</span>
+                        </div>
+                        <div class="ui-range__tooltip fz-100" bg="light" aria-hidden="true">1.5</div>
+                    </div>
+
+                    <p>Если не ставить атрибут [font] элементам track и indicator, то они не будет иметь внутреннюю тень.</p>
+                </div>
+            </li>
+
+            <!-- Поля ввода текстовые -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-input</code>
+                            <h2 class="sg-block__name font-heading">Поля ввода текстовые</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.ui-input__wrapper > 
+    input.ui-input 
+    + label.ui-input__label
+    + .ui-input__hint-icon.valid
+    + .ui-input__hint-icon.invalid
+    + ui-input__feedback</pre>
+                    </code>
+                    <p>Имеет определенную длину, ограниченную шириной контейнера на больших экранах (max-width: calc(100% - 1.5em), фолбэк - 95%). На маленьких экранах имеет ширину 100%.</p>
+                    <h3 class="sg-block__subtitle">Поле ввода обычное, незаполненное</h3>
+                    <!-- контейнер поля ввода -->
+                    <div class="ui-input__wrapper">
+                        <!-- сам инпут -->
+                        <input class="ui-input" id="family-1" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="input-family-feedback">
+                        <!-- название поля, label для него -->
+                        <label for="family-1" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                        
+                        <!-- иконки-подсказки правильности введенных в поле данных, по умолчанию скрыто -->
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <!-- иконка галочки -->
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <!-- иконка ошибки (! в круге) -->
+                            <span class="icon icon__error"></span>
+                        </div>
+        
+                        <!-- обратная связь для сообщения об ошибках, по умолчанию скрыто -->
+                        <div class="ui-input__feedback fz-90" font="secondary" border="secondary" id="input-family-feedback" role="alert" aria-live="assertive"></div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Поле, втиснутое в контейнер небольшого размера</h3>
+                    <p>Попробуйте уменьшить размер экрана. Для наглядности контейнеру задан цвет и padding</p>
+                    <div class="col-3 col-xl-4 col-md-5 col-sm-12 padding-top padding-bottom" style="background-color: burlywood;">
+                        <div class="ui-input__wrapper">
+                            <input class="ui-input" id="family-2" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="">
+                            <label for="family-2" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                            
+                            <div class="ui-input__hint-icon valid" font="primary">
+                                <span class="icon icon__checkmark"></span>
+                            </div>
+                            <div class="ui-input__hint-icon invalid" font="secondary">
+                                <span class="icon icon__error"></span>
+                            </div>
+            
+                        </div>
+                    </div>
+        
+                    <h3 class="sg-block__subtitle">Поле ввода, заполненное правильно</h3>
+                    <p>Правильность поля показывается иконкой галочки (span.icon.icon__checkmark), который находится в блоке .ui-input__hint-icon.valid и показывается, когда контейнер .ui-input__wrapper имеет класс .valid</p>
+                    <div class="ui-input__wrapper valid">
+                        <input class="ui-input" id="family-3" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="" value="Иванов">
+                        <label for="family-3" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                        
+                        <!-- этот блок будет показан, когда у контейнера класс .valid -->
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <!-- иконка галочки -->
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <span class="icon icon__error"></span>
+                        </div>
+
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Поле ввода, заполненное неправильно</h3>
+                    <p>Неправильность поля показывается иконкой ошибки (span.icon.icon__error), который находится в блоке .ui-input__hint-icon.invalid и показывается, когда контейнер .ui-input__wrapper имеет класс .invalid</p>
+                    <p>Также показывается блок .ui-input__feedback (текст ошибки туда вставляет javascript). Этот блок также является описанием для input.ui-input с помощью aria-describedby, так что текст ошибки читается при фокусе на инпут.</p>
+                    <div class="ui-input__wrapper invalid">
+                        <input class="ui-input" id="family-4" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="input-family-feedback-1" value="8914628">
+                        <label for="family-4" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                        
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <!-- этот блок будет показан, когда у контейнера класс .invalid -->
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <!-- иконка ошибки (! в круге) -->
+                            <span class="icon icon__error"></span>
+                        </div>
+        
+                        <!-- обратная связь для сообщения об ошибках -->
+                        <!-- этот блок будет показан, когда у контейнера класс .invalid -->
+                        <div class="ui-input__feedback fz-90" font="secondary" border="secondary" id="input-family-feedback-1" role="alert" aria-live="assertive">Неверно введена фамилия</div>
+                    </div>
+        
+                    <h3 class="sg-block__subtitle">Поле ввода отключенное</h3>
+                    <p>Атрибут [disabled], поставленный элементу input.ui-input</p>
+                    <div class="ui-input__wrapper">
+                        <input class="ui-input" id="family-5" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="" disabled>
+                        <label for="family-5" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <span class="icon icon__error"></span>
+                        </div>
+                    </div>
+        
+                    <h3 class="sg-block__subtitle">Поле ввода только для чтения</h3>
+                    <p>Атрибут [readonly], поставленный элементу input.ui-input</p>
+                    <div class="ui-input__wrapper">
+                        <input class="ui-input" id="family-6" type="text" border="primary" outline="primary" bg="white" placeholder=" " required aria-describedby="" readonly value="Иванов">
+                        <label for="family-6" class="ui-input__label fz-90" font="gray">Фамилия</label>
+                        <div class="ui-input__hint-icon valid" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <div class="ui-input__hint-icon invalid" font="secondary">
+                            <span class="icon icon__error"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Чекбоксы -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-checkbox</code>
+                            <h2 class="sg-block__name font-heading">Чекбоксы</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>label.ui-checkbox > 
+    input[type="checkbox"]
+    + .ui-checkbox__custom
+    + .ui-checkbox__text
+    + .ui-checkbox__outline</pre>
+                    </code>
+                    <fieldset role="group">
+                        <label class="ui-checkbox">
+                            <input id="checkbox-example" type="checkbox" checked>
+                            <div class="ui-checkbox__custom" border="primary" font="primary">
+                                <span class="icon icon__checkmark"></span>
+                            </div>
+                            <span class="ui-checkbox__text">checkbox 1</span>
+                            <div class="ui-checkbox__outline" border="primary"></div>
+                        </label>
+                        <label class="ui-checkbox">
+                            <input id="checkbox-example" type="checkbox">
+                            <div class="ui-checkbox__custom" border="primary" font="primary">
+                                <span class="icon icon__checkmark"></span>
+                            </div>
+                            <span class="ui-checkbox__text">checkbox 2</span>
+                            <div class="ui-checkbox__outline" border="primary"></div>
+                        </label>
+                    </fieldset>
+
+                    <h3 class="sg-block__subtitle">Чекбоксы отключенные</h3>
+                    <p>Добавлен атрибут [disabled] элементу input[type="checkbox"]. Цвета обесцвечиваются почти полностью</p>
+                    <label class="ui-checkbox">
+                        <input id="checkbox-example" type="checkbox" disabled>
+                        <div class="ui-checkbox__custom" border="primary" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <span class="ui-checkbox__text">checkbox 2</span>
+                        <div class="ui-checkbox__outline" border="primary"></div>
+                    </label>
+                    <label class="ui-checkbox">
+                        <input id="checkbox-example" type="checkbox" checked disabled>
+                        <div class="ui-checkbox__custom" border="primary" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <span class="ui-checkbox__text bold" font="primary">
+                            checkbox 1 [font="primary"].bold
+                        </span>
+                        <div class="ui-checkbox__outline" border="primary"></div>
+                    </label>
+                    <label class="ui-checkbox">
+                        <input id="checkbox-example" type="checkbox" disabled>
+                        <div class="ui-checkbox__custom" border="primary" font="primary">
+                            <span class="icon icon__checkmark"></span>
+                        </div>
+                        <span class="ui-checkbox__text bold" font="secondary">
+                            checkbox 2 [font="secondary"].bold
+                        </span>
+                        <div class="ui-checkbox__outline" border="primary"></div>
+                    </label>
+                </div>
+            </li>
+
+            <!-- Радиокнопки -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-radio</code>
+                            <h2 class="sg-block__name font-heading">Радиокнопки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>fieldset > label.ui-radio > 
+    input[type="radio"]
+    + .ui-radio__custom
+    + .ui-radio__text
+    + .ui-radio__outline</pre>
+                    </code>
+                    <p>Должны лежать в <code>fieldset role="radiogroup"</code></p>
+                    <fieldset role="radiogroup">
+                        <label class="ui-radio">
+                            <input id="presence-1" type="radio" name="radio-example-1" required>
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">Значение 1</div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                        <label class="ui-radio">
+                            <input id="presence-2" type="radio" name="radio-example-1" required>
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">Значение 2</div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                        <label class="ui-radio">
+                            <input id="presence-3" type="radio" name="radio-example-1" required>
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">Значение 3</div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                    </fieldset>
+        
+                    <h3 class="sg-block__subtitle">Радиокнопки отключенные</h3>
+                    <p>Добавлен атрибут [disabled] элементу input[type="radio"]. Цвета обесцвечиваются почти полностью</p>
+                    <fieldset role="radiogroup">
+                        <label class="ui-radio">
+                            <input id="presence-1" type="radio" name="radio-example-2" required checked disabled>
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">Значение 1</div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                        <label class="ui-radio">
+                            <input id="presence-2" type="radio" name="radio-example-2" required disabled>
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">Значение 2</div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                        <label class="ui-radio">
+                            <input id="presence-1" type="radio" name="radio-example-2" required checked disabled>
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text bold" font="primary">
+                                Значение 1 [font="primary"].bold
+                            </div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                        <label class="ui-radio">
+                            <input id="presence-2" type="radio" name="radio-example-2" required disabled>
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text bold" font="secondary">
+                                Значение 2 [font="secondary"].bold
+                            </div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                    </fieldset>
+                </div>
+            </li>
+
+            <!-- Селект - список стандартный -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-select</code>
+                            <h2 class="sg-block__name font-heading">Селект - список стандартный</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.ui-select > (
+    select.ui-select__control 
+        > option )
+    + label.ui-select__label
+    + .ui-select__feedback</pre>
+                    </code>
+                    <p>Имеет определенную длину, ограниченную шириной контейнера на больших экранах (max-width: calc(100% - 1.5em), фолбэк - 95%). На маленьких экранах имеет ширину 100%.</p>
+                    <p>Внутри может иметь спиннер</p>
+                    <h3 class="sg-block__subtitle">Список без ошибок, с ограниченным контейнером</h3>
+                    <div class="col-3 col-xl-4 col-md-5 col-sm-12 padding-top padding-bottom" style="background-color: burlywood;">
+                        <div class="ui-select" font="primary" bg="white">
+                            <select class="ui-select__control" 
+                                font="black" border="primary" outline="primary" bg="white"
+                                name="subject-1" id="select-subject-1"
+                                aria-describedby="select-feedback">
+                                
+                                <option bg="white" value="default">-- Выберите предмет --</option>
+                                <option bg="white" value="lit">Литература   20.03.2020</option>
+                                <option bg="white" value="rus">Русский язык   23.03.2020</option>
+                                <option bg="white" value="math">Математика базовая   27.03.2020</option>
+                                <option bg="white" value="phys">Физика   30.03.2020</option>
+                                <option bg="white" value="info">Информатика и ИКТ   03.04.2020</option>
+                                <option bg="white" value="info">История   06.04.2020</option>
+                            </select>
+                            
+                            <label class="ui-select__label fz-90" for="select-subject-1" font="gray">Предмет и дата</label>
+        
+                            <!-- обратная связь для сообщения об ошибках -->
+                            <div class="ui-select__feedback fz-90" id="select-feedback" font="secondary" border="secondary" id="passport-feedback-error" role="alert" aria-live="assertive"></div>
+        
+                            <!-- крутилка загрузочная -->
+                            <div class="ui-spinner__wrapper">
+                                <div class="ui-spinner__overlay" bg="primary"></div>
+                                <div class="ui-spinner fz-150">
+                                    <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                                </div>
+                            </div>
+        
+                            <!-- сюда вставляются сообщения о состоянии загрузки -->
+                            <div class="sr-only" role="status" aria-live="polite"></div>
+                        </div>
+                    </div>
+        
+                    <h3 class="sg-block__subtitle">Селект с ошибками</h3>
+                    <p>На контейнер .ui-select добавлен класс .invalid и показывается блок .ui-select__feedback (текст ошибки туда вставляет javascript). Этот блок также является описанием для select.ui-select__control с помощью aria-describedby, так что текст ошибки читается при фокусе на селекте.</p>
+                    <div class="ui-select invalid" font="primary" bg="white">
+                        <select class="ui-select__control" 
+                            font="black" border="primary" outline="primary" bg="white"
+                            name="subject-2" id="select-subject-2"
+                            aria-describedby="select-feedback">
+                            
+                            <option bg="white" value="default">-- Выберите предмет --</option>
+                            <option bg="white" value="lit" selected>Литература   20.03.2020</option>
+                            <option bg="white" value="rus">Русский язык   23.03.2020</option>
+                            <option bg="white" value="math">Математика базовая   27.03.2020</option>
+                            <option bg="white" value="phys">Физика   30.03.2020</option>
+                            <option bg="white" value="info">Информатика и ИКТ   03.04.2020</option>
+                            <option bg="white" value="info">История   06.04.2020</option>
+                        </select>
+                        
+                        <label class="ui-select__label fz-90" for="select-subject-2" font="gray">Предмет и дата</label>
+        
+                        <div class="ui-select__feedback fz-90" id="select-feedback" font="secondary" border="secondary" id="passport-feedback-error" role="alert" aria-live="assertive">По данному предмету подача апелляции невозможна, так как истек срок подачи апелляций.</div>
+        
+                        <div class="ui-spinner__wrapper">
+                            <div class="ui-spinner__overlay" bg="primary"></div>
+                            <div class="ui-spinner fz-150">
+                                <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                            </div>
+                        </div>
+        
+                        <div class="sr-only" role="status" aria-live="polite"></div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Демонстрация селекта со спиннером</h3>
+                    <p>По нажатию кнопки в элемент #loading-notice вставляется текст со статусом загрузки (Загрузка начата), а кнопке селекта (select.ui-select__control) ставится атрибут <code>[aria-busy="true"]</code>. После окончания загрузки - сообщение об окончании загрузки (Данные получены) и очищается, а у кнопки селекта удаляется атрибут [aria-busy]. Т.к. данный элемент (#loading-notice) имеет [role="status"], скринридер прочтет изменения в его содержании.</p>
+                    <button class="padding no-invert-font" font="white" bg="secondary" outline="secondary" onclick="addAjaxLoadingToSelect()">Включить демо (добавить селекту спиннер)</button>
+
+                    <div class="ui-select" id="select-demo-ajax" font="primary" bg="white">
+                        <select class="ui-select__control" 
+                            font="black" border="primary" outline="primary" bg="white"
+                            name="subject-3" id="select-subject-3"
+                            aria-describedby="select-feedback">
+                            
+                            <option bg="white" value="default">-- Выберите предмет --</option>
+                            <option bg="white" value="lit">Литература   20.03.2020</option>
+                            <option bg="white" value="rus">Русский язык   23.03.2020</option>
+                            <option bg="white" value="math">Математика базовая   27.03.2020</option>
+                            <option bg="white" value="phys">Физика   30.03.2020</option>
+                            <option bg="white" value="info">Информатика и ИКТ   03.04.2020</option>
+                            <option bg="white" value="info">История   06.04.2020</option>
+                        </select>
+                        <label class="ui-select__label fz-90" for="select-subject-3" font="gray">Предмет и дата</label>
+                        <div class="ui-select__feedback fz-90" id="select-feedback" font="secondary" border="secondary" id="passport-feedback-error" role="alert" aria-live="assertive"></div>
+                        <!-- крутилка загрузочная -->
+                        <div class="ui-spinner__wrapper">
+                            <div class="ui-spinner__overlay" bg="primary"></div>
+                            <div class="ui-spinner fz-150">
+                                <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <!-- сюда вставляются сообщения о состоянии загрузки -->
+                        <div class="sr-only js-loading-notice" role="status" aria-live="polite"></div>
+                        <!-- скрипт для демонстрации -->
+                        <script>
+                            function addAjaxLoadingToSelect() {
+                                var select = $('#select-demo-ajax'),
+                                    selectControl = select.find('.ui-select__control'),
+                                    loadingNotice = select.find('.js-loading-notice');
+
+                                select.addClass('ajax-loading');
+                                selectControl.attr('aria-busy', true);
+                                loadingNotice.text('Идёт загрузка списка предметов');
+                                
+                                setTimeout(function() {
+                                    select.removeClass('ajax-loading');
+                                    selectControl.removeAttr('aria-busy');
+                                    loadingNotice.text('');
+                                }, 6000);
+                            }
+                        </script>
+                    </div>
+                    
+                    <h3 class="sg-block__subtitle">Селект отключенный</h3>
+                    <p>Элементу селекта .ui-select__control добавлен атрибут [disabled]. Чтобы стрелка в псевдоэлементе также стала серой, надо контейнеру .ui-select добавить класс .disabled</p>
+                    <div class="ui-select disabled" font="primary" bg="white">
+                        <select class="ui-select__control" 
+                            font="black" border="primary" outline="primary" bg="white"
+                            name="subject-4" id="select-subject-4"
+                            aria-describedby="select-feedback"
+                            disabled>
+                            
+                            <option bg="white" value="default">-- Выберите предмет --</option>
+                            <option bg="white" value="lit" selected>Литература 20.03.2020</option>
+                            <option bg="white" value="rus">Русский язык 23.03.2020</option>
+                            <option bg="white" value="math">Математика базовая 27.03.2020</option>
+                            <option bg="white" value="phys">Физика 30.03.2020</option>
+                            <option bg="white" value="info">Информатика и ИКТ 03.04.2020</option>
+                            <option bg="white" value="info">История 06.04.2020</option>
+                        </select>
+                        
+                        <label class="ui-select__label fz-90" for="select-subject-4" font="gray">Предмет и дата</label>
+        
+                        <div class="ui-select__feedback fz-90" id="select-feedback" font="secondary" border="secondary" id="passport-feedback-error" role="alert" aria-live="assertive"></div>
+        
+                        <div class="ui-spinner__wrapper">
+                            <div class="ui-spinner__overlay" bg="primary"></div>
+                            <div class="ui-spinner fz-150">
+                                <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                            </div>
+                        </div>
+        
+                        <div class="sr-only" role="status" aria-live="polite"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Селект кастомный -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-select_custom</code>
+                            <h2 class="sg-block__name font-heading">Селект кастомный</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.ui-select.ui-select_custom >
+    input[type="button"].ui-select__control
+    + label.ui-select__label
+    + ul.ui-select__options-box > 
+        li.ui-select__option >
+            label.ui-radio > 
+                input[type="radio"]
+                + .ui-radio__custom
+                + .ui-radio__text
+                + .ui-radio__outline</pre>
+                    </code>
+                    <p>Не применяется на сайте, только в версии для слабовидящих (для выбора шрифтов), но есть небольшие отличия и скрипт не мой.</p>
+
+                    <h3 class="sg-block__subtitle">Описание взаимодействия</h3>
+                    <p><b>Инициализация:</b> элементу <code>input.ui-select__control</code> (контрол) ставится атрибут <code>[aria-expanded="false"]</code> и <code>[data-value=""]</code>, равный значению выбранной радио-кнопки (есди ничего не выбрано, то ничего не ставится).</p>
+                    <p>При фокусе на контроле возможна смена значений стрелками (вверх-вниз, влева-вправо).</p>
+                    <p><b>Открытие:</b> по клику мышкой на контроле, нажатие клавиши "пробел" или Enter на нем (стандартное событие click для <code>input[type="button"]</code>). После открытия контролу ставится атрибут <code>[aria-expanded="true"]</code>, фокус устанавливается на выбранный <code>input[type="radio"]</code> или первый в списке.</p>
+                    <p>Передвижение по пунктам при открытом селекте происходит нативно (группировка радиокнопок с одним именем). При смене выбранного значения обновляются данные (атрибуты value, data-value) в контрол.</p>
+                    <p><b>Закрытие:</b> кликом мышкой на контроле, нажатием клавиш Esc, Tab, Enter внутри выпадающего списка (<code>ul.ui-select__options-box</code>). После закрытия фокус ставится на контрол.</p>
+
+                    <!-- <button class="padding no-invert-font" font="white" bg="secondary" outline="secondary" onclick="chooseSubjectOnCustomSelect()">Включить демо (того, что произойдет после выбора)</button> -->
+
+                    <div class="ui-select ui-select_custom" id="select-custom" font="primary" bg="white">
+                                    
+                        <input type="button" class="ui-select__control" 
+                        bg="white" border="primary" outline="primary" font="black"
+                        id="select-subject--control"
+                        role="combobox" 
+                        aria-expanded="false"
+                        value="Математика">
+            
+                        <label class="ui-select__label fz-90" font="gray" for="select-subject--control">Предмет</label>
+            
+                        <!-- Скрытое поле, в которое происходит запись нового значения -->
+                        <div class="sr-only js-notification" role="alert" aria-live="assertive">
+                            <!-- Выбран предмет: <span id="select-subject--updated-name">Математика</span> -->
+                        </div>
+
+                        <ul hidden class="ui-select__options-box" bg="white" font="black" outline="gray" border="primary" role="presentation">
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject" value="math" checked>
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Математика (базовый, профильный)</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject" value="lit">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Литература</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject" value="bio">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Биология</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject" value="rus">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Русский язык</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                        </ul>
+
+                        <!-- скрипт для демонстрации -->
+                        <!-- <script>
+                            function chooseSubjectOnCustomSelect() {
+                                var selectBox = $('#select-custom'),
+                                    selectControl = selectBox.find('.ui-select__control'),
+                                    selectAlertName = selectBox.find('.js-notification');
+
+                                selectControl.val('Новый');
+                                selectAlertName.text('Выбран предмет: Новый.');
+                            }
+                        </script> -->
+                    </div>
+                    
+                    <h3 class="sg-block__subtitle">Список кастомный отключенный</h3>
+                    <p>Элементу селекта .ui-select__control добавлен атрибут [disabled]. Чтобы стрелка в псевдоэлементе также стала серой, надо контейнеру .ui-select добавить класс .disabled. Атрибут <code>aria-expanded</code> не нужен.</p>
+                    <div class="ui-select ui-select_custom disabled" id="select-custom-1" font="primary" bg="white">
+                                    
+                        <input type="button" class="ui-select__control" 
+                        bg="white" border="primary" outline="primary" font="black"
+                        id="select-subject-1--control"
+                        name="subject-control-1"
+                        role="combobox"
+                        value="Математика" disabled>
+            
+                        <label class="ui-select__label fz-90" font="gray" for="select-subject-1--control">Предмет</label>
+            
+                        <ul hidden class="ui-select__options-box" bg="white" font="black" outline="gray" border="primary" role="presentation">
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject-1" value="math" >
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Математика (базовый, профильный)</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject-1" value="lit">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Литература</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject-1" value="bio">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Биология</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="subject-1" value="rus">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">Русский язык</div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Селект кастомный для выбора шрифтов -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-select_font</code>
+                            <h2 class="sg-block__name font-heading">Селект кастомный для выбора шрифтов</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    
+                    <!-- Выпадающий список с выбором шрифта -->
+                    <div class="ui-select ui-select_custom ui-select_font" id="select-font" font="primary" bg="white">
+                                    
+                        <input type="button" class="ui-select__control" 
+                        bg="white" border="primary" outline="primary" font="black"
+                        id="select-font--control"
+                        role="combobox" 
+                        aria-expanded="false"
+                        value="Roboto" style="font-family: Roboto;">
+            
+                        <label class="ui-select__label fz-90" font="gray" for="select-font--control">Шрифт</label>
+            
+                        <div class="sr-only" role="alert" aria-live="assertive">
+                            Выбран шрифт: <span id="select-font--updated-name">Roboto</span>
+                        </div>
+
+                        <ul hidden class="ui-select__options-box" bg="white" font="black" outline="gray" border="primary" role="presentation">
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="font" value="font-1" checked>
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">
+                                        <img src="img/fonts/arial-narrow_wrong-address.jpg" alt="Arial Narrow" class="ui-select__font-example" style="font-family: 'Arial Narrow';">
+                                    </div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="font" value="font-2">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">
+                                        <img src="img/fonts/open-sans-condensed.jpg" alt="Open Sans Condensed" class="ui-select__font-example" style="font-family: 'Open Sans Condensed';">
+                                    </div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="font" value="font-3">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text" style="font-family: 'PT Sans';">
+                                        <img src="img/fonts/pt-sans.jpg" alt="PT Sans" class="ui-select__font-example" style="font-family: 'PT Sans';">
+                                    </div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                            <li class="ui-select__option">
+                                <label class="ui-radio">
+                                    <input type="radio" name="font" value="font-4">
+                                    <div class="ui-radio__custom" border="primary" font="primary"></div>
+                                    <div class="ui-radio__text">
+                                        <!-- <img src="img/fonts/roboto-condensed.jpg" alt="Roboto Condensed" class="ui-select__font-example"> -->
+                                        <span class="ui-select__font-example" style="font-family: 'Roboto Condensed';">Roboto Condensed</span>
+                                    </div>
+                                    <div class="ui-radio__outline" border="primary"></div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <code>
+<pre>.ui-select.ui-select_custom >
+    input[type="button"].ui-select__control
+    + label.ui-select__label
+    + ul.ui-select__options-box > 
+        li.ui-select__option >
+            label.ui-radio > 
+                input[type="radio"]
+                + .ui-radio__custom
+                + .ui-radio__text
+                + .ui-radio__outline</pre>
+                    </code>
+                    <p>Применяется в панели настроек для слабовидящих, для выбора шрифта.</p>
+                    <p>Интерактивное взаимодействие такое же, как и у обычного кастомного селекта.</p>
+                    
+                </div>
+            </li>
+
+            <!-- Селект очень маленький -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-xs-select</code>
+                            <h2 class="sg-block__name font-heading">Селект очень маленький</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.ui-xs-select > 
+    label.sr-only
+    + select.ui-xs-select__control
+        > option</pre>
+                    </code>
+                    <p>Используется на с. ГИА-9(ГИА-11) / Информация / Минимальные баллы.</p>
+                    <div class="ui-xs-select d-inline-block margin-left margin-right" font="primary" bg="white">
+                        <label class="sr-only" for="select-grade">Оценка в пятибалльной шкале</label>
+                        <select class="ui-xs-select__control" name="grade" id="select-grade" font="black" border="primary" outline="primary" bg="white">
+                            <option bg="white" value="2">2</option>
+                            <option bg="white" value="3">3</option>
+                            <option bg="white" value="4">4</option>
+                            <option bg="white" value="5">5</option>
+                        </select>
+                    </div>
+                    <p>Вписывается в строку, но в стилях это не прописано, поэтому стоит добавлять дополнительно класс .d-inline-block и другие классы-хэлперы (например, внешние отступы) при необходимости.</p>
+                    <p>Название (label) скрыто внешне с помощью .sr-only.</p>
+                </div>
+            </li>
+
+            <!-- Спиннер, который крутится при загрузке чего-либо -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-spinner</code>
+                            <h2 class="sg-block__name font-heading">Спиннер, который крутится при загрузке чего-либо</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>.ui-spinner__wrapper > .ui-spinner</code>
+                    <p>Класс .ajax-loading нужно добавить контейнеру-владельцу</p>
+                    <p>Чтобы он правильно спозиционировался, контейнер-родитель должен иметь position: relative, в данном случае добавлен класс .relative.</p>
+                    <p>Предусмотрен вариант замены крутилки фразой "Загрузка...", если у юзера стоит предпочтение к уменьшению анимации (media-тип: prefers-reduced-motion: reduce), подключается в соответствующих css-стилях.</p>
+                    <!-- контейнер со спиннером -->
+                    <div class="ajax-loading relative" style="max-width: 25em; height: 5em;">
+                        <div class="ui-spinner__wrapper">
+                            <!-- подложка полупрозрачная -->
+                            <div class="ui-spinner__overlay" bg="primary"></div>
+                            <!-- блок с самим спиннером -->
+                            <div class="ui-spinner fz-150">
+                                <!-- крутится именно иконка -->
+                                <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <!-- сюда вставляются сообщения о состоянии загрузки -->
+                        <div class="sr-only js-loading-notice" role="status" aria-live="polite"></div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Кнопка отправки -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-submit</code>
+                            <h2 class="sg-block__name font-heading">Кнопка отправки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>button.ui-submit</code>
+                    <p>Имеет определенную длину, ограниченную шириной контейнера на больших экранах (max-width: calc(100% - 1.5em), фолбэк - 95%). На маленьких экранах имеет ширину 100%.</p>
+                    <button class="ui-submit no-invert-font" type="submit" outline="primary" bg="primary" bg-hover="primary-light" font="white">Отправить запрос</button>
+
+                    <h3 class="sg-block__subtitle">Кнопка submit, втиснутая в контейнер небольшого размера</h3>
+                    <p>Попробуйте уменьшить размер экрана. Для наглядности контейнеру задан цвет и padding</p>
+                    <div class="col-3 col-xl-4 col-md-5 col-sm-12 padding-top padding-bottom" style="background-color: burlywood;">
+                        <button class="ui-submit no-invert-font" type="submit" outline="primary" bg="primary" bg-hover="primary-light" font="white">Отправить запрос</button>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Интерактивная кнопка, со спиннером внутри</h3>
+                    <p>Спиннер показывается, если класс .ajax-loading повесить на кнопку</p>
+                    <p>Когда начинается загрузка: кнопке ставится атрибут <code>[aria-busy="true"]</code>, в скрытый элемент .js-loading-notice записывается сообщение о загрузке.</p>
+                    <p>Когда загрузка окончена: у кнопки удаляется атрибут <code>[aria-busy]</code> (или ставится false), в скрытый элемент .js-loading-notice записывается сообщение об окончании загрузки (или текст сообщения удаляется).</p>
+
+                    <button class="ui-submit no-invert-font relative" type="submit" outline="primary" bg="primary" bg-hover="primary-light" font="white" onclick="addAjaxLoadingToButton()" id="ajax-demo-button">
+                        Добавить спиннер
+                        <!-- контейнер со спиннером -->
+                        <div class="ui-spinner__wrapper">
+                            <div class="ui-spinner__overlay" bg="white"></div>
+                            <div class="ui-spinner fz-150">
+                                <span class="icon icon__spinner" font="secondary" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <!-- сюда вставляются сообщения о состоянии загрузки -->
+                        <div class="sr-only js-loading-notice" role="status" aria-live="polite"></div>
+                    </button>
+                    <!-- скрипт для демонстрации -->
+                    <script> 
+                        function addAjaxLoadingToButton() {
+                            var button = $('#ajax-demo-button'),
+                                loadingNotice = button.find('.js-loading-notice');
+    
+                            button.addClass('ajax-loading');
+                            button.attr('aria-busy', true);
+                            loadingNotice.text('Идёт загрузка');
+                            
+                            setTimeout(function() {
+                                button.removeClass('ajax-loading');
+                                button.removeAttr('aria-busy');
+                                loadingNotice.text('');
+                            }, 6000);
+                        }
+                    </script>
+                </div>
+            </li>
+
+            <!-- Кнопки закрыть -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-close</code>
+                            <h2 class="sg-block__name font-heading">Кнопки закрыть</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>button.ui-close</code>
+                    <p>Не имеют своих стилей, стиль задается на месте классами-хэлперами, атрибутами цвета или в стилях конкретного блока.</p>
+                    <button class="ui-close" outline="primary">
+                        <span class="icon icon__close" font="dark"></span>
+                    </button>
+                </div>
+            </li>
+
+            <!-- Кнопка Удалить категорию из выбранных (фильтр на с. Документы) -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-close-category</code>
+                            <h2 class="sg-block__name font-heading">Кнопка удалить категорию из выбранных</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>button.ui-close-category</code>
+                    <p>На с. Документы</p>
+                    <p>Показан пример с названием категории (с.Документы). Кнопка имеет внешний отступ margin-left: 0.2em</p>
+                    <!-- выбранные категории -->
+                    <div id="selected-filter-1" class="docs-selected__filter">
+                        <span id="category-name-1">Краевые</span>
+                        <button class="ui-close-category" outline="secondary" bg="light" title="Убрать категорию из выбранных" aria-describedby="category-name-1">
+                            <span class="icon icon__close" font="dark"></span>
+                        </button>
+                    </div>
+                    <div id="selected-filter-2" class="docs-selected__filter">
+                        <span id="category-name-2">ГИА-9</span>
+                        <button class="ui-close-category" outline="secondary" bg="light" title="Убрать категорию из выбранных" aria-describedby="category-name-2">
+                            <span class="icon icon__close" font="dark"></span>
+                        </button>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Кнопка открытия фильтра документов -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-filter</code>
+                            <h2 class="sg-block__name font-heading">Кнопка открытия фильтра документов</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>button.ui-filter</code><br>
+                    <p>На с. Документы</p>
+                    <button class="ui-filter" type="button" id="docs-filter-button" title="Открыть фильтр документов" border="dark" font="dark" outline="gray" aria-label="Открыть фильтр документов">
+                        <span class="icon icon__filter fz-100"></span>
+                        <span aria-hidden="true">Фильтр</span>
+                    </button>
+                </div>
+            </li>
+
+            <!-- Кнопка Запустить видео -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-play</code>
+                            <h2 class="sg-block__name font-heading">Кнопка Запустить видео</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>button.ui-play</code>
+                    <p>Используется на с. Методики / Видеоматериалы</p>
+                    <p>Родительский блок должен иметь position: relative, в данном случае добавлен класс .relative. Стрелка рисуется с помощью бордера</p>
+                    <p>Для демонстрации кнопке добавлен цвет (обычно она наследует его от родителя).</p>
+                    <div class="relative" style="max-width:20em;height:10em;" bg="gray">
+                        <button class="ui-play" outline="primary" bg="primary" aria-label="Запустить видео" aria-describedby="video-4-link"></button>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Пример с заданием кнопке цветов фона, шрифта (для бордера), и того же при наведении</h3>
+                    <div class="relative" style="max-width:20em;height:10em;" bg="gray">
+                        <button class="ui-play no-invert-font" outline="secondary" bg="light" bg-hover="secondary" font="dark" font-hover="light" aria-label="Запустить видео" aria-describedby="video-4-link"></button>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Пример с наследованием цвета фона от родителя (как в Видеоматериалах)</h3>
+                    <p>Для наглядности добавлена дополнительная подложка</p>
+                    <p>Стоит заметить, что свойство background-color не наследуется автоматически, в отличие от цвета шрифта color. В стилях кнопки .ui-play прописано, что если она не имеет атрибут [bg], то она должна наследовать это значение от родителя.</p>
+                    <div class="relative no-invert-font" style="max-width:20em;height:10em;" bg="light" bg-hover="secondary" font="black" font-hover="white">
+                        <span>Текст внутри блока (для демонстрации изменения цвета шрифта при наведении)</span>
+                        <div class="absolute" style="bottom:0;width:80%;height:80%;opacity:0.5;" bg="primary"></div>
+                        <button class="ui-play no-invert-font" outline="secondary" aria-label="Запустить видео" aria-describedby="video-4-link"></button>
+                    </div>
+                    <p>Отличие стилей именно для кнопки в Видеоматериалах (.video__button) от стилей компонента кнопки (.ui-play) в том, что .video__button более полупрозрачная и меняет прозрачность при наведении на блок с видео.</p>
+                </div>
+            </li>
+
+            <!-- Стрелки прокрутки слайдера малые -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-arrow</code>
+                            <h2 class="sg-block__name font-heading">Стрелки малые</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>button.ui-arrow.left[disabled]
++ button.ui-arrow.right</pre>
+                    </code>
+
+                    <div class="slider__controls">
+                        <button class="slider__arrow ui-arrow left no-invert-font" aria-label="левый слайд" outline="secondary" font="dark" disabled>
+                            <span class="icon icon__arrow-left"></span>
+                        </button>
+                        <button class="slider__arrow ui-arrow right no-invert-font" aria-label="правый слайд" outline="secondary" font="dark">
+                            <span class="icon icon__arrow-right"></span>
+                        </button>
+                    </div>
+                    <p>Применяется в слайдере на главной странице (меню плиткой, Популярные статьи, Популярные вопросы)</p>
+                    <p>Класс .slider__arrow для javascript - назначение событий переключения слайдов. Также, лежит в блоке .slider__controls</p>
+                    <p>Левая кнопка по умолчанию отключена (т.к. на слайдере показан первый слайд) с помощью атрибута [disabled], это показывается ее полупрозрачностью</p>
+                </div>
+            </li>
+
+            <!-- Стрелки прокрутки слайдера большие -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-scroll-arrow</code>
+                            <h2 class="sg-block__name font-heading">Стрелки прокрутки слайдера большие</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>button.ui-scroll-arrow.left[disabled]
++ button.ui-scroll-arrow.right</pre>
+                    </code>
+                    <p>Применяется в слайдерах на главной странице (Новости на сайте, Памятки участникам и Полезные ссылки).</p>
+                    <div class="relative" style="height: 10em;background-color: burlywood;max-width: 50em;">
+                        <!-- <div class="slider__controls"> -->
+                            <button class="slider__arrow ui-scroll-arrow left sm-hidden" font="page" outline="primary" aria-label="предыдущие новости" disabled>
+                                <span class="icon__scroll-left" font="black" aria-hidden="true"></span>
+                            </button>
+                            <button class="slider__arrow ui-scroll-arrow right sm-hidden" font="page" outline="primary"  aria-label="следующие новости">
+                                <span class="icon__scroll-right" font="black" aria-hidden="true"></span>
+                            </button>
+                        <!-- </div> -->
+                    </div>
+
+                    <p>Класс .slider__arrow для javascript - назначение событий переключения слайдов. Также, лежит в блоке .slider__controls. Стили позиционирования слева и справа назчачаются в классах .left, .right.</p>
+                    <p>Градиент задается с помощью box-shadow, для которого указан атрибут [font].Родительский контейнер должен иметь position: relative или класс .relative.</p>
+                    <p>Левая кнопка по умолчанию отключена (т.к. на слайдере показаны первые слайды) с помощью атрибута [disabled], это показывается ее невидностью (visibility: hidden или display: none). На маленьких экранах убираются (класс .sm-hidden), т.к. это разрешение смартфонов/планшетов (и места много не занимает) и доступны touch-события - появляется горизонтальная полоса прокрутки.</p>
+                </div>
+            </li>
+        
+            <!-- Стрелки слайдера в модальном окне -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-popup-slider-arrow</code>
+                            <h2 class="sg-block__name font-heading">Стрелки слайдера в модальном окне</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>button.ui-popup-slider-arrow</code>
+                    <p>Применяется в всплывающем окне для памяток. Для нагдядности обернуты в контейнер с шириной, высотой и классом .relative</p>
+                    <div class="relative" style="max-width: 100%; width: 30em; height: 15em;" bg="light" border="dark">
+                        <div class="slider__controls"> 
+                            <!-- этот контейнер ничего не дает и бесмысленнен -->
+                            <button class="ui-popup-slider-arrow left no-invert-font" font="white" blackout="black" outline="primary" aria-label="предыдущее изображение">
+                                <span class="icon icon__arrow-left fz-110" aria-hidden="true"></span>
+                            </button>
+                            <button class="ui-popup-slider-arrow right no-invert-font" font="white" blackout="black" outline="primary" aria-label="следующее изображение">
+                                <span class="icon icon__arrow-right fz-110" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Дотсы - переключатели на слайдере -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>
+<pre>.ui-dotslist 
+    > .ui-dot</pre>
+                            </code>
+                            <h2 class="sg-block__name font-heading">Дотсы - переключатели на слайдере</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>ul.ui-dotslist > li > button.ui-dot</code>
+                    <p>Используется на главной в слайдере</p>
+                    <ul class="ui-dotslist row fz-130" role="group" aria-label="Панель переключателей на слайдере">
+                        <li role="presentation">
+                            <button class="ui-dot active" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-current="true" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                    </ul>
+                    <p>Цвет активного дотса задается атрибутом [bg-active="secondary"], который активируется, когда у дотса присутствует класс .active</p>
+                </div>
+            </li>
+
+            <!-- Этапы выполнения -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>
+<pre>.ui-steplist
+    > .ui-step</pre>
+                            </code>
+                            <h2 class="sg-block__name font-heading">Этапы выполнения</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>ul.ui-steplist[role="tablist"]
+    > li > button.ui-step[role="tab"]</pre>
+                    </code>
+                    <p>Используется в панели настроек для слабовидящих (ограничивающий контейнер для примера)</p>
+
+                    <h3 class="sg-block__subtitle">Не пройденный шаг</h3>
+                    <code>button.ui-step[role="tab"]</code>
+                    <div class="col-3 col-xs-6">
+                        <button class="ui-step no-invert-font" font="dark" bg="light" bg-active="primary" font-active="white" outline="primary" title="Выбор цветовой гаммы" role="tab">
+                            <span class="sr-only">Шаг</span>
+                            1
+                        </button>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Пройденный шаг</h3>
+                    <code>button.ui-step.active[role="tab"]</code>
+                    <div class="col-3 col-xs-6">
+                        <button class="ui-step no-invert-font active" font="dark" bg="light" bg-active="primary" font-active="white" outline="primary" title="Выбор цветовой гаммы" role="tab">
+                            <span class="sr-only">Шаг</span>
+                            1
+                        </button>
+                    </div>
+                    
+                    <h3 class="sg-block__subtitle">Текущий шаг</h3>
+                    <code>button.ui-step.active[aria-current="true"][role="tab"]</code>
+                    <div class="col-3 col-xs-6">
+                        <button class="ui-step no-invert-font active" font="dark" bg="light" bg-active="primary" font-active="white" outline="primary" title="Выбор цветовой гаммы" role="tab" aria-current="true">
+                            <span class="sr-only">Шаг</span>
+                            1
+                        </button>
+                    </div>
+                    
+                </div>
+            </li>
+
+            <!-- Вкладки -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>
+<pre>.ui-tablist 
+    > .ui-tab</pre>
+                            </code>
+                            <h2 class="sg-block__name font-heading">Вкладки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>ul.ui-tablist[role="tablist"] > 
+    li > button.ui-tab[role="tab"] > .ui-tab-triangle</pre>
+                    </code>
+                
+                    <p>Используется на многих страницах.</p>
+                    <div class="overflow-horizontal">
+                        <ul class="ui-tablist news__tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                            <li role="presentation">
+                                <button class="ui-tab no-invert-font" bg="light" bg-active="secondary" outline="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" role="tab">
+                                    Первая
+                                    <span border="page" class="ui-tab-triangle"></span>
+                                </button>
+                            </li>
+                            <li role="presentation">
+                                <button class="ui-tab no-invert-font" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab" >
+                                    Вторая
+                                    <span border="page" class="ui-tab-triangle"></span>
+                                </button>
+                            </li>
+                        </ul>
+                        <div hidden id="tablist-description">Клавиши влево и вправо для выбора вкладки, клавиша вниз для перехода к содержимому вкладки</div>
+                    </div>
+
+                    <p>Цвет активной вкладки задается атрибутом [bg-active="secondary"], который активируется, когда у вкладки присутствует класс .active</p>
+                    <button class="ui-tab no-invert-font active" bg="light" bg-active="secondary" outline="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" role="tab">
+                        Активная
+                        <!-- треугольник внизу активной вкладки -->
+                        <span border="page" class="ui-tab-triangle"></span>
+                    </button>
+                        
+                </div>
+            </li>
+            
+            <!-- Иконочные ссылки -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-icon-link</code>
+                            <h2 class="sg-block__name font-heading">Иконочные ссылки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>a.ui-icon-link</code>
+                    <p>Используется в таблицах на страницах Результаты / Получить результаты и ГИА-9(ГИА-11) / Даты объявления результатов и подачи апелляций</p>
+                    <div class="margin-top margin-bottom">
+                        <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                            <span class="icon icon__look fz-150"></span>
+                        </a>
+                        <a href="#" title="Подать апелляцию" font="secondary" outline="secondary" font="gray" class="no-visited ui-icon-link">
+                            <span class="icon icon__edit fz-150"></span>
+                        </a>
+                    </div>
+                    <div class="margin-top margin-bottom">Пример со словами (иконки имеют внешний отступ margin-left):<br>
+                        Слово<a href="#" title="Подать апелляцию" font="secondary" outline="secondary" font="gray" class="no-visited ui-icon-link">
+                            <span class="icon icon__edit fz-150"></span>
+                        </a>
+                        <br>
+                        19.05.2019
+                        <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                            <span class="icon icon__look fz-150"></span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Ссылки-примечания -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-grade-note</code>
+                            <h2 class="sg-block__name font-heading">Ссылки-примечания</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>a.ui-grade-note</code>
+                    <p>Используются в таблице на с. "ГИА / Информация / Минимальные баллы", имеют отступ margin-left</p>
+                    <p>С помощью aria-labelledby="id" должны быть связаны с примечанием (оно будет озвучено при фокусе на ссылку)</p>
+
+                    <a href="#grade-about-1" class="ui-grade-note no-visited" bg="light" outline="secondary" aria-labelledby="id-info-notice-for-grade">
+                        <span class="fz-120 bold sm-hidden" aria-hidden="true" font="secondary">! </span>
+                        <span class="fz-90">примечание 1</span>
+                    </a>
+                </div>
+            </li>
+
+            <!-- Кнопка открытия блока аккордеона -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-accordion-open</code>
+                            <h2 class="sg-block__name font-heading">Кнопка открытия блока аккордеона</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.ui-accordion-open__wrapper > 
+    button.ui-accordion-open</pre>
+                    </code>
+                    <p>Пока применяется только в style guide, ширина 100%.</p>
+                    <p>В элементе .ui-accordion-open может быть что угодно. Для наглядности компонент вложен в обертку. Также, для удобства блоку-обертке <code>.accordion__block.js-accordion-block</code> устанавливается класс .is-open</p>
+                    
+                    <h3 class="sg-block__subtitle">Описание взаимодействия</h3>
+                    <p>При открытии кнопке ставится атрибут <code>[aria-expanded="true"]</code>, при закрытии и первой инициализации false.</p>
+
+                    <h3 class="sg-block__subtitle">Стандартный вариант</h3>
+                    <div class="padding" border="gray">
+                        <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                            <button class="ui-accordion-open" outline="secondary">
+                                Заголовок блока аккордеона
+                            </button>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Вариант с кодом (тэг code) внутри</h3>
+                    <div class="padding" border="gray">
+                        <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                            <button class="ui-accordion-open" outline="secondary">
+                                <div class="sg-block__caption">
+                                    <code>.ui-component</code>
+                                    <h2 class="sg-block__name font-heading">Название компонента</h2>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <h3 class="sg-block__subtitle">В другом цвете и стиле, открытый</h3>
+                    <div class="padding" border="gray">
+                        <div class="ui-accordion-open__wrapper fz-120 no-invert-font" bg="primary" border="secondary" font="white">
+                            <button class="ui-accordion-open" outline="secondary">
+                                Заголовок блока аккордеона
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Пусто -->
+            <!-- <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.ui-</code>
+                            <h2 class="sg-block__name font-heading">Пусто</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    
+                </div>
+            </li> -->
+
+        </ul>
+        
+    </main>
+    </div>
+
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/disclosure.js"></script>
+    <script src="js/select.js"></script>
+    
+</body>
+</html>

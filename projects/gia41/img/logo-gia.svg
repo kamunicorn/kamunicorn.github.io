@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" 
+viewBox="0 0 1.44444 1.24823"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .edge {stroke:black;stroke-width:0.03528}
+    .white {fill:white}
+    .red {fill:#FF142A}
+    .blue {fill:#0172BE}
+		.light .edge {stroke:#0172BE}
+		.dark .edge {stroke:white}
+		.dark .white {fill:#506471}
+   ]]>
+  </style>
+ </defs>
+ <g>
+  <circle class="white edge" cx="0.38102" cy="0.18117" r="0.16353"/>
+  <circle class="red edge" cx="1.05043" cy="0.19091" r="0.16353"/>
+  <circle class="blue edge" cx="0.71572" cy="0.18117" r="0.16353"/>
+  <path class="white edge" d="M0.01764 0.29759l0 0.33837c0.36096,0.00484 -0.03756,0.61 0.52691,0.59301l0.00286 -0.44949c-0.04029,-0.35579 -0.21179,-0.45195 -0.52977,-0.48189z"/>
+  <path class="red edge" d="M1.4268 0.29759l0 0.33837c-0.36096,0.00484 0.03756,0.61 -0.52691,0.59301l-0.00286 -0.44949c0.04029,-0.35579 0.21179,-0.45195 0.52977,-0.48189z"/>
+  <path class="blue edge" d="M1.08157 0.31578l0 0.32018c-0.15228,0.00204 -0.16938,0.11093 -0.18065,0.23486l0.0013 0.35977 -0.35641 0 0.0013 -0.35977c-0.01127,-0.12393 -0.06834,-0.23646 -0.22062,-0.2385l0 -0.32018c0.16551,0.01558 0.29134,0.04911 0.37963,0.12785 0.08807,-0.07615 0.21251,-0.10887 0.37545,-0.12421z"/>
+ </g>
+</svg>

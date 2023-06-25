@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <script src="js/foreach-ie.js"></script> 
+	<title>Даты объявления результатов и подачи апелляций</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- контент -->
+    <div class="container">
+       
+        <!-- основное содержание страницы -->
+        <main id="main" class="content">
+            <h1 class="content__title" id="content-title">Даты объявления результатов и подачи апелляций</h1>
+
+            <!-- блок показывается, если расписания нет в базе -->
+            <!-- тогда расписание не выводится (вкладки, таблицы) -->
+            <div class="info-notice relative" border="secondary">
+                <div class="info-notice__icon bold" border="secondary" bg="white" font="secondary" aria-hidden="true">!</div>
+                <p class="info-notice__text m0 bold fz-120" font="secondary">
+                    На 2020 год пока не загружено расписание. Попробуйте позднее.
+                </p>
+            </div>
+            
+            <!-- Вкладки -->
+            <div class="tabbed">
+                <ul class="ui-tablist content__tablist" font="black" border="secondary" role="tablist" aria-describedby="tablist-description">
+                    <li role="presentation">
+                        <button class="ui-tab no-invert-font" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" target="tabpanel-ege" role="tab" tabindex="-1">
+                            <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span>
+                            <span class="ui-tab-triangle" border="white"></span>
+                        </button>
+                    </li>
+                    <li role="presentation">
+                        <button class="ui-tab no-invert-font" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" target="tabpanel-gve-11" role="tab" tabindex="-1">
+                            <span role="text" aria-labelledby="abbr-gve-11">ГВЭ-11</span>
+                            <span class="ui-tab-triangle" border="white"></span>
+                        </button>
+                    </li>
+                </ul>
+                <div hidden id="tablist-description">Клавиши влево и вправо для выбора вкладки, клавиша вниз для перехода к содержимому вкладки</div>
+
+                <!-- содержание вкладки ЕГЭ -->
+                <section outline="gray" id="tabpanel-ege" tabindex="-1" role="tabpanel">
+                    <h2 class="sr-only">Даты объявления результатов и подачи апелляций по предметам ЕГЭ</h2>
+
+                    <!-- селект с предметами -->
+                    <div class="row align-items-center margin-top margin-bottom">
+                        <p class="bold margin-right">
+                            Показано расписание для предмета:
+                        </p>
+                        <div class="ui-select ui-select_long" font="primary" bg="white">
+                            <label class="ui-select__label fz-90" for="select-subject" font="gray">Предмет</label>
+                            <select class="ui-select__control" name="subject" id="select-subject" font="black" border="primary" outline="primary" bg="white">
+                                <option bg="white" value="math" selected>Математика (базовый, профильный)</option>
+                                <option bg="white" value="rus">Русский язык</option>
+                                <option bg="white" value="phys">Физика</option>
+                                <option bg="white" value="lit">Литература</option>
+                                <option bg="white" value="bio">Биология</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table class="table announcement-dates">
+                                <caption class="sr-only">Расписание для предмета: Математика</caption>
+                                <thead bg="dark" font="white" aria-hidden="true">
+                                    <tr>
+                                        <th scope="col">Тип экзамена</th>
+                                        <th scope="col">Дата экзамена</th>
+                                        <th scope="col">Официальный день объявления результатов</th>
+                                        <th scope="col">Прием апелляций</th>
+                                        <th scope="col">Утверждение результатов апелляции</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody role="presentation">
+                                    <!-- Досрочный период -->
+                                    <tr>
+                                        <th class="table__period-caption" colspan="5" font="primary" border="primary">
+                                            <h3 class="m0 font-content bold fz-110">Досрочный период</h3>
+                                        </th>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="italic" scope="row">основной день</th>
+                                        <td>15.05.2019</td>
+                                        <td>
+                                            19.05.2019
+                                            <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                                                <span class="icon icon__look fz-150"></span>
+                                            </a>
+                                        </td>
+                                        <td>19.05.2019 - 22.05.2019</td>
+                                        <td>27.05.2019</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="italic" scope="row">резервный день</th>
+                                        <td>24.05.2019</td>
+                                        <td>
+                                            30.05.2019
+                                            <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                                                <span class="icon icon__look fz-150"></span>
+                                            </a>
+                                        </td>
+                                        <td>30.05.2019 - 02.06.2019</td>
+                                        <td>07.06.2019</td>
+                                    </tr>
+                                    <!-- Основной период -->
+                                    <tr>
+                                        <th class="table__period-caption" colspan="5" font="primary" border="primary">
+                                            <h3 class="m0 font-content bold fz-110">Основной период</h3>
+                                        </th>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="italic" scope="row">основной день</th>
+                                        <td>15.05.2019</td>
+                                        <td>
+                                            19.05.2019
+                                            <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                                                <span class="icon icon__look fz-150"></span>
+                                            </a>
+                                        </td>
+                                        <td>19.05.2019 - 22.05.2019</td>
+                                        <td>27.05.2019</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="italic" scope="row">резервный день</th>
+                                        <td>24.05.2019</td>
+                                        <td>
+                                            30.05.2019
+                                            <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                                                <span class="icon icon__look fz-150"></span>
+                                            </a>
+                                        </td>
+                                        <td>30.05.2019 - 02.06.2019</td>
+                                        <td>07.06.2019</td>
+                                    </tr>
+                                    <!-- Дополнительный период -->
+                                    <tr>
+                                        <th class="table__period-caption" colspan="5" font="primary" border="primary">
+                                            <h3 class="m0 font-content bold fz-110">Дополнительный период</h3>
+                                        </th>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="italic" scope="row">основной день</th>
+                                        <td>15.05.2019</td>
+                                        <td>
+                                            19.05.2019
+                                            <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                                                <span class="icon icon__look fz-150"></span>
+                                            </a>
+                                        </td>
+                                        <td>19.05.2019 - 22.05.2019</td>
+                                        <td>27.05.2019</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="italic" scope="row">резервный день</th>
+                                        <td>24.05.2019</td>
+                                        <td>
+                                            30.05.2019
+                                            <a href="#" title="Посмотреть результаты" font="primary" outline="primary" class="no-visited ui-icon-link">
+                                                <span class="icon icon__look fz-150"></span>
+                                            </a>
+                                        </td>
+                                        <td>30.05.2019 - 02.06.2019</td>
+                                        <td>07.06.2019</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- содержание вкладки ГВЭ-11 -->
+                <section outline="gray" id="tabpanel-gve-11" tabindex="-1" role="tabpanel">
+                </section>
+            </div>
+
+            <div class="info-notice relative" border="secondary">
+                <div class="info-notice__icon bold" border="secondary" bg="white" font="secondary" aria-hidden="true">!</div>
+                <p class="info-notice__text m0">Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов <span role="text" aria-labelledby="abbr-gia">ГИА</span>. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в таблице “Даты объявления результатов и подачи апелляций”, то дни приема апелляций также сдвигаются.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script src="js/tabs.js"></script>
+    
+</body>
+</html>

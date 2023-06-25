@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <title>Инструкции ГИА</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- для озвучки вместо сокращений -->
+    <div hidden>
+        <span id="abbr-ege">ЕГЭ (единый государственный экзамен)</span>
+        <span id="abbr-oge">ОГЭ (основной государственный экзамен)</span>
+        <span id="abbr-gve">ГВЭ (государственный выпускной экзамен)</span>
+        <span id="abbr-gia">ГИА (государственная итоговая аттестации)</span>
+        
+        <span id="abbr-gve-9">ГВЭ-9 (государственный выпускной экзамен за девятый класс)</span>
+        <span id="abbr-gve-11">ГВЭ-11 (государственный выпускной экзамен за одиннадцатый класс)</span>
+        <span id="abbr-gia-9">ГИА-9 (государственная итоговая аттестации за девятый класс)</span>
+        <span id="abbr-gia-11">ГИА-11 (государственная итоговая аттестации за одиннадцатый класс)</span>
+        
+        <span id="abbr-gis">ГИС (государственная информационная система)</span>
+        <span id="abbr-ooto-gia">ООТО ГИА (Отдел организационно-технологического обеспечения государственной итоговой аттестации)</span>
+        <span id="abbr-rcoi">РЦОИ (Региональный центр обработки информации)</span>
+        <span id="abbr-ppe">ППЭ (пункт проведения экзаменов)</span>
+        <span id="abbr-gek">ГЭК (государственная экзаменнационная комиссия)</span>
+    </div>
+
+    <!-- хлебные крошки -->
+    <div class="container">
+        <ul aria-label="вы находитесь здесь" role="navigation" class="breadcrumbs row fz-90">
+            <li class="breadcrumbs__item">
+                <a outline="primary" class="underlined-link" href="/">
+                    Главная
+                </a>
+            </li>
+            <li class="breadcrumbs__separator" role="separator"></li>
+            <li class="breadcrumbs__item">
+                <a outline="primary" class="underlined-link" href="#">
+                    Методические материалы
+                </a>
+            </li>
+            <li class="breadcrumbs__separator" role="separator"></li>
+            <li class="breadcrumbs__item" aria-current="page">
+                Инструкции ГИА
+            </li>
+        </ul>
+    </div>
+
+    <!-- контейнер страницы -->
+    <div class="container row">
+
+        <!-- боковое меню aside -->
+        <div class="col-4 col-xl-4 md-hidden">
+            <aside role="menu" border="gray" class="aside">
+                <ul class="aside-menu sticky" aria-labelledby="aside-title">
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Итоговое сочинение (изложение)</a>
+                    </li>
+                    <li class="active" aria-current="page">
+                        Инструкции ГИА
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Презентации</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Видеоматериалы</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">ГИА по иностранным языкам</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Обучение лиц, задействованных при проведении ГИА</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" outline="primary" href="#">Общественным наблюдателям</a>
+                    </li>
+                </ul>
+                <!-- .aside-menu -->
+            </aside>
+        </div>
+        
+        <!-- основное содержание страницы -->
+        <div class="col-8 col-xl-8 col-md-12 content">
+            <main id="main">
+                <h1 class="content__title">Инструкции ГИА</h1>
+
+                <!-- Вкладки и их содержание -->
+                <div class="tabbed">
+                    <div class="overflow-horizontal">
+                        <ul class="ui-tablist content__tablist" font="black" border="secondary" role="tablist" aria-describedby="tablist-description">
+                            <li role="presentation">
+                                <button class="ui-tab no-invert-font" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" type="button" target="tabpanel-gia-11" role="tab" aria-selected="true" tabindex="-1">
+                                    <span role="text" aria-labelledby="abbr-gia-11">ГИА-11</span>
+                                    <span class="ui-tab-triangle" border="page"></span>
+                                </button>
+                            </li>
+                            <li role="presentation">
+                                <button class="ui-tab no-invert-font" bg="light" bg-hover="secondary-light" font-active="white" font-hover="white" bg-active="secondary" outline="secondary" type="button" target="tabpanel-gia-9" role="tab" tabindex="-1">
+                                    <span role="text" aria-labelledby="abbr-gia-9">ГИА-9</span>
+                                    <span class="ui-tab-triangle" border="page"></span>
+                                </button>
+                            </li>
+                        </ul>
+                        <div hidden id="tablist-description">Клавиши влево и вправо для выбора вкладки, клавиша вниз для перехода к содержимому вкладки</div>
+                    </div>
+
+                    <!-- содержание вкладки ГИА-11 -->
+                    <section id="tabpanel-gia-11" outline="gray" tabindex="-1" role="tabpanel">
+                        <h2 class="sr-only">Инструкции ГИА-11</h2>
+
+                        <h3 id="content-subtitle-1" class="content__subtitle">Инструкции, утверждённые <a href="#" outline="primary" font="primary" class="underlined-link">Приказом Министерства образования и молодёжной политики Камчатского края от 14.02.2019 №130</a></h3>
+                        <!-- Список документов -->
+                        <ul aria-labelledby="content-subtitle-1" class="docs-list">
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-1-about">Инструкция по подготовке и проведению ЕГЭ</a>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                        <div hidden id="doc-1-about">формат документа pdf, размер 213.4 Кб</div>
+                                    </div>
+                                </div>
+                                    
+                            </li>
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-2-about">Инструкция по проведению ЕГЭ в ППЭ по бланочной технологии</a>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                        <div hidden id="doc-2-about">формат документа pdf, размер 213.4 Кб</div>
+                                    </div>
+                                </div>
+                                    
+                            </li>
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-3-about">Инструкции для лиц, задействованных при проведении ЕГЭ в ППЭ</a>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                        <div hidden id="doc-3-about">формат документа pdf, размер 213.4 Кб</div>
+                                    </div>
+                                </div>
+                                    
+                            </li>
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-4-about">Инструкция по организации видеонаблюдения</a>
+                                        <div hidden="hidden" id="doc-4-about">формат документа docx, размер 86.4 Кб</div>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                    </div>
+                                </div>
+                                    
+                            </li>
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-5-about">Инструкция по организации и проведению ЕГЭ для лиц с ОВЗ, детей-инвалидов и инвалидов</a>
+                                        <div hidden="hidden" id="doc-5-about">формат документа docx, размер 86.4 Кб</div>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                    </div>
+                                </div>
+                                    
+                            </li>
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-6-about">Инструкция по автоматизированной процедуре проведения ГВЭ-11</a>
+                                        <div hidden="hidden" id="doc-6-about">формат документа docx, размер 86.4 Кб</div>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                    </div>
+                                </div>
+                                    
+                            </li>
+                            <li role="document" class="document document_archive">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__archive"></span>
+                                        <div class="fz-80">.rar</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-8-about">Скачать одним архивом</a>
+                                        <div aria-hidden="true" class="fz-90">(102.6 Кб)</div>
+                                        <div hidden id="doc-8-about">формат документа docx, размер 86.4 Кб</div>
+                                    </div>
+                                </div>
+                                    
+                            </li>
+                        </ul>
+                        <!-- .doc-list -->
+
+                        <h3 id="content-subtitle-3" class="content__subtitle">Иные инструкции</h3>
+                        <!-- Список документов -->
+                        <ul aria-labelledby="content-subtitle-3" class="docs-list">
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline">Сборник форм для проведения ЕГЭ</a>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="document" class="document">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__document"></span>
+                                        <div class="fz-80">.pdf</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-9-about">Перечень протоколов ЕГЭ (условия хранения/доставки)</a>
+                                        <div aria-hidden="true" class="fz-90">(213.4 Кб)</div>
+                                        <div hidden id="doc-9-about">формат документа docx, размер 86.4 Кб</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="document" class="document document_archive">
+                                <div class="row">
+                                    <div aria-hidden="true" class="document__icon col-1 col-xs-2">
+                                        <span font="primary" class="fz-180 icon icon__archive"></span>
+                                        <div class="fz-80">.rar</div>
+                                    </div>
+                                    <div class="col-11 col-xs-10">
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="doc-10-about">Скачать одним архивом</a>
+                                        <div aria-hidden="true" class="fz-90">(822.6 Кб)</div>
+                                        <div hidden id="doc-10-about">формат документа docx, размер 86.4 Кб</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- .doc-list -->
+
+                        <h3 id="content-subtitle-4" class="content__subtitle">Образцы и формы</h3>
+                        <ul aria-labelledby="content-subtitle-4" class="row blanks-list">
+                            <li class="col-4 col-lg-6 col-xs-12 blank blank_horizontal">
+                                <a class="d-inline-block" outline="primary" href="img/blanks/blank1.png">
+                                    <img class="box-shadow bright-less-in-dark" font="gray" src="img/blanks/blank1.png" alt="Бланк для сейф-пакета (большого)">
+                                </a>
+                                <div class="row margin-top">
+                                    <div class="document__icon col-2" role="document">
+                                        <a class="to-underline" outline="primary" font="primary" href="#" title="Скачать документ" aria-describedby="doc-11-name doc-11-about">
+                                            <span font="primary" class="fz-180 icon icon__document"></span>
+                                            <div class="fz-80" aria-hidden="true">.docx</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10">
+                                        <div id="doc-11-name">Бланк для сейф-пакета (большого)</div>
+                                        <div aria-hidden="true" class="fz-90">(47.6 Кб)</div>
+                                    </div>
+                                    <div hidden id="doc-11-about">формат документа docx, размер 86.4 Кб</div>
+                                </div>
+                            </li>
+                            <li class="col-4 col-lg-6 col-xs-12 blank blank_horizontal">
+                                <a class="d-inline-block" outline="primary" href="img/blanks/blank2.png">
+                                    <img class="box-shadow bright-less-in-dark" font="gray" src="img/blanks/blank2.png" alt="Форма ППЭ-11 для сейф-пакета (стандартного) с КИМ 1">
+                                </a>
+                                <div class="row margin-top">
+                                    <div class="document__icon col-2" role="document">
+                                        <a class="to-underline" outline="primary" font="primary" href="#" title="Скачать документ" aria-describedby="doc-12-name doc-12-about">
+                                            <span font="primary" class="fz-180 icon icon__document"></span>
+                                            <div class="fz-80" aria-hidden="true">.docx</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10">
+                                        <div id="doc-12-name">Форма ППЭ-11 для сейф-пакета (стандартного) с КИМ</div>
+                                        <div aria-hidden="true" class="fz-90">(47.6 Кб)</div>
+                                    </div>
+                                    <div hidden id="doc-12-about">формат документа docx, размер 86.4 Кб</div>
+                                </div>
+                            </li>
+                            <li class="col-4 col-lg-6 col-xs-12 blank blank_horizontal">
+                                <a class="d-inline-block" outline="primary" href="img/blanks/blank2.png">
+                                    <img class="box-shadow bright-less-in-dark" font="gray" src="img/blanks/blank2.png" alt="Форма ППЭ-11 для сейф-пакета (стандартного) с КИМ 1">
+                                </a>
+                                <div class="row margin-top">
+                                    <div class="document__icon col-2" role="document">
+                                        <a class="to-underline" outline="primary" font="primary" href="#" title="Скачать документ" aria-describedby="doc-12-name doc-12-about">
+                                            <span font="primary" class="fz-180 icon icon__document"></span>
+                                            <div class="fz-80" aria-hidden="true">.docx</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10">
+                                        <div id="doc-12-name">Форма ППЭ-11 для сейф-пакета (стандартного) с КИМ</div>
+                                        <div aria-hidden="true" class="fz-90">(47.6 Кб)</div>
+                                    </div>
+                                    <div hidden id="doc-12-about">формат документа docx, размер 86.4 Кб</div>
+                                </div>
+                            </li>
+                            <li class="col-4 col-lg-6 col-xs-12 blank blank_horizontal">
+                                <a class="d-inline-block" outline="primary" href="img/blanks/blank2.png">
+                                    <img class="box-shadow bright-less-in-dark" font="gray" src="img/blanks/blank2.png" alt="Форма ППЭ-11 для сейф-пакета (стандартного) с КИМ 1">
+                                </a>
+                                <div class="row margin-top">
+                                    <div class="document__icon col-2" role="document">
+                                        <a class="to-underline" outline="primary" font="primary" href="#" title="Скачать документ" aria-describedby="doc-12-name doc-12-about">
+                                            <span font="primary" class="fz-180 icon icon__document"></span>
+                                            <div class="fz-80" aria-hidden="true">.docx</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10">
+                                        <div id="doc-12-name">Форма ППЭ-11 для сейф-пакета (стандартного) с КИМ</div>
+                                        <div aria-hidden="true" class="fz-90">(47.6 Кб)</div>
+                                    </div>
+                                    <div hidden id="doc-12-about">формат документа docx, размер 86.4 Кб</div>
+                                </div>
+                            </li>
+                            <li class="col-4 col-lg-6 col-xs-12 blank blank_horizontal">
+                                <a class="d-inline-block" outline="primary" href="img/blanks/blank1.png">
+                                    <img class="box-shadow bright-less-in-dark" font="gray" src="img/blanks/blank1.png" alt="Бланк для сейф-пакета (большого)">
+                                </a>
+                                <div class="row margin-top">
+                                    <div class="document__icon col-2" role="document">
+                                        <a class="to-underline" outline="primary" font="primary" href="#" title="Скачать документ" aria-describedby="doc-11-name doc-11-about">
+                                            <span font="primary" class="fz-180 icon icon__document"></span>
+                                            <div class="fz-80" aria-hidden="true">.docx</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10">
+                                        <div id="doc-11-name">Бланк для сейф-пакета (большого)</div>
+                                        <div aria-hidden="true" class="fz-90">(47.6 Кб)</div>
+                                    </div>
+                                    <div hidden id="doc-11-about">формат документа docx, размер 86.4 Кб</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- .doc-list -->
+
+                    </section>
+
+                    <!-- содержание вкладки ГИА-9 -->
+                    <section id="tabpanel-gia-9" hidden outline="gray" tabindex="-1" role="tabpanel">
+                        <h2 class="sr-only">Инструкции ГИА-9</h2>
+
+                        содержание вкладки ГИА-9
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quasi eius similique labore vitae pariatur quia non tempora! Quaerat quibusdam earum maxime culpa nostrum animi laboriosam veniam, ad velit. Quisquam nam explicabo repudiandae quos eum laboriosam obcaecati aspernatur molestiae pariatur at. Atque eos commodi dignissimos voluptates quibusdam error ea nemo possimus nostrum ut aut sed, facilis nisi? Ipsum at aliquid perspiciatis, rem illum ad odio facilis atque molestiae assumenda temporibus delectus, dignissimos expedita impedit unde ipsa corporis dolorem blanditiis! Error amet placeat incidunt quisquam fugit porro quaerat tempore repellat, natus delectus, provident, tenetur at molestiae accusantium blanditiis ea adipisci rem modi? Hic, obcaecati? Distinctio, dolorum facilis! Eaque in temporibus cum. Error dolore assumenda totam voluptate dolorum, odio distinctio enim! Eum ipsa, velit dolorem deleniti voluptas quam quaerat praesentium vero, aut est modi at expedita dolorum enim, itaque fugiat architecto omnis error laboriosam molestias hic fuga cum rem sapiente! Animi rem adipisci sit. Magnam ex veniam qui, assumenda et sequi quisquam, consequatur unde ea quas eaque modi, quod perspiciatis. Iusto ad repellendus autem et ullam placeat cupiditate excepturi quod rem sunt nihil porro minus expedita doloremque itaque, tempore distinctio, vero ducimus. Pariatur consequatur incidunt cupiditate voluptas ab, laudantium ex itaque dicta.
+                    </section>
+
+                </div>
+            </main>
+
+            <!-- Другие статьи из раздела -->
+            <aside role="menu" class="aside aside_bottom hidden md-visible">
+                <h2 id="aside-title" class="content__subtitle">Другие статьи из раздела</h2>
+                <ul class="aside-menu" aria-labelledby="aside-title">
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Итоговое сочинение (изложение)</a>
+                    </li>
+                    <li class="active" aria-current="page">
+                        Инструкции ГИА
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Презентации</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Видеоматериалы</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">ГИА по иностранным языкам</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Обучение лиц, задействованных при проведении ГИА</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" outline="primary" href="#">Общественным наблюдателям</a>
+                    </li>
+                </ul>
+                <!-- .aside-menu -->
+            </aside>
+
+        </div>
+    </div>
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script src="js/tabs.js"></script>
+    
+</body>
+</html>

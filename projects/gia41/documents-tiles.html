@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <title>Документы плиткой</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- контент -->
+    <div class="container row">
+
+        <!-- боковое меню aside -->
+        <!-- <div class="col-4 col-xl-4 md-hidden"></div> -->
+
+        <!-- main - основное содержание страницы -->
+        <!-- <div class="col-8 col-xl-8 col-md-12"> -->
+            <main id="main" class="content">
+                <h1 class="fz-190 content__title">Документы плиткой</h1>
+    
+                <!-- Список документов -->
+                <ul class="docs-list row">
+                    <li class="col-4 col-lg-6 col-sm-12">
+                        <div class="row document">
+                            <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.docx</div>
+                            </div>
+                         <div class="col-10 col-xs-10 document__text" role="document">
+                                <div id="doc-1-name">Согласие на обработку персональных данных</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="col-4 col-lg-6 col-sm-12">
+                        <div class="row document">
+                            <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.doc</div>
+                            </div>
+                            <div class="col-10 col-xs-10 document__text" role="document">
+                                <div id="doc-2-name">Памятка о порядке проведения итогового сочинения (изложения)</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-2-name doc-2-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-2-about" hidden>формат документа doc, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="col-4 col-lg-6 col-sm-12">
+                        <div class="row document">
+                            <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.pdf</div>
+                            </div>
+                            <div class="col-10 col-xs-10 document__text" role="document">
+                                <div id="doc-3-name">Форма заявления выпускника прошлых лет на участие в итоговом сочинении</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-3-name doc-3-about">
+                                        Скачать документ
+                                        <span aria-hidden="true">( 186.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-3-about" hidden>формат документа pdf, размер 186.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="col-4 col-lg-6 col-sm-12">
+                        <div class="row document">
+                            <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.txt</div>
+                            </div>
+                            <div class="col-10 col-xs-10 document__text" role="document">
+                                <div id="doc-4-name">Форма заявления выпускника текущего года на участие в итоговом сочинении (изложении)</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-4-name doc-4-about">
+                                        Скачать документ
+                                        <span aria-hidden="true" >(8.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-4-about" hidden>формат документа txt, размер 8.4 Кб</div>
+                        </div>
+                    </li>
+
+                    <li class="col-4 col-lg-6 col-sm-12">
+                        <div class="row document">
+                            <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.docx</div>
+                            </div>
+                         <div class="col-10 col-xs-10 document__text" role="document">
+                                <div id="doc-1-name">Согласие на обработку персональных данных</div>
+                                <small font="gray">(Последнее обновление 12.03.2020)</small>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="col-4 col-lg-6 col-sm-12">
+                        <div class="row document">
+                            <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.doc</div>
+                            </div>
+                            <div class="col-10 col-xs-10 document__text" role="document">
+                                <div id="doc-2-name">Памятка о порядке проведения итогового сочинения (изложения)</div>
+                                <small font="gray">(Последнее обновление 12.03.2020)</small>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-2-name doc-2-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-2-about" hidden>формат документа doc, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="col-4 col-lg-6 col-sm-12">
+                        <div class="row document">
+                            <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.txt</div>
+                            </div>
+                            <div class="col-10 col-xs-10 document__text" role="document">
+                                <div id="doc-4-name">Форма заявления выпускника текущего года на участие в итоговом сочинении (изложении)</div>
+                                <small font="gray">(Последнее обновление 12.03.2020)</small>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-4-name doc-4-about">
+                                        Скачать документ
+                                        <span aria-hidden="true" >(8.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-4-about" hidden>формат документа txt, размер 8.4 Кб</div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- .docs-list -->
+
+            <!-- </main> -->
+        <!-- </div> -->
+    </div>
+
+</body>
+</html>

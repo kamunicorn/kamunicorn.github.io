@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <title>Документы</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- верхний колонтитул страницы -->
+    <div class="container">
+        <header role="banner" class="header row space-beetween">
+            <!-- логотип, ссылка на главную -->
+            <div class="header__logo xs-hidden col-1 col-lg-2 col-md-2">
+                <a class="d-inline-block" title="На главную" outline="primary" href="/">
+                    <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                </a>
+            </div>
+
+            <!-- название сайта, ссылки -->
+            <div class="col-10 col-xl-11 col-lg-10 col-xs-12">
+                <div class="row space-between">    
+                    <div class="col-8 col-lg-12">
+                        <div class="header__logo_xs hidden xs-visible">
+                            <a class="d-block" title="На главную" outline="primary" href="/">
+                                <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                            </a>
+                        </div>
+                        <div font="gray" class="header__small-title fz-100 font-heading">Официальный информационный портал</div>
+                        <div class="header__title uppercase fz-180 font-heading">государственной итоговой аттестации выпускников Камчатского&nbsp;края</div>
+                    </div>
+
+                    <div class="col-4 col-lg-12 header__links">
+                        <div class="link-wrapper">
+                            <a outline="primary" href="#">
+                                <span font="dark" class="fz-130 icon icon__eye-plus"></span>
+                                <span class="underlined-link">Версия для слабовидящих</span>
+                            </a>
+                        </div>
+                        <div class="link-wrapper">
+                            <a outline="primary" href="#hot-line">
+                                <span font="dark" class="fz-130 icon icon__phone-call"></span>
+                                <span class="underlined-link">Горячая линия по вопросам <span role="text" aria-labelledby="abbr-gia">ГИА</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- навигационное меню -->
+    <nav class="menu-bar fz-110 no-invert-font" id="navigation" aria-label="главное меню сайта" bg="primary" font="white">
+        <div class="container p0">
+            <ul class="menu-bar__list row no-wrap space-between">
+                <!-- ГИА-11 -->
+                <li class="menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" role="menuitem" aria-haspopup="true" tabindex="0">
+                        <span role="text" aria-labelledby="abbr-gia-11">
+                            ГИА-11 <span class="lg-hidden"> (ЕГЭ, ГВЭ-11)</span>
+                        </span>
+                    </div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Расписание</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Даты объявления результатов и подачи апелляций</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Посмотреть результаты <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Подать апелляцию по <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Информация</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- ГИА-9 -->
+                <li class="menu-bar__item active" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" role="menuitem" aria-haspopup="true" tabindex="0" aria-current="location">
+                        <span role="text" aria-labelledby="abbr-gia-9">
+                            ГИА-9<span class="lg-hidden"> (ОГЭ, ГВЭ-9)</span>
+                        </span>
+                    </div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Расписание</a>
+                        </li>
+                        <li class="dropdown__item active" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" aria-current="page">
+                            <a href="#" outline="secondary">Даты объявления результатов и подачи апелляций</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Посмотреть результаты <span role="text" aria-labelledby="abbr-ege">ОГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Подать апелляцию по <span role="text" aria-labelledby="abbr-oge">ОГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Информация</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Результаты -->
+                <li class="xs-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light" role="menuitem">
+                    <a class="menu-bar__head" outline="secondary" href="#">Результаты</a>
+                </li>
+                <!-- Апелляции -->
+                <li class="xs-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light" role="menuitem">
+                    <a class="menu-bar__head" outline="secondary" href="#">Апелляции</a>
+                </li>
+                <!-- Документы -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <a class="menu-bar__head" outline="secondary" href="#" aria-haspopup="true">Документы</a>
+                    <ul class="dropdown" bg="primary" role="presentation">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gia-9">ГИА-9</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gia-11">ГИА-11</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gis">ГИС</span> «Экзамен»</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Методики -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" aria-haspopup="true" tabindex="0">Методики</div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Итоговое сочинение (изложение)</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Инструкции <span role="text" aria-labelledby="abbr-gia">ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Презентации, видеоматериалы</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary"><span role="text" aria-labelledby="abbr-gia">ГИА</span> по иностранным языкам</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Обучение лиц, задействованных при проведении <span role="text" aria-labelledby="abbr-gia">ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Общественным наблюдателям <span role="text" aria-labelledby="abbr-ppe">ППЭ</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Контакты -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" aria-haspopup="true" tabindex="0">Контакты</div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Об <span role="text" aria-labelledby="abbr-ooto-gia">ООТО ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Контакты управлений образования</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Горячие линии</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Полезные ссылки</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!-- Поиск -->
+                <li class="menu-bar__item" bg-hover="secondary-light">
+                    <button class="menu-bar__head" id="open-search-form" outline="secondary" aria-label="Открыть поиск">
+                        <span class="icon icon__search"></span>
+                    </button>
+                </li>
+                <!-- меню-гамбургер - кнопка открытия -->
+                <li class="menu-bar__item sm-visible hidden" id="open-menu-ham" bg-hover="secondary-light">
+                    <button class="menu-bar__head" outline="secondary" aria-label="Открыть всё меню">
+                        <span class="icon icon__ham"></span>
+                    </button>
+                </li>
+            </ul>
+            <!-- .menu-bar__list -->
+        </div>
+    </nav>
+    
+    <!-- контент -->
+    <div class="container row">
+
+        <!-- боковое меню aside -->
+        <div class="col-4 col-xl-4 md-hidden">
+            <aside border="gray" class="aside" role="complementary">
+                <div class="sr-only" role="heading">Фильтр документов</div>
+
+                <div class="docs-filter sticky">
+                    <div class="docs-filter__caption" aria-hidden="true">Типы документов</div>
+                    <ul aria-label="отфильтровать документы по типу" class="docs-filter__list">
+                        <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                            <button outline="primary" class="to-underline">ГИА-9</button>
+                        </li>
+                        <li class="docs-filter__item" font-active="primary">
+                            <button outline="primary" class="to-underline">ГИА-11</button>
+                        </li>
+                        <li class="docs-filter__item" font-active="primary">
+                            <button outline="primary" class="to-underline">ГИС «Экзамен»</button>
+                        </li>
+                    </ul>
+
+                    <div class="docs-filter__caption" aria-hidden="true">Административное деление</div>
+                    <ul aria-label="отфильтровать документы по административному делению" class="docs-filter__list">
+                        <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                            <button outline="primary" class="to-underline" >Краевые</button>
+                        </li>
+                        <li class="docs-filter__item" font-active="primary">
+                            <button outline="primary" class="to-underline">Федеральные</button>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- main - основное содержание страницы -->
+        <div class="col-8 col-xl-8 col-md-12">
+            <main id="main" class="content">
+                <h1 class="fz-190 content__title">Документы</h1>
+    
+                <!-- фильтр документов -->
+                <div class="md-visible hidden relative">
+                    <button class="ui-filter" id="docs-filter-button" title="Открыть фильтр документов" border="dark" font="dark" outline="gray" aria-label="Открыть фильтр документов">
+                        <span class="icon icon__filter fz-100"></span>
+                        <span aria-hidden="true">Фильтр</span>
+                    </button>
+
+                    <!-- выпадающее окно -->
+                    <div class="docs-filter box-shadow" id="docs-filter-dropdown" tabindex="-1" outline="gray" bg="white" font="gray" role="dialog">
+                        <div class="docs-filter__caption" aria-hidden="true">Типы документов</div>
+                        <ul aria-label="отфильтровать документы по типу" class="docs-filter__list">
+                            <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                                <button outline="primary" class="to-underline">ГИА-9</button>
+                            </li>
+                            <li class="docs-filter__item" font-active="primary">
+                                <button outline="primary" class="to-underline">ГИА-11</button>
+                            </li>
+                            <li class="docs-filter__item" font-active="primary">
+                                <button outline="primary" class="to-underline">ГИС «Экзамен»</button>
+                            </li>
+                        </ul>
+
+                        <div class="docs-filter__caption" aria-hidden="true">Административное деление</div>
+                        <ul aria-label="отфильтровать документы по административному делению" class="docs-filter__list">
+                            <li class="docs-filter__item active" font-active="primary" aria-current="true">
+                                <button outline="primary" class="to-underline" >Краевые</button>
+                            </li>
+                            <li class="docs-filter__item" font-active="primary">
+                                <button outline="primary" class="to-underline">Федеральные</button>
+                            </li>
+                        </ul>
+
+                        <button id="close-filter" class="ui-close" aria-label="закрыть фильтр документов" outline="primary" title="Закрыть фильтр документов">
+                            <span class="icon icon__close" font="dark"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- выбранные категории -->
+                <div class="docs-selected">
+                    <div font="gray" class="docs-selected__caption">
+                        <span class="sr-only">Выбраны категории</span>
+                        <span aria-hidden="true">Выбрано:</span>
+                    </div>
+
+                    <div font="primary" id="docs-selected-filter" class="docs-selected__value">
+                        <div id="selected-filter-1" class="docs-selected__filter">
+                            <span id="category-name-1">Краевые</span>
+                            <button class="ui-close-category" outline="secondary" bg="light" title="Убрать категорию из выбранных" aria-describedby="category-name-1">
+                                <span class="icon icon__close" font="dark"></span>
+                            </button>
+                        </div>
+                        <div id="selected-filter-2" class="docs-selected__filter">
+                            <span id="category-name-2">ГИА-9</span>
+                            <button class="ui-close-category" outline="secondary" bg="light" title="Убрать категорию из выбранных" aria-describedby="category-name-2">
+                                <span class="icon icon__close" font="dark"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- количество выбранных документов -->
+                <div class="docs-selected" aria-live="assertive" aria-atomic="true">
+                    <div font="gray" class="docs-selected__caption">
+                        <span class="sr-only">Получено документов</span>
+                        <span aria-hidden="true">Документов:</span>
+                    </div>
+                    <div font="primary" id="docs-selected-count" class="docs-selected__value">23</div>
+                </div>
+
+                <!-- Список документов -->
+                <ul class="docs-list">
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.docx</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-1-name">Федеральный закон от 29.12.2012 №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.doc</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-2-name">Федеральный закон №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-2-name doc-2-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-2-about" hidden>формат документа doc, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.pdf</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-3-name">Федеральный закон №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-3-name doc-3-about">
+                                        Скачать документ
+                                        <span aria-hidden="true">( 186.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-3-about" hidden>формат документа pdf, размер 186.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.txt</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-4-name">Федеральный закон от 29.12.2012 №273-ФЗ "Об образовании (редакция от 03.08.2018)</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-4-name doc-4-about">
+                                        Скачать документ
+                                        <span aria-hidden="true" >(8.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-4-about" hidden>формат документа txt, размер 8.4 Кб</div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- .docs-list -->
+                <!-- Список документов -->
+                <ul class="docs-list">
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.docx</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-1-name">Федеральный закон от 29.12.2012 №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.doc</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-2-name">Федеральный закон №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-2-name doc-2-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-2-about" hidden>формат документа doc, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.pdf</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-3-name">Федеральный закон №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-3-name doc-3-about">
+                                        Скачать документ
+                                        <span aria-hidden="true">( 186.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-3-about" hidden>формат документа pdf, размер 186.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.txt</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-4-name">Федеральный закон от 29.12.2012 №273-ФЗ "Об образовании (редакция от 03.08.2018)</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-4-name doc-4-about">
+                                        Скачать документ
+                                        <span aria-hidden="true" >(8.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-4-about" hidden>формат документа txt, размер 8.4 Кб</div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- .docs-list -->
+                <!-- Список документов -->
+                <ul class="docs-list">
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.docx</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-1-name">Федеральный закон от 29.12.2012 №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.doc</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-2-name">Федеральный закон №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-2-name doc-2-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-2-about" hidden>формат документа doc, размер 86.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.pdf</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-3-name">Федеральный закон №273-ФЗ</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-3-name doc-3-about">
+                                        Скачать документ
+                                        <span aria-hidden="true">( 186.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-3-about" hidden>формат документа pdf, размер 186.4 Кб</div>
+                        </div>
+                    </li>
+                    <li class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.txt</div>
+                            </div>
+                            <div class="col-11 col-xs-10 document__text" role="document">
+                                <div id="doc-4-name">Федеральный закон от 29.12.2012 №273-ФЗ "Об образовании (редакция от 03.08.2018)</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-4-name doc-4-about">
+                                        Скачать документ
+                                        <span aria-hidden="true" >(8.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-4-about" hidden>формат документа txt, размер 8.4 Кб</div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- .docs-list -->
+
+                <!-- пагинация -->
+                <ul aria-label="навигация по страницам" class="pagination row fz-110">
+                    <li role="presentation" font-active="primary" class="pagination__item active">
+                        <a class="no-visited" outline="primary" href="#" aria-label="страница 1" aria-current="page">1</a>
+                    </li>
+                    <li role="presentation" font-active="primary" class="pagination__item">
+                        <a class="no-visited" outline="primary" href="#" aria-label="страница 2">2</a>
+                    </li>
+                    <li role="presentation" font-active="primary" class="pagination__item">
+                        <a class="no-visited" outline="primary" href="#" aria-label="страница 3">3</a>
+                    </li>
+                </ul>
+                <!-- .pagination -->
+            </main>
+        </div>
+    </div>
+
+    <script>
+        let filterButton = document.getElementById('docs-filter-button'),
+            filterDropdown = document.getElementById('docs-filter-dropdown');
+
+        filterButton.addEventListener('click', () => {
+            filterDropdown.classList.toggle('open');
+            if (filterDropdown.classList.contains('open')) {
+                filterButton.setAttribute('aria-expanded', 'true');
+                // aria-expanded="true"
+                filterDropdown.focus();
+            } else {
+                filterButton.removeAttribute('aria-expanded');
+            }
+        });
+
+        setTimeout(function() {
+            document.querySelector('#docs-selected-count').textContent = "новое число";
+        }, 5000);
+    </script>
+
+</body>
+</html>

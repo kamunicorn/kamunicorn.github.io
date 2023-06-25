@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+        
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <!-- Мета-теги для SEO и вообще -->
+    <meta name="title" content="Официальный информационный портал государственной итоговой аттестации выпускников Камчатского края">
+    <meta name="description" content="Официальный информационный портал государственной итоговой аттестации выпускников Камчатского края">
+    <meta name="keywords" content="государственная итоговая аттестация в Камчатском крае, ГИА в Камчатском крае, ЕГЭ в Камчатском крае, ОГЭ в Камчатском крае">
+
+    <!-- Теги для расшаривания в соцсети -->
+    <meta property="og:url" content="http://www.gia41.ru/"> <!-- каноничный адрес сайта -->
+    <meta property="og:site_name" content="Официальный информационный портал Государственной итоговой аттестации выпускников Камчатского края"> <!-- Название сайта -->
+    <meta property="og:title" content="Главная страница"> <!-- Название страницы, статьи -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:description" content="Официальный информационный портал государственной итоговой аттестации выпускников Камчатского края"> <!-- описание содержимого страницы -->
+
+    <!-- Картинки для расшаривания в соцсети (картинки из статьи) -->
+    <link rel="image_src" href="http://www.gia41.ru/img/logo-gia.jpg">
+    <meta property="og:image" content="http://www.gia41.ru/img/logo-gia.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="480">
+    <meta property="og:image:height" content="480">
+
+    <!-- Иконки на вкладке - favicon -->
+    <!-- <link href="img/favicons/favicon-64.png" sizes="64x64" rel="apple-touch-icon"> -->
+	<!-- <link href="img/favicons/favicon-48.png" sizes="48x48" rel="apple-touch-icon"> -->
+	<!-- <link href="img/favicons/favicon-32.png" sizes="32x32" rel="apple-touch-icon"> -->
+	<link rel="apple-touch-icon" href="img/favicons/favicon.jpg">
+	<link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+
+    <!-- Цвет браузерной вкладки -->
+    <meta name="theme-color" content="#004d80">
+    <link rel="manifest" type="text/css" href="manifest.json">
+
+    <title>Технологическая страница</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- для озвучки вместо сокращений -->
+    <div hidden>
+        <span id="abbr-ege">ЕГЭ (единый государственный экзамен)</span>
+        <span id="abbr-oge">ОГЭ (основной государственный экзамен)</span>
+        <span id="abbr-gve">ГВЭ (государственный выпускной экзамен)</span>
+        <span id="abbr-gia">ГИА (государственная итоговая аттестации)</span>
+        
+        <span id="abbr-gve-9">ГВЭ-9 (государственный выпускной экзамен за девятый класс)</span>
+        <span id="abbr-gve-11">ГВЭ-11 (государственный выпускной экзамен за одиннадцатый класс)</span>
+        <span id="abbr-gia-9">ГИА-9 (государственная итоговая аттестации за девятый класс)</span>
+        <span id="abbr-gia-11">ГИА-11 (государственная итоговая аттестации за одиннадцатый класс)</span>
+        
+        <span id="abbr-gis">ГИС (государственная информационная система)</span>
+        <span id="abbr-ooto-gia">ООТО ГИА (Отдел организационно-технологического обеспечения государственной итоговой аттестации)</span>
+        <span id="abbr-rcoi">РЦОИ (Региональный центр обработки информации)</span>
+        <span id="abbr-ppe">ППЭ (пункт проведения экзаменов)</span>
+        <span id="abbr-gek">ГЭК (государственная экзаменнационная комиссия)</span>
+        <span id="kgau">Краевое государственное автономное учреждение</span>
+    </div>
+
+    <a href="#main" class="sr-only">Перейти к основному содержимому</a>
+    <a href="#navigation" class="sr-only">Перейти к навигации</a>
+
+    <!-- верхний колонтитул страницы -->
+    <div class="container">
+        <header role="banner" class="header row space-beetween">
+            <!-- логотип, ссылка на главную -->
+            <div class="header__logo xs-hidden col-1 col-lg-2 col-md-2">
+                <!-- у Коли .link-inline-block и в футере тоже -->
+                <a class="d-inline-block" title="На главную" outline="primary" href="/">
+                    <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                </a>
+            </div>
+
+            <!-- название сайта, ссылки -->
+            <div class="col-10 col-xl-11 col-lg-10 col-xs-12">
+                <div class="header__logo_xs hidden xs-visible">
+                    <a class="d-block" title="На главную" outline="primary" href="/">
+                        <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                    </a>
+                </div>
+                <div font="gray" class="header__small-title fz-100 font-heading">Официальный информационный портал</div>
+                <div class="header__title uppercase fz-180 font-heading">государственной итоговой аттестации выпускников Камчатского&nbsp;края</div>
+        
+                <div class="header__links">
+                    <div class="link-wrapper">
+                        <a outline="primary" href="#">
+                            <span font="dark" class="fz-130 icon icon__eye-plus"></span>
+                            <span class="underlined-link">Версия для слабовидящих</span>
+                        </a>
+                    </div>    
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- плашка наверху - даже не навигация -->
+    <nav class="menu-bar fz-110 no-invert-font" id="navigation" bg="primary" font="white">
+        <div class="container p0">
+            <ul class="menu-bar__list row no-wrap space-between">
+                <!-- Технологическая страница -->
+                <li class="menu-bar__item col-10 col-md-9">
+                    <div class="menu-bar__head text-left font-heading" outline="secondary">
+                        Технологическая страница
+                    </div>
+                </li>
+                <!-- меню-гамбургер - кнопка открытия -->
+                <li class="menu-bar__item col-2 col-md-3" bg-hover="secondary-light">
+                    <!-- или a? -->
+                    <button class="menu-bar__head" id="logout" outline="secondary" aria-label="Завершить сессию">
+                        <span class="xs-hidden d-inline-block margin-right">Выйти</span>
+                        <span class="icon icon__logout fz-120"></span>
+                    </button>
+                </li>
+            </ul>
+            <!-- .menu-bar__list -->
+        </div>
+    </nav>
+
+    <!-- хлебные крошки? -->
+    <!-- хлебных крошек нет, и отступов нет -->
+    <p class="padding-top fz-80"></p>
+
+    <!-- контейнер страницы -->
+    <div class="container row">
+
+        <!-- боковое меню aside -->
+        <div class="col-4 col-xl-4 md-hidden">
+            <aside role="menu" border="gray" class="aside">
+                <ul class="aside-menu" aria-labelledby="aside-title">
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Исследование качества знаний 8/9/10/11 классов</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Программное обеспечение для проведения ГИА-9 (ОГЭ)</a>
+                    </li>
+                    <li class="active" aria-current="page">
+                        Программное обеспечение для проведения ГИА-11 (ЕГЭ)
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Программное обеспечение для проведения апробации ЕГЭ 20.02.2020</a>
+                    </li>
+                    <li>
+                        <a class="to-underline" href="#" outline="primary">Вебинары</a>
+                    </li>
+                </ul>
+                <!-- .aside-menu -->
+            </aside>
+        </div>
+        
+        <!-- основное содержание страницы -->
+        <div class="col-8 col-xl-8 col-md-12 content">
+            <h1 class="content__title">Программное обеспечение для проведения ГИА-11 (ЕГЭ)</h1>
+
+            <h3 id="content-subtitle-1" class="content__subtitle">Печать КИМ и Сканирование в ППЭ</h3>
+            <!-- Список документов -->
+            <ul aria-labelledby="content-subtitle-1" class="docs-list">
+                <li class="document">
+                    <div class="row">
+                        <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                            <span class="fz-180 icon icon__archive" font="primary"></span>
+                            <div class="fz-80">.zip</div>
+                        </div>
+                        <div class="col-11 col-xs-10 document__text" role="document">
+                            <div id="doc-1-name">Станция печати ЭМ 7.5 (обновлено 29.05.2019)</div>
+                            <div class="link-wrapper" font="dark">
+                                <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                    Скачать архив
+                                    <span aria-hidden="true"> (218.4 Кб)</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="doc-1-about" hidden>формат документа docx, размер 218.4 Кб</div>
+                    </div>
+                </li>
+                <li class="document">
+                    <div class="row">
+                        <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                            <span class="fz-180 icon icon__archive" font="primary"></span>
+                            <div class="fz-80">.zip</div>
+                        </div>
+                        <div class="col-11 col-xs-10 document__text" role="document">
+                            <div id="doc-1-name">Инструкция по формированию и печати протоколов бланков итогового сочинения (изложения)</div>
+                            <div class="link-wrapper" font="dark">
+                                <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                    Скачать архив
+                                    <span aria-hidden="true"> (218.4 Кб)</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="doc-1-about" hidden>формат документа docx, размер 218.4 Кб</div>
+                    </div>
+                </li>
+                <li class="document">
+                    <div class="row">
+                        <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                            <span class="fz-180 icon icon__archive" font="primary"></span>
+                            <div class="fz-80">.zip</div>
+                        </div>
+                        <div class="col-11 col-xs-10 document__text" role="document">
+                            <div id="doc-1-name">Станция печати ЭМ 7.5 (обновлено 29.05.2019)</div>
+                            <div class="link-wrapper" font="dark">
+                                <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                    Скачать архив
+                                    <span aria-hidden="true"> (218.4 Кб)</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="doc-1-about" hidden>формат документа docx, размер 218.4 Кб</div>
+                    </div>
+                </li>
+            </ul>
+            <!-- .doc-list -->
+        </div>
+    </div>
+    
+    <!-- нижний колонтитул страницы -->
+    <footer class="footer no-invert-font" font="white" bg="footer">
+        <div class="container fz-90 text-center">
+            <p><a class="underlined-link" href="#">Перейти на основной сайт</a></p>
+            <div class="sr-only">название и адрес организации</div>
+            <p class="footer__ps-text">
+                <span role="text" aria-labelledby="kgau">КГАУ</span>
+                &nbsp;«Камчатский центр информатизации и оценки качества образования»
+            <br>Отдел организационно-технологического обеспечения государственной итоговой аттестации
+            </p>
+            <address aria-hidden="true">683023,&nbsp;г.&nbsp;Петропавловск-Камчатский, ул.&nbsp;Кавказская,&nbsp;д.&nbsp;40</address>
+            <address class="sr-only">Адрес организации: город Петропавловск-Камчатский, улица Кавказская, дом 40, индекс 683 023</address>
+        </div>
+    </footer>
+
+</body>
+</html>

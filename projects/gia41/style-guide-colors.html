@@ -1,0 +1,693 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/style-guide.min.css">
+    <title>Руководство стиля. Цвета</title>
+    
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/> -->
+</head>
+<body bg="page" font="black">
+
+    <div class="container">
+    <main>
+        <div class="padding-top font-heading">
+            <h1 class="fz-200 bold">Сайт ГИА41. Руководство стиля</h1>
+            <h1 class="fz-150">Атрибуты цвета и зависимые от типа темы классы</h1>
+        </div>
+        
+        <p>Для стилизации цвета используется отдельный файл colors.css из папки css. Он формируется из scss/parts/colors.scss. Темы лежат в scss/parts/colors/, там 6 вариантов тем: светлая, темная, оттенки серого светлая и темная, высококонтрастная черно-белая светлая и темная, какая-то из них импортируется в файл scss/parts/colors.scss. Все виды тем сформированы как css, поэтому в девтулз можно заменить css и увидеть другую тему.</p>
+        
+        <p>Темная тема включается, если в ОС включена темная тема (если в браузере вообще доступен этот медиа-запрос), не включится при печати.</p>
+        
+        <!-- бардак с id-шниками -->
+        
+        <!-- sg - префикс, сокращение от style guide -->
+        <ul class="accordion margin-top margin-bottom margin-negative js-accordion" id="style-guide-accordion" aria-label="список с их примерами и описанием">
+            
+            <!-- Фоновые -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[bg]</code>
+                            <h2 class="sg-block__name">Фоновые цвета</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[bg="color-name"]</code>
+                    <p>На сайте предусмотрены 10 следующих цветов фона:</p>
+                    <dl>
+                        <dt><code>bg="primary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            Основной цвет - на элементах меню, кнопках
+                            <div bg="primary" style="width: 13em;height: 4em;"></div>
+                        </dd>
+
+                        <dt><code>bg="secondary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            Дополнительный цвет - акцентный, на дополнительных элементах (дотсы, вкладки)
+                            <div bg="secondary" style="width: 13em;height: 4em;"></div>
+                        </dd>
+
+                        <dt><code>bg="primary-light"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            Оттенок основного цвета - для ховера<br>
+                            В светлой теме - светлее primary, в темной - темнее
+                            <div bg="primary-light" style="width: 13em;height: 4em;"></div>
+                        </dd>
+                        
+                        <dt><code>bg="secondary-light"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            Оттенок дополнительного цвета - для ховера<br>
+                            В светлой теме - светлее secondary, в темной - темнее
+                            <div bg="secondary-light" style="width: 13em;height: 4em;"></div>
+                        </dd>
+
+                        <dt><code>bg="black"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div bg="black" style="width: 13em;height: 4em;"></div>
+                        </dd>
+                        
+                        <dt><code>bg="dark"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            В качестве фона шапки таблицы thead
+                            <div bg="dark" style="width: 13em;height: 4em;"></div>
+                        </dd>
+
+                        <dt><code>bg="gray"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div bg="gray" style="width: 13em;height: 4em;"></div>
+                        </dd>
+
+                        <dt><code>bg="light"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            Светлосерый цвет, в качестве фона для вкладок (.ui-tab), радиокнопок с Периодами проведения экзаменов
+                            <div bg="light" style="width: 13em;height: 4em;"></div>
+                        </dd>
+                        
+                        <dt><code>bg="white"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div bg="white" style="width: 13em;height: 4em;"></div>
+                        </dd>
+                        
+                        <dt><code>bg="page"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            Используется для body - цвет фоновой страницы и для элементов, которые должны быть цвета страницы
+                            <div bg="page" border="black" style="width: 13em;height: 4em;"></div>
+                        </dd>
+                    </dl>
+                    <p>Описанные выще цвета задаются в циклах.</p>
+                    <p>Отдельно задается цвет фона футера <code>bg="footer"</code>, который имеет hue от primary, и параметры saturation и light, отличающиеся от исходного bg="primary".</p>
+                    <div bg="footer" style="width: 13em;height: 4em;"></div>                    
+                </div>
+            </li>
+
+            <!-- Фон активных элементов -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[bg-active]</code>
+                            <h2 class="sg-block__name">Фон активных элементов</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[bg-active="color-name"]</code>
+                    <p>Применяется для элементов, у которых может быть активное состояние. Например, текущий раздел меню, выбранная вкладка, активный дотс для текущего слайда. Указанный цвет включается, когда элемент имеет класс .active.</p>
+                    <p>Список цветов такой же, как и для bg (кроме [bg="footer"])</p>
+
+                    <h3 class="sg-block__subtitle">Реальные примеры</h3>
+                    <p>Всем элементам .ui-dot указаны атрибуты <code>bg="page" bg-active="secondary"</code>, второй элемент дотса имеет класс .active.</p>
+                    <ul class="ui-dotslist row" role="group" aria-label="Панель переключателей на слайдере">
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot active" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-current="true" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                    </ul>
+
+                    <p>Всем элементам .ui-tab указаны атрибуты <code>bg="light" bg-active="secondary"</code>, первая вкладка имеет класс .active.</p>
+                    <ul class="ui-tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font active" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-9
+                                <span border="page" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-11
+                                <span border="page" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            
+            <!-- Фон элементов при наведении -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[bg-hover]</code>
+                            <h2 class="sg-block__name">Фон элементов при наведении</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[bg-hover="color-name"]</code>
+                    <p>Применяется для задания цвета фона при наведении (:hover). Например, пункты меню, вкладка, дотсы, кнопки.</p>
+                    <p>Список цветов такой же, как и для bg (кроме [bg="footer"])</p>
+
+                    <h3 class="sg-block__subtitle">Реальные примеры</h3>
+                    <p>Всем элементам .ui-dot указаны атрибуты <code>bg="white" bg-hover="secondary-light"</code>.</p>
+                    <ul class="ui-dotslist row" role="group" aria-label="Панель переключателей на слайдере">
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-current="true" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-dot" bg-active="secondary" outline="secondary" bg-hover="secondary-light" bg="page" border="secondary" aria-label="переключатель"></button>
+                        </li>
+                    </ul>
+
+                    <p>Всем элементам .ui-tab указаны атрибуты <code>bg="light" bg-active="secondary-light"</code>.</p>
+                    <ul class="ui-tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-9
+                                <span border="page" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-11
+                                <span border="page" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <p>Кнопка submit - ей указан <code>bg="primary" bg-hover="primary-light"</code></p>
+                    <div class="col-3 col-xl-4 col-md-5 col-sm-12 margin-top">
+                        <button class="ui-submit no-invert-font" type="submit" outline="primary" bg="primary" bg-hover="primary-light" font="white">Отправить запрос</button>
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Текстовые цвета -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[font]</code>
+                            <h2 class="sg-block__name">Текстовые цвета</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[font="color-name"]</code>
+                    <p class="fz-120 bold" font="secondary">Благодаря особенностям CSS, цвет текста (color) задает также цвет границы (border-color), что используется, в частности, для рисования треугольника в кнопке .button.ui-play (Запустить видео).</p>
+                    <p>Цветов текста на 2 меньше, чем цветов фона - отсутствует primary-light, secondary-light:</p>
+                    <dl>
+                        <dt><code>font="primary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div font="primary">
+                                Основной цвет - для ссылок<br>
+                                В светлой теме цвет такой же, как и [bg="primary"], в темной теме - светлее и ярче исходного [bg="primary"] в светлой теме
+                            </div>
+                            Сравнение цветов primary фона и шрифта (примените темную тему)<br>
+                            <code>bg="primary" > font="primary"</code>
+                            <div class="padding" font="primary" bg="primary" style="max-width: 14em">
+                                Памятка участникам
+                            </div>
+
+                            Сравнение цветов primary-light фона и шрифта (примените темную тему)<br>
+                            <code>bg="primary-light" > font="primary"</code>
+                            <div class="padding" font="primary" bg="primary-light" style="max-width: 14em">
+                                Памятка участникам
+                            </div>
+                        </dd>
+                        
+                        <dt><code>font="secondary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div font="secondary">
+                                Дополнительный цвет - акцентирует некоторые элементы (например, радиокнопки в Периоды проведения экзаменов)<br>
+                                В светлой теме цвет такой же, как и [bg="secondary"], в темной теме - светлее и ярче исходного [bg="secondary"] в светлой теме
+                            </div>
+                            Сравнение цветов secondary фона и шрифта (примените темную тему)<br>
+                            <code>bg="secondary" > font="secondary"</code>
+                            <div class="padding" font="secondary" bg="secondary" style="max-width: 14em">
+                                Памятка участникам
+                            </div>
+
+                            Сравнение цветов secondary-light фона и шрифта (примените темную тему)<br>
+                            <code>bg="secondary-light" > font="secondary"</code>
+                            <div class="padding" font="secondary" bg="secondary-light" style="max-width: 14em">
+                                Памятка участникам
+                            </div>
+                        </dd>
+                        
+                        <dt><code>font="black"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div font="black">Стоит на body</div>
+                        </dd>
+                        
+                        <dt><code>font="dark"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div font="dark">Пример темно-серого текста</div>
+                            <div font="dark" class="bold">Лучше выглядит, когда жирный</div>
+                        </dd>
+
+                        <dt><code>font="gray"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div font="gray">Пример серого текста</div>
+                        </dd>
+                        
+                        <dt><code>font="light"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div font="light" bg="black">Используется для box-shadow</div>
+                        </dd>
+
+                        <dt><code>font="white"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div font="white" bg="black">Используется на элементах меню и меню плиткой</div>
+                            <div class="no-invert-font" font="white" bg="primary">В совокупности с классом .no-invert-font остается белым в темной теме</div>
+                            <div font="white" bg="primary">Вот пример без класса .no-invert-font - в темной теме шрифт инвертируется в черный</div>
+                        </dd>
+                    </dl>
+                    <p>Описанные выше цвета задаются в циклах.</p>
+                    
+                    <p>Отдельно после цикла задается <code>font="page"</code> - цвет текста, как цвет фона страницы</p>
+                    <div font="page" bg="black">Используется для box-shadow .ui-scroll-arrow</div>    
+
+                    <h3 class="sg-block__subtitle">Не инвертировать белый цвет текста в темной теме</h3>
+                    <p>Могут быть случаи, когда белый цвет текста должен оставаться белым в темной теме - на элементах с цветным фоном (bg="primary", bg="secondary", bg="footer") или с картинкой на заднем плане. Для таких случаев предусмотрен класс .no-invert-font. В темной теме после блока правил с цветами текста следуют правила, в которых переопределяются цвета с для элементов с классом .no-invert-font.</p>
+                </div>
+            </li>
+            
+            <!-- Текст активных элементов -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[font-active]</code>
+                            <h2 class="sg-block__name">Текст активных элементов</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[font-active="color-name"]</code>
+                    <p>Применяется для элементов, у которых может быть активное состояние. Например, выбранная вкладка, выбранный тип документов (фильтрация по документам), текущей страницы. Указанный цвет включается, когда элемент имеет класс .active.</p>
+                    <p>Список цветов такой же, как и для font (отсутствует primary-light, secondary-light).</p>
+                    
+                    <h3 class="sg-block__subtitle">Реальные примеры</h3>
+                    <p>Всем элементам .ui-tab указан атрибут <code>font-active="white"</code>, атрибут <code>font="black"</code> указан родителю ul.ui-tablist. Первой вкладке установлен класс .active.</p>
+                    <p>Стоит заметить, что элемент .ui-tab также имеет класс .no-invert-font. Правило <code>[font-active="white"].active.no-invert-font</code> (в стилях _colors-dark.scss) будет значить, что в темной теме цвет шрифта кнопки в активном состоянии будет по-прежнему белым.</p>
+                    <ul class="ui-tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font active" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-9
+                                <span border="white" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-11
+                                <span border="white" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <p>Всем элементам li указан атрибут <code>font-active="white"</code>. Первому элементу установлен класс .active.</p>
+                    <ul>
+                        <li class="active" font-active="primary" aria-current="true">
+                            <button outline="primary">ГИА-9</button>
+                        </li>
+                        <li font-active="primary">
+                            <button outline="primary">ГИА-11</button>
+                        </li>
+                        <li font-active="primary">
+                            <button outline="primary">ГИС «Экзамен»</button>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            
+            <!-- Текст элементов при наведении -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[font-hover]</code>
+                            <h2 class="sg-block__name">Текст элементов при наведении</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[font-hover="color-name"]</code>
+                    <p>Довольно редко применяется, но тем не менее в стилях есть. Применяется, например, для вкладок, для кнопки .ui-play (в ней таким образом задается border) или ее контейнера.</p>
+                    <p>Список цветов такой же, как и для font (отсутствует primary-light, secondary-light).</p>
+                    
+                    <h3 class="sg-block__subtitle">Реальные примеры</h3>
+                    <p>Всем элементам .ui-tab указан атрибут <code>font-hover="white"</code>, атрибут <code>font="black"</code> указан родителю ul.ui-tablist.</p>
+                    <p>Стоит заметить, что элемент .ui-tab также имеет класс .no-invert-font. Правило <code>[font-hover="white"].active.no-invert-font</code> (в стилях _colors-dark.scss) будет значить, что в темной теме цвет шрифта кнопки при наведении будет по-прежнему белым.</p>
+                    <ul class="ui-tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font active" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-9
+                                <span border="white" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab">
+                                ГИА-11
+                                <span border="white" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle">Пример с кнопкой .ui-play (как в Видеоматериалах)</h3>
+                    <p>Контейнеру для button.ui-play указаны атрибуты <code>font="black" font-hover="white"</code> (и класс .no-invert-font), самой кнопке атрибуты цвета шрифта не указаны.</p>
+                    <p>Треугольник рисуется с помощью границ (border). Цвет границ наследуется от цвета шрифта.</p>
+                    <div class="relative no-invert-font" style="max-width:20em;height:10em;" bg="light" bg-hover="secondary" font="black" font-hover="white">
+                        <span>Текст внутри блока (для демонстрации изменения цвета шрифта при наведении)</span>
+                        <div class="absolute" style="bottom:0;width:80%;height:80%;opacity:0.5;" bg="primary"></div>
+                        <button class="ui-play no-invert-font" outline="secondary"></button>
+                    </div>
+                    
+                </div>
+            </li>
+            
+            <!-- Цвет границ -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[border]</code>
+                            <h2 class="sg-block__name">Цвет границ</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[border="color-name"]</code>
+                    <p>Список цветов такой же, как и для font (отсутствует primary-light, secondary-light).</p>
+                    <p>Значения цветов secondary и primary в темной теме вычисляются также, как и для цветов шрифта.</p>
+                    <p>Применяется для элементов форм, нижней границы вкладок .ui-tablist, дотсах .ui-dot и других элементах.</p>
+                    <dl>
+                        <dt><code>border="primary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div border="primary" style="width: 13em;height: 2em;"></div>
+                        </dd>
+
+                        <dt><code>border="secondary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div border="secondary" style="width: 13em;height: 2em;"></div>
+                        </dd>
+
+                        <dt><code>border="black"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div border="black" style="width: 13em;height: 2em;"></div>
+                        </dd>
+
+                        <dt><code>border="dark"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div border="dark" style="width: 13em;height: 2em;"></div>
+                        </dd>
+
+                        <dt><code>border="gray"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div border="gray" style="width: 13em;height: 2em;"></div>
+                        </dd>
+
+                        <dt><code>border="light"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div border="light" style="width: 13em;height: 2em;"></div>
+                        </dd>
+                        
+                        <dt><code>border="white"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div border="white" border="black" style="width: 13em;height: 2em;"></div>
+                        </dd>
+                    </dl>
+
+                    <p>Отдельно после цикла задается <code>border="page"</code> - цвет границы, как цвет фона страницы</p>
+                    <div border="page">Используется для треугольника .ui-tab-triangle во вкладке .ui-tab</div>    
+                </div>
+            </li>
+
+            <!-- Обводка при фокусе -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[outline]</code>
+                            <h2 class="sg-block__name">Обводка при фокусе</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[outline="color-name"]</code>
+                    <p>Применяется для всех элементов, доступных для взаимодействия - кнопки, инпуты, элементы меню, ссылки и т.п. Обводка становится видимой при фокусе на элементе.</p>
+                    <p>Список цветов такой же, как и для font (отсутствует primary-light, secondary-light).</p>
+                    <p>Значения цветов secondary и primary в темной теме вычисляются также, как и для цветов шрифта с единственным отличием - обводка полупрозрачная (rgba(color-value, .7)).</p>
+
+                    <h3 class="sg-block__subtitle">Примеры кнопок с outline</h3>
+                    <dl>
+                        <dt><code>outline="primary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <button border="black" outline="primary" style="width: 13em;height: 2em;"></button>
+                        </dd>
+
+                        <dt><code>outline="secondary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <button border="black" outline="secondary" style="width: 13em;height: 2em;"></button>
+                        </dd>
+
+                        <dt><code>outline="black"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <button border="black" outline="black" style="width: 13em;height: 2em;"></button>
+                        </dd>
+
+                        <dt><code>outline="dark"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <button border="black" outline="dark" style="width: 13em;height: 2em;"></button>
+                        </dd>
+                        
+                        <dt><code>outline="gray"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <button border="black" outline="gray" style="width: 13em;height: 2em;"></button>
+                        </dd>
+                        
+                        <dt><code>outline="light"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div class="padding" bg="black">
+                                <button border="black" outline="light" style="width: 13em;height: 2em;"></button>
+                            </div>
+                        </dd>
+
+                        <dt><code>outline="white"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div class="padding" bg="black">
+                                <button border="black" outline="white" style="width: 13em;height: 2em;"></button>
+                            </div>
+                        </dd>
+                    </dl>
+                    
+                    <h3 class="sg-block__subtitle">Не инвертировать белую обводку в темной теме</h3>
+                    <p>Могут быть случаи, когда белый цвет outline должен оставаться белым в темной теме - в блоках с цветным фоном (bg="primary", bg="secondary", bg="footer") или с картинкой на заднем плане. Для таких случаев предусмотрен класс .no-invert-font. В темной теме после блока правил с цветами текста и outline следуют правила, в которых переопределяются цвета с для элементов с классом .no-invert-font.</p>
+                    
+                    <div class="padding" bg="footer">
+                        <button outline="white">Обводка инвертируется в темной теме</button><br>
+                        <button class="no-invert-font" outline="white">Обводка не инвертируется в темной теме</button>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Цвет затемнения -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>[blackout]</code>
+                            <h2 class="sg-block__name">Цвет затемнения</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>[blackout="color-name"]</code>
+                    <p>Затемнение, в темной теме не инвертируется , а наоборот становится темнее (уменьшается light в модели hsl). Полупрозрачный фон, задается с помощью opacity (и filter для IE8). В темной теме более непрозрачное, в плитке маленькой непрозрачность уменьшается при наведении.</p>
+                    <!-- <p>Только 2 цвета затемнения:</p> -->
+                    <dl>
+                        <dt><code>blackout="primary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div blackout="primary" style="width: 13em;height: 4em;"></div>
+                            На плитке на главной и в меню "ГИА / Информация"
+                        </dd>
+
+                        <dt><code>blackout="secondary"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div blackout="secondary" style="width: 13em;height: 4em;"></div>
+                            На плитке на главной и в меню "ГИА / Информация"
+                        </dd>
+
+                        <dt><code>blackout="black"</code></dt>
+                        <dd class="padding-left margin-left margin-bottom">
+                            <div blackout="black" style="width: 13em;height: 4em;"></div>
+                            На подложке для всплывающего окна, кнопок слайдера внутри него
+                        </dd>
+                    </dl>
+
+                    <h3 class="sg-block__subtitle">Примеры с картинкой</h3>
+                    <code>blackout="primary"</code>
+                    <div class="col-3 col-lg-4 col-sm-6 relative" style="height: 13em;">
+                        <img class="absolute" src="img/info-menu/2.jpg" alt="" style="width:80%;height:100%;object-fit:cover;overflow:hidden" aria-hidden="true">
+                        <div blackout="primary" style="height:80%;"></div>
+                    </div>
+                    <code>blackout="secondary"</code>
+                    <div class="col-3 col-lg-4 col-sm-6 relative" style="height: 13em;">
+                        <img class="absolute" src="img/main-tiles/big-tile.jpg" alt="" style="width:80%;height:100%;object-fit:cover;overflow:hidden" aria-hidden="true">
+                        <div blackout="secondary" style="height:80%;"></div>
+                    </div>
+                    <!-- <div class="col-4 col-lg-5 col-sm-7">
+                        <div class="tile small">
+                            <div class="tile__bg-image">
+                                <img src="img/info-menu/2.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="tile__blackout" blackout="primary"></div>
+                            <div class="tile__content">
+                                <div class="tile__content-cell">
+                                    <a class="no-inert-font no-visited fz-110" outline="secondary" href="#" font="white">
+                                        Коды предметов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </li>
+
+            <!-- Картинки -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.bright-less-in-dark</code>
+                            <h2 class="sg-block__name">Картинки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>img.bright-less-in-dark</code>
+                    <p>Для светлых картинок в темной теме предусмотрено понижение яркости (чтобы не выжигало глаза). Применяется для памяток участникам и бланков.</p>
+
+                    <div class="row">
+                        <div class="col-3 col-lg-4 col-md-5 col-sm-6 col-xs-9 padding-right">
+                            <p>Картинка с классом .bright-less-in-dark</p>
+                            <img class="bright-less-in-dark" src="img/memories/memories-1.jpg">
+                        </div>
+
+                        <div class="col-3 col-lg-4 col-md-5 col-sm-6 col-xs-9 padding-right">
+                            <p>Картинка без класса .bright-less-in-dark</p>
+                            <img src="img/memories/memories-1.jpg">
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Ссылки -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Ссылки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>.underlined-link[font="primary"][outline="primary"]</code>
+                    <p>Обычные ссылки - синий цвет, синий outline, подчеркивание убирается при наведении</p>
+                    
+                    <h3 class="sg-block__subtitle">Состояние :active</h3>
+                    <p>Цвет фона ссылки становится слегка синим (цвет шрифта font="primary" с прозрачностью)</p>
+                    <p><a href="#" class="underlined-link" font="primary" outline="primary">Обычная ссылка</a></p>
+                    
+                    <h3 class="sg-block__subtitle">Состояние :visited</h3>
+                    <p>В стилях прописано, что ссылки внутри main без класса .no-visited меняют цвет при посещении:</p>
+                    <code>main a:not(.no-visited):visited</code>
+                    <p>Цвет посещенной ссылки вычисляется как микс от цветов шрифта primary (большая часть) и secondary</p>
+                    <p>
+                        <a href="#visited" class="underlined-link" font="primary" outline="primary">Cсылка, которая меняет цвет при посещении</a><br>
+                        <a class="no-visited underlined-link" href="#no-visited" font="primary" outline="primary">Эта ссылка после посещения не меняет цвет</a>
+                    </p>
+                    <p>Для того, чтобы посещенная ссылка не меняла цвет, надо добавить ей класс .no-visited</p>
+                </div>
+            </li>
+
+            <!-- Пусто -->
+            <!-- <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code></code>
+                            <h2 class="sg-block__name">Пусто</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code></code>
+                    <h3 class="sg-block__subtitle"></h3>
+                    
+                </div>
+            </li> -->
+        </ul>
+    </main>
+    </div>
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script src="js/accordion.js"></script>
+    
+</body>
+</html>

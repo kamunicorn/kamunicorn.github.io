@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="css/icons-ie7.css">
+    <!--<![endif]-->
+
+    <!-- Иконки на вкладке - favicon -->
+    <!-- <link href="img/favicons/favicon-64.png" sizes="64x64" rel="apple-touch-icon"> -->
+	<!-- <link href="img/favicons/favicon-48.png" sizes="48x48" rel="apple-touch-icon"> -->
+	<!-- <link href="img/favicons/favicon-32.png" sizes="32x32" rel="apple-touch-icon"> -->
+	<link rel="apple-touch-icon" href="img/favicons/favicon.jpg">
+	<link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+
+    <!-- Цвет браузерной вкладки -->
+    <meta name="theme-color" content="#004d80">
+    <link rel="manifest" type="text/css" href="manifest.json">
+
+    <title>Модальное окно</title>
+</head>
+<body font="black" bg="page">
+
+    <a href="#main" class="sr-only">Перейти к основному содержимому</a>
+    <a href="#navigation" class="sr-only">Перейти к навигации</a>
+
+    <!-- верхний колонтитул страницы -->
+    <div class="container">
+        <header role="banner" class="header row space-beetween">
+            <!-- логотип, ссылка на главную -->
+            <div class="header__logo xs-hidden col-1 col-lg-2 col-md-2">
+                <a class="d-inline-block" title="На главную" outline="primary" href="/">
+                    <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                </a>
+            </div>
+
+            <!-- название сайта, ссылки -->
+            <div class="col-10 col-xl-11 col-lg-10 col-xs-12">
+                <div class="row space-between">    
+                    <div class="col-8 col-lg-12">
+                        <div class="header__logo_xs hidden xs-visible">
+                            <a class="d-block" title="На главную" outline="primary" href="/">
+                                <img aria-hidden="true" src="img/logo-gia.svg" alt="Логотип">
+                            </a>
+                        </div>
+                        <div font="gray" class="header__small-title fz-100 font-heading">Официальный информационный портал</div>
+                        <div class="header__title uppercase fz-180 font-heading">государственной итоговой аттестации выпускников Камчатского&nbsp;края</div>
+                    </div>
+
+                    <div class="col-4 col-lg-12 header__links">
+                        <div class="link-wrapper">
+                            <a outline="primary" href="#">
+                                <span font="dark" class="fz-130 icon icon__eye-plus"></span>
+                                <span class="underlined-link">Версия для слабовидящих</span>
+                            </a>
+                        </div>
+                        <div class="link-wrapper">
+                            <a outline="primary" href="#hot-line">
+                                <span font="dark" class="fz-130 icon icon__phone-call"></span>
+                                <span class="underlined-link">Горячая линия по вопросам <span role="text" aria-labelledby="abbr-gia">ГИА</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- навигационное меню -->
+    <nav class="menu-bar fz-110 no-invert-font" id="navigation" aria-label="главное меню сайта" bg="primary" font="white">
+        <div class="container p0">
+            <ul class="menu-bar__list row no-wrap space-between">
+                <!-- ГИА-11 -->
+                <li class="menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" role="menuitem" aria-haspopup="true" tabindex="0">
+                        <span role="text" aria-labelledby="abbr-gia-11">
+                            ГИА-11 <span class="lg-hidden"> (ЕГЭ, ГВЭ-11)</span>
+                        </span>
+                    </div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Расписание</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Даты объявления результатов и подачи апелляций</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Посмотреть результаты <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Подать апелляцию по <span role="text" aria-labelledby="abbr-ege">ЕГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light">
+                            <a href="#" outline="secondary">Информация</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- ГИА-9 -->
+                <li class="menu-bar__item active" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" role="menuitem" aria-haspopup="true" tabindex="0" aria-current="location">
+                        <span role="text" aria-labelledby="abbr-gia-9">
+                            ГИА-9<span class="lg-hidden"> (ОГЭ, ГВЭ-9)</span>
+                        </span>
+                    </div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Расписание</a>
+                        </li>
+                        <li class="dropdown__item active" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" aria-current="page">
+                            <a href="#" outline="secondary">Даты объявления результатов и подачи апелляций</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Посмотреть результаты <span role="text" aria-labelledby="abbr-ege">ОГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Подать апелляцию по <span role="text" aria-labelledby="abbr-oge">ОГЭ</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Информация</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Результаты -->
+                <li class="xs-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light" role="menuitem">
+                    <a class="menu-bar__head" outline="secondary" href="#">Результаты</a>
+                </li>
+                <!-- Апелляции -->
+                <li class="xs-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light" role="menuitem">
+                    <a class="menu-bar__head" outline="secondary" href="#">Апелляции</a>
+                </li>
+                <!-- Документы -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <a class="menu-bar__head" outline="secondary" href="#" aria-haspopup="true">Документы</a>
+                    <ul class="dropdown" bg="primary" role="presentation">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gia-9">ГИА-9</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gia-11">ГИА-11</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Документы <span role="text" aria-labelledby="abbr-gis">ГИС</span> «Экзамен»</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Методики -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" aria-haspopup="true" tabindex="0">Методики</div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Итоговое сочинение (изложение)</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Инструкции <span role="text" aria-labelledby="abbr-gia">ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Презентации, видеоматериалы</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary"><span role="text" aria-labelledby="abbr-gia">ГИА</span> по иностранным языкам</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Обучение лиц, задействованных при проведении <span role="text" aria-labelledby="abbr-gia">ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem" >
+                            <a href="#" outline="secondary">Общественным наблюдателям <span role="text" aria-labelledby="abbr-ppe">ППЭ</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Контакты -->
+                <li class="sm-hidden menu-bar__item" bg-active="secondary-light" bg-hover="secondary-light">
+                    <div class="menu-bar__head" outline="secondary" aria-haspopup="true" tabindex="0">Контакты</div>
+                    <ul class="dropdown" bg="primary">
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Об <span role="text" aria-labelledby="abbr-ooto-gia">ООТО ГИА</span></a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Контакты управлений образования</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Горячие линии</a>
+                        </li>
+                        <li class="dropdown__item" bg-hover="secondary-light" bg-active="secondary-light" role="menuitem">
+                            <a href="#" outline="secondary">Полезные ссылки</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!-- Поиск -->
+                <li class="menu-bar__item" bg-hover="secondary-light">
+                    <button class="menu-bar__head" id="open-search-form" outline="secondary" aria-label="Открыть поиск">
+                        <span class="icon icon__search"></span>
+                    </button>
+                </li>
+                <!-- меню-гамбургер - кнопка открытия -->
+                <li class="menu-bar__item sm-visible hidden" id="open-menu-ham" bg-hover="secondary-light">
+                    <button class="menu-bar__head" outline="secondary" aria-label="Открыть всё меню">
+                        <span class="icon icon__ham"></span>
+                    </button>
+                </li>
+            </ul>
+            <!-- .menu-bar__list -->
+        </div>
+    </nav>
+
+    <!-- всплывающая форма поиска -->
+    <div>
+        <div class="search-form open" bg="light" role="dialog">
+            <div class="container p0">
+                <div class="row no-wrap margin-left-auto">
+                    <form role="search" class="row no-wrap margin-left-auto">
+                        <div class="ui-input__wrapper">
+                            <input class="ui-input" id="search-input" border="gray" outline="primary" bg="white" type="text" placeholder=" ">
+                            <label for="search-input" class="ui-input__label fz-90" font="gray">Поиск</label>
+                        </div>
+                        <button outline="primary" bg="primary" bg-hover="primary-light" font="white" type="submit" class="ui-submit no-invert-font">Найти</button>
+                    </form>
+
+                    <button id="close-search-form" class="ui-close xs-hidden fz-180" aria-label="закрыть форму поиска" outline="primary" title="Закрыть форму поиска">
+                        <span class="icon icon__close" font="dark"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- основное содержание страницы -->
+    <main id="main">
+        <!-- Обновления (на сайте) -->
+        <div class="container">
+            <div class="news tabbed">
+
+                <h2 class="sr-only">новости на сайте</h2>
+                <div class="overflow-horizontal">
+                    <ul class="ui-tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" target="news-tabpanel-updates" bg="light" bg-active="secondary" outline="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" role="tab" tabindex="-1">
+                                Обновления
+                                <span border="page" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" target="news-tabpanel-gia-9" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab"  tabindex="-1">
+                                <span role="text" aria-labelledby="abbr-gia-9">ГИА-9</span>
+                                <span border="page" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="ui-tab no-invert-font" target="news-tabpanel-gia-11" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab"  tabindex="-1">
+                                <span role="text" aria-labelledby="abbr-gia-11">ГИА-11</span>
+                                <span border="page" class="ui-tab-triangle"></span>
+                            </button>
+                        </li>
+                    </ul>
+                    <div hidden id="tablist-description">Клавиши влево и вправо для выбора вкладки, клавиша вниз для перехода к содержимому вкладки</div>
+                </div>
+
+                <!-- содержание вкладки Обновления -->
+                <section id="news-tabpanel-updates" tabindex="-1" outline="gray" id="news-content-updates" role="tabpanel">
+                    <h3 class="sr-only">Обновления на сайте</h3>
+                    <div class="padding"></div>
+
+                    <div class="slider relative" id="news-updates-slider">
+                        <div class="slider__wrapper">
+                            <ul class="slider__row">
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В "Документы" опубликован Приказ Министерства образования и молодёжной политики Камчатского края от 28.09.2018 №983 "Об утверждении сроков и мест регистрации для участия в написании итогового сочинения (изложения) в Камчатском крае в 2018/2019 учебном году"</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">На вкладке "Методические материалы" - "Итоговое сочинение (изложение)" размещён Акт передачи работ участников итогового сочинения (изложения) из ОО в ОМСУ.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">На вкладке "Методические материалы" - "Итоговое сочинение (изложение)" размещена Инструкция по формированию и печати протоколов бланков итогового сочинения (изложения).</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Информация -> Документы -> Министерство образования и молодёжной политики Камчатского края" можно скачать Приказ о порядке ознакомления с результатами.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Информация -> Документы -> Министерство образования и молодёжной политики Камчатского края" можно скачать Приказ о порядке ознакомления с результатами.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Информация -> Документы -> Министерство образования и молодёжной политики Камчатского края" можно скачать Приказ о порядке ознакомления с результатами.</p>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="slider__controls">
+                            <button class="slider__arrow ui-scroll-arrow left sm-hidden" font="page" outline="primary" aria-label="предыдущие новости" disabled>
+                                <span class="icon__scroll-left" font="black" aria-hidden="true"></span>
+                            </button>
+                            <button class="slider__arrow ui-scroll-arrow right sm-hidden" font="page" outline="primary"  aria-label="следующие новости">
+                                <span class="icon__scroll-right" font="black" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- содержание вкладки ГИА-9 -->
+                <section id="news-tabpanel-gia-9" tabindex="-1" outline="gray" role="tabpanel">
+                    <h3 class="sr-only">новости ГИА-9</h3>
+                    <div class="padding"></div>
+                    
+                    <div class="slider relative" id="news-gia-9-slider">
+                        <div class="slider__wrapper">
+                            <ul class="slider__row">
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ОГЭ по дисциплине "Математика",  который состоялся 27.06.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования. Официальный день объявления результатов - 02.07.2019. Прием апелляций осуществляется – 03.07.2019 и 04.07.2019.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ОГЭ по дисциплине "Английский язык" за 29.06.2019,  "Русский язык", "Математика", "Биология" за 01.07.2019, "Биология", "География", "Обществознание" за 02.07.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования. Официальный день объявления результатов - 05.07.2019. Прием апелляций осуществляется – 08.07.2019 и 09.07.2019.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ОГЭ по "Русскому языку", состоявшемуся 03.09.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования. Официальный день объявления результатов - 06.09.2019. Прием апелляций осуществляется – 09.09.2019 и 10.09.2019.</p>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="slider__controls">
+                            <button font="white" outline="primary" class="slider__arrow ui-scroll-arrow left sm-hidden" aria-label="предыдущие новости" disabled>
+                                <span class="icon__scroll-left" font="black" aria-hidden="true"></span>
+                            </button>
+                            <button font="white" outline="primary" class="slider__arrow ui-scroll-arrow right sm-hidden" aria-label="следующие новости">
+                                <span class="icon__scroll-right" font="black" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- содержание вкладки ГИА-11 -->
+                <section id="news-tabpanel-gia-11" tabindex="-1" outline="gray" role="tabpanel">
+                    <h3 class="sr-only">Новости ГИА-11</h3>
+                    <div class="padding"></div>
+                    
+                    <div class="slider relative" id="news-gia-11-slider">
+                        <div class="slider__wrapper">
+                            <ul class="slider__row">
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ЕГЭ по дисциплинам "Английский язык" (27.06.2019 устная часть) и "Обществознание" за 28.06.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования. Официальный день объявления результатов - 09.07.2019. Прием апелляций осуществляется – 10.07.2019 и 11.07.2019.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ЕГЭ по дисциплине "Русский язык" за 03.09.2019,  "Математика базовый уровень" за 06.09.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования. Официальный день объявления результатов - 17.07.2019. Прием апелляций осуществляется – 18.07.2019 и 19.07.2019.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ОГЭ по предмету "Английский язык" за 20.09.2019 и результаты ОГЭ по предметам "География", "Биология", "Обществознание" за 21.09.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования. Официальный день объявления результатов - 25.09.2019. Прием апелляций осуществляется – 26.09.2019 и 27.09.2019.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">Результаты ОГЭ по предмету "Английский язык" за 20.09.2019 и результаты ОГЭ по предметам "География", "Биология", "Обществознание" за 21.09.2019. Прием апелляций осуществляется – 26.09.2019 и 27.09.2019.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ЕГЭ по дисциплинам "Биология", "Информатика",  которые состоялись 13.06.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования.<br>Официальный день объявления результатов - 27.06.2019. Прием апелляций осуществляется – 28.06.2019 и 01.07.2019.</p>
+                                    </article>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <article class="news__article fz-90">
+                                        <span class="sr-only">новость за</span>
+                                        <p class="news__date m0" font="gray">20.09.2019</p>
+                                        <p class="m0">В разделе "Апелляции, результаты" опубликованы результаты ОГЭ по дисциплине "Английский язык" за 29.06.2019,  "Русский язык", "Математика", "Биология" за 01.07.2019, "Биология", "География", "Обществознание" за 02.07.2019. Также результаты размещены в сетевых папках ГИС "Сетевой город" органов местного самоуправления, осуществляющих управление в сфере образования.<br>Официальный день объявления результатов - 05.07.2019. Прием апелляций осуществляется – 08.07.2019 и 09.07.2019.</p>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="slider__controls">
+                            <button font="white" outline="primary" class="slider__arrow ui-scroll-arrow left sm-hidden" aria-label="предыдущие новости" disabled>
+                                <span class="icon__scroll-left" font="black" aria-hidden="true"></span>
+                            </button>
+                            <button font="white" outline="primary" class="slider__arrow ui-scroll-arrow right sm-hidden" aria-label="следующие новости">
+                                <span class="icon__scroll-right" font="black" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="link-wrapper padding-top margin-top">
+                    <a outline="primary" href="#" class="underlined-link" font="primary">
+                        Смотреть архив 
+                        <span class="icon__look-next" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Памятка участникам -->
+            <section class="memories margin-negative">
+                <h2 id="memories-title" class="section__title">
+                    Памятка участникам
+                    <span class="sr-only">. Графические материалы</span>
+                </h2>
+    
+                <div class="slider memories__slider relative" id="memories-slider">
+                    <div class="slider__wrapper">
+                        <ul class="slider__row" aria-labelledby="memories-title">
+                            <li class="slider__item col-2 col-lg-3 col-md-3 col-sm-5 col-xs-8">
+                                <div class="memories__item">
+                                    <a class="d-block" outline="primary" href="img/memories/big/memories-1.jpg">
+                                        <img class="box-shadow lazyload bright-less-in-dark" loading="lazy" font="gray" border="light" data-src="img/memories/memories-1.jpg" alt="памятка участникам государственной итоговой аттестации по баллам">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-lg-3 col-md-3 col-sm-5 col-xs-8">
+                                <div class="memories__item">
+                                    <a class="d-block" outline="primary" href="img/memories/big/memories-2.jpg">
+                                        <img class="box-shadow lazyload bright-less-in-dark" loading="lazy" font="gray" border="light" data-src="img/memories/memories-2.jpg" alt="памятка участникам государственной итоговой аттестации по математике">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-lg-3 col-md-3 col-sm-5 col-xs-8">
+                                <div class="memories__item">
+                                    <a class="d-block" outline="primary" href="img/memories/big/memories-3.jpg">
+                                        <img class="box-shadow lazyload bright-less-in-dark" loading="lazy" font="gray" border="light" data-src="img/memories/memories-3.jpg" alt="памятка участникам государственной итоговой аттестации о пункте проведения экзаменов">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-lg-3 col-md-3 col-sm-5 col-xs-8">
+                                <div class="memories__item">
+                                    <a class="d-block" outline="primary" href="img/memories/big/memories-4.jpg">
+                                        <img class="box-shadow lazyload bright-less-in-dark" loading="lazy" font="gray" border="light" data-src="img/memories/memories-4.jpg" alt="памятка участникам государственной итоговой аттестации по итоговому сочинению">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-lg-3 col-md-3 col-sm-5 col-xs-8">
+                                <div class="memories__item">
+                                    <a class="d-block" outline="primary" href="img/memories/big/memories-5.jpg">
+                                        <img class="box-shadow lazyload bright-less-in-dark" loading="lazy" font="gray" border="light" data-src="img/memories/memories-5.jpg" alt="памятка участникам государственной итоговой аттестации по запретам и разрешениям">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-lg-3 col-md-3 col-sm-5 col-xs-8">
+                                <div class="memories__item">
+                                    <a class="d-block" outline="primary" href="img/memories/big/memories-1.jpg">
+                                        <img class="box-shadow lazyload bright-less-in-dark" loading="lazy" font="gray" border="light" data-src="img/memories/memories-1.jpg" alt="памятка участникам государственной итоговой аттестации по баллам">
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-lg-3 col-md-3 col-sm-5 col-xs-8">
+                                <div class="memories__item">
+                                    <a class="d-block" outline="primary" href="img/memories/big/memories-2.jpg">
+                                        <img class="box-shadow lazyload bright-less-in-dark" loading="lazy" font="gray" border="light" data-src="img/memories/memories-2.jpg" alt="памятка участникам государственной итоговой аттестации по математике">
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="slider__controls">
+                        <button class="slider__arrow ui-scroll-arrow left sm-hidden" font="page" outline="primary" aria-label="предыдущие памятки" disabled>
+                            <span class="icon__scroll-left" font="black" aria-hidden="true"></span>
+                        </button>
+                        <button class="slider__arrow ui-scroll-arrow right sm-hidden" font="page" outline="primary"  aria-label="следующие памятки">
+                            <span class="icon__scroll-right" font="black" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Полезные ссылки -->
+            <section class="usefull margin-negative">
+                <h2 class="section__title" id="usefull-title">Полезные ссылки</h2>
+
+                <div class="slider usefull__slider relative" id="usefull-slider">
+                    <div class="slider__wrapper">
+                        <ul class="slider__row" aria-labelledby="usefull-title">
+                            <li class="slider__item col-2 col-xl-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="usefull__item">
+                                    <a class="d-inline-block" outline="primary" href="//www.obrnadzor.gov.ru/" aria-describedby="usefull-1-short usefull-1-full">
+                                        <img class="lazyload" loading="lazy" data-src="img/usefull-links/obrnadzor.png" alt="">
+                                    </a>
+                                    <div class="usefull__short fz-90" id="usefull-1-short">Рособрнадзор</div>
+                                    <div class="usefull__full fz-80" id="usefull-1-full">Федеральная служба по надзору в сфере образования и науки</div>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-xl-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="usefull__item">
+                                    <a class="d-inline-block" outline="primary" href="//fipi.ru/" aria-describedby="usefull-2-short usefull-2-full">
+                                        <img class="lazyload" loading="lazy" data-src="img/usefull-links/fipi.jpg" alt="">
+                                    </a>
+                                    <div class="usefull__short fz-90" id="usefull-2-short">ФИПИ</div>
+                                    <div class="usefull__full fz-80" id="usefull-2-full">Федеральный институт педагогических измерений</div>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-xl-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="usefull__item">
+                                    <a class="d-inline-block" outline="primary" href="//www.rustest.ru/" aria-describedby="usefull-3-short usefull-3-full">
+                                        <img class="lazyload" loading="lazy" data-src="img/usefull-links/fct.png" alt="">
+                                    </a>
+                                    <div class="usefull__short fz-90" id="usefull-3-short">ФЦТ</div>
+                                    <div class="usefull__full fz-80" id="usefull-3-full">Федеральный центр тестирования</div>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-xl-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="usefull__item">
+                                    <a class="d-inline-block" outline="primary" href="//www.edu.ru/" aria-describedby="usefull-4-short usefull-4-full">
+                                        <img class="lazyload" loading="lazy" data-src="img/usefull-links/rosobr.png" alt="">
+                                    </a>
+                                    <div class="usefull__short fz-90" id="usefull-4-short">Российское образование</div>
+                                    <div class="usefull__full fz-80" id="usefull-4-full">Федеральный портал</div>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-xl-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="usefull__item">
+                                    <a class="d-inline-block" outline="primary" href="//www.rustest.ru/" aria-describedby="usefull-5-short usefull-5-full">
+                                        <img class="lazyload" loading="lazy" data-src="img/usefull-links/fct.png" alt="">
+                                    </a>
+                                    <div class="usefull__short fz-90" id="usefull-5-short">ФЦТ</div>
+                                    <div class="usefull__full fz-80" id="usefull-5-full">Федеральный центр тестирования</div>
+                                </div>
+                            </li>
+                            <li class="slider__item col-2 col-xl-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="usefull__item">
+                                    <a class="d-inline-block" outline="primary" href="//www.obrnadzor.gov.ru/" aria-describedby="usefull-6-short usefull-6-full">
+                                        <img class="lazyload" loading="lazy" data-src="img/usefull-links/obrnadzor.png" alt="">
+                                    </a>
+                                    <div class="usefull__short fz-90" id="usefull-6-short">Рособрнадзор</div>
+                                    <div class="usefull__full fz-80" id="usefull-6-full">Федеральная служба по надзору в сфере образования и науки</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="slider__controls">
+                        <button class="slider__arrow ui-scroll-arrow left sm-hidden" font="page" outline="primary" aria-label="предыдущие ссылки" disabled>
+                            <span class="icon__scroll-left" font="black" aria-hidden="true"></span>
+                        </button>
+                        <button class="slider__arrow ui-scroll-arrow right sm-hidden" font="page" outline="primary"  aria-label="следующие ссылки">
+                            <span class="icon__scroll-right" font="black" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- нижний колонтитул страницы -->
+    <footer class="footer no-invert-font" font="white" bg="footer">
+        <div class="container">
+            <div class="row space-between">
+                <div class="footer__logo lg-hidden">
+                    <a class="d-inline-block" title="На главную" aria-label="На главную" class="no-invert-font" outline="white" href="/">
+                        <img aria-hidden="true" src="img/logo-gia-dark.svg" alt="Логотип">
+                    </a>
+                </div>
+
+                <div class="footer__menu">
+                    <ul aria-label="меню сайта короткое">
+                        <li>
+                            <a class="underlined-link no-invert-font" outline="white" href="#">Карта сайта</a>
+                        </li>
+                        <li>
+                            <a class="underlined-link no-invert-font" outline="white" href="#">Горячие телефоны</a>
+                        </li>
+                        <li>
+                            <a class="underlined-link no-invert-font" outline="white" href="#">Служебная страница</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div  class="footer__contacts">
+                    <div class="sr-only" id="footer-contacts-heading" role="heading">Контакты организации</div>
+                    <ul aria-labelledby="footer-contacts-heading">
+                        <li>
+                            <a class="no-invert-font" outline="white" href="#">
+                                <span class="fz-130 icon icon__phone-call sm-hidden"></span>
+                                <span class="underlined-link">Позвонить нам</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="no-invert-font" outline="white" href="#">
+                                <span class="fz-130 icon icon__mail sm-hidden"></span>
+                                <span class="underlined-link">Обратная связь</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="no-invert-font" outline="white" href="#">
+                                <span class="fz-130 icon icon__location sm-hidden"></span>
+                                <span class="underlined-link">Где мы находимся</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="no-invert-font" outline="white" href="#">
+                                <span class="fz-130 icon icon__contact-book sm-hidden"></span>
+                                <span class="underlined-link">Контактная информация</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="hot-line" class="col-4 col-sm-12">
+                    <hr aria-hidden="true" class="hidden sm-visible">
+
+                    <div role="heading" class="fz-120 font-heading">
+                        Горячая линия по вопросам 
+                        <span role="text" aria-labelledby="abbr-gia-parent">ГИА</span>
+                    </div>
+                    <div class="footer__hot-item">
+                        <a id="hot-phone-kam" aria-labelledby="hot-phone-kam__name hot-phone-kam__label hot-phone-kam" outline="white" href="tel:84152412752" class="underlined-link fz-120 no-invert-font">8 (415 2) 41-27-52</a>
+                        <div aria-hidden="true" id="hot-phone-kam__name" class="fz-80">Министерство образования Камчатского&nbsp;края</div>
+                        <div id="hot-phone-kam__label" hidden>позвонить по телефону</div>
+                    </div>
+                    <div class="footer__hot-item">
+                        <a id="hot-phone-ru" aria-labelledby="hot-phone-ru__name hot-phone-ru__label hot-phone-ru" outline="white" href="tel:84959848919" class="underlined-link fz-120 no-invert-font">
+                            8 (495) 984-89-19
+                            <span class="sr-only">добавить цифру 5</span>
+                        </a>
+                        <span aria-hidden="true"> (доб. 5)</span>
+                        <div id="hot-phone-ru__label" hidden>позвонить</div>
+                        <div aria-hidden="true" class="fz-80">г. Москва</div>
+                        <div id="hot-phone-ru__name" hidden>телефон в городе Москва</div>
+                    </div>
+                    <div class="footer__hot-item">
+                        <a id="hot-email" aria-labelledby="hot-email__name hot-email__label hot-email" outline="white" href="mailto:ege@obrnadzor.gov.ru" class="fz-120 underlined-link no-invert-font">ege@obrnadzor.gov.ru</a>
+                        <div aria-hidden="true" class="fz-80">Адрес доверия г. Москва</div>
+                        <div aria-hidden="true" id="hot-email__name" class="sr-only">Адрес доверия в городе Москва</div>
+                        <div id="hot-email__label" hidden>электронная почта</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container fz-90 text-center">
+            <hr aria-hidden="true">
+        
+            <div class="sr-only">название и адрес организации</div>
+            <p class="footer__ps-text">
+                <span role="text" aria-labelledby="kgau">КГАУ</span>
+                &nbsp;«Камчатский центр информатизации и оценки качества образования»
+            <br>Отдел организационно-технологического обеспечения государственной итоговой аттестации
+            </p>
+            <address aria-hidden="true">683023,&nbsp;г.&nbsp;Петропавловск-Камчатский, ул.&nbsp;Кавказская,&nbsp;д.&nbsp;40</address>
+            <address class="sr-only">Адрес организации: город Петропавловск-Камчатский, улица Кавказская, дом 40, индекс 683 023</address>
+        </div>
+    </footer>
+
+    <!-- Всплывающее окно с изображением памяткой, затемненная подложка, должно быть скрыто по умолчанию атрибутом hidden -->
+    <div class="popup">
+        <div class="popup__overlay" blackout="black"></div>
+        <div class="popup__body">
+            <div class="container text-center padding" class="no-invert-font" font="white">
+                <button class="popup__close no-invert-font ui-close" font="white" bg-hover="secondary" outline="secondary" aria-label="закрыть всплывающее окно">
+                    <span class="icon icon__close fz-110" aria-hidden="true"></span>
+                </button>
+                <p>Памятка участникам государственной итоговой аттестации по баллам</p>
+                <!-- контейнер, ограничивающий ширину картинки на разных экранах -->
+                <div class="col-7 col-xl-8 col-lg-9 col-md-11 col-sm-12 margin-auto relative">
+                    <img class="bright-less-in-dark" border="light" src="img/memories/big/memories-1.jpg" alt="памятка участникам государственной итоговой аттестации по баллам">
+                    <div class="slider__controls"> 
+                        <!-- этот контейнер ничего не дает и бесмысленнен -->
+                        <button class="ui-popup-slider-arrow left no-invert-font" font="white" blackout="black" outline="primary" aria-label="предыдущее изображение">
+                            <span class="icon icon__arrow-left fz-110" aria-hidden="true"></span>
+                        </button>
+                        <button class="ui-popup-slider-arrow right no-invert-font" font="white" blackout="black" outline="primary" aria-label="следующее изображение">
+                            <span class="icon icon__arrow-right fz-110" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- вкладки (с новостями) -->
+    <script src="js/tabs.js"></script>
+    <script src="js/lazyload.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            tabsInit('.news');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+    
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="css/icons-ie7.css">
+    <!--<![endif]-->
+
+    <title>Настройка версии для слабовидящих</title>
+</head>
+<body font="black" bg="page">
+    
+    <h1 class="sr-only">Настройка версии для слабовидящих</h1>
+
+    <div class="container">
+        <nav class="margin-negative">
+            <div id="low-vision-heading" hidden>этапы настройки версии для слабовидящих</div>
+            <ul class="ui-steplist row no-wrap" font="dark" aria-labelledby="low-vision-heading" role="tablist">
+                <li role="presentation">
+                    <button class="ui-step no-invert-font active" bg="light" bg-active="primary" font-active="white" outline="primary" title="Выбор цветовой гаммы" role="tab">
+                        <span class="sr-only">Шаг</span>
+                        1
+                    </button>
+                </li>
+                <li role="presentation">
+                    <button class="ui-step no-invert-font active" bg="light" bg-active="primary" font-active="white" outline="primary" title="Выбор шрифта" aria-current="true" role="tab">
+                        <span class="sr-only">Шаг</span>
+                        2
+                    </button>
+                </li>
+                <li role="presentation">
+                    <button class="ui-step no-invert-font" bg="light" bg-active="primary" font-active="white" outline="primary" title="Настройки шрифта" role="tab">
+                        <span class="sr-only">Шаг</span>
+                        3
+                    </button>
+                </li>
+                <li role="presentation">
+                    <button class="ui-step no-invert-font" bg="light" bg-active="primary" font-active="white" outline="primary" title="Графика и картинки" role="tab">
+                        <span class="sr-only">Шаг</span>
+                        4
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="step-1-section" role="tabpanel">
+            <h2 id="step-1-heading" class="content__subtitle">Шаг 1. Выбор цветовой гаммы</h2>
+        </section>
+        
+        <section id="step-2-section" role="tabpanel">
+            
+            <h2 id="step-2-heading" class="content__subtitle">Шаг 2. Выбор шрифта</h2>
+            
+            <!-- Группа радиокнопок с толщиной шрифта -->
+            <fieldset role="radiogroup" class="row">
+                <legend class="sr-only">Толщина шрифта</legend>
+                <div class="row">
+                    <label class="ui-radio">
+                        <input type="radio" name="appeal-type-presence" value="weight-300">
+                        <div class="ui-radio__custom" border="primary" font="primary"></div>
+                        <div class="ui-radio__text">Тонкий</div>
+                        <div class="ui-radio__outline" border="primary"></div>
+                    </label>
+                    <label class="ui-radio">
+                        <input type="radio" name="appeal-type-presence" value="weight-400">
+                        <div class="ui-radio__custom" border="primary" font="primary"></div>
+                        <div class="ui-radio__text">Обычный</div>
+                        <div class="ui-radio__outline" border="primary"></div>
+                    </label>
+                    <label class="ui-radio">
+                        <input type="radio" name="appeal-type-presence" value="weight-500">
+                        <div class="ui-radio__custom" border="primary" font="primary"></div>
+                        <div class="ui-radio__text">Средний</div>
+                        <div class="ui-radio__outline" border="primary"></div>
+                    </label>
+                    <label class="ui-radio">
+                        <input type="radio" name="appeal-type-presence" value="weight-700">
+                        <div class="ui-radio__custom" border="primary" font="primary"></div>
+                        <div class="ui-radio__text">Жирный</div>
+                        <div class="ui-radio__outline" border="primary"></div>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Выпадающий список с выбором шрифта -->
+            <div class="ui-select ui-select_custom ui-select_font" id="select-font" font="primary" bg="white">
+                            
+                <input type="button" class="ui-select__control" 
+                bg="white" border="primary" outline="primary" font="black"
+                id="select-font--control"
+                role="combobox" 
+                aria-expanded="false"
+                value="Roboto" style="font-family: Roboto;">
+    
+                <label class="ui-select__label fz-90" font="gray" for="select-font--control">Шрифт</label>
+    
+                <div class="sr-only" role="alert" aria-live="assertive">
+                    Выбран шрифт: <span id="select-font--updated-name">Roboto</span>
+                </div>
+
+                <ul hidden class="ui-select__options-box" id="select-font--list" bg="white" font="black" outline="gray" border="primary" role="presentation">
+                    <li class="ui-select__option">
+                        <label class="ui-radio">
+                            <input type="radio" name="font" value="font-1" checked aria-checked="true" role="option">
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">
+                                <img src="img/fonts/arial-narrow_wrong-address.jpg" alt="Arial Narrow" class="ui-select__font-example" style="font-family: 'Arial Narrow';">
+                            </div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                    </li>
+                    <li class="ui-select__option">
+                        <label class="ui-radio">
+                            <input type="radio" name="font" value="font-2" role="option">
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">
+                                <img src="img/fonts/open-sans-condensed.jpg" alt="Open Sans Condensed" class="ui-select__font-example" style="font-family: 'Open Sans Condensed';">
+                            </div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                    </li>
+                    <li class="ui-select__option">
+                        <label class="ui-radio">
+                            <input type="radio" name="font" value="font-3" role="option">
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text" style="font-family: 'PT Sans';">
+                                <img src="img/fonts/pt-sans.jpg" alt="PT Sans" class="ui-select__font-example" style="font-family: 'PT Sans';">
+                            </div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                    </li>
+                    <li class="ui-select__option">
+                        <label class="ui-radio">
+                            <input type="radio" name="font" value="font-4" role="option">
+                            <div class="ui-radio__custom" border="primary" font="primary"></div>
+                            <div class="ui-radio__text">
+                                <!-- <img src="img/fonts/roboto-condensed.jpg" alt="Roboto Condensed" class="ui-select__font-example"> -->
+                                <span class="ui-select__font-example" style="font-family: 'Roboto Condensed';">Roboto Condensed</span>
+                            </div>
+                            <div class="ui-radio__outline" border="primary"></div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <label aria-expanded="false" aria-label="выбор шрифта, выпадающий список" for="select-font" class="ui-select-font" bg="white" border="gray">
+                <input type="checkbox" name="font-list[]" value="not_changed" id="select-font" aria-label="нажмите Enter для выбора шрифта">
+                <div class="ui-select-font__list" bg="white" border="gray">
+
+                    <label class="ui-radio ui-select-font__item" bg="white" border="gray">
+                        <input name="list" type="radio" value="roboto-medium"/>
+                        <span bg="white" font="primary" border="primary" class="ui-radio-custom"><span bg="primary" class="ui-radio-custom__inner"></span></span>
+                        <img src="img/roboto-medium.jpg" alt="Roboto medium" class="ui-select-font__image" aria-label="Выбрать шрифт Roboto medium">
+                        <div border="primary-light" class="ui-help-outline"></div>
+                    </label>
+
+                    <label class="ui-radio ui-select-font__item" bg="white" border="gray">
+                        <input name="list" type="radio" value="open-sans-condensed"/>
+                        <span bg="white" font="primary" border="primary" class="ui-radio-custom"><span bg="primary" class="ui-radio-custom__inner"></span></span>
+                        <img src="img/open-sans-condensed.jpg" alt="Open Sans Condensed" class="ui-select-font__image" aria-label="Выбрать шрифт Open Sans Condensed">
+                        <div border="primary-light" class="ui-help-outline"></div>
+                    </label>
+
+                    <label class="ui-radio ui-select-font__item" bg="white" border="gray">
+                        <input name="list" type="radio" value="arial-narrow"/>
+                        <span bg="white" font="primary" border="primary" class="ui-radio-custom"><span bg="primary" class="ui-radio-custom__inner"></span></span>
+                        <img src="" alt="Arial Narrow" style="font-family: 'Arial Narrow'" class="ui-select-font__image" aria-label="Выбрать шрифт Arial Narrow">
+                        <div border="primary-light" class="ui-help-outline"></div>
+                    </label>
+
+                </div>
+                <span class="ui-select-font__placeholder" font="black" aria-label=" ">Выберите шрифт</span>
+                <div border="primary-light" class="ui-help-outline"></div>
+            </label> -->
+
+            <p role="heading" class="margin-top fz-110 bold">Образец текста</p>
+            <p>Федеральная <em>служба по надзору в сфере образования и науки</em> подготовила новые анимированные видеоролики и плакаты, рассказывающие о государственной итоговой аттестации. С их помощью выпускники смогут узнать об особенностях ЕГЭ по математике и иностранному языку, собеседовании <strong>по русскому языку</strong> в 9 классе, как зарегистрироваться на ЕГЭ и пересдать экзамены, правилах и процедуре ЕГЭ, заполнении бланков. Два видеоролика содержат советы для выпускников и их родителей, как лучше организовать подготовку к экзаменам.</p>
+
+            <p><strong><em>«Рособрнадзор</em></strong> традиционно уделяет большое внимание разъяснению правил и особенностей экзаменационных процедур выпускникам и их родителям.Ежегодно мы обновляем и дополняем наши разъяснительные материалы, снимаем видеоконсультации по подготовке к ЕГЭ с участием разработчиков экзаменационных заданий. Надеемся, что они будут полезны и помогут будущим выпускникам лучше сориентироваться в том, что их ждет на экзаменах», - рассказал руководитель Рособрнадзора Сергей Кравцов.</p>
+
+            <button type="button" class="ui-submit margin-top no-invert-font" bg="primary" outline="primary" font="white">Продолжить</button>
+            
+        </section>
+
+        <section id="step-3-section" role="tabpanel">
+            <h2 id="step-3-heading" class="content__subtitle">Шаг 3. Настройки шрифта</h2>
+        </section>
+
+        <section id="step-4-section" role="tabpanel">
+            <h2 id="step-4-heading" class="content__subtitle">Шаг 4. Графика и картинки</h2>
+        </section>
+    </div>
+
+</body>
+</html>

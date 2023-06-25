@@ -1,0 +1,501 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- отработка верстки со стилями, задающие цветовую тему -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+	<link rel="stylesheet" href="css/colors.min.css">
+	<link rel="stylesheet" href="css/template.min.css">
+	<link rel="stylesheet" href="css/style-guide.min.css">
+	<link rel="stylesheet" href="css/tables.min.css">
+	<title>Руководство стиля. Иконки</title>
+    
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/> -->
+    
+    <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="css/icons-ie7.css">
+    <!--<![endif]-->
+</head>
+<body bg="white" font="black">
+
+    <style>
+        [class*="icon"], 
+        .icon {
+            font-size: 120%;
+        }
+    </style>
+
+	<div class="container">
+    <main>
+
+        <div class="padding-top font-heading">
+            <h1 class="fz-200 bold">Сайт ГИА41. Руководство стиля</h1>
+            <h1 class="fz-150">Иконки</h1>
+        </div>
+
+        <p>Все исходные стили можно найти в scss/parts/_icons.scss, они собираются в scss/parts/template.scss.</p>
+        <p>Всем иконкам желательно ставить атрибут [aria-hidden="true"] во избежание озвучивания их содержания скринридерами. Допустимо ставить иконкам aria-label (но нигде на сайте такое не практикуется).</p>
+
+        <ul class="accordion margin-top margin-bottom margin-negative js-accordion" id="style-guide-accordion">
+            <!-- Иконочный шрифт IcoMoon -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Иконочный шрифт IcoMoon</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Данные иконки - иконочный шрифт, полученный с помощью сервиса <a class="to-underline" href="https://icomoon.io/app" font="black">IcoMoon</a></p>
+                    <p>Все иконки от IcoMoon имеют класс .icon, ставить их можно в любой тэг (i, span, div), но предпочтителен span.</p>
+                    <p>Шрифты лежат в fonts.</p>
+        
+                    <div class="table__wrapper margin-top">
+                        <div class="overflow-horizontal">
+                            <table class="table">
+                                <!-- <caption></caption> -->
+                                <thead bg="dark" font="white">
+                                    <tr>
+                                        <th scope="col">Код</th>
+                                        <th class="padding-left padding-right" scope="col">Иконка</th>
+                                        <th scope="col">Описание, где используется</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__logout
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__logout" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Выход из системы" - на технологической странице
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__error
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__error" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Ошибка - на формах, сообщает о неправильно введенных данных
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__spinner
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__spinner" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Спиннер - крутится при загрузке чего-либо
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__download
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__download" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Загрузка - в блоке .document, рядом с текстом "Скачать документ"
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__checkmark
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__checkmark" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Галочка - в чекбоксе (замена стандартной галочки), <br>
+                                            и в поле ввода (чтобы показать правильность введенных данных)
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__close
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__close" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            В кнопках Закрыть
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__ham
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__ham" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Гамбургер - в меню
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__search
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__search" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">Лупа для поиска - в навигации</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__document
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__document" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Документ - в блоке .document
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__archive
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__archive" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Архив - для архивов на страницах с документами
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__filter
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__filter" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Фильтр (воронка) - в кнопке открытия фильтра (button.ui-filter) на с.Документы
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__mail
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__mail" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Обратная связь" в футере 
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__contact-book
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__contact-book" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Контактная информация" в футере
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__location
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__location" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Где мы находимся" в футере
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__phone-call
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__phone-call" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Горячие линии ГИА" в хэдере,<br>
+                                            "Позвонить нам" в футере
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__eye-plus
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__eye-plus" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Версия для слабовидящих" в хэдере
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__look
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__look" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Посмотреть результаты" в таблице "Даты объявления результатов и подачи апелляций"
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__edit
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__edit" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Подать апелляцию" в таблице с результатами ЕГЭ (ОГЭ) на с. "Посмотреть результаты по ЕГЭ и ОГЭ"
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__arrow-right
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__arrow-right" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Стрелка вправо - на слайдере
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__arrow-left
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__arrow-left" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Стрелка влево - на слайдере
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__external-link
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__external-link" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Ссылка на внешнюю страницу
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon.icon__self-link
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__self-link" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Cсылка на саму себя (элемент или страницу)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Иконки из стандартных символов -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Иконки из стандартных символов</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Иконки из стандартных символов требуют проставления атрибута [aria-hidden="true"], а не то скринридер прочитает содержание (например, <span class="icon__look-next"></span> звучит как "больше-больше-больше")</p>
+                    <div class="table__wrapper margin-top">
+                        <div class="overflow-horizontal">
+                            <table class="table">
+                                <thead bg="dark" font="white">
+                                    <tr>
+                                        <th scope="col">Код</th>
+                                        <th class="padding-left padding-right" scope="col">Иконка</th>
+                                        <th scope="col">Описание, где используется</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon__look-next
+                                        </th>
+                                        <td>
+                                            <span class="icon__look-next" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            "Смотреть далее"
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon__scroll-left
+                                        </th>
+                                        <td>
+                                            <span class="icon__scroll-left" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            В кнопках прокрутки слайдера
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon__scroll-right
+                                        </th>
+                                        <td>
+                                            <span class="icon__scroll-right" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            В кнопках прокрутки слайдера
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            .icon__dropdown-arrow
+                                        </th>
+                                        <td>
+                                            <span class="icon__dropdown-arrow" aria-hidden="true"></span>
+                                        </td>
+                                        <td class="text-left">
+                                            Для обозначения раскрывающихся пунктов в меню-гамбургере
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Задание цвета иконкам -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Задание цвета иконкам</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Как правило, на сайте иконки наследуют цвет текста от родителя. Если требуется задать цвет, то следует задавать его с помощью атрибутов цвета [font], [font-active], [font-hover].</p>
+        
+                    <div class="table__wrapper table margin-top">
+                        <div class="overflow-horizontal">
+                            <table style="min-width: auto;">
+                                <caption class="margin-top margin-bottom font-heading text-left">
+                                    <h3 class="m0 fz-120">Примеры задания цвета иконкам</h3>
+                                </caption>
+                                <thead bg="dark" font="white">
+                                    <tr>
+                                        <th scope="col">Код</th>
+                                        <th class="padding-left padding-right" scope="col">Иконка</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            span.icon.icon__error[font="secondary"]
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__error" font="secondary"></span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            span.icon.icon__checkmark[font="primary"]
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__checkmark" font="primary"></span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            span.icon.icon__filter[font="dark"]
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__filter" font="dark"></span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            span.icon.icon__download[font="gray"]
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__download" font="gray"></span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            span.icon.icon__look[font="primary"]
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__look" font="primary"></span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            span.icon.icon__edit[font="secondary"]
+                                        </th>
+                                        <td>
+                                            <span class="icon icon__edit" font="secondary"></span>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <th class="font-ui text-left" scope="row">
+                                            span.icon.icon__search[font="white"]
+                                        </th>
+                                        <td bg="primary">
+                                            <span class="icon icon__search" font="white"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+    </main>
+
+    </div>
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+    <script src="js/accordion.js"></script>
+	
+</body>
+</html>

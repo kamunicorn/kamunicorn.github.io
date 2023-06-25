@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/colors.min.css">
+    <link rel="stylesheet" href="css/template.min.css">
+
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+    <title>Информация</title>
+</head>
+<body font="black" bg="page">
+
+    <!-- хлебные крошки -->
+    <div class="container">
+        <ul aria-label="вы находитесь здесь" role="navigation" class="breadcrumbs row">
+            <li class="breadcrumbs__item">
+                <a outline="primary" class="underlined-link" href="/">
+                    Главная
+                </a>
+            </li>
+            <li class="breadcrumbs__separator"></li>
+            <li class="breadcrumbs__item">
+                <a outline="primary" class="underlined-link" href="#">
+                    ГИА-9 (ОГЭ-ГВЭ)
+                </a>
+            </li>
+            <li class="breadcrumbs__separator"></li>
+            <li class="breadcrumbs__item" aria-current="page">
+                Информация
+            </li>
+        </ul>
+    </div>
+
+    <!-- контент -->
+    <div class="container">
+        <main id="main">
+
+            <h1 class="sr-only" id="info-menu-title">Информация по ГИА-9</h1>
+
+            <div class="margin-negative" role="menu" aria-labelledby="info-menu-title">
+                <ul class="row no-invert-font" font="white">
+                    <!-- filter for IE8 -->
+                    <li class="col-3 col-lg-4 col-sm-6">
+                        <div class="tile small">
+                            <!-- <div class="tile__bg-image" style="background-image: url(img/info-menu/1.jpg);filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/info-menu/1.jpg',sizingMethod='scale');"></div> -->
+                            <div class="tile__bg-image">
+                                <img src="img/info-menu/1.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="tile__blackout" blackout="primary"></div>
+                            <div class="tile__content">
+                                <div class="tile__content-cell">
+                                    <a class="no-visited fz-110" outline="secondary" href="#">
+                                        Участникам с ограниченными возможностями здоровья
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-3 col-lg-4 col-sm-6">
+                        <div class="tile small">
+                            <div class="tile__bg-image">
+                                <img src="img/info-menu/2.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="tile__blackout" blackout="primary"></div>
+                            <div class="tile__content">
+                                <div class="tile__content-cell">
+                                    <a class="no-visited fz-110" outline="secondary" href="#">
+                                        Коды предметов
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-3 col-lg-4 col-sm-6">
+                        <div class="tile small">
+                            <div class="tile__bg-image">
+                                <img src="img/memories/big/memories-1.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <!-- <div class="tile__bg-image">
+                                <img src="img/info-menu/3.jpg" alt="" aria-hidden="true">
+                            </div> -->
+                            <div class="tile__blackout" blackout="primary"></div>
+                            <div class="tile__content">
+                                <div class="tile__content-cell">
+                                    <a class="no-visited fz-110" outline="secondary" href="#">
+                                        Итоговое собеседование
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-3 col-lg-4 col-sm-6">
+                        <div class="tile small">
+                            <div class="tile__bg-image">
+                                <img src="img/info-menu/4.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="tile__blackout" blackout="primary"></div>
+                            <div class="tile__content">
+                                <div class="tile__content-cell">
+                                    <a class="no-visited fz-110" outline="secondary" href="#">
+                                        Продолжительность проведения ГИА-9
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-3 col-lg-4 col-sm-6">
+                        <div class="tile small">
+                            <div class="tile__bg-image">
+                                <img src="img/info-menu/5.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="tile__blackout" blackout="primary"></div>
+                            <div class="tile__content">
+                                <div class="tile__content-cell">
+                                    <a class="no-visited fz-110" outline="secondary" href="#">
+                                        Минимальные баллы ГИА-9
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-3 col-lg-4 col-sm-6">
+                        <div class="tile small">
+                            <div class="tile__bg-image">
+                                <img src="img/info-menu/6.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="tile__blackout" blackout="primary"></div>
+                            <div class="tile__content">
+                                <div class="tile__content-cell">
+                                    <a class="no-visited fz-110" outline="secondary" href="#">
+                                        Регистрация на ГИА-9
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

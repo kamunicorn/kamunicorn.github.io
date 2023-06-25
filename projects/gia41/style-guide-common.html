@@ -1,0 +1,2449 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+	<link rel="stylesheet" href="css/colors.min.css">
+	<link rel="stylesheet" href="css/template.min.css">
+	<link rel="stylesheet" href="css/style-guide.min.css">
+    <link rel="stylesheet" href="css/docs.min.css">
+    <link rel="stylesheet" href="css/shedule-exams.min.css">
+    <title>Руководство стиля. Общее</title>
+    
+    <!-- IE bugs fix -->
+
+    <!-- IE 8-9 fix (flexbox и другое) -->
+    <!-- Internet Explorer 9 or less -->
+    <!--[if lte IE 9]> <link rel="stylesheet" href="css/ie-fix.min.css"> <![endif]-->
+
+    <!-- включение медиа-запросов CSS3 в IE8, в IE9 они работают -->
+    <!--[if lte IE 8]> <script src="js/respond.min.js"></script> <![endif]-->
+
+    <!-- IE8 не воспринимает новые теги HTML5 -->
+    <!--[if lte IE 8]> <script src="js/html5shiv.js"></script> <![endif]-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/> -->
+    
+    <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="css/icons-ie7.css">
+    <!--<![endif]-->
+</head>
+<body bg="page" font="black">
+
+    <div class="container">
+    <main>
+
+        <div class="padding-top font-heading">
+            <h1 class="fz-200 bold">Сайт ГИА41. Руководство стиля</h1>
+            <h1 class="fz-150">Общее</h1>
+        </div>
+
+        <ul class="accordion margin-top margin-bottom margin-negative js-accordion" id="style-guide-accordion">
+                        
+            <!-- Сетка -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Сетка</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Desktop First, 12-ти колоночная сетка</p>
+
+                    <h3 class="sg-block__subtitle">Контрольные точки</h3>
+                    <p>Префиксы содержатся в названиях классов .col-*, .col-*-*, .visible-*, .hidden-*.</p>
+                    <p>Стартовые значения действуют при <span class="font-ui">@media (min-width: 1440px)</span> (для классов без префикса)</p>
+                    <div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table class="table table-bordered" border="light">
+                                <caption class="sr-only">Контрольные точки</caption>
+                                <thead bg="light" class="bold">
+                                    <tr>
+                                        <td>Префикс</td>
+                                        <td>Full</td>
+                                        <td>Breakpoint</td>
+                                        <td>Media query</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="bold">xs</td>
+                                        <td>Extra small</td>
+                                        <td>576px</td>
+                                        <td class="font-ui">@media (max-width: 575px)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bold">sm</td>
+                                        <td>Small</td>
+                                        <td>768px</td>
+                                        <td class="font-ui">@media (max-width: 767px)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bold">md</td>
+                                        <td>Medium</td>
+                                        <td>992px</td>
+                                        <td class="font-ui">@media (max-width: 991px)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bold">lg</td>
+                                        <td>Large</td>
+                                        <td>1200px</td>
+                                        <td class="font-ui">@media (max-width: 1199px)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bold">xl</td>
+                                        <td>Extra large</td>
+                                        <td>1440px</td>
+                                        <td class="font-ui">@media (max-width: 1439px)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Основные классы</h3>
+                    <dl>
+                        <div>
+                            <dt class="font-ui">.container</dt>
+                            <dd class="padding-left margin-left">Основной контейнер с ограничением по ширине и внутренними отступами.</dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui">.row</dt>
+                            <dd class="padding-left margin-left">Flex-контейнер (<code>display: flex</code>) с переносом блоков (<code>flex-wrap: wrap</code>)</dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui">.margin-negative</dt>
+                            <dd class="padding-left margin-left">
+                                <div class="font-ui">
+                                    margin-left: -1em;<br>
+                                    margin-right: -1em;
+                                </div>
+                                Используется в верстке плиткой (.tile)<br>
+                                На больших экранах > 1440px (<code>min-width: $containerMaxWidth + 1px</code>) margin убирается, т.к. убирается padding у .container
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui">.col-{colcount}</dt>
+                            <dd class="padding-left margin-left">Flex-блок с ограничением по ширине (от 1 до 12 колонок)</dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui">.col-{breakpoint}-{colcount}</dt>
+                            <dd class="padding-left margin-left">Flex-блок с ограничением по ширине (от 1 до 12 колонок), изменяющейся на контрольных точках</dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui">.hidden</dt>
+                            <dd class="padding-left margin-left font-ui">display: none!important</dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui">.{breakpoint}-hidden</dt>
+                            <dd class="padding-left margin-left">Скрывает блок (<code>display: none</code>) на соответствующих контрольных точках</dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui">.{breakpoint}-visible</dt>
+                            <dd class="padding-left margin-left">Показывает блок (<code>display: block</code>) на соответствующих контрольных точках</dd>
+                        </div>
+                        <div>
+                            <dt class="font-ui"></dt>
+                            <dd class="padding-left margin-left"></dd>
+                        </div>
+                    </dl>
+                    
+                    <br><div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table class="table table-bordered" border="gray">
+                                <thead>
+                                    <tr bg="light">
+                                        <td></td>
+                                        <td>Extra small<br>&lt;576px</td>
+                                        <td>Small<br>&lt;768px</td>
+                                        <td>Medium<br>&lt;992px</td>
+                                        <td>Large<br>&lt;1200px</td>
+                                        <td>Extra large<br>&lt;1440px</td>
+                                        <td>&ge;1440px</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="font-ui">
+                                        <td class="text-left">.container</td>
+                                        <td colspan="5">
+                                            width: 100%<br>
+                                            padding: 0 1em
+                                        </td>
+                                        <td>
+                                            width: 1440px<br>
+                                            padding: 0
+                                        </td>
+                                    </tr>
+                                    <tr class="font-ui">
+                                        <td class="text-left">.margin-negative</td>
+                                        <td colspan="5">
+                                            margin-left: -1em<br>
+                                            margin-right: -1em
+                                        </td>
+                                        <td>
+                                            margin-left: 0<br>
+                                            margin-right: 0
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <h3 class="sg-block__subtitle">Вспомогательные flex-классы</h3>
+                    <p>Эти классы надо ставить на flex-контейнер, обозначенный с помощью .row или .d-flex</p>
+                    <div class="table__wrapper margin-top">
+                        <div class="overflow-horizontal">
+                            <table class="table table-bordered" border="light">
+                                <caption class="sr-only">Вспомогательные классы</caption>
+                                <thead bg="light">
+                                    <tr>
+                                        <th scope="col" style="min-width: 10em;">Класс</th>
+                                        <th scope="col">Значение</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-left">
+                                    <tr>
+                                        <td class="font-ui">.space-around</td>
+                                        <td class="font-ui">justify-content: space-around</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-ui">.space-between</td>
+                                        <td class="font-ui">justify-content: space-between</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-ui">.justify-center</td>
+                                        <td class="font-ui">justify-content: center</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-ui">.direction-column</td>
+                                        <td class="font-ui">flex-direction: column</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-ui">.no-wrap</td>
+                                        <td class="font-ui">flex-wrap: nowrap</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-ui">.maximal-width</td>
+                                        <td class="font-ui">flex-grow: 1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br><hr class="margin-top" bg="gray" aria-hidden="true">
+                    <h3 class="sg-block__subtitle">Примеры</h3>
+                    
+                    <p class="text-indent margin-top fz-110 font-heading" font="secondary">12 не адаптивных колонок</p>
+                    <div class="row text-center font-ui">
+                        <div class="col-1" border="gray" bg="light">.col-1</div>
+                        <div class="col-11" border="gray" bg="light">.col-11</div>
+
+                        <div class="col-2" border="gray" bg="light">.col-2</div>
+                        <div class="col-10" border="gray" bg="light">.col-10</div>
+
+                        <div class="col-3" border="gray" bg="light">.col-3</div>
+                        <div class="col-9" border="gray" bg="light">.col-9</div>
+
+                        <div class="col-4" border="gray" bg="light">.col-4</div>
+                        <div class="col-8" border="gray" bg="light">.col-8</div>
+
+                        <div class="col-5" border="gray" bg="light">.col-5</div>
+                        <div class="col-7" border="gray" bg="light">.col-7</div>
+
+                        <div class="col-6" border="gray" bg="light">.col-6</div>
+                        <div class="col-6" border="gray" bg="light">.col-6</div>
+
+                        <div class="col-12" border="gray" bg="light">.col-12</div>
+                    </div>
+
+                    <br><p class="text-indent margin-top fz-110 font-heading" font="secondary">Адаптивные колонки</p>
+                    <div class="row text-center font-ui">
+                        <div class="col-2 col-xl-3 col-lg-5 col-md-8 col-sm-10 col-xs-12" border="gray" bg="light">
+                            .col-2.col-xl-3.col-lg-5<br>.col-md-8.col-sm-10.col-xs-12<br>
+                            <div class="bold">
+                                колонок:
+                                <span class="xl-hidden">2</span>
+                                <span class="hidden xl-visible lg-hidden">3</span>
+                                <span class="hidden lg-visible md-hidden">5</span>
+                                <span class="hidden md-visible sm-hidden">8</span>
+                                <span class="hidden sm-visible xs-hidden">10</span>
+                                <span class="hidden xs-visible">12</span>
+                            </div>
+                        </div>
+                        <div class="col-10 col-xl-9 col-lg-7 col-md-7 col-sm-9 col-xs-12" border="gray" bg="light">
+                            .col-10.col-xl-9<br>.col-lg-7.col-md-7.col-sm-9.col-xs-12<br>
+                            <div class="bold">
+                                колонок:
+                                <span class="xl-hidden">10</span>
+                                <span class="hidden xl-visible lg-hidden">9</span>
+                                <span class="hidden lg-visible md-hidden">7</span>
+                                <span class="hidden md-visible sm-hidden">7</span>
+                                <span class="hidden sm-visible xs-hidden">9</span>
+                                <span class="hidden xs-visible">12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br><p class="text-indent margin-top fz-110 font-heading" font="secondary">Вложенные адаптивные колонки</p>
+                    <div class="row text-center font-ui">
+                        <div class="col-8 col-md-7 col-xs-12" border="gray" bg="light">
+                            .col-8.col-md-7.col-xs-12
+                            <div class="row">
+                                <div class="col-6 col-md-12" border="dark" bg="gray" font="white">.col-6.col-md-12</div>
+                                <div class="col-6 col-md-12" border="dark" bg="gray" font="white">.col-6.col-md-12</div>
+                            </div>
+                            <p class="fz-70"></p>
+                        </div>
+                        <div class="col-4 col-md-5 col-xs-12" border="gray" bg="light">.col-4.col-md-5.col-xs-12</div>
+                    </div>
+
+                    <br><p class="text-indent margin-top fz-110 font-heading" font="secondary">Выравнивание (justify-content)</p>
+                    <div class="font-ui">
+                        <code>.row.space-around>.col-3</code>
+                        <div class="row space-around padding-top padding-bottom text-center" border="gray">
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                        </div>
+
+                        <br><code>.row.space-between>.col-3</code>
+                        <div class="row space-between padding-top padding-bottom text-center" border="gray">
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                        </div>
+
+                        <br><code>.row.justify-center>.col-3</code>
+                        <div class="row justify-center padding-top padding-bottom text-center" border="gray">
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                            <div class="col-3" border="gray" bg="light">.col-3</div>
+                        </div>
+                    </div>
+
+                    <br><p class="text-indent margin-top fz-110 font-heading" font="secondary">Видимость</p>
+                    <div class="row font-ui">
+                        <div class="hidden sm-visible padding" bg="light" border="gray">.hidden.sm-visible</div>
+                        <div class="xl-hidden lg-visible padding" bg="light" border="gray">.xl-hidden.lg-visible</div>
+                        <div class="lg-hidden padding" bg="light" border="gray">.lg-hidden</div>
+                    </div>
+
+                    <br><p class="text-indent margin-top fz-110 font-heading" font="secondary">Перенос блоков (flex-wrap)</p>
+                    <div>
+                        <p>Автоперенос ( <code>flex-wrap: wrap</code> )</p>
+                        <code>.row</code>
+                        <div class="row">
+                            <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis repudiandae odit velit magni, maxime eaque soluta magnam hic nesciunt dignissimos quia voluptatum provident aut. Ut?</div>
+                            <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ad officiis laboriosam! Veniam repudiandae beatae quae, blanditiis voluptatum iusto temporibus eos ea necessitatibus aperiam libero.</div>
+                            <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestias vero quo soluta dolorem quasi cum, laboriosam laborum quaerat ab obcaecati magnam, repudiandae iusto non magni perferendis iste unde dolorum?</div>
+                        </div>
+                        <code>.row</code>
+                        <div class="row">
+                            <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit amet.</div>
+                            <div class="padding" bg="light" border="gray">Lorem, ipsum dolor.</div>
+                            <div class="padding" bg="light" border="gray">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+                        </div>
+
+                        <br><p>Перенос запрещен (<code>flex-wrap: nowrap</code>)</p>
+                        <code>.row.no-wrap</code>
+                        <div class="row no-wrap">
+                            <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ea!</div>
+                            <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, repudiandae? Maxime in enim impedit.</div>
+                            <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. A doloremque praesentium ipsa nemo atque quos laudantium vel aut? Odio, consectetur?</div>
+                        </div>
+                    </div>
+
+                    <br><p class="text-indent margin-top fz-110 font-heading" font="secondary">Направление</p>
+                    <code>.row.direction-column</code>
+                    <div class="row direction-column">
+                        <div class="padding" bg="light" border="gray">Lorem ipsum dolor sit amet.</div>
+                        <div class="padding" bg="light" border="gray">Lorem, ipsum dolor.</div>
+                        <div class="padding" bg="light" border="gray">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+                    </div>
+
+                    <br>
+                </div>
+            </li>
+            
+            <!-- Контент, создаваемый пользователями -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Контент, создаваемый пользователями</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Не реализовано на сайте до конца.</p>
+                    <h3 class="sg-block__subtitle">Обычный абзац</h3>
+                    <p>Отступ в первой строке. Участ­ни­ки еди­ного го­сударс­твен­но­го эк­за­мена с ог­ра­ничен­ны­ми воз­можнос­тя­ми здо­ровья (ОВЗ) – это ли­ца, име­ющие не­дос­татки в фи­зичес­ком и (или) пси­хичес­ком раз­ви­тии: глу­хие, сла­бос­лы­шащие, сле­пые, сла­бови­дящие, с тя­желы­ми на­руше­ни­ями ре­чи, с на­руше­ни­ями опор­но-дви­гатель­но­го ап­па­рата и дру­гие, в том чис­ле де­ти-ин­ва­лиды.</p>
+
+                    <hr bg="gray" aria-hidden="true">
+                    <h3 class="sg-block__subtitle">Сноски</h3>
+                    <code>.footnote</code>
+                    <p class="fz-90 footnote" border="gray">Сноска в p без маркера. Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов ГИА-11. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в настоящей таблице, то дни приема апелляций также сдвигаются.</p>
+                    <p class="fz-90 footnote" border="gray" data-marker="1">Сноска в p с маркером. Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов ГИА-11. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в настоящей таблице, то дни приема апелляций также сдвигаются.</p>
+                    <div></div>
+                    <div class="fz-90 footnote" border="gray" data-marker="2">Сноска в div и с маркером. Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов ГИА-11. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в настоящей таблице, то дни приема апелляций также сдвигаются.</div>
+                    <p class="fz-90 footnote" border="gray" data-marker="*">Сноска в p с маркером. Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов ГИА-11. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в настоящей таблице, то дни приема апелляций также сдвигаются.</p>
+                    <div class="fz-90 footnote" border="gray">Сноска в div и без маркера. Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов ГИА-11. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в настоящей таблице, то дни приема апелляций также сдвигаются.</div>
+
+                    <hr bg="gray" aria-hidden="true">
+                    <h3 class="sg-block__subtitle">Cсылки</h3>
+                    <p>Обычные ссылки - синий цвет, синий outline, подчеркивание убирается при наведении</p>
+                    <code>.underlined-link[font="primary"][outline="primary"]</code><br>
+                    <a href="#123" class="underlined-link" font="primary" outline="primary">Стандартный стиль ссылки</a><br>
+
+                    <h4 class="text-indent bold fz-90">Ссылка на весь абзац</h4>
+                    <p><a href="#" class="underlined-link" outline="primary" font="primary" target="_blank">Приказ Рособрнадзора от 10.01.2019 №8/17 «Об утверждении единого расписания и продолжительности проведения государственного выпускного экзамена по образовательным программам основного общего и среднего общего образования по каждому учебному предмету, требований к использованию средств обучения и воспитания при его проведении в 2019 году»</a></p>
+
+                    <h4 class="text-indent bold fz-90">Cсылка строчная в абзаце</h4>
+                    <p>В соответствии с <a href="#" class="underlined-link" outline="primary" font="primary" target="_blank">Приказом Рособрнадзора от 10.01.2019 №9/18 «Об утверждении единого расписания и продолжительности проведения ЕГЭ по каждому учебному предмету»</a> в 2019 году в Камчатском крае установлены временные рамки продолжительности ГИА-11.</p>
+
+                    <hr bg="gray" aria-hidden="true">
+                    
+                    <h3 class="sg-block__subtitle">Заголовки</h3>
+                    <h1 class="content__title">Заголовок первого уровня - заголовок статей</h1>
+                    <code>h1.content__title</code>
+                    <hr bg="gray" aria-hidden="true">
+
+                    <h2 class="content__subtitle">Заголовок второго уровня - подзаголовок статей</h2>
+                    <code>h2.content__subtitle</code>
+                    <hr bg="gray" aria-hidden="true">
+
+                    <h3 class="fz-120 text-indent" font="secondary">Заголовок третьего уровня - подзаголовок (вариант)</h3>
+                    <code>h3.fz-120.text-indent[font="secondary"]</code>
+                    <hr bg="gray" aria-hidden="true">
+                    
+                    <h3 class="sg-block__subtitle">Несортированный список</h3>
+                    <code>ul.list > li</code>
+                    <ul class="list">
+                        <li>зак­лю­чение пси­холо­го-ме­дико-пе­даго­гичес­кой ко­мис­сии;</li>
+                        <li>справ­ка об ус­та­нов­ле­нии ин­ва­лид­ности, вы­дан­ная фе­дераль­ным го­сударс­твен­ным уч­режде­ни­ем ме­дико-со­ци­аль­ной экс­пер­ти­зы;</li>
+                        <li>до­кумент (справ­ка), вы­дан­ный об­ра­зова­тель­ным уч­режде­ни­ем, ор­га­ном, осу­щест­вля­ющим уп­равле­ние в сфе­ре об­ра­зова­ния, подт­вер­жда­ющий, что пос­ту­па­ющий про­ходил го­сударс­твен­ную (ито­говую) ат­теста­цию как обу­ча­ющий­ся с ог­ра­ничен­ны­ми воз­можнос­тя­ми здо­ровья.</li>
+                    </ul>
+
+                    <hr bg="gray" aria-hidden="true">
+                    <h3 class="sg-block__subtitle">Таблицы</h3>
+
+                    <h4 class="text-indent bold fz-90">Не стилизованная (без границ и фонового цвета) - на тэге table, без класса. table</h4>
+                    <div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table>
+                                <caption class="sr-only">Название таблицы</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Заголовок</th>
+                                        <th scope="col">Заголовок</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <hr bg="gray" aria-hidden="true">
+
+                    <h4 class="text-indent bold fz-90">Стилизованная, с классом .table</h4>
+                    <div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table class="table">
+                                <!-- название таблицы нужно, пусть скрывается всегда -->
+                                <!-- если нужен видимый заголовок, то пусть добавляют его над .table__wrapper -->
+                                <caption class="sr-only">Название таблицы</caption>
+                                <thead bg="dark" font="white">
+                                    <!-- th только в thead и всегда scope="col" -->
+                                    <tr>
+                                        <th scope="col">Заголовок</th>
+                                        <th scope="col">Заголовок</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+            
+            <!-- Ссылки -->
+            <!-- <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Ссылки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <h3 class="sg-block__subtitle">Cсылка обычная</h3>
+                    <p>Обычные ссылки - синий цвет, синий outline, подчеркивание убирается при наведении</p>
+                    <code>.underlined-link font="primary" outline="primary"</code><br>
+                    <a href="#123" class="underlined-link" font="primary" outline="primary">Стандартный стиль ссылки</a><br>
+
+                    <h3 class="sg-block__subtitle">Ссылка на весь абзац</h3>
+                    <p><a href="#" class="underlined-link" outline="primary" font="primary" target="_blank">Приказ Рособрнадзора от 10.01.2019 №8/17 «Об утверждении единого расписания и продолжительности проведения государственного выпускного экзамена по образовательным программам основного общего и среднего общего образования по каждому учебному предмету, требований к использованию средств обучения и воспитания при его проведении в 2019 году»</a></p>
+
+                    <h3 class="sg-block__subtitle">Cсылка строчная в абзаце</h3>
+                    <p>В соответствии с <a href="#" class="underlined-link" outline="primary" font="primary" target="_blank">Приказом Рособрнадзора от 10.01.2019 №9/18 «Об утверждении единого расписания и продолжительности проведения ЕГЭ по каждому учебному предмету»</a> в 2019 году в Камчатском крае установлены временные рамки продолжительности ГИА-11.</p>
+                </div>
+            </li> -->
+
+            <!-- Заголовки -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Заголовки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <h3 class="sg-block__subtitle">Заголовок первого уровня - заголовок статей</h3>
+                    <p>Не имеет отступа первой строки и верхнего отступа (margin-top). Шрифт для заголовков - PT Sans.</p>
+                    <code>h1.content__title</code>
+                    <h1 class="content__title">Общественным наблюдателям</h1>
+                    <hr bg="gray" aria-hidden="true">
+
+                    <h3 class="sg-block__subtitle">Заголовок второго уровня - подзаголовок статей</h3>
+                    <p>В зависимости от иерархии, может быть тэгом h2 или h3. Имеет отступ слева (как text-indent у p), который убирается на маленьких экранах. Шрифт для заголовков - PT Sans.</p>
+                    <code>h2.content__subtitle</code>
+                    <h2 class="content__subtitle">Для участников ГИА с ОВЗ предусмотрены определенные требования к аудитория ППЭ, такие как:</h2>
+                    <!-- <hr bg="gray" aria-hidden="true"> -->
+
+                    <!-- <h3 class="sg-block__subtitle">Заголовок третьего уровня - подзаголовок (вариант)</h3>
+                    <p>В зависимости от иерархии, может быть тегэм h3 или h4.</p>
+                    <code>h3.fz-120.text-indent[font="secondary"]</code>
+                    <h3 class="fz-120 text-indent" font="secondary">для участников ГИА с нарушениям функций опорно-двигательного аппарата:</h3> -->
+
+                </div>
+            </li>
+
+            <!-- Формы -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Формы</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Форма должна иметь заголовок или <code>aria-label, aria-labelledby</code>, он будет озвучиваться при фокуссе на ней</p>
+                    <p>Группировка полей ввода, селектов, чекбоксов, можно именовать с помощью legend</p>
+                    <code>fieldset[role="group"] > legend + поля ввода (.ui-input, .ui-select, .ui-radio)</code>
+
+                    <p>Группировка радиокнопок, можно именовать с помощью legend</p>
+                    <code>fieldset[role="radiogroup"] > legend + label.ui-radio</code>
+
+                    <h3 class="sg-block__subtitle">Обратная связь группы полей или формы</h3>
+                    <code>.ui-form__group-feedback[role="alert"][aria-live="assertive"]</code>
+                    <p>Нет специального класса, чтобы его показывать, показывается просто через <code>style="display: block;"</code></p>
+                    <div class="ui-form__group-feedback fz-90" font="secondary" border="secondary" id="participant-group-feedback" role="alert" aria-live="assertive" style="display: block;">По указанным фамилии и номеру документа не найден участник экзамена.<br>Проверьте данные участника.</div>
+                </div>
+            </li>
+
+            <!-- Классы-хелперы -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <h2 class="sg-block__name">Классы-хелперы</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Большинство классов заданы в scss/parts/_helper.scss и импортируются в template.scss</p>
+                    <p>Классы шрифтов (.font-ui, .font-heading, .font-content) и список шрифтов заданы в scss/parts/_fonts.scss</p>
+                    <div class="table__wrapper margin-top">
+                        <div class="overflow-horizontal">
+                            <table class="table">
+                                <thead bg="dark" font="white">
+                                    <tr>
+                                        <th scope="col" style="min-width: 10em;">Класс</th>
+                                        <th scope="col">Примечание, пояснение, пример</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-left">
+                                    <!-- Всякое -->
+                                    <tr border="gray">
+                                        <td class="font-ui">.sr-only</td>
+                                        <td>
+                                            ниже скрытая ссылка для примера 👇🏻
+                                            <a href="#" class="sr-only">Визуально скрытая ссылка</a>
+                                            <div style="max-width:33em;min-width: 20em;">Визуальное скрытие элемента, оставляет доступность для скринридеров</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .relative<br>
+                                            .absolute<br>
+                                            .sticky
+                                        </td>
+                                        <td>Задает соответствующий стиль position</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.overflow-horizontal</td>
+                                        <td>
+                                            <div style="max-width:33em;min-width: 20em;">Только горизонтальная прокрутка, с отрицательными отступами (margin: -0.3em; padding: 0.3em;), чтобы focus не перекрывался</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.box-shadow</td>
+                                        <td>
+                                            <div class="d-inline-block box-shadow padding margin-bottom" font="gray">font="gray"</div>
+                                            <div class="d-inline-block box-shadow margin-left margin-bottom padding" font="primary" bg="light">font="primary" bg="light"</div>
+                                            <br><div class="d-inline-block box-shadow margin-bottom padding" font="black" bg="secondary-light">font="black" bg="secondary-light"</div>
+                                            <div style="max-width:33em;min-width: 20em;">задает box-shadow с цветом, наследуемым от цвета текста<br>
+                                            применяется на картинках, всплывающих окнах и подсказках</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .d-block<br>
+                                            .d-inline-block<br>
+                                            .d-inline<br>
+                                            .d-table<br>
+                                            .d-flex
+                                        </td>
+                                        <td>
+                                            Задают соответствующий стиль display<br>
+                                            Для .d-flex не предусмотрены фолбэки в ie-fix.css специально
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .float-left<br>
+                                            .float-right
+                                        </td>
+                                        <td>Задают соответствующий стиль float</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.clearfix</td>
+                                        <td class="font-ui">clear: both</td>
+                                    </tr>
+
+                                    <!-- Форматирование текста -->
+                                    <tr>
+                                        <th class="table__period-caption" colspan="2" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Форматирование текста</h3>
+                                        </th>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .text-left<br>
+                                            .text-center<br>
+                                            .text-right
+                                        </td>
+                                        <td>
+                                            <div class="text-left">text-align: left</div>
+                                            <div class="text-center">text-align: center</div>
+                                            <div class="text-right">text-align: right</div>
+                                            Задает выравнивание text-align
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .bold<br>
+                                            .normal
+                                        </td>
+                                        <td>
+                                            <div class="bold">Жирный текст</div>
+                                            <div class="normal">Нормальный текст</div>
+                                            Задает жирность текста font-weight
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.italic</td>
+                                        <td class="italic">Курсивный текст</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.uppercase</td>
+                                        <td class="uppercase">Заглавные буквы</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.underline</td>
+                                        <td class="underline">Подчеркнутый текст</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.text-indent</td>
+                                        <td class="text-indent">
+                                            Отступ первой строки
+                                            <div style="max-width: 30em;">На вкладке "Методические материалы" - "Итоговое сочинение (изложение)" размещён Акт передачи работ участников итогового сочинения (изложения) из ОО в ОМСУ.</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.text-indent-0</td>
+                                        <td>text-indent: 0;</td>
+                                    </tr>
+                                    
+                                    <!-- Шрифты -->
+                                    <tr>
+                                        <th class="table__period-caption" colspan="2" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Шрифты</h3>
+                                        </th>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.font-content</td>
+                                        <td>
+                                            <div class="font-content" >Пример текста 0ОIl1</div>
+                                            <div style="max-width:33em;min-width: 20em;">Основной шрифт (Helvetica, Arial, Roboto, Segoe UI)</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.font-heading</td>
+                                        <td>
+                                            <div class="font-heading">Пример текста 0ОIl1</div>
+                                            Шрифт для заголовков (PT Sans)</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.font-ui</td>
+                                        <td>
+                                            <div class="font-ui">Пример текста 0ОIl1</div>
+                                            <div style="max-width:33em;min-width: 20em;">Шрифт для полей ввода и кода, чтобы были хорошо различимы похожие символы: 0ОIl1 (текущий шрифт)</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.fz-50 -<br>.fz-200</td>
+                                        <td>
+                                            <div class="fz-50">Размер 50%</div>
+                                            <div class="fz-130">Размер 130%</div>
+                                            <div class="fz-200">Размер 200%</div>
+                                            <div style="max-width:33em;min-width: 20em;">Задает размер шрифта в % относительно родителя (как em), шаг 10%, диапазон 50-200%</div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Отступы -->
+                                    <tr>
+                                        <th class="table__period-caption" colspan="2" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Отступы</h3>
+                                        </th>
+                                    </tr>
+                                    <!-- padding -->
+                                    <tr border="gray">
+                                        <td class="font-ui">.padding</td>
+                                        <td>padding: 1em;</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.p0</td>
+                                        <td>padding: 0; (для .container)</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .padding-top<br>
+                                            .padding-right<br>
+                                            .padding-bottom<br>
+                                            .padding-left
+                                        </td>
+                                        <td>
+                                            <div style="max-width:33em;min-width: 20em;">Задают внутренний отступ в 1em в соответсвующих направлениях</div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- margin -->
+                                    <tr border="gray">
+                                        <td class="font-ui">.margin</td>
+                                        <td>margin: 1em;</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.m0</td>
+                                        <td>margin: 0; (для p, заголовков h1-h6)</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .margin-top<br>
+                                            .margin-right<br>
+                                            .margin-bottom<br>
+                                            .margin-left
+                                        </td>
+                                        <td>
+                                            <div style="max-width:33em;min-width: 20em;">Задают внешний отступ в 1em в соответствующих направлениях</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .margin-auto<br>
+                                            .margin-top-auto<br>
+                                            .margin-right-auto<br>
+                                            .margin-bottom-auto<br>
+                                            .margin-left-auto
+                                        </td>
+                                        <td>
+                                            <div style="max-width:33em;min-width: 20em;">Задают внешний отступ в auto в соответствующих направлениях</div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">
+                                            .block-center
+                                        </td>
+                                        <td>
+                                            <div class="font-ui">
+                                                margin-left: auto;<br>
+                                                margin-right: auto;
+                                            </div>
+                                            <div style="max-width:33em;min-width: 20em;">
+                                                Выравнивает блок с ограниченной шириной по центру
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.margin-negative</td>
+                                        <td>
+                                            <div style="max-width:33em;min-width: 20em;">
+                                                <code>margin-left: -1em;<br>
+                                                    margin-right: -1em;</code>
+                                                <br>чтобы компенсировать padding по бокам у .container для некоторых блоков (меню плиткой, памятки, полезные ссылки)</div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Для ссылок -->
+                                    <tr>
+                                        <th class="table__period-caption" colspan="2" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Для ссылок</h3>
+                                        </th>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.link-wrapper</td>
+                                        <td>Просто блочная обертка для ссылки</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.underlined-link</td>
+                                        <td>
+                                            <div class="link-wrapper">
+                                                <a href="#" class="underlined-link">Подчеркнутая ссылка, при наведении подчеркивание убирается</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.to-undeline</td>
+                                        <td>
+                                            <div class="link-wrapper">
+                                                <a href="#" class="to-underline">При наведении появляется подчеркивание</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui">.no-visited</td>
+                                        <td>
+                                            <div class="link-wrapper">
+                                                <a href="#" class="underlined-link no-visited">Такая ссылка не меняет цвет после посещения</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- <tr>
+                                        <th class="table__period-caption" colspan="2" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Заголовок</h3>
+                                        </th>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td class="font-ui"></td>
+                                        <td></td>
+                                    </tr> -->
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Изображения -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.content__image</code>
+                            <h2 class="sg-block__name">Изображения</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <>Картинки, в том числе добавляемые пользователями. Не реализовано на сайте.</p>
+                    <code>img.content__image</code>
+                
+                    <h3 class="sg-block__subtitle">Примеры того, как картинки с разной шириной и высотой адаптируются к ширине и высоте экрана (работает также и в IE8)</h3>
+
+                    <img class="content__image" border="gray" src="img/memories/big/memories-1-landscape.jpg" alt="описание картинки 1 - горизонтальная">
+                    <img class="content__image" border="gray" src="img/memories/big/memories-3.jpg" alt="описание картинки 2 - вертикальная">
+                    <img class="content__image" src="img/info-menu/2.jpg" alt="описание картинки 3 - маленькая">
+                    <img class="content__image" border="gray" src="img/instrukcija_ege2.png" alt="описание картинки 4 - длинная">
+                    <!-- <img class="content__image" src="img/main-tiles/big-tile.jpg" alt="описание картинки 5 - книга"> -->
+
+                    <h3 class="sg-block__subtitle">Картинка в тексте слева</h3>
+                    <code>img.content__image.float-left</code>
+                    <img class="content__image float-left" src="img/main-tiles/big-tile.jpg" alt="описание картинки 5">
+                    <p>Служба Яндекс.Рефераты предназначена для студентов и школьников, дизайнеров и журналистов, создателей научных заявок и отчетов — для всех, кто относится к тексту, как к количеству знаков. Нажав на кнопку «Написать реферат», вы лично создаете уникальный текст, причем именно от вашего нажатия на кнопку зависит, какой именно текст получится — таким образом, авторские права на реферат принадлежат только вам.</p>
+                    <p>Теперь никто не сможет обвинить вас в плагиате, ибо каждый текст Яндекс.Рефератов неповторим. Текстами рефератов можно пользоваться совершенно бесплатно, однако при транслировании и предоставлении текстов в массовое пользование ссылка на Яндекс.Рефераты обязательна.</p>
+
+                    <h3 class="sg-block__subtitle">Картинка в тексте справа и с отступами</h3>
+                    <code>img.content__image.float-right.padding-top.padding-left.padding-bottom</code>
+                    <img class="content__image float-right padding-top padding-left padding-bottom" src="img/main-tiles/big-tile.jpg" alt="описание картинки 5">
+                    <p>Служба Яндекс.Рефераты предназначена для студентов и школьников, дизайнеров и журналистов, создателей научных заявок и отчетов — для всех, кто относится к тексту, как к количеству знаков. Нажав на кнопку «Написать реферат», вы лично создаете уникальный текст, причем именно от вашего нажатия на кнопку зависит, какой именно текст получится — таким образом, авторские права на реферат принадлежат только вам.</p>
+                    <p>Теперь никто не сможет обвинить вас в плагиате, ибо каждый текст Яндекс.Рефератов неповторим. Текстами рефератов можно пользоваться совершенно бесплатно, однако при транслировании и предоставлении текстов в массовое пользование ссылка на Яндекс.Рефераты обязательна.</p>
+
+                    <h3 class="sg-block__subtitle">Несколько картинок в куче текста и с .clearfix</h3>
+                    <img class="content__image float-left margin-top margin-bottom margin-right" src="img/info-menu/2.jpg" alt="описание картинки 3 - маленькая">
+                    <p>Служба Яндекс.Рефераты предназначена для студентов и школьников, дизайнеров и журналистов, создателей научных заявок и отчетов — для всех, кто относится к тексту, как к количеству знаков. Нажав на кнопку «Написать реферат», вы лично создаете уникальный текст, причем именно от вашего нажатия на кнопку зависит, какой именно текст получится — таким образом, авторские права на реферат принадлежат только вам.</p>
+
+                    <img class="content__image float-right margin-top margin-bottom margin-left" src="img/info-menu/2.jpg" alt="описание картинки 3 - маленькая">
+                    <p>Теперь никто не сможет обвинить вас в плагиате, ибо каждый текст Яндекс.Рефератов неповторим. Текстами рефератов можно пользоваться совершенно бесплатно, однако при транслировании и предоставлении текстов в массовое пользование ссылка на Яндекс.Рефераты обязательна.</p>
+                    <div class="clearfix"></div>
+
+                </div>
+            </li>
+
+            <!-- Блок документа (+ архив, бланки) -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.document</code>
+                            <h2 class="sg-block__name">Документы (+ архив, бланки)</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>ul.docs-list >
+    li.document >
+        . row >
+            .document__icon
+            + div[role="document"]</pre>
+                    </code>
+                    <p>Используется на многих страницах в разделе "Методики" и в разделе "Документы", стили находятся в parts/_docs.scss (импорт parts/blocks/_docs-list.scss) и компилируются в css/docs.css</p>
+                    
+                    <h3 class="sg-block__subtitle">Стандартный блок документа</h3>
+                    <ul class="docs-list" aria-labelledby="docs-list-title">
+                        <li class="document">
+                            <div class="row">
+                                <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__document" font="primary"></span>
+                                    <div class="fz-80">.docx</div>
+                                </div>
+                                <div class="col-11 col-xs-10" role="document">
+                                    <div id="doc-1-name">Федеральный закон от 29.12.2012 №273-ФЗ "Об образовании (редакция от 03.08.2018)</div>
+                                    <div class="link-wrapper" font="dark">
+                                        <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                        <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                            Скачать документ
+                                            <span aria-hidden="true"> (86.4 Кб)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle">Единичный блок документа (div вместо ul > li)</h3>
+                    <div class="document">
+                        <div class="row">
+                            <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                <span class="fz-180 icon icon__document" font="primary"></span>
+                                <div class="fz-80">.docx</div>
+                            </div>
+                            <div class="col-11 col-xs-10" role="document">
+                                <div id="doc-1-name">Федеральный закон от 29.12.2012 №273-ФЗ "Об образовании (редакция от 03.08.2018)</div>
+                                <div class="link-wrapper" font="dark">
+                                    <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                        Скачать документ
+                                        <span aria-hidden="true"> (86.4 Кб)</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Блок документа с подписью об обновлении</h3>
+                    <ul class="docs-list" aria-labelledby="docs-list-title">
+                        <li class="document">
+                            <div class="row">
+                                <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__document" font="primary"></span>
+                                    <div class="fz-80">.docx</div>
+                                </div>
+                                <div class="col-11 col-xs-10" role="document">
+                                    <div id="doc-1-name">Федеральный закон от 29.12.2012 №273-ФЗ "Об образовании (редакция от 03.08.2018)</div>
+                                    <small font="gray">(Последнее обновление 09.01.2020)</small>
+                                    <div class="link-wrapper" font="dark">
+                                        <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                        <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-2-about">
+                                            Скачать документ
+                                            <span aria-hidden="true"> (86.4 Кб)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="doc-2-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle">Блок с архивом (добавлен класс .archive)</h3>
+                    <ul class="docs-list" aria-labelledby="docs-list-title">
+                        <!-- остальные документы -->
+                        <li class="document archive" border="primary">
+                            <div class="row">
+                                <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__archive" font="primary"></span>
+                                    <div class="fz-80">.rar</div>
+                                </div>
+                                <div class="col-11 col-xs-10" role="document">
+                                    <div class="link-wrapper" font="dark">
+                                        <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                        <a outline="primary" href="#" class="to-underline" aria-describedby="file-10418066">
+                                            Скачать инструкции одним архивом
+                                            <span aria-hidden="true"> (248.4 Кб)</span>
+                                        </a>
+                                    </div>
+                                    <small font="gray">(Последнее обновление 09.01.2020)</small>
+                                    <div hidden id="file-10418066">Размер файла: девятьсот девяносто один килобайт</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle">Документы плиткой</h3>
+                    <p>Применяется на страницах, где нет боковой панели (aside) и названия документов короткие.</p>
+                    <ul class="docs-list row" aria-labelledby="docs-list-title">
+                        <li class="col-4 col-lg-6 col-sm-12">
+                            <div class="row document">
+                                <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__document" font="primary"></span>
+                                    <div class="fz-80">.doc</div>
+                                </div>
+                                <div class="col-10 col-xs-10 document__text" role="document">
+                                    <div id="doc-2-name">Памятка о порядке проведения итогового сочинения (изложения)</div>
+                                    <div class="link-wrapper" font="dark">
+                                        <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                        <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-2-name doc-2-about">
+                                            Скачать документ
+                                            <span aria-hidden="true"> (86.4 Кб)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="doc-2-about" hidden>формат документа doc, размер 86.4 Кб</div>
+                            </div>
+                        </li>
+                        <li class="col-4 col-lg-6 col-sm-12">
+                            <div class="row document">
+                                <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__document" font="primary"></span>
+                                    <div class="fz-80">.pdf</div>
+                                </div>
+                                <div class="col-10 col-xs-10 document__text" role="document">
+                                    <div id="doc-3-name">Форма заявления выпускника прошлых лет на участие в итоговом сочинении</div>
+                                    <div class="link-wrapper" font="dark">
+                                        <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                        <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-3-name doc-3-about">
+                                            Скачать документ
+                                            <span aria-hidden="true">( 186.4 Кб)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="doc-3-about" hidden>формат документа pdf, размер 186.4 Кб</div>
+                            </div>
+                        </li>
+                        <li class="col-4 col-lg-6 col-sm-12">
+                            <div class="row document">
+                                <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__document" font="primary"></span>
+                                    <div class="fz-80">.docx</div>
+                                </div>
+                            <div class="col-10 col-xs-10 document__text" role="document">
+                                    <div id="doc-1-name">Согласие на обработку персональных данных</div>
+                                    <small font="gray">(Последнее обновление 12.03.2020)</small>
+                                    <div class="link-wrapper" font="dark">
+                                        <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                        <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-1-name doc-1-about">
+                                            Скачать документ
+                                            <span aria-hidden="true"> (86.4 Кб)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="doc-1-about" hidden>формат документа docx, размер 86.4 Кб</div>
+                            </div>
+                        </li>
+                        <li class="col-4 col-lg-6 col-sm-12">
+                            <div class="row document">
+                                <div class="document__icon col-2 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__document" font="primary"></span>
+                                    <div class="fz-80">.txt</div>
+                                </div>
+                                <div class="col-10 col-xs-10 document__text" role="document">
+                                    <div id="doc-4-name">Форма заявления выпускника текущего года на участие в итоговом сочинении (изложении)</div>
+                                    <small font="gray">(Последнее обновление 12.03.2020)</small>
+                                    <div class="link-wrapper" font="dark">
+                                        <span class="icon icon__download fz-80 xs-hidden" aria-hidden="true"></span>
+                                        <a class="underlined-link fz-90" href="#" download outline="primary" aria-describedby="doc-4-name doc-4-about">
+                                            Скачать документ
+                                            <span aria-hidden="true" >(8.4 Кб)</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="doc-4-about" hidden>формат документа txt, размер 8.4 Кб</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle">Ссылка на внешний ресурс</h3>
+                    <ul class="docs-list" aria-labelledby="docs-list-title">
+                        <li class="document archive" border="primary">
+                            <div class="row">
+                                <div class="document__icon col-1 col-xs-2" aria-hidden="true">
+                                    <span class="fz-180 icon icon__external-link" font="primary"></span>
+                                    <div class="fz-80">.HTML</div>
+                                </div>
+                                <div class="col-11 col-xs-10" role="document">
+                                    <div id="doc-10418947-name">Тренировочная версия Станции записи устных ответов для проведения ГИА-9 по английскому языку (устн.)</div>
+                                    <span class="icon icon__download fz-80" aria-hidden="true"></span>
+                                    <a class="underlined-link fz-90" href="http://injaz9.ru/" target="_blank" outline="primary">Открыть внешнюю ссылку</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle" id="content-subtitle-10418923">Бланки (образцы и формы)</h3>
+                    <ul aria-labelledby="content-subtitle-10418923" class="row blanks-list">
+                        <li class="col-4 col-lg-6 col-xs-12 blank blank_vertical">
+                            <a class="d-inline-block" outline="primary" href="img/blanks/blank1.png">
+                                <img class="box-shadow bright-less-in-dark" font="gray" src="img/blanks/blank1.png" alt="Образец бланка регистрации (устная часть)">
+                            </a>
+                            <div class="margin-top text-center">
+                                Образец бланка регистрации (устная часть)<br>
+                                <small font="gray">(Последнее обновление 18.02.2020)</small>
+                            </div>
+                        </li>
+                        <li class="col-4 col-lg-6 col-xs-12 blank blank_vertical">
+                            <a class="d-inline-block" outline="primary" href="img/blanks/blank3.png">
+                                <img class="box-shadow bright-less-in-dark" font="gray" src="img/blanks/blank3.png" alt="Образец заполнения бланка регистрации (устная часть)">
+                            </a>
+                            <div class="margin-top text-center">
+                                Образец заполнения бланка регистрации (устная часть)<br>
+                                <small font="gray">(Последнее обновление 18.02.2020)</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Всплывающее окно -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.popup</code>
+                            <h2 class="sg-block__name">Всплывающее окно</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.popup[hidden] >
+    .popup__overlay[blackout] +
+    .popup__body >
+        .container
+            button.popup__close.ui-close
+</pre>
+                    </code>
+                    <p>Положение кнопки закрытия окна .popup__close и стрелок слайдера .ui-popup-slider-arrow гибко регулируется: они позиционируется относительно ближайшего родителя с заданным позиционированием (не дальше родителя .popup__body). То есть достаточно переместить класс .relative или удалить его.</p>
+
+                    <h3 class="sg-block__subtitle">Пример 1. Шаблон всплывающего окна</h3>
+                    <button class="ui-submit no-invert-font margin-top" bg="secondary-light" bg-hover="secondary" font="white" outline="secondary" onclick="openPopup('#popup-example-1')">Открыть пример 1</button>
+                    
+                    <div hidden class="popup" id="popup-example-1">
+                        <div class="popup__overlay" blackout="black"></div>
+                        <div class="popup__body">
+                            <div class="container text-center padding" class="no-invert-font" font="white">
+                                <button class="popup__close js-popup-close no-invert-font ui-close" font="white" bg-hover="secondary" outline="secondary" aria-label="закрыть всплывающее окно">
+                                    <span class="icon icon__close fz-110" aria-hidden="true"></span>
+                                </button>                
+                                <p>Если элементу .container добавить класс .relative, то кнопка закрытия переместится внутрь контейнера.</p>            
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Пример 2. Всплывающее окно с памятками</h3>
+                    <p>Код всплывающего окна для этого примера находится в конце документа, что наглядно демонстрирует взаимодействие со скринридером (описано ниже).</p>
+                    <button class="ui-submit no-invert-font margin-top" bg="secondary-light" bg-hover="secondary" font="white" outline="secondary" onclick="openPopup('#popup-example-2')">Открыть пример 2</button>
+
+                    <h3 class="sg-block__subtitle">Интерактивное взаимодействие</h3>
+                    <p>После открытия всплывающего окна должен ставиться фокус внутрь него, чтобы скринридер "увидел" это окно. В противном случае, незрячие пользователи скринридеров не узнают, что окно всплыло, пока не дойдут до него в дереве документа. После его закрытия фокус должен ставиться на элемент, который был в фокусе до открытия всплывающего окна.</p>
+                    <p>(Необязательно) Пока всплывающее окно открыто, должен быть запрещен выход фокуса за его пределы ("ловушка фокуса"). <a href="https://udacity.github.io/ud891/lesson2-focus/07-modals-and-keyboard-traps/solution/" class="underlined-link" font="primary" outline="primary">Пример реализации "ловушки фокуса"</a></p>
+                    <p>После закрытия всплывающего окна фокус должен ставиться на тот элемент, который вызвал его открытие или был в фокусе до того, как оно открылось.</p>
+                </div>
+            </li>
+
+            <!-- Слайдер -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.slider</code>
+                            <h2 class="sg-block__name">Слайдер</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.slider >
+    .slider__wrapper >
+        .slider__row >
+            .slider__item.col-*</pre>
+                    </code>
+                    <p>Используется на главной странице</p>
+                    <p>Ширина слайда задается через классы .col-*. Внутри .slider__item может быть любая разметка блока.</p>
+                    <h3 class="sg-block__subtitle">Пример разметки как в блоке Новости на сайте</h3>
+                    <p>В слайдере кнопки управления .ui-scroll-arrow спозиционированы абсолютно, поэтому главному блоку .slider установлен класс .relative. В слайдере на плитке (Популярные статьи) в качестве кнопок управления неспозиционированные (статичные) обычные .ui-arrow.</p>
+                    <div class="slider js-slider relative" id="slider-example-1">
+                        <div class="slider__wrapper">
+                            <ul class="slider__row js-translate-row">
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:salmon">содержание слайда</div>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:hotpink">содержание слайда</div>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:cornflowerblue">содержание слайда</div>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:crimson">содержание слайда</div>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:darkturquoise">содержание слайда</div>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:goldenrod">содержание слайда</div>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:tomato">содержание слайда</div>
+                                </li>
+                                <li class="slider__item col-3 col-lg-5 col-md-7 col-xs-9">
+                                    <div class="padding" style="width:100%;height:10em;background-color:mediumseagreen">содержание слайда</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="slider__controls">
+                            <button font="page" outline="primary" class="slider__arrow ui-scroll-arrow left js-left-slide" aria-label="предыдущие новости" disabled>
+                                <span class="icon__scroll-left" font="black" aria-hidden="true"></span>
+                            </button>
+                            <button font="page" outline="primary" class="slider__arrow ui-scroll-arrow right js-right-slide" aria-label="следующие новости">
+                                <span class="icon__scroll-right" font="black" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Этапы выполнения -->
+            <li class="accordion__block js-accordion-block sg-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>
+<pre>.ui-steplist
+    > .ui-step</pre>
+                            </code>
+                            <h2 class="sg-block__name font-heading">Этапы выполнения</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>nav > ul.ui-steplist[role="tablist"]
+    > li > button.ui-step[role="tab"]</pre>
+                    </code>
+                    <p>Используется в панели настроек для слабовидящих</p>
+
+                    <nav class="margin-negative">
+                        <div id="low-vision-heading" hidden>этапы настройки версии для слабовидящих</div>
+                        <ul class="ui-steplist row no-wrap" font="dark" aria-labelledby="low-vision-heading" role="tablist">
+                            <li role="presentation">
+                                <button class="ui-step no-invert-font active" bg="light" bg-active="primary" font-active="white" outline="primary" title="Выбор цветовой гаммы" role="tab">
+                                    <span class="sr-only">Шаг</span>
+                                    1
+                                </button>
+                            </li>
+                            <li role="presentation">
+                                <button class="ui-step no-invert-font active" bg="light" bg-active="primary" font-active="white" outline="primary" title="Выбор шрифта" aria-current="true" role="tab">
+                                    <span class="sr-only">Шаг</span>
+                                    2
+                                </button>
+                            </li>
+                            <li role="presentation">
+                                <button class="ui-step no-invert-font" bg="light" bg-active="primary" font-active="white" outline="primary" title="Настройки шрифта" role="tab">
+                                    <span class="sr-only">Шаг</span>
+                                    3
+                                </button>
+                            </li>
+                            <li role="presentation">
+                                <button class="ui-step no-invert-font" bg="light" bg-active="primary" font-active="white" outline="primary" title="Графика и картинки" role="tab">
+                                    <span class="sr-only">Шаг</span>
+                                    4
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                </div>
+            </li>
+            
+            <!-- Вкладки и их содержание -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>
+<pre>.ui-tablist 
+    > .ui-tab</pre>
+                            </code>
+                            <h2 class="sg-block__name font-heading">Вкладки и их содержание</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.tabbed >
+    .overflow-horizontal > (
+        ul.ui-tablist[role="tablist"] > 
+            li > button.ui-tab[role="tab"] )
+    + section[role="tabpanel"]</pre>
+                    </code>
+                
+                    <p>Используется на многих страницах. Цвет активной вкладки задается атрибутом [bg-active="secondary"], который активируется, когда у вкладки присутствует класс .active</p>
+                    
+                    <h3 class="sg-block__subtitle">Описание взаимодействия</h3>
+                    <p><b>Инициализация</b>: содержание <code>role="tabpanel"</code> всех вкладок скрыть, кроме одного</p>
+                    <p><b>Неактивная вкладка</b>: убирается класс .active, удаляется атрибут [aria-selected], добавляется атрибут [tabindex="-1"]</p>
+                    <p><b>Активная вкладка</b>: добавляется класс .active, атрибут [aria-selected="true"], удаляется атрибут [tabindex] (или ставится в 0)</p>
+                    <p><b>Переключение вкладок</b>: клавишами влево и вправо или кликом, после чего открывается содержание выбранной вкладки</p>
+                    <p><b>Переход к содержимому вкладки</b>: при фокусе на текущей вкладке нажать клавишу вниз, после чего делается фокус на содержимое</p>
+
+                    <h3 class="sg-block__subtitle">Рабочий пример</h3>
+                    <div class="tabbed">
+        
+                        <h2 class="sr-only">новости на сайте</h2>
+                        <!-- добавляет горизонтальную прокрутку, если они не вмещаются -->
+                        <div class="overflow-horizontal">
+                            <ul class="ui-tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                                <li role="presentation">
+                                    <button class="ui-tab no-invert-font" target="news-tabpanel-updates" bg="light" bg-active="secondary" outline="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" role="tab" tabindex="-1">
+                                        Первая
+                                        <!-- треугольник внизу активной вкладки -->
+                                        <span border="page" class="ui-tab-triangle"></span>
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button class="ui-tab no-invert-font" target="news-tabpanel-gia-9" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab"  tabindex="-1">
+                                        Вторая
+                                        <span border="page" class="ui-tab-triangle"></span>
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button class="ui-tab no-invert-font" target="news-tabpanel-gia-11" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab"  tabindex="-1">
+                                        Третья
+                                        <span border="page" class="ui-tab-triangle"></span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div hidden id="tablist-description">Клавиши влево и вправо для выбора вкладки, клавиша вниз для перехода к содержимому вкладки</div>
+                        </div>
+                        
+                        <!-- содержание вкладки Обновления -->
+                        <section id="news-tabpanel-updates" tabindex="-1" outline="gray" id="news-content-updates" role="tabpanel">
+                            <h3 class="sr-only">Обновления на сайте</h3>
+                            Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </section>
+        
+                        <!-- содержание вкладки ГИА-9 -->
+                        <section id="news-tabpanel-gia-9" tabindex="-1" outline="gray" role="tabpanel">
+                            <h3 class="sr-only">новости ГИА-9</h3>
+                            Вторая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </section>
+        
+                        <!-- содержание вкладки ГИА-11 -->
+                        <section id="news-tabpanel-gia-11" tabindex="-1" outline="gray" role="tabpanel">
+                            <h3 class="sr-only">Новости ГИА-11</h3>
+                            Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </section>
+                    </div>
+
+                    <br>
+                    <div class="tabbed">
+        
+                        <h2 class="sr-only">новости на сайте</h2>
+                        <!-- добавляет горизонтальную прокрутку, если они не вмещаются -->
+                        <div class="overflow-horizontal">
+                            <ul class="ui-tablist" border="secondary" font="black" role="tablist" aria-describedby="tablist-description">
+                                <li role="presentation">
+                                    <button class="ui-tab no-invert-font" target="news-tabpanel-updates" bg="light" bg-active="secondary" outline="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" role="tab" tabindex="-1">
+                                        Первая
+                                        <!-- треугольник внизу активной вкладки -->
+                                        <span border="page" class="ui-tab-triangle"></span>
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button class="ui-tab no-invert-font" target="news-tabpanel-gia-9" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab"  tabindex="-1">
+                                        Вторая
+                                        <span border="page" class="ui-tab-triangle"></span>
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button class="ui-tab no-invert-font" target="news-tabpanel-gia-11" bg="light" bg-active="secondary" bg-hover="secondary-light" font-active="white" font-hover="white" outline="secondary" role="tab"  tabindex="-1">
+                                        Третья
+                                        <span border="page" class="ui-tab-triangle"></span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div hidden id="tablist-description">Клавиши влево и вправо для выбора вкладки, клавиша вниз для перехода к содержимому вкладки</div>
+                        </div>
+                        
+                        <!-- содержание вкладки Обновления -->
+                        <section id="news-tabpanel-updates" tabindex="-1" outline="gray" id="news-content-updates" role="tabpanel">
+                            <h3 class="sr-only">Обновления на сайте</h3>
+                            Первая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </section>
+        
+                        <!-- содержание вкладки ГИА-9 -->
+                        <section id="news-tabpanel-gia-9" tabindex="-1" outline="gray" role="tabpanel">
+                            <h3 class="sr-only">новости ГИА-9</h3>
+                            Вторая вкладка. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </section>
+        
+                        <!-- содержание вкладки ГИА-11 -->
+                        <section id="news-tabpanel-gia-11" tabindex="-1" outline="gray" role="tabpanel">
+                            <h3 class="sr-only">Новости ГИА-11</h3>
+                            Третья вкладка. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </section>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Таблицы -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>table</code>
+                            <h2 class="sg-block__name">Таблицы</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.table__wrapper > .overflow-horizontal >
+    table >
+        caption
+        + thead > tr > th[scope="col"]
+        + tbody > tr > td</pre>
+                    </code>
+                    <p>Стиль задается в scss/parts/_tables.scss и импортируется в template</p>
+                    
+                    <p>Если таблица создается и вставляется пользователями, то стоит использовать таблицу без [role="presentation"] для tbody, без [aria-hidden="true"] для thead и без скрытой разметки (как в первых двух вариантах)</p>
+                    
+                    <h3 class="sg-block__subtitle">Таблица не стилизованная (только тэгом table) - без границ и фонового цвета</h3>
+                    
+                    <div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table>
+                                <caption class="sr-only">Название таблицы</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Заголовок</th>
+                                        <th scope="col">Заголовок</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Таблица стилизованная (+вариант названия)</h3>
+                    <p>Отличие стилизованной таблицы (класс .table) от нестилизованной - 1. у строк только нижняя граница и есть доп.классы (.table__period-caption), 2. задается минимальная ширина таблицы (~60% на больших экранах, 100% на маленьких)</p>
+                    <div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table class="table">
+                                <caption class="text-left padding-bottom padding-top">Название таблицы</caption>
+                                <thead bg="dark" font="white">
+                                    <tr>
+                                        <th scope="col">Заголовок</th>
+                                        <th scope="col">Заголовок</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                    <tr border="gray">
+                                        <td>Ячейка</td>
+                                        <td>Ячейка</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Таблица стилизованная со скрытой разметкой (+ заголовок над таблицей не прокручиваемый)</h3>
+                    <p>Для tbody добавлен [role="presentation"] - будет читать подряд, без озвучивания столбцов и строк и их номеров. Для thead добавлен [aria-hidden="true"] - заголовки столбцов не будут прочитаны.</p>
+                    <p>В ячейках таблицы добавлена скрытая разметка для скринридеров (.sr-only) вместо заголовков столбцов.</p>
+                    <p class="bold" font="secondary">Скрытая разметка в таблице - это альтернативный вариант озвучивания таблицы связным текстом без многократного повторения "столбец №", "строка №". Пока скрытая разметка не добавлена, надо использовать нативную таблицу без [role="presentation"] для tbody и без [aria-hidden="true"] для thead</p>
+                    <p><b>Заголовок:</b> на больших экранах центрируется по центру таблицы (<code>caption.table__period-caption</code>), на маленьких экранах caption скрывается и показывается другой <code>.table__period-caption</code>, находящийся вне контейнера <code>.overflow-horizontal</code> и растягивающийся на ширину родителя</p>
+
+                    <div class="table__wrapper">
+                        <h3 class="sr-only">Досрочный период сдачи экзаменов.</h3>
+                        <div class="table__period-caption sm-visible hidden" aria-hidden="true">
+                            сейчас идет
+                            <div class="fz-110 bold" font="primary">Досрочный период</div>
+                            <small class="sr-only">сдачи экзаменов</small>
+                        </div>
+                        <div class="overflow-horizontal">
+                            <table class="table text-center">
+                                <caption class="table__period-caption sm-hidden" font="primary" aria-hidden="true">
+                                    <small font="black">сейчас идет</small><br>
+                                    <span class="fz-110 bold" font="primary">Досрочный период</span>
+                                    <small class="sr-only">сдачи экзаменов</small>
+                                </caption>
+                                <thead bg="dark" font="white" aria-hidden="true">
+                                    <tr>
+                                        <th scope="col">Дата</th>
+                                        <th scope="col">Предметы ОГЭ</th>
+                                        <th scope="col">Предметы ГВЭ-9</th>
+                                    </tr>
+                                </thead>
+                                <tbody role="presentation">
+                                    <tr border="gray" class="">
+                                        <td scope="row">
+                                            24 апреля
+                                        </td>
+                                        <td>
+                                            <div class="sr-only">Это главный день сдачи ОГЭ по предметам:</div>
+                                            Русский язык
+                                            <small class="sr-only">,</small><br>
+                                        </td>
+                                        <td>
+                                            <div class="sr-only">Это также основной день сдачи ГВЭ-9 по предметам:</div>
+                                            Русский язык
+                                            <small class="sr-only">,</small><br>
+                                            <small class="sr-only">.</small>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr border="gray" class="">
+                                        <td scope="row">
+                                            27 апреля
+                                        </td>
+                                        <td>
+                                            <div class="sr-only">Это главный день сдачи ОГЭ по предметам:</div>
+                                            Информатика и ИКТ
+                                            <small class="sr-only">,</small><br>
+                                            Литература
+                                            <small class="sr-only">,</small><br>
+                                        </td>
+                                        <td>
+                                            <div class="sr-only">Это также основной день сдачи ГВЭ-9 по предметам:</div>
+                                            Информатика и ИКТ
+                                            <small class="sr-only">,</small><br>
+                                            Обществознание
+                                            <small class="sr-only">,</small><br>
+                                            Литература
+                                            <small class="sr-only">,</small><br>
+                                            <small class="sr-only">.</small>
+                                        </td>
+                                    </tr>
+
+                                    <tr border="gray" class="">
+                                        <td scope="row">
+                                            12 мая
+                                        </td>
+                                        <td>
+                                            <small font="secondary" aria-hidden="true">резервный день</small><br>
+                                            <div class="sr-only"> Это резервный день сдачи ОГЭ по предметам:</div>
+                                            Математика
+                                            <small class="sr-only">,</small><br>
+                                        </td>
+                                        <td>
+                                            <small font="secondary" aria-hidden="true">резервный день</small><br>
+                                            <div class="sr-only">Это также резервный день сдачи ГВЭ-9 по предметам:</div>
+                                            Математика
+                                            <small class="sr-only">,</small><br>
+                                            <small class="sr-only">.</small>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr border="gray" class="">
+                                        <td scope="row">
+                                            13 мая
+                                        </td>
+                                        <td>
+                                            <small font="secondary" aria-hidden="true">резервный день</small><br>
+                                            <div class="sr-only"> Это резервный день сдачи ОГЭ по предметам:</div>
+                                            Информатика и ИКТ
+                                            <small class="sr-only">,</small><br>
+                                            Обществознание
+                                            <small class="sr-only">,</small><br>
+                                            Химия
+                                            <small class="sr-only">,</small><br>
+                                        </td>
+                                        <td>
+                                            <small font="secondary" aria-hidden="true">резервный день</small><br>
+                                            <div class="sr-only">Это также резервный день сдачи ГВЭ-9 по предметам:</div>
+                                            Информатика и ИКТ
+                                            <small class="sr-only">,</small><br>
+                                            Обществознание
+                                            <small class="sr-only">,</small><br>
+                                            Химия
+                                            <small class="sr-only">,</small><br>
+                                            <small class="sr-only">.</small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Таблица стилизованная + заголовок внутри таблицы</h3>
+                    <p>Внутренний заголовок <code>th.table__period-caption > h3</code> имеет толстый нижний бордер</p>
+                    <div class="table__wrapper">
+                        <div class="overflow-horizontal">
+                            <table class="table">
+                                <caption class="sr-only">Расписание для предмета: Математика</caption>
+                                <thead bg="dark" font="white" aria-hidden="true">
+                                    <tr>
+                                        <th>Тип экзамена</th>
+                                        <th>Дата экзамена</th>
+                                        <th>Официальный день<br>объявления результатов<br><small>(не позднее)</small></th>
+                                        <th>Прием апелляций</th>
+                                        <th>Утверждение ГЭК<br>результатов апелляций</th>
+                                    </tr>
+                                </thead>
+            
+                                <tbody role="presentation">
+                                    <tr>
+                                        <th class="table__period-caption" colspan="5" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Досрочный период <span class="sr-only">сдачи экзаменов</span></h3>
+                                        </th>
+                                    </tr>
+
+                                    <tr border="gray">
+                                        <th scope="row">резервный день</th>
+                                        <td>01.07.2019</td>
+                                        <td>09.07.2019</td>
+                                        <td>11.07.2019</td>
+                                        <td>18.07.2019</td>
+                                    </tr>
+                                    
+                                    <tr border="gray">
+                                        <th scope="row">основной день</th>
+                                        <td>04.06.2019</td>
+                                        <td>18.06.2019</td>
+                                        <td>20.06.2019</td>
+                                        <td>27.06.2019</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th class="table__period-caption" colspan="5" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Основной период <span class="sr-only">сдачи экзаменов</span></h3>
+                                        </th>
+                                    </tr>
+
+                                    <tr border="gray">
+                                        <th scope="row">основной день</th>
+                                        <td>24.05.2019</td>
+                                        <td>05.06.2019</td>
+                                        <td>07.06.2019</td>
+                                        <td>15.06.2019</td>
+                                    </tr>
+                                    
+                                    <tr border="gray">
+                                        <th scope="row">резервный день</th>
+                                        <td>28.06.2019</td>
+                                        <td>04.07.2019</td>
+                                        <td>08.07.2019</td>
+                                        <td>15.07.2019</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th class="table__period-caption" colspan="5" font="primary" border="primary">
+                                            <h3 class="m0 bold fz-110">Дополнительный период <span class="sr-only">сдачи экзаменов</span></h3>
+                                        </th>
+                                    </tr>
+
+                                    <tr border="gray">
+                                        <th scope="row">основной день</th>
+                                        <td>11.06.2019</td>
+                                        <td>24.06.2019</td>
+                                        <td>26.06.2019</td>
+                                        <td>03.07.2019</td>
+                                    </tr>
+            
+                                    <tr border="gray">
+                                        <th scope="row">резервный день</th>
+                                        <td>28.06.2019</td>
+                                        <td>04.07.2019</td>
+                                        <td>08.07.2019</td>
+                                        <td>15.07.2019</td>
+                                    </tr>
+                            
+                                </tbody>
+            
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Таблица с границами внутри</h3>
+                    <code>table.table-bordered[border="color-name"]</code>
+                    <p></p>
+                    <div class="overflow-horizontal">
+                        <table class="table-bordered" border="gray">
+                            <caption>Название таблицы</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Столбец</th>
+                                    <th scope="col">Столбец</th>
+                                    <th scope="col">Столбец</th>
+                                    <th scope="col">Столбец</th>
+                                    <th scope="col">Столбец</th>
+                                    <th scope="col">Столбец</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                    <td>Ячейка</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Таблица с пустыми ячейками</h3>
+                    <p>Для td, th заданы min-width и для пустых ячеек (:empty) задан height (min-height не работает). Действует для всех table, для демонстрации добавлен класс .table-bordered</p>
+                    <div class="overflow-horizontal">
+                        <table class="table-bordered" border="gray">
+                            <caption>Таблица с пустыми ячейками</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Внутренняя таблица (+ пример скрытой разметки)</h3>
+                    <p>На с. "Получить результаты". Т.к. показанная таблица невозможна к восприятию на слух, то она скрыта ([aria-hidden="true"]), а для скринридеров добавлена скрытая таблица (div.sr-only>table)</p>
+                    <div class="overflow-horizontal">
+                        <table class="table">
+                            <caption class="sr-only">Название таблицы, в которой содержится еще одна</caption>
+                            <tbody>
+                                <tr role="presentation">
+                                    <td class="p0">
+                                        <table class="table-bordered" bg="light" border="gray" aria-hidden="true" style="width: 100%;">
+                                            <caption class="bold padding-top padding-bottom" font="dark">
+                                                Результаты обработки заданий с краткими ответами
+                                            </caption>
+                                            <thead>
+                                                <tr font="primary">
+                                                    <th class="bold padding-right text-right" scope="row" bg="light" font="dark">№ задания</th>
+                                                    <th scope="col">1</th>
+                                                    <th scope="col">2</th>
+                                                    <th scope="col">3</th>
+                                                    <th scope="col">4</th>
+                                                    <th scope="col">5</th>
+                                                    <th scope="col">6</th>
+                                                    <th scope="col">7</th>
+                                                    <th scope="col">8</th>
+                                                    <th scope="col">9</th>
+                                                    <th scope="col">10</th>
+                                                    <th scope="col">11</th>
+                                                    <th scope="col">12</th>
+                                                    <th scope="col">13</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="fz-130">
+                                                    <th class="bold padding-right text-right" scope="row" bg="light" font="dark" aria-hidden="true"></th>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>+</td>
+                                                    <td>-</td>
+                                                    <td>+</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>+</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- скрытая таблица для скринридеров -->
+                                        <div class="sr-only">
+                                            <table>
+                                                <caption>Результаты обработки заданий с краткими ответами (по предмету Тестовый 1)</caption>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Задание 1 не сдано.</td>
+                                                        <td>Задание 2 не сдано.</td>
+                                                        <td>Задание 3 не сдано.</td>
+                                                        <td>Задание 4 выполнено.</td>
+                                                        <td>Задание 5 не сдано.</td>
+                                                        <td>Задание 6 выполнено.</td>
+                                                        <td>Задание 7 не сдано.</td>
+                                                        <td>Задание 8 не сдано.</td>
+                                                        <td>Задание 9 не сдано.</td>
+                                                        <td>Задание 10: не сдано.</td>
+                                                        <td>Задание 11: выполнено.</td>
+                                                        <td>Задание 12: не сдано.</td>
+                                                        <td>Задание 13: не сдано.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        
+                                        <table class="table-bordered" bg="light" border="gray" aria-hidden="true" style="width: 100%;">
+                                            <caption class="bold padding-top padding-bottom" font="dark">
+                                                Результаты обработки заданий с развернутыми ответами
+                                            </caption>
+                                            <thead>
+                                                <tr font="primary">
+                                                    <th class="bold padding-right text-right" scope="row" bg="light" font="dark">№ задания</th>
+                                                    <td>1</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>4</td>
+                                                    <td>5</td>
+                                                    <td>6</td>
+                                                    <td>7</td>
+                                                    <td>8</td>
+                                                    <td>9</td>
+                                                    <td>10</td>
+                                                    <td>11</td>
+                                                    <td>12</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="bold text-right padding-right" scope="row" bg="light" font="dark" aria-label="набранный балл">набр. балл</th>
+                                                    <td>1</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="bold text-right padding-right" scope="row" bg="light" font="dark" aria-label="максимальный балл">макс. балл</th>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>3</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                    <td>2</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- скрытая таблица для скринридеров -->
+                                        <div class="sr-only">
+                                            <table>
+                                                <caption>Результаты обработки заданий с развернутыми ответами (по предмету Тестовый 1)</caption>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>По заданию 1 набрано 1 баллов из 2.</td>
+                                                        <td>По заданию 2 набрано 1 баллов из 3.</td>
+                                                        <td>По заданию 3 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 4 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 5 набрано 0 баллов из 3.</td>
+                                                        <td>По заданию 6 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 7 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 8 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 9 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 10 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 11 набрано 0 баллов из 2.</td>
+                                                        <td>По заданию 12 набрано 2 баллов из 2.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Плитка -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.tile</code>
+                            <h2 class="sg-block__name">Плитка</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.tile >
+    .tile__bg-image > img
+    + .tile__blackout[blackout="color-name"]
+    + .tile__content >
+        .tile__content-cell > a</pre>
+                    </code>
+                    <p>Используется на главной ("Популярные статьи") и в меню "ГИА / Информация"</p>
+
+                    <h3 class="sg-block__subtitle">Маленькая плитка (из "ГИА / Информация")</h3>
+                    <p>Тип плитки модифицируется классом .small</p>
+                    <p>Класс .margin-negative делает отрицательный отступ в -1em по бокам, который компенсирует внутренние отступы в 1em у .container</p>
+                    <div class="margin-negative" role="menu" aria-labelledby="tile-menu-title">
+                        <ul class="row no-invert-font" font="white">
+                            <li class="col-3 col-lg-4 col-sm-6">
+                                <div class="tile small">
+                                    <div class="tile__bg-image">
+                                        <img src="img/info-menu/4.jpg" alt="" aria-hidden="true">
+                                    </div>
+                                    <div class="tile__blackout" blackout="primary"></div>
+                                    <div class="tile__content">
+                                        <div class="tile__content-cell">
+                                            <a class="no-visited fz-110" outline="secondary" href="#">
+                                                Продолжительность проведения ГИА-9
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Большая плитка (как на главной для слайдера)</h3>
+                    <p>Тип плитки модифицируется классом .big</p>
+                    <div class="col-6 col-md-8 col-sm-12">
+                        <div class="big tile">
+                            <div class="tile__bg-image">
+                                <img src="img/main-tiles/big-tile.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="tile__blackout" blackout="secondary"></div>
+        
+                            <div class="tile__content">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Навигация по страницам -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.pagination</code>
+                            <h2 class="sg-block__name">Навигация по страницам</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>ul.pagination.row >
+    li.pagination__item >
+        a.no-visited</pre>
+                    </code>
+
+                    <p>На с. Документы. Текущая страница задается классом .active, ссылке внутри дается атрибут [aria-current="page"].</p>
+
+                    <!-- пагинация -->
+                    <ul aria-label="навигация по страницам" class="pagination row fz-110">
+                        <li role="presentation" font-active="primary" class="pagination__item active">
+                            <a class="no-visited" outline="primary" href="#" aria-label="страница 1" aria-current="page">1</a>
+                        </li>
+                        <li role="presentation" font-active="primary" class="pagination__item">
+                            <a class="no-visited" outline="primary" href="#" aria-label="страница 2">2</a>
+                        </li>
+                        <li role="presentation" font-active="primary" class="pagination__item">
+                            <a class="no-visited" outline="primary" href="#" aria-label="страница 3">3</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Плашка с периодами -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.period-info</code>
+                            <h2 class="sg-block__name">Плашка с периодами</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>Стили в scss/shedule-exams.scss</p>
+                    <!-- плашка Периоды проведения экзаменов -->
+                    <div class="period-info box-shadow" font="gray">
+                        <h2 aria-hidden="true" class="period-info__title text-center bold fz-110 m0" font="dark">Периоды проведения экзаменов</h2>
+
+                        <fieldset font="black" role="radiogroup">
+                            <legend>
+                                <h2 class="sr-only">Периоды проведения экзаменов</h2>
+                            </legend>
+                            <label class="ui-radio period-info__item" bg-active="light" font-active="secondary" border="light">
+                                <input type="radio" name="exam-period" value="period-1" aria-describedby="period-1-desc">
+                                <div class="ui-radio__custom" border="secondary" font="secondary"></div>
+                                <div class="ui-radio__text row">
+                                    <span class="period-info__name">Досрочный</span>
+                                    <span>с 20 марта по 15 мая</span>
+                                </div>
+                                <div class="ui-radio__outline" border="secondary"></div>
+                                <div aria-hidden="true" class="period-info__description sm-hidden" id="period-1-desc" bg="light" font="black" border="light">уже закончился</div>
+                            </label>
+                            <label class="ui-radio period-info__item" bg-active="light" font-active="secondary" border="light">
+                                <input type="radio" name="exam-period" value="period-2" aria-describedby="period-2-desc">
+                                <div class="ui-radio__custom" border="secondary" font="secondary"></div>
+                                <div class="ui-radio__text row">
+                                    <span class="period-info__name">Основной</span>
+                                    <span>с 24 мая по 2 июля</span>
+                                </div>
+                                <div class="ui-radio__outline" border="secondary"></div>
+                                <div aria-hidden="true" class="period-info__description sm-hidden" id="period-2-desc" bg="light" font="black" border="light">идёт сейчас</div>
+                            </label>
+                            <label class="ui-radio period-info__item active" bg-active="light" font-active="secondary" border="light">
+                                <input type="radio" name="exam-period" value="period-3" aria-describedby="period-3-desc" checked>
+                                <div class="ui-radio__custom" border="secondary" font="secondary"></div>
+                                <div class="ui-radio__text row">
+                                    <span class="period-info__name">Дополнительный</span>
+                                    <span>с 3 сентября по 29 сентября</span>
+                                </div>
+                                <div class="ui-radio__outline" border="secondary"></div>
+                                <div aria-hidden="true" class="period-info__description sm-hidden" id="period-3-desc" bg="light" font="black" border="light">скоро начнётся</div>
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Форма поиска -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.search-form</code>
+                            <h2 class="sg-block__name">Всплывающая форма поиска</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>.search-form[role="dialog"] > .search-form__container</code>
+                    <p>Открытие сделано на jQuery. При открытии формы фокус ставится на инпут ввода. После закрытия формы фокус ставится на кнопку её открытия. По клику на кнопку "Открыть поиск" (с иконкой или любую другую, определенную по id) может проиходить как открытие, так и ее закрытие.</p>
+
+                    <button class="ui-submit no-invert-font margin-top" bg="secondary-light" bg-hover="secondary" font="white" id="open-search-form" outline="secondary">Развернуть форму поиска</button>
+
+    <div class="search-form" role="dialog">
+        <div class="search-form__container" bg="light">
+            <div class="container p0">
+                <div class="row no-wrap margin-left-auto">
+                    <form role="search" class="row no-wrap margin-left-auto">
+                        <div class="ui-input__wrapper">
+                            <input class="ui-input" id="search-input" border="gray" outline="primary" bg="white" type="text" placeholder=" ">
+                            <label for="search-input" class="ui-input__label fz-90" font="gray">Поиск</label>
+                        </div>
+                        <button outline="primary" bg="primary" bg-hover="primary-light" font="white" type="submit" class="ui-submit no-invert-font">Найти</button>
+                    </form>
+
+                    <button id="close-search-form" class="ui-close xs-hidden fz-180" aria-label="закрыть форму поиска" outline="primary" title="Закрыть форму поиска">
+                        <span class="icon icon__close" font="dark"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+                    <p class="padding"></p>
+                </div>
+            </li>
+
+            <!-- Видеоблок -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.video</code>
+                            <h2 class="sg-block__name">Видеоблок</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>ul.videos-list.row >
+    .video
+        .video__box
+            a.video__link > img.video__media
+            + button.video__button.ui-play
+        .link-wrapper > a</pre>
+                    </code>
+                    <p>Используется на с. "Методики / Видеоматериалы", стили находятся в parts/_docs.scss (импорт parts/blocks/_docs-list.scss) и компилируются в css/docs.css</p>
+                    
+                    <ul aria-labelledby="videos-list-title" class="row videos-list">
+                        <li class="col-4 col-lg-6 col-xs-12 video">
+                            <div class="video__box no-invert-font" bg="light" bg-hover="secondary" font="black" font-hover="white">
+                                <a class="video__link d-block" outline="secondary" href="https://youtu.be/4Md7noF8vz8" aria-labelledby="video-1-link">
+                                    <img class="video__media" src="https://i.ytimg.com/vi/4JS70KB9GS0/maxresdefault.jpg" alt="Упаковка ЭМ после завершения экзамена" aria-hidden="true">
+                                </a>
+                                <button class="ui-play video__button" outline="secondary" aria-label="Запустить видео" aria-describedby="video-4-link"></button>
+                            </div>
+                            <div class="link-wrapper margin-top">
+                                <a class="to-underline" outline="primary" id="video-4-link" href="https://www.youtu.be/4JS70KB9GS0">Упаковка ЭМ после завершения экзамена</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- Плавающие подсказки -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.balloon</code>
+                            <h2 class="sg-block__name">Плавающие подсказки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>.balloon > div[font="color-name"]
+                    </code>
+                    <p>Используется на с. "ГИА / Информация / Минимальные баллы" (<code>.balloon.bottom</code>).</p>
+                    <p>Вложенный <code>div[font="color-name"]</code> используется по тому, что сам .balloon имеет .box-shadow c цветом, заданным с помощью <code>[font="color-name"]</code>.</p>
+                    <p>Родительский блок балуна должен иметь позиционирование, в данном случае добавлен класс .relative.</p>
+                    <p>Расположение подсказки (наверху, внизу, слева или справа) задается модифицирующим классом с соответствующим названием (top, left, bottom, left)</p>
+
+                    <div class="relative padding" bg="dark">
+                        <div font="white">Родительский блок для <code>.balloon.bottom</code></div>
+                        <div class="balloon bottom fz-90 box-shadow" bg="secondary-light" font="gray" border="secondary" id="grade-select-balloon">
+                            <div class="no-invert-font" font="white">Для пересчета оценки из пятибалльной шкалы в стобалльную шкалу (первичные баллы) выберите соответствующую оценку в списке</div>
+                        </div>
+                    </div>
+                    <p class="padding-top"></p>
+
+                    <h3 class="sg-block__subtitle">Балун в ограниченном контейнере</h3>
+                    <p>Ширина подсказки ограничивается шириной родителя</p>
+                    <div class="relative padding" style="max-width:30em;" bg="dark">
+                        <div font="white">Родительский блок ограниченной ширины для <code>.balloon.bottom</code></div>
+                        <div class="balloon bottom fz-90 box-shadow" bg="secondary-light" font="gray" border="secondary" id="grade-select-balloon">
+                            <div class="no-invert-font" font="white">Для пересчета оценки из пятибалльной шкалы в стобалльную шкалу (первичные баллы) выберите соответствующую оценку в списке</div>
+                        </div>
+                    </div>
+                    <p class="padding"></p>
+
+                    <h3 class="sg-block__subtitle">Балун правый, в ограниченном контейнере</h3>
+                    <p>Ширина подсказки также ограничивается шириной родителя</p>
+                    <div class="relative padding" style="max-width:20em;" bg="dark">
+                        <div font="white">Родительский блок</div>
+                        <div class="balloon right fz-90 box-shadow" bg="secondary-light" font="gray" border="secondary" id="grade-select-balloon">
+                            <div class="no-invert-font" font="white">Для пересчета оценки из пятибалльной шкалы в стобалльную шкалу (первичные баллы) выберите соответствующую оценку в списке</div>
+                        </div>
+                    </div>
+                    <p class="padding"></p>
+
+                    <h3 class="sg-block__subtitle">Балун левый, в ограниченном контейнере</h3>
+                    <p>Ширина подсказки также ограничивается шириной родителя</p>
+                    <div class="relative padding" style="max-width:20em;margin-left:auto" bg="dark">
+                        <div font="white">Родительский блок</div>
+                        <div class="balloon left fz-90 box-shadow" bg="secondary-light" font="gray" border="secondary" id="grade-select-balloon">
+                            <div class="no-invert-font" font="white">Для пересчета оценки из пятибалльной шкалы в стобалльную шкалу (первичные баллы) выберите соответствующую оценку в списке</div>
+                        </div>
+                    </div>
+                    <p class="padding"></p>
+                    
+                </div>
+            </li>
+
+            <!-- Примечание, блок "Важно" -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>.info-notice</code>
+                            <h2 class="sg-block__name">Примечание, блок "Важно"</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <code>
+<pre>.info-notice.relative >
+    .info-notice__icon
+    + p.info-notice__text</pre>
+                    </code>
+                    <p>Используется на страницах "Подать апелляцию", "ГИА / Даты объявления результатов и подачи апелляций", "ГИА / Расписание ГИА", "ГИА / Информация / Минимальные баллы ГИА" .</p>
+                    <p>Блок .info-notice должен иметь класс .relative (хотя разумнее было бы сделать это в стилях :-( ), т.к. иконка с ! .info-notice__icon позиционируется абсолютно.</p>
+                    <p>Блок .info-notice__icon должен иметь <code>aria-hidden="true"</code>, чтобы не быть прочитанным скринридером.</p>
+
+                    <h3 class="sg-block__subtitle">Стандартный блок</h3>
+                    <div class="info-notice relative" border="secondary">
+                        <div class="info-notice__icon bold" border="secondary" bg="page" font="secondary" aria-hidden="true">!</div>
+                        <p class="info-notice__text m0">Апелляции принимаются на рассмотрение в последующие два рабочих дня после официального объявления результатов <span role="text" aria-labelledby="abbr-gia">ГИА</span>. В случае, если официальное ознакомление с результатами экзамена состоялось ранее даты, указанной в таблице “Даты объявления результатов и подачи апелляций”, то дни приема апелляций также сдвигаются.</p>
+                    </div>
+
+                    <h3 class="sg-block__subtitle">Блок с важной информацией</h3>
+                    <p>Отличается увеличенным размером текста, жирным начертанием и цветом текста secondary - все параметры заданы классами-хелперами или атрибутами.</p>
+                    <div class="info-notice relative" border="secondary">
+                        <div class="info-notice__icon bold" border="secondary" bg="page" font="secondary" aria-hidden="true">!</div>
+                        <p class="info-notice__text m0 bold fz-120" font="secondary">Подача апелляций на данный момент невозможна, т.к. истек срок подачи апелляций. </p>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Списки -->
+            <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>
+                                ul.list<br>
+                                ol.list-ordered
+                            </code>
+                            <h2 class="sg-block__name">Списки</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    <p>У тегов ul, dd убраны padding, margin, list-style. Для стилизации неупорядоченных (ul) списков предусмотрены классы .list, .list-ordered</p>
+                    <h3 class="sg-block__subtitle">Несортированный список простой</h3>
+                    <code>ul.list > li</code>
+                    <ul class="list">
+                        <li>Пункт списка 1</li>
+                        <li>Пункт списка 2</li>
+                        <li>Пункт списка 3</li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle">Несортированный список с цветными маркерами</h3>
+                    <p>Маркеры списка (тире) рисуются с помощью бордера, у которого по умолчанию цвет черный (цвет текста body), и задается он для ul.list атрибутом [border="color-name"]</p>
+                    <code>ul.list[border="secondary"] > li</code>
+                    <ul class="list" border="secondary">
+                        <li>Пункт списка 1</li>
+                        <li>Пункт списка 2</li>
+                        <li>Пункт списка 3</li>
+                    </ul>
+
+                    <h3 class="sg-block__subtitle">Сортированный список</h3>
+                    <code>ol.list-ordered > li</code>
+                    <ol class="list-ordered">
+                        <li>Пункт списка 1</li>
+                        <li>Пункт списка 2</li>
+                        <li>Пункт списка 3</li>
+                    </ol>
+                </div>
+            </li>
+
+            <!-- Пусто -->
+            <!-- <li class="accordion__block sg-block js-accordion-block">
+                <div class="ui-accordion-open__wrapper" bg="light" border="primary">
+                    <button class="ui-accordion-open js-accordion-open" outline="secondary">
+                        <div class="sg-block__caption">
+                            <code>Пусто</code>
+                            <h2 class="sg-block__name">Пусто</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="accordion__content sg-block__content js-accordion-body">
+                    
+                </div>
+            </li> -->
+
+        </ul>
+    </main>
+
+    <div hidden class="popup" id="popup-example-2">
+        <div class="popup__overlay" blackout="black"></div>
+        <div class="popup__body">
+            <div class="container text-center padding" class="no-invert-font" font="white">
+                <button class="popup__close js-popup-close no-invert-font ui-close" font="white" bg-hover="secondary" outline="secondary" aria-label="закрыть всплывающее окно">
+                    <span class="icon icon__close fz-110" aria-hidden="true"></span>
+                </button>
+                <p>Памятка участникам государственной итоговой аттестации по баллам</p>
+                <p>Для изменения расположения стрелок слайдера достаточно с контейнера, ограничивающего ширину картинки (с классами .col-*), убрать класс .relative и переместить его на стоящий выше .container или на .popup__body</p>
+                <!-- контейнер, ограничивающий ширину картинки на разных экранах -->
+                <div class="col-7 col-xl-8 col-lg-9 col-md-11 col-sm-12 margin-auto relative">
+                    <img class="bright-less-in-dark" border="light" src="img/memories/big/memories-1.jpg" alt="памятка участникам государственной итоговой аттестации по баллам">
+                    <div class="slider__controls"> 
+                        <!-- этот контейнер ничего не дает и бесмысленнен -->
+                        <button class="ui-popup-slider-arrow left no-invert-font" font="white" blackout="black" outline="primary" aria-label="предыдущее изображение">
+                            <span class="icon icon__arrow-left fz-110" aria-hidden="true"></span>
+                        </button>
+                        <button class="ui-popup-slider-arrow right no-invert-font" font="white" blackout="black" outline="primary" aria-label="следующее изображение">
+                            <span class="icon icon__arrow-right fz-110" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="js/jquery-1.8.1.min.js"></script>
+
+	<script src="js/tabs.js"></script>
+	<script src="js/slider.js"></script>
+	<script src="js/search-form.js"></script>
+    <script src="js/accordion.js"></script>
+	<script src="js/popup.js"></script>
+	
+</body>
+</html>
