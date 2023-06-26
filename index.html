@@ -7,19 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Информация об Авторе и описание проекта -->
-  <meta name="description" content="Веб-разработчик Вера Шингарева">
+  <meta name="description" content="Вера Шингарева">
   <meta name="author" content="Вера Шингарева">
 
   <!-- Иконка, которая будет на вкладке в браузере -->
   <link rel="icon" href="favicon.png">
-  <title>Вера Шингарева | Веб-разработчик</title>
+  <title>Вера Шингарева | Специалист по веб-доступности</title>
 
   <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="/css/style.css?v=2">
+  <link rel="stylesheet" href="/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet">
-
-  <!-- Полифиллы для работы в Internet Explorer -->
-  <!-- <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.forEach%2CElement.prototype.classList%2CWebAnimations%2CNodeList.prototype.forEach"></script> -->
 </head>
 
 <body>
@@ -44,35 +41,29 @@
     </div>
     <!-- /.navbar -->
 
-    <div class="about">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="about__info col-md-7">
-            <p class="about__hello">Привет, меня зовут</p>
-            <h2 class="about__family">Вера Шингарева</h2>
-            <p class="about__job">Я разрабатываю сайты:</p>
-            <ul class="about__job-list">
-              <li>Верстка на HTML/CSS</li>
-              <li>Оживление веб-страниц с помощью javascript</li>
-            </ul>
-
-            <div class="about__buttons">
-              <a target="_blank" href="https://vk.me/shinga_vera" class="c-button about__connect">Написать мне</a>
-              <a target="_blank" href="https://spb.superjob.ru/resume/specialist-po-veb-dostupnosti-53945975.html" class="c-button about__resume">
-                <i class="icon-resume"></i>
-                Моё резюме
-              </a>
-            </div>
-
+    <div class="about container">
+      <div class="row align-items-center">
+        <div class="about__info col-md-7">
+          <p class="about__hello">Привет, меня зовут</p>
+          <h2 class="about__family">Вера Шингарева</h2>
+          <p class="about__job">Я разбираюсь в веб-доступности.</p>
+          
+          <div class="about__buttons">
+            <a target="_blank" href="https://t.me/kamunicorn" class="c-button about__connect">Написать мне</a>
+            <a target="_blank" href="https://spb.superjob.ru/resume/specialist-po-veb-dostupnosti-53945975.html" class="c-button about__resume">
+              <i class="icon-resume"></i>
+              Моё резюме
+            </a>
           </div>
-          <!-- /.about__info -->
-          <div class="col-md-5">
-            <img class="about__foto about__foto_big" src="img/SAM_7846-big.JPG" alt="Вера Шингарева">
-          </div>
+
+        </div>
+        <!-- /.about__info -->
+        <div class="col-md-5">
+          <img class="about__foto about__foto_big" src="img/SAM_7846-big.JPG" alt="Вера Шингарева">
         </div>
       </div>
-
     </div>
+
     <!-- /.about -->
   </header>
 
@@ -262,34 +253,23 @@
   </section>
   <!-- /#docs.docs -->
 
-  <section class="section contacts container">
-    <h2 class="section__title">Контакты</h2>
-    <ul id="contacts" class="contacts__list">
-      <li><a target="_blank" href="https://github.com/kamunicorn">GitHub</a></li>
-      <li><a target="_blank" href="https://www.instagram.com/shinga_vera/">Instagram</a></li>
-      <li><a target="_blank" href="https://www.facebook.com/shingareva.vera41/">FaceBook</a></li>
-      <li><a target="_blank" href="https://t.me/kamunicorn">Telegram</a></li>
-      <li><a target="_blank" href="https://vk.com/shinga_vera">ВКонтакте</a></li>
-    </ul>
-  </section>
+  <footer class="contacts">
+    <div class="container">
+      <h2 class="section__title">Контакты</h2>
+      <ul id="contacts" class="contacts__list">
+        <li><a target="_blank" href="https://github.com/kamunicorn/">GitHub</a></li>
+        <li><a target="_blank" href="https://www.instagram.com/shinga_vera/">Instagram</a></li>
+        <li><a target="_blank" href="https://www.facebook.com/shingareva.vera41/">FaceBook</a></li>
+        <li><a target="_blank" href="https://t.me/kamunicorn/">Telegram</a></li>
+        <li><a target="_blank" href="https://vk.com/shinga_vera/">ВКонтакте</a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/kamunicorn/">LinkedIn</a></li>
+        <li><a target="_blank" href="https://twitter.com/shingavera/">Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
   <!-- /.section.contacts
 
   <!-- Описание работ в модальных окнах -->
-  <div class="popup budget">
-    <div class="popup__content text-center">
-      <button class="popup__close">&times;</button>
-
-      <h3 class="project__title">Калькулятор бюджета</h3>
-      <img src="/img/works/works-budget.jpg" alt="" class="project__preview">
-      <p class="project__info">Сайт для расчета дневного бюджета был создан в рамках курса «Javascript». Мне был дан
-        полностью сверстанный сайт. Моей задачей было добавить функционал калькулятору. Присутствуют проверки вводимых
-        данных и автозамена.</p>
-      <a target="_blank" href="/projects/budget/" class="project__link">Смотреть работу</a>
-
-    </div>
-  </div>
-  <!-- /.popup.budget -->
-
   <div class="popup irvas">
     <div class="popup__content text-center">
       <button class="popup__close">&times;</button>
