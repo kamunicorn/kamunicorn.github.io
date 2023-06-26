@@ -1,506 +1,550 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Информация об Авторе и описание проекта -->
-    <meta name="description" content="Веб-разработчик Вера Шингарева">
-    <meta name="author" content="Вера Шингарева">
+  <!-- Информация об Авторе и описание проекта -->
+  <meta name="description" content="Веб-разработчик Вера Шингарева">
+  <meta name="author" content="Вера Шингарева">
 
-    <!-- Иконка, которая будет на вкладке в браузере -->
-    <link rel="icon" href="favicon.png">
-    <title>Вера Шингарева | Веб-разработчик</title>
+  <!-- Иконка, которая будет на вкладке в браузере -->
+  <link rel="icon" href="favicon.png">
+  <title>Вера Шингарева | Веб-разработчик</title>
 
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/css/style.css?v=2">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/css/style.css?v=2">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet">
 
-    <!-- Полифиллы для работы в Internet Explorer -->
-    <!-- <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.forEach%2CElement.prototype.classList%2CWebAnimations%2CNodeList.prototype.forEach"></script> -->
+  <!-- Полифиллы для работы в Internet Explorer -->
+  <!-- <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.forEach%2CElement.prototype.classList%2CWebAnimations%2CNodeList.prototype.forEach"></script> -->
 </head>
 
 <body>
-    <header>
-        <!-- Плашка наверху - картинка, краткая информация, навигация -->
-        <div class="navbar">
-            <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-2 col-3">
-                    <img class="navbar__logo" src="img/008-code-1.png" alt="Веб-разработка">
-                </div>
-                <div class="col-md-4 col-9">
-                    <p class="navbar__title">Вера Шингарева</p>
-                    <p class="navbar__subtitle">Веб-разработчик</p>
-                </div>
-                
-                <div class="navbar__menu col-md-6 col-12">
-                    <a class="navbar__link" href="#works">Мои работы</a>
-                    <a class="navbar__link" href="#contacts">Контакты</a>
-                </div>
-                <!-- /.navbar__menu -->
-            </div>
-            </div>
+  <header>
+    <!-- Плашка наверху - картинка, краткая информация, навигация -->
+    <div class="navbar">
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-md-4 col-9">
+            <p class="navbar__title">Вера Шингарева</p>
+            <p class="navbar__subtitle">Веб-разработчик</p>
+          </div>
+
+          <ul class="navbar__menu col-md-6 col-12">
+            <li><a class="navbar__link" href="#works">Портфолио</a></li>
+            <li><a class="navbar__link" href="#contacts">Контакты</a></li>
+          </ul>
+          <!-- /.navbar__menu -->
         </div>
-        <!-- /.navbar -->
+      </div>
+    </div>
+    <!-- /.navbar -->
 
-        <div class="about">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="about__info col-md-7">
-                        <p class="about__hello">Привет, меня зовут</p>
-                        <h2 class="about__family">Вера Шингарева</h2>
-                        <p class="about__job">Я разрабатываю сайты:</p>
-                        <ul class="about__job-list">
-                            <li>Верстка на HTML/CSS</li>
-                            <li>Оживление веб-страниц с помощью javascript</li>
-                        </ul>
+    <div class="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="about__info col-md-7">
+            <p class="about__hello">Привет, меня зовут</p>
+            <h2 class="about__family">Вера Шингарева</h2>
+            <p class="about__job">Я разрабатываю сайты:</p>
+            <ul class="about__job-list">
+              <li>Верстка на HTML/CSS</li>
+              <li>Оживление веб-страниц с помощью javascript</li>
+            </ul>
 
-                        <div class="about__buttons">
-                            <a target="_blank" href="https://vk.me/shinga_vera" class="c-button about__connect">Написать мне</a>
-                            <a target="_blank" href="https://spb.superjob.ru/resume/specialist-po-veb-dostupnosti-53945975.html" class="c-button about__resume">
-                                <i class="icon-resume"></i>
-                                Моё резюме
-                            </a>
-                        </div>
-                        
-                    </div>
-                    <!-- /.about__info -->
-                    <div class="col-md-5">
-                        <img class="about__foto about__foto_big" src="img/SAM_7846-big.JPG" alt="Вера Шингарева">
-                    </div>
-                </div>
+            <div class="about__buttons">
+              <a target="_blank" href="https://vk.me/shinga_vera" class="c-button about__connect">Написать мне</a>
+              <a target="_blank" href="https://spb.superjob.ru/resume/specialist-po-veb-dostupnosti-53945975.html" class="c-button about__resume">
+                <i class="icon-resume"></i>
+                Моё резюме
+              </a>
             </div>
 
+          </div>
+          <!-- /.about__info -->
+          <div class="col-md-5">
+            <img class="about__foto about__foto_big" src="img/SAM_7846-big.JPG" alt="Вера Шингарева">
+          </div>
         </div>
-        <!-- /.about -->
-    </header>
+      </div>
 
-    <!-- Портфолио -->
-    <section class="works section" id="works">
-        <div class="container">
-            <h3 class="section__title">Портфолио</h3>
-            <div class="row">
+    </div>
+    <!-- /.about -->
+  </header>
 
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Landing page «Тонус»</h4>
-                        <img src="img/works/works-tonus.jpg" class="case__preview"></img>
-                        <p class="case__text">Создание сайта для камчатской компании, производящей хлеб. Разработка прототипа и дизайн-макета, верстка и программирование.</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="tonus" href="">Подробнее</a>
-                            <a class="case__link" href="//kam-tonus.ru" target="_blank">Смотреть сайт</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
+  <!-- Портфолио -->
+  <section class="works section" id="works">
+    <div class="container">
+      <h2 class="section__title">Портфолио</h2>
+      <div class="row">
 
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Корпоративный сайт «САМОН»</h4>
-                        <img src="img/works/works-samon.jpg" class="case__preview"></img>
-                        <p class="case__text">Создание корпоративного сайта для компании, производящей тротуарную плитку и другие изделия из бетона на Камчатке.</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="samon" href="">Подробнее</a>
-                            <a class="case__link" href="//kpk-samon.ru" target="_blank">Смотреть сайт</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
-
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Интернет-магазин «Суши»</h4>
-                        <img src="img/works/works-yii2-shop.jpg" class="case__preview"></img>
-                        <p class="case__text">Интернет-магазин «Суши» реализован в рамках курса «PHP» Академии верстки с использованием php-фреймворка Yii2.</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="yii2-shop" href="">Подробнее</a>
-                            <a class="case__link" href="//yii2-shop.kamunicorn.ru" target="_blank">Смотреть работу</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
-
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Мини-сервис «Укротитель ссылок»</h4>
-                        <img src="img/works/works-reducer.jpg" class="case__preview"></img>
-                        <p class="case__text">Дополнительное задание за баллы в рамках курса «PHP» Академии верстки на создание сервиса коротких ссылок (простейший аналог https://bitly.com/).</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="reducer" href="">Подробнее</a>
-                            <a class="case__link" href="//kamunicorn.ru/reducer/" target="_blank">Смотреть работу</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
-
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Интернет-магазин техники «Sublime»</h4>
-                        <img src="img/works/works-sublime.jpg" class="case__preview"></img>
-                        <p class="case__text">Мой дипломный проект на курсе «PHP» Академии верстки.</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="sublime" href="">Подробнее</a>
-                            <a class="case__link" href="//sublime.kamunicorn.ru" target="_blank">Смотреть работу</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
-
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Landing page «Ирвас окна»</h4>
-                        <img src="img/works/works-irvas.jpg" class="case__preview"></img>
-                        <p class="case__text">Мой дипломный проект на курсе «Javascript» Академии верстки.</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="irvas" href="">Подробнее</a>
-                            <a class="case__link" href="/projects/irvas/" target="_blank">Смотреть работу</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
-
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Калькулятор бюджета</h4>
-                        <img src="img/works/works-budget.jpg" class="case__preview"></img>
-                        <p class="case__text">Сайт для расчета дневного бюджета в рамках курса «Javascript».</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="budget" href="">Подробнее</a>
-                            <a class="case__link" href="/projects/budget" target="_blank">Смотреть работу</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
-
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Landing page «Балашиха хлеб»</h4>
-                        <img src="img/works/works-balashiha.jpg" class="case__preview"></img>
-                        <p class="case__text">Верстка по дизайн-макету в формате psd (макет можно посмотреть <a class="project__layout" href="/projects/balashiha/balashiha-layout.jpg" target="_blank">здесь</a>). Мной был реализован функционал с помощью языков javascript и php.</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="balashiha" href="">Подробнее</a>
-                            <a class="case__link" href="/projects/balashiha" target="_blank">Смотреть работу</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
-
-                <div class="col-md-6">
-                    <div class="case">
-                        <h4 class="case__title">Информационная система предприятия</h4>
-                        <img src="img/works/works-system.jpg" class="case__preview"></img>
-                        <p class="case__text">Доработка информационной системы предприятия с разработкой новых модулей на основе языков javascript и php.</p>
-                        <div class="case__links">
-                            <a class="case__link case__more-info" id="system" href="">Подробнее</a>
-                        </div>
-                    </div>
-                    <!-- /.case -->
-                </div>
-                <!-- /.col-xl-6 -->
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Landing page «Тонус»</h3>
+            <img src="img/works/works-tonus.jpg" class="case__preview"></img>
+            <p class="case__text">Создание сайта для камчатской компании, производящей хлеб. Разработка прототипа и
+              дизайн-макета, верстка и программирование.</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="tonus" href="">Подробнее</a>
+              <a class="case__link" href="//kam-tonus.ru" target="_blank">Смотреть сайт</a>
             </div>
+          </div>
+          <!-- /.case -->
         </div>
-    </section>
-    <!-- /#works.works -->
+        <!-- /.col-xl-6 -->
 
-    <!-- Сертификаты -->
-    <section class="docs section" id="docs">
-        <div class="container">
-            <h3 class="section__title">Сертификаты</h3>
-            <div class="row justify-content-center">
-                <div class="col-md-3 col-sm-6 col-10 docs__item"><a href="img/PHP_2.0.jpg" target="_blank"><img src="img/PHP_2.0.jpg" title="Курс по PHP, онлайн-школа Академия верстки"></a></div>
-                <div class="col-md-3 col-sm-6 col-10 docs__item"><a href="img/JS_5.0.jpg" target="_blank"><img src="img/JS_5.0.jpg" title="Курс по Javascript, онлайн-школа Академия верстки"></a></div>
-                <div class="col-md-3 col-sm-6 col-10 docs__item"><a href="img/Highlights.jpg" target="_blank"><img src="img/Highlights.jpg" title="Курс Основы веб-дизайна, онлайн-школа Highlights"></a></div>
-                <div class="col-md-3 col-sm-6 col-10 docs__item"><a href="img/Рекомендательное письмо.jpg" target="_blank"><img src="img/Рекомендательное письмо.jpg" title="Рекомендательное письмо от преподавателя курса PHP 2.0 Артема Прыгина"></a></div>
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Корпоративный сайт «САМОН»</h3>
+            <img src="img/works/works-samon.jpg" class="case__preview"></img>
+            <p class="case__text">Создание корпоративного сайта для компании, производящей тротуарную плитку и другие
+              изделия из бетона на Камчатке.</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="samon" href="">Подробнее</a>
+              <a class="case__link" href="//kpk-samon.ru" target="_blank">Смотреть сайт</a>
             </div>
+          </div>
+          <!-- /.case -->
         </div>
-    </section>
-    <!-- /#docs.docs -->
+        <!-- /.col-xl-6 -->
 
-    <!-- Отзывы -->
-    <section class="comments section" id="comments">
-            <div class="container">
-                <h3 class="section__title">Отзывы</h3>
-                <div class="row justify-content-center">
-                    <div class="col-md-4 col-sm-6 col-10 comments__item"><a href="img/отзыв самон.jpg" target="_blank"><img src="img/отзыв самон.jpg" title='ИП Клюшникова И.В., Камчатская производственная кампания "САМОН"'></a></div>
-                    <div class="col-md-4 col-sm-6 col-10 comments__item"><a href="img/отзыв тонус.jpg" target="_blank"><img src="img/отзыв тонус.jpg" title='Учредители ООО "Родной хлеб", производство хлеба "Тонус" на Камчатке'></a></div>
-                </div>
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Интернет-магазин «Суши»</h3>
+            <img src="img/works/works-yii2-shop.jpg" class="case__preview"></img>
+            <p class="case__text">Интернет-магазин «Суши» реализован в рамках курса «PHP» Академии верстки с
+              использованием php-фреймворка Yii2.</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="yii2-shop" href="">Подробнее</a>
+              <a class="case__link" href="//yii2-shop.kamunicorn.ru" target="_blank">Смотреть работу</a>
             </div>
-        </section>
-        <!-- /#docs.docs -->
+          </div>
+          <!-- /.case -->
+        </div>
+        <!-- /.col-xl-6 -->
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4 col-sm-6 col-6 footer__info order-1 order-md-1">
-                    <h4 class="footer__author">Вера Шингарева</h4>
-                    <p class="footer__description">Разработка сайтов</p>
-                </div>
-                <div id="contacts" class="footer__socials col-xl-4 col-md-4 col-sm-12 col-12 order-3 order-md-2">
-                    <a target="_blank" href="https://github.com/kamunicorn"><img src="img/socials/github-logo.png" alt="GitHub"></a>
-                    <a target="_blank" href="https://www.instagram.com/shinga_vera/"><img src="img/socials/instagram-logo.png" alt="Instagram"></a>
-                    <a target="_blank" href="https://www.facebook.com/shingareva.vera41/"><img src="img/socials/facebook.png" alt="Facebook"></a>
-                    <a target="_blank" href="https://t.me/kamunicorn"><img src="img/socials/telegram-symbol.png" alt="Telegram"></a>
-                    <a target="_blank" href="https://vk.com/shinga_vera"><img src="img/socials/vk.png" alt="Вконтакте"></a>
-                </div>
-
-                <div class="footer__connect col-xl-4 col-md-3 col-sm-6 col-6 order-2 order-md-12">
-                    <a target="_blank" href="https://vk.me/shinga_vera" class="c-button">Связаться</a>
-                </div>
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Мини-сервис «Укротитель ссылок»</h3>
+            <img src="img/works/works-reducer.jpg" class="case__preview"></img>
+            <p class="case__text">Дополнительное задание за баллы в рамках курса «PHP» Академии верстки на создание
+              сервиса коротких ссылок (простейший аналог https://bitly.com/).</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="reducer" href="">Подробнее</a>
+              <a class="case__link" href="//kamunicorn.ru/reducer/" target="_blank">Смотреть работу</a>
             </div>
+          </div>
+          <!-- /.case -->
         </div>
-        
-        
-    </footer>
-    <!-- /.footer -->
+        <!-- /.col-xl-6 -->
 
-    <!-- Описание работ в модальных окнах -->
-    <div class="popup budget">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
-
-            <h3 class="project__title">Калькулятор бюджета</h3>
-            <img src="/img/works/works-budget.jpg" alt="" class="project__preview">
-            <p class="project__info">Сайт для расчета дневного бюджета был создан в рамках курса «Javascript». Мне был дан полностью сверстанный сайт. Моей задачей было добавить функционал калькулятору. Присутствуют проверки вводимых данных и автозамена.</p>
-            <a target="_blank" href="/projects/budget/" class="project__link">Смотреть работу</a>
-            
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Интернет-магазин техники «Sublime»</h3>
+            <img src="img/works/works-sublime.jpg" class="case__preview"></img>
+            <p class="case__text">Мой дипломный проект на курсе «PHP» Академии верстки.</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="sublime" href="">Подробнее</a>
+              <a class="case__link" href="//sublime.kamunicorn.ru" target="_blank">Смотреть работу</a>
+            </div>
+          </div>
+          <!-- /.case -->
         </div>
+        <!-- /.col-xl-6 -->
+
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Landing page «Ирвас окна»</h3>
+            <img src="img/works/works-irvas.jpg" class="case__preview"></img>
+            <p class="case__text">Мой дипломный проект на курсе «Javascript» Академии верстки.</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="irvas" href="">Подробнее</a>
+              <a class="case__link" href="/projects/irvas/" target="_blank">Смотреть работу</a>
+            </div>
+          </div>
+          <!-- /.case -->
+        </div>
+        <!-- /.col-xl-6 -->
+
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Калькулятор бюджета</h3>
+            <img src="img/works/works-budget.jpg" class="case__preview"></img>
+            <p class="case__text">Сайт для расчета дневного бюджета в рамках курса «Javascript».</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="budget" href="">Подробнее</a>
+              <a class="case__link" href="/projects/budget" target="_blank">Смотреть работу</a>
+            </div>
+          </div>
+          <!-- /.case -->
+        </div>
+        <!-- /.col-xl-6 -->
+
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Landing page «Балашиха хлеб»</h3>
+            <img src="img/works/works-balashiha.jpg" class="case__preview"></img>
+            <p class="case__text">Верстка по дизайн-макету в формате psd (макет можно посмотреть <a class="project__layout" href="/projects/balashiha/balashiha-layout.jpg" target="_blank">здесь</a>). Мной был реализован функционал с помощью языков javascript и php.</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="balashiha" href="">Подробнее</a>
+              <a class="case__link" href="/projects/balashiha" target="_blank">Смотреть работу</a>
+            </div>
+          </div>
+          <!-- /.case -->
+        </div>
+        <!-- /.col-xl-6 -->
+
+        <div class="col-md-6">
+          <div class="case">
+            <h3 class="case__title">Информационная система предприятия</h3>
+            <img src="img/works/works-system.jpg" class="case__preview"></img>
+            <p class="case__text">Доработка информационной системы предприятия с разработкой новых модулей на основе
+              языков javascript и php.</p>
+            <div class="case__links">
+              <a class="case__link case__more-info" id="system" href="">Подробнее</a>
+            </div>
+          </div>
+          <!-- /.case -->
+        </div>
+        <!-- /.col-xl-6 -->
+      </div>
     </div>
-    <!-- /.popup.budget -->
+  </section>
+  <!-- /#works.works -->
 
-    <div class="popup irvas">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  <!-- Сертификаты -->
+  <section class="docs section container" id="docs">
+    <h2 class="section__title">Сертификаты</h2>
+    <ul class="row justify-content-center">
+      <li class="col-md-3 col-sm-6 col-10 docs__item">
+        <a href="img/PHP_2.0.jpg" target="_blank">
+          <img src="img/PHP_2.0.jpg" title="Курс по PHP, онлайн-школа Академия верстки">
+        </a>
+      </li>
+      <li class="col-md-3 col-sm-6 col-10 docs__item">
+        <a href="img/JS_5.0.jpg" target="_blank">
+          <img src="img/JS_5.0.jpg" title="Курс по Javascript, онлайн-школа Академия верстки">
+        </a>
+      </li>
+      <li class="col-md-3 col-sm-6 col-10 docs__item">
+        <a href="img/Highlights.jpg" target="_blank">
+          <img src="img/Highlights.jpg" title="Курс Основы веб-дизайна, онлайн-школа Highlights">
+        </a>
+      </li>
+      <li class="col-md-3 col-sm-6 col-10 docs__item">
+        <a href="img/Рекомендательное письмо.jpg" target="_blank">
+          <img src="img/Рекомендательное письмо.jpg" title="Рекомендательное письмо от преподавателя курса PHP 2.0 Артема Прыгина">
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- /#docs.docs -->
 
-            <h3 class="project__title">Ирвас окна</h3>
-            <img src="/img/works/works-irvas.jpg" alt="Ирвас окна" class="project__preview">
+  <!-- Отзывы -->
+  <section class="container section reviews" id="reviews">
+    <h2 class="section__title">Отзывы</h2>
+    <ul class="row justify-content-center">
+      <li class="col-md-4 col-sm-6 col-10 reviews__item">
+        <a href="img/отзыв самон.jpg" target="_blank">
+          <img src="img/отзыв самон.jpg" title='ИП Клюшникова И.В., Камчатская производственная кампания "САМОН"'>
+        </a>
+      </li>
+      <li class="col-md-4 col-sm-6 col-10 reviews__item">
+        <a href="img/отзыв тонус.jpg" target="_blank">
+          <img src="img/отзыв тонус.jpg" title='Учредители ООО "Родной хлеб", производство хлеба "Тонус" на Камчатке'>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <!-- /#docs.docs -->
 
-            <p class="project__info">Сайт «Ирвас окна» - мой дипломный проект на курсе «Javascript» Академии верстки. Мне был дан полностью сверстанный сайт, сделанный адаптивно. Моей задачей было добавить интерактив сайту в соответствии с требованиями технического задания. Было реализовано:</p>
-            
-            <ul class="project__info-list">
-                <li>появление модальных окон с формой обратной связи;</li>
-                <li>отправка данных пользователя через несколько форм обратной связи;</li>
-                <li>два слайдера с информацией;</li>
-                <li>таймер обратного отсчета;</li>
-                <li>калькулятор расчета стоимости с отправкой данных для расчета.</li>
-            </ul>
-            
-            <p class="project__info">Итоговый вариант построен на модульной структуре (Webpack), подключена сборка проекта. Процесс работы над сайтом велся в сервисе Trello.</p>
+  <section class="section contacts container">
+    <h2 class="section__title">Контакты</h2>
+    <ul id="contacts" class="contacts__list">
+      <li><a target="_blank" href="https://github.com/kamunicorn">GitHub</a></li>
+      <li><a target="_blank" href="https://www.instagram.com/shinga_vera/">Instagram</a></li>
+      <li><a target="_blank" href="https://www.facebook.com/shingareva.vera41/">FaceBook</a></li>
+      <li><a target="_blank" href="https://t.me/kamunicorn">Telegram</a></li>
+      <li><a target="_blank" href="https://vk.com/shinga_vera">ВКонтакте</a></li>
+    </ul>
+  </section>
+  <!-- /.section.contacts
 
-            <a href="/projects/irvas/" class="project__link" target="_blank">Смотреть работу</a>
+  <!-- Описание работ в модальных окнах -->
+  <div class="popup budget">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-        </div>
+      <h3 class="project__title">Калькулятор бюджета</h3>
+      <img src="/img/works/works-budget.jpg" alt="" class="project__preview">
+      <p class="project__info">Сайт для расчета дневного бюджета был создан в рамках курса «Javascript». Мне был дан
+        полностью сверстанный сайт. Моей задачей было добавить функционал калькулятору. Присутствуют проверки вводимых
+        данных и автозамена.</p>
+      <a target="_blank" href="/projects/budget/" class="project__link">Смотреть работу</a>
+
     </div>
-    <!-- /.popup.irvas -->
+  </div>
+  <!-- /.popup.budget -->
 
-    <div class="popup system">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  <div class="popup irvas">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-            <h3 class="project__title">Информационная система предприятия</h3>
-            <img src="/img/works/works-system.jpg" alt="Информационная система предприятия" class="project__preview">
+      <h3 class="project__title">Ирвас окна</h3>
+      <img src="/img/works/works-irvas.jpg" alt="Ирвас окна" class="project__preview">
 
-            <p class="project__info">Доработка информационной системы предприятия с разработкой новых модулей на основе языков javascript и php:</p>
-            
-            <ul class="project__info-list">
-                <li>авторизация пользователя (2 уровня доступа);</li>
-                <li>редактирование таблицы базы данных из браузера с использованием плагина на jQuery;</li>
-                <li>SQL-запрос формируется динамически на основе данных от пользователя;</li>
-                <li>получение данных от сервера приходят в формате json;</li>
-                <li>рисование таблицы на основе полученных данных с учетом содержания этих данных (выделение цветом некоторых строк и т.д.)</li>
-            </ul>
-            
-            <!-- <p class="project__info"></p> -->
-        </div>
+      <p class="project__info">Сайт «Ирвас окна» - мой дипломный проект на курсе «Javascript» Академии верстки. Мне был
+        дан полностью сверстанный сайт, сделанный адаптивно. Моей задачей было добавить интерактив сайту в соответствии
+        с требованиями технического задания. Было реализовано:</p>
+
+      <ul class="project__info-list">
+        <li>появление модальных окон с формой обратной связи;</li>
+        <li>отправка данных пользователя через несколько форм обратной связи;</li>
+        <li>два слайдера с информацией;</li>
+        <li>таймер обратного отсчета;</li>
+        <li>калькулятор расчета стоимости с отправкой данных для расчета.</li>
+      </ul>
+
+      <p class="project__info">Итоговый вариант построен на модульной структуре (Webpack), подключена сборка проекта.
+        Процесс работы над сайтом велся в сервисе Trello.</p>
+
+      <a href="/projects/irvas/" class="project__link" target="_blank">Смотреть работу</a>
+
     </div>
-    <!-- /.popup.system -->
+  </div>
+  <!-- /.popup.irvas -->
 
-    <div class="popup balashiha">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  <div class="popup system">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-            <h3 class="project__title">Балашиха хлеб></h3>
-            <img src="/img/works/works-balashiha.jpg" alt="Йога-туры в Индию" class="project__preview">
+      <h3 class="project__title">Информационная система предприятия</h3>
+      <img src="/img/works/works-system.jpg" alt="Информационная система предприятия" class="project__preview">
 
-            <p class="project__info">Верстка по дизайн-макету в формате psd (макет можно посмотреть <a class="project__layout" href="/projects/balashiha/balashiha-layout.jpg" target="_blank">здесь</a>). Был реализован следующий функционал:</p>
+      <p class="project__info">Доработка информационной системы предприятия с разработкой новых модулей на основе языков
+        javascript и php:</p>
 
-            <ul class="project__info-list">
-                <li>появление модальных окон с дополнительной информацией;</li>
-                <li>отправка данных пользователя через три формы обратной связи;</li>
-                <li>слайдер с фотографиями;</li>
-                <li>подключена Яндекс.Карта с оптимизацией загрузки (увеличивает скорость загрузки сайта);</li>
-                <li>отправка данных пользователя (введенных в форме обратной связи) на почту с помощью языка php.</li>
-            </ul>
+      <ul class="project__info-list">
+        <li>авторизация пользователя (2 уровня доступа);</li>
+        <li>редактирование таблицы базы данных из браузера с использованием плагина на jQuery;</li>
+        <li>SQL-запрос формируется динамически на основе данных от пользователя;</li>
+        <li>получение данных от сервера приходят в формате json;</li>
+        <li>рисование таблицы на основе полученных данных с учетом содержания этих данных (выделение цветом некоторых
+          строк и т.д.)</li>
+      </ul>
 
-            <p class="project__info">Сайт был сверстан адаптивно и хорошо выглядит как на больших мониторах, так и на смартфонах. Также сайт одинаково хорошо смотрится и работает во всех современных браузерах, в том числе Internet Explorer 11, Edge и Safari (Mac OS). Была проведена оптимизация скорости загрузки (проверка с помощью Google Page Speed Insights) с повышением показателей загрузки.</p>
-            <p class="project__info">Итоговый вариант построен на модульной структуре (Webpack), подключена сборка проекта.</p>
-            <a href="/projects/balashiha/" class="project__link" target="_blank">Смотреть работу</a>
-            
-        </div>
+      <!-- <p class="project__info"></p> -->
     </div>
-    <!-- /.popup.balashiha -->
-    
-    <div class="popup samon">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  </div>
+  <!-- /.popup.system -->
 
-            <h3 class="project__title">Корпоративный сайт «САМОН»</h3>
-            <img src="/img/works/works-samon.jpg" alt="КПК 'САМОН'" class="project__preview">
+  <div class="popup balashiha">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-            <p class="project__info">Создание корпоративного сайта для камчатской производственной компании «САМОН». Компания заказчика изготавливает тротуарную плитку и другие изделия из бетона на Камчатке.</p>
+      <h3 class="project__title">Балашиха хлеб></h3>
+      <img src="/img/works/works-balashiha.jpg" alt="Йога-туры в Индию" class="project__preview">
 
-            <p class="project__info">Цели сайта:</p>
-            <ul class="project__info-list">
-                <li>Привлечение клиентов</li>
-                <li>Повышение узнаваемости компании, улучшение имиджа</li>
-                <li>Информирование компании, о товарах и услугах</li>    
-            </ul>
+      <p class="project__info">Верстка по дизайн-макету в формате psd (макет можно посмотреть <a class="project__layout" href="/projects/balashiha/balashiha-layout.jpg" target="_blank">здесь</a>). Был реализован следующий
+        функционал:</p>
 
-            <p class="project__info">Целевая аудитория:</p>
-            <ul class="project__info-list">
-                <li>Владельцы частных домов или дачных участков.</li>
-                <li>Юридические лица – строительные организации, занимающиеся благоустройством территорий.</li>
-                <li>Юридические лица – магазины строительных и отделочных материалов (на реализацию продукции).</li>
-            </ul>
-            
-            <p class="project__info">Задача – сделать максимально простой и понятный сайт.</p>
-            <p class="project__info">Что было выполнено:</p>
-            <ul class="project__info-list">
-                <li>разработан логотип, прототип и дизайн-макет дизайнером;</li>
-                <li>проведена фотосъемка продукции заказчика;</li>
-                <li>адаптивная верстка с использованием технологии flexbox – сайт отлично смотрится как на больших, так и на маленьких экранах;</li>
-                <li>чистый javascript, без использования сторонних библиотек и плагинов (bootstrap, jquery), что позволило сократить количество и вес загружаемых файлов;</li>
-                <li>страницы категорий и каталога формируются с помощью php;</li>
-                <li>слайдер на главной странице;</li>
-                <li>фотогалерея с примерами работ, среди которых по особому пожеланию заказчика вставлено видео.</li>
-            </ul>
+      <ul class="project__info-list">
+        <li>появление модальных окон с дополнительной информацией;</li>
+        <li>отправка данных пользователя через три формы обратной связи;</li>
+        <li>слайдер с фотографиями;</li>
+        <li>подключена Яндекс.Карта с оптимизацией загрузки (увеличивает скорость загрузки сайта);</li>
+        <li>отправка данных пользователя (введенных в форме обратной связи) на почту с помощью языка php.</li>
+      </ul>
 
-            <p class="project__info">При написании стилей использовала css-препроцессор sass (заодно происходит минификация выходного файла) и методологию БЭМ (чёткая и понятная структура, удобно писать стили).</p>
-            <p class="project__info">Бонусом для заказчика сделала сжатие всех картинок без потери качества так, чтобы они быстро загружались даже на телефонах.</p>
-            <a href="//kpk-samon.ru" class="project__link" target="_blank">Смотреть сайт</a>
+      <p class="project__info">Сайт был сверстан адаптивно и хорошо выглядит как на больших мониторах, так и на
+        смартфонах. Также сайт одинаково хорошо смотрится и работает во всех современных браузерах, в том числе Internet
+        Explorer 11, Edge и Safari (Mac OS). Была проведена оптимизация скорости загрузки (проверка с помощью Google
+        Page Speed Insights) с повышением показателей загрузки.</p>
+      <p class="project__info">Итоговый вариант построен на модульной структуре (Webpack), подключена сборка проекта.
+      </p>
+      <a href="/projects/balashiha/" class="project__link" target="_blank">Смотреть работу</a>
 
-        </div>
     </div>
-    <!-- /.popup.samon -->
+  </div>
+  <!-- /.popup.balashiha -->
 
-    <div class="popup tonus">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  <div class="popup samon">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-            <h3 class="project__title">Landing page «Тонус»</h3>
-            <img src="/img/works/works-tonus.jpg" alt="Тонус хлеб" class="project__preview">
+      <h3 class="project__title">Корпоративный сайт «САМОН»</h3>
+      <img src="/img/works/works-samon.jpg" alt="КПК 'САМОН'" class="project__preview">
 
-            <p class="project__info">Создание сайта для компании, производящей хлеб:</p>
-            
-            <ul class="project__info-list">
-                <li>мной разработан прототип и дизайн-макет, дизайн мобильной версии главного экрана;</li>
-                <li>проведена съемка продукции заказчика для фото главного экрана;</li>
-                <li>адаптивная верстка с помощью библиотеки bootstrap – сайт отлично смотрится как на больших, так и на маленьких экранах;</li>
-                <li>слайдер с наградами выполнен с помощью плагина slick slider;</li>
-                <li>настроена отправка писем на почту владельца из формы обратной связи с помощью библиотеки PHPMailer;</li>
-                <li>установлена Яндекс.Карта с показанными точками продаж;</li>
-                <li>установлен сертификат безопасности (соединение по протоколу https вместо http).</li>
-            </ul>
-            
-            <p class="project__info">При написании стилей использовала css-препроцессор sass (заодно происходит минификация выходного файла) и методологию БЭМ (чёткая и понятная структура, удобно писать стили).</p>
-            <p class="project__info">На сайт установлена простая админ. панель, так что заказчик сможет самостоятельно редактировать текст на сайте. Записана видео-инструкция по работе с этой админ. панелью для заказчика.</p>
+      <p class="project__info">Создание корпоративного сайта для камчатской производственной компании «САМОН». Компания
+        заказчика изготавливает тротуарную плитку и другие изделия из бетона на Камчатке.</p>
 
-            <a href="//kam-tonus.ru" class="project__link" target="_blank">Смотреть сайт</a>
+      <p class="project__info">Цели сайта:</p>
+      <ul class="project__info-list">
+        <li>Привлечение клиентов</li>
+        <li>Повышение узнаваемости компании, улучшение имиджа</li>
+        <li>Информирование компании, о товарах и услугах</li>
+      </ul>
 
-        </div>
+      <p class="project__info">Целевая аудитория:</p>
+      <ul class="project__info-list">
+        <li>Владельцы частных домов или дачных участков.</li>
+        <li>Юридические лица – строительные организации, занимающиеся благоустройством территорий.</li>
+        <li>Юридические лица – магазины строительных и отделочных материалов (на реализацию продукции).</li>
+      </ul>
+
+      <p class="project__info">Задача – сделать максимально простой и понятный сайт.</p>
+      <p class="project__info">Что было выполнено:</p>
+      <ul class="project__info-list">
+        <li>разработан логотип, прототип и дизайн-макет дизайнером;</li>
+        <li>проведена фотосъемка продукции заказчика;</li>
+        <li>адаптивная верстка с использованием технологии flexbox – сайт отлично смотрится как на больших, так и на
+          маленьких экранах;</li>
+        <li>чистый javascript, без использования сторонних библиотек и плагинов (bootstrap, jquery), что позволило
+          сократить количество и вес загружаемых файлов;</li>
+        <li>страницы категорий и каталога формируются с помощью php;</li>
+        <li>слайдер на главной странице;</li>
+        <li>фотогалерея с примерами работ, среди которых по особому пожеланию заказчика вставлено видео.</li>
+      </ul>
+
+      <p class="project__info">При написании стилей использовала css-препроцессор sass (заодно происходит минификация
+        выходного файла) и методологию БЭМ (чёткая и понятная структура, удобно писать стили).</p>
+      <p class="project__info">Бонусом для заказчика сделала сжатие всех картинок без потери качества так, чтобы они
+        быстро загружались даже на телефонах.</p>
+      <a href="//kpk-samon.ru" class="project__link" target="_blank">Смотреть сайт</a>
+
     </div>
-    <!-- /.popup.tonus -->
+  </div>
+  <!-- /.popup.samon -->
 
-    <div class="popup sublime">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  <div class="popup tonus">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-            <h3 class="project__title"></h3>
-            <img src="/img/works/works-sublime.jpg" alt="" class="project__preview">
+      <h3 class="project__title">Landing page «Тонус»</h3>
+      <img src="/img/works/works-tonus.jpg" alt="Тонус хлеб" class="project__preview">
 
-            <p class="project__info">Сайт «Sublime» – мой дипломный проект на курсе «PHP» Академии верстки. Мне был дан сверстанный адаптивно сайт. Моей задачей было добавить сайту функционал интернет-магазина в соответствии с требованиями технического задания. Было реализовано:</p>
-            
-            <ul class="project__info-list">
-                <li>создание и заполнение базы данных с нуля;</li>
-                <li>вывод товаров всех категорий на главной странице;</li>
-                <li>страницы отдельного товара, всех категорий и отдельной категории, поиск по названию товара;</li>
-                <li>на странице отдельной категории выводятся все товары постранично (пагинация);</li>
-                <li>возможность подписаться на рассылку и дать обратную связь;</li>
-                <li>возможности корзины и оформления заказа с отправкой писем на почту;</li>
-                <li>защита от атак XSS и других.</li>
-            </ul>
-            
-            <p class="project__info">Добавление, удаление и изменение количества товаров в корзине происходит динамически с использованием ajax.</p>
-            <p class="project__info">Кроме требований технического задания, я реализовала возможность выбора способа доставки и оплаты – с динамическим изменением общей стоимости для платной доставки и записью этой информации в базу данных. Также, на странице отдельного товара сделала вывод его фотографий, которые указаны в базе данных.</p>
-            <p class="project__info">Проект реализован на чистом php без использования php-фреймворков.</p>
+      <p class="project__info">Создание сайта для компании, производящей хлеб:</p>
 
-            <a href="//sublime.kamunicorn.ru" class="project__link" target="_blank">Смотреть работу</a>
+      <ul class="project__info-list">
+        <li>мной разработан прототип и дизайн-макет, дизайн мобильной версии главного экрана;</li>
+        <li>проведена съемка продукции заказчика для фото главного экрана;</li>
+        <li>адаптивная верстка с помощью библиотеки bootstrap – сайт отлично смотрится как на больших, так и на
+          маленьких экранах;</li>
+        <li>слайдер с наградами выполнен с помощью плагина slick slider;</li>
+        <li>настроена отправка писем на почту владельца из формы обратной связи с помощью библиотеки PHPMailer;</li>
+        <li>установлена Яндекс.Карта с показанными точками продаж;</li>
+        <li>установлен сертификат безопасности (соединение по протоколу https вместо http).</li>
+      </ul>
 
-        </div>
+      <p class="project__info">При написании стилей использовала css-препроцессор sass (заодно происходит минификация
+        выходного файла) и методологию БЭМ (чёткая и понятная структура, удобно писать стили).</p>
+      <p class="project__info">На сайт установлена простая админ. панель, так что заказчик сможет самостоятельно
+        редактировать текст на сайте. Записана видео-инструкция по работе с этой админ. панелью для заказчика.</p>
+
+      <a href="//kam-tonus.ru" class="project__link" target="_blank">Смотреть сайт</a>
+
     </div>
-    <!-- /.popup.sublime -->
+  </div>
+  <!-- /.popup.tonus -->
 
-    <div class="popup yii2-shop">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  <div class="popup sublime">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-            <h3 class="project__title"></h3>
-            <img src="/img/works/works-yii2-shop.jpg" alt="" class="project__preview">
+      <h3 class="project__title"></h3>
+      <img src="/img/works/works-sublime.jpg" alt="" class="project__preview">
 
-            <p class="project__info">Сайт «Суши» реализован в рамках курса «PHP» Академии верстки. Мне был дан полностью сверстанный сайт и дамп базы данных. Моей задачей было добавить сайту функционал интернет-магазина с использованием php-фреймворка Yii2:</p>
-            
-            <ul class="project__info-list">
-                <li>личный кабинет администратора, в котором можно управлять заказами пользователей;</li>
-                <li>страницы отдельного товара, благодарности, фильтрация товаров по категориям, поиск по названию товара;</li>
-                <li>возможности корзины и оформления заказа с отправкой писем на почту (и добавление заказа в базу данных);</li>
-                <li>защита от атак XSS и других;</li>
-                <li>человеко-понятный URL.</li>
-            </ul>
-            
-            <p class="project__info">Добавление, удаление и изменение количества товаров в корзине происходит динамически с использованием ajax.</p>
+      <p class="project__info">Сайт «Sublime» – мой дипломный проект на курсе «PHP» Академии верстки. Мне был дан
+        сверстанный адаптивно сайт. Моей задачей было добавить сайту функционал интернет-магазина в соответствии с
+        требованиями технического задания. Было реализовано:</p>
 
-            <a href="//kpk-samon.ru" class="project__link" target="_blank">Смотреть работу</a>
+      <ul class="project__info-list">
+        <li>создание и заполнение базы данных с нуля;</li>
+        <li>вывод товаров всех категорий на главной странице;</li>
+        <li>страницы отдельного товара, всех категорий и отдельной категории, поиск по названию товара;</li>
+        <li>на странице отдельной категории выводятся все товары постранично (пагинация);</li>
+        <li>возможность подписаться на рассылку и дать обратную связь;</li>
+        <li>возможности корзины и оформления заказа с отправкой писем на почту;</li>
+        <li>защита от атак XSS и других.</li>
+      </ul>
 
-        </div>
+      <p class="project__info">Добавление, удаление и изменение количества товаров в корзине происходит динамически с
+        использованием ajax.</p>
+      <p class="project__info">Кроме требований технического задания, я реализовала возможность выбора способа доставки
+        и оплаты – с динамическим изменением общей стоимости для платной доставки и записью этой информации в базу
+        данных. Также, на странице отдельного товара сделала вывод его фотографий, которые указаны в базе данных.</p>
+      <p class="project__info">Проект реализован на чистом php без использования php-фреймворков.</p>
+
+      <a href="//sublime.kamunicorn.ru" class="project__link" target="_blank">Смотреть работу</a>
+
     </div>
-    <!-- /.popup.yii2-shop -->
+  </div>
+  <!-- /.popup.sublime -->
 
-    <div class="popup reducer">
-        <div class="popup__content text-center">
-            <button class="popup__close">&times;</button>
+  <div class="popup yii2-shop">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
 
-            <h3 class="project__title"></h3>
-            <img src="/img/works/works-reducer.jpg" alt="" class="project__preview">
+      <h3 class="project__title"></h3>
+      <img src="/img/works/works-yii2-shop.jpg" alt="" class="project__preview">
 
-            <p class="project__info">Дополнительное задание за баллы в рамках курса «PHP» Академии верстки. Было дано следующее задание:</p>
-            <p class="project__info">Создать сервис коротких ссылок (простейший аналог https://bitly.com/, форма – кнопка – вывод короткой ссылки). Требования:</p>
+      <p class="project__info">Сайт «Суши» реализован в рамках курса «PHP» Академии верстки. Мне был дан полностью
+        сверстанный сайт и дамп базы данных. Моей задачей было добавить сайту функционал интернет-магазина с
+        использованием php-фреймворка Yii2:</p>
 
-            <ul class="project__info-list">
-                <li>основная логика лежит на ООП (простыми словами, нужен класс с методами)</li>
-                <li>в одном из методов должна быть логика создания таблицы со ссылками, если она еще не была создана</li>
-                <li>форма отправляется асинхронно, без перезагрузки страницы (ввел ссылку – без перезагрузки страницы получил короткую ссылку)</li>
-                <li>чистый код с комментариями, без костылей и мусора, понятная структура, приятная архитектура</li>
-                <li>должна быть хотя бы минимальная проверка на вводимое пользователем значение с помощью регулярного выражения (похоже оно (значение) на ссылку или нет, если нет – асинхронно вывести предупреждение об этом)</li>
-            </ul>
-            
-            <p class="project__info">Проект сделан на нативном javascript, без использования jquery. Вся логика работы лежит на классах, присутствует основной класс, вспомогательный и два интерфейса.</p>
+      <ul class="project__info-list">
+        <li>личный кабинет администратора, в котором можно управлять заказами пользователей;</li>
+        <li>страницы отдельного товара, благодарности, фильтрация товаров по категориям, поиск по названию товара;</li>
+        <li>возможности корзины и оформления заказа с отправкой писем на почту (и добавление заказа в базу данных);</li>
+        <li>защита от атак XSS и других;</li>
+        <li>человеко-понятный URL.</li>
+      </ul>
 
-            <a href="//kamunicorn.ru/reducer/" class="project__link" target="_blank">Смотреть работу</a>
+      <p class="project__info">Добавление, удаление и изменение количества товаров в корзине происходит динамически с
+        использованием ajax.</p>
 
-        </div>
+      <a href="//kpk-samon.ru" class="project__link" target="_blank">Смотреть работу</a>
+
     </div>
-    <!-- /.popup.reducer -->
+  </div>
+  <!-- /.popup.yii2-shop -->
 
-    <script src="js/script.js"></script>
+  <div class="popup reducer">
+    <div class="popup__content text-center">
+      <button class="popup__close">&times;</button>
+
+      <h3 class="project__title"></h3>
+      <img src="/img/works/works-reducer.jpg" alt="" class="project__preview">
+
+      <p class="project__info">Дополнительное задание за баллы в рамках курса «PHP» Академии верстки. Было дано
+        следующее задание:</p>
+      <p class="project__info">Создать сервис коротких ссылок (простейший аналог https://bitly.com/, форма – кнопка –
+        вывод короткой ссылки). Требования:</p>
+
+      <ul class="project__info-list">
+        <li>основная логика лежит на ООП (простыми словами, нужен класс с методами)</li>
+        <li>в одном из методов должна быть логика создания таблицы со ссылками, если она еще не была создана</li>
+        <li>форма отправляется асинхронно, без перезагрузки страницы (ввел ссылку – без перезагрузки страницы получил
+          короткую ссылку)</li>
+        <li>чистый код с комментариями, без костылей и мусора, понятная структура, приятная архитектура</li>
+        <li>должна быть хотя бы минимальная проверка на вводимое пользователем значение с помощью регулярного выражения
+          (похоже оно (значение) на ссылку или нет, если нет – асинхронно вывести предупреждение об этом)</li>
+      </ul>
+
+      <p class="project__info">Проект сделан на нативном javascript, без использования jquery. Вся логика работы лежит
+        на классах, присутствует основной класс, вспомогательный и два интерфейса.</p>
+
+      <a href="//kamunicorn.ru/reducer/" class="project__link" target="_blank">Смотреть работу</a>
+
+    </div>
+  </div>
+  <!-- /.popup.reducer -->
+
+  <script src="js/script.js"></script>
 </body>
 
 </html>
