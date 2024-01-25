@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>error messages examples</title>
+  <style>
+    body {
+      line-height: 1.5;
+      font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    }
+    .block {
+      margin: 1.5rem 0;
+    }
+
+    label,
+    input {
+      display: block;
+    }
+    input {
+      padding: 0.5rem;
+    }
+
+    s {
+      color: grey
+    }
+
+    .desc {
+      color: grey
+    }
+
+    .error-text {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Примеры полей без подсказок</h2>
+
+  <!-- .block*2>label[for="input-$"]+input#input-$[type="text"][aria-describedby="error-text-$"][aria-errormessage="error-text-$"]+.input-desc+.error-text#error-text-$ -->
+
+  <div class="block">
+    <p>1. aria-describedby + <s>role="alert"</s> + <s>aria-errormessage</s></p>
+    <label for="input-1">Напиши мне</label><input type="text" id="input-1" aria-describedby="error-text-1">
+    <div class="error-text" id="error-text-1"></div>
+  </div>
+  <div class="block">
+    <p>2. aria-describedby + role="alert" + <s>aria-errormessage</s></p>
+    <label for="input-2">Напиши мне</label><input type="text" id="input-2" aria-describedby="error-text-2">
+    <div class="error-text" id="error-text-2" role="alert"></div>
+  </div>
+
+  <h3>С aria-errormessage</h3>
+  <div class="block">
+    <p>3. <s>aria-describedby</s> + <s>role="alert"</s> + aria-errormessage</p>
+    <label for="input-3">Напиши мне</label><input type="text" id="input-3" aria-errormessage="error-text-3">
+    <div class="error-text" id="error-text-3" role="alert"></div>
+  </div>
+  <div class="block">
+    <p>4. <s>aria-describedby</s> + role="alert" + aria-errormessage</p>
+    <label for="input-4">Напиши мне</label><input type="text" id="input-4" aria-errormessage="error-text-4">
+    <div class="error-text" id="error-text-4" role="alert"></div>
+  </div>
+
+  <h2>Примеры полей с подсказками</h2>
+  <div class="block">
+    <p>5. aria-describedby + <s>role="alert"</s> + <s>aria-errormessage</s></p>
+    <label for="input-5">Напиши мне</label><input type="text" id="input-5" aria-describedby="error-text-5 desc-5">
+    <div class="desc" id="desc-5">Только да или нет</div>
+    <div class="error-text" id="error-text-5"></div>
+  </div>
+  <div class="block">
+    <p>6. aria-describedby + role="alert" + <s>aria-errormessage</s></p>
+    <label for="input-6">Напиши мне</label><input type="text" id="input-6" aria-describedby="error-text-6 desc-6">
+    <div class="desc" id="desc-6">Только да или нет</div>
+    <div class="error-text" id="error-text-6" role="alert"></div>
+  </div>
+
+  <h3>С aria-errormessage</h3>
+  <div class="block">
+    <p>7. aria-describedby + <s>role="alert"</s> + aria-errormessage</p>
+    <label for="input-7">Напиши мне</label><input type="text" id="input-7" aria-describedby="desc-7" aria-errormessage="error-text-7">
+    <div class="desc" id="desc-7">Только да или нет</div>
+    <div class="error-text" id="error-text-7"></div>
+  </div>
+  <div class="block">
+    <p>8. aria-describedby + role="alert" + aria-errormessage</p>
+    <label for="input-8">Напиши мне</label><input type="text" id="input-8" aria-describedby="desc-8" aria-errormessage="error-text-8">
+    <div class="desc" id="desc-8">Только да или нет</div>
+    <div class="error-text" id="error-text-8" role="alert"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input').forEach( (input, index) => {
+
+        let num = index + 1,
+          error = document.querySelector(`#error-text-${num}`);
+        
+        input.addEventListener('focusout', () => {
+          if (!input.classList.contains('error')) {
+            input.classList.add('error');
+            error.textContent = `Ошибка добавлена к полю ${num}`;
+            input.setAttribute('aria-invalid', 'true'); 
+          }
+        });
+      })
+    });
+  </script>
+
+</body>
+</html>
