@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тестовый, примеры</title>
+  <style>
+    .visually-hidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    .roman-digit::before {
+      content: attr(data-number);
+    }
+  </style>
+</head>
+<body>
+  <h2>Без ничего</h2>
+  <p>I группа инвалидности</p>
+  <p>II группа инвалидности</p>
+  <p>III группа инвалидности</p>
+  <p>Пн</p>
+  <p>→</p>
+  
+  <h2>Способ с aria-hidden="true" и .visually-hidden</h2>
+  <p><span aria-hidden="true">Пн</span><span class="visually-hidden" role="presentation">понедельник</span></p>
+  <p><span aria-hidden="true">→</span><span class="visually-hidden" role="presentation">далее</span></p>
+  <p><span aria-hidden="true">I</span><span class="visually-hidden" role="presentation">1</span> группа инвалидности</p>
+  <p><span aria-hidden="true">II</span><span class="visually-hidden" role="presentation">2</span> группа инвалидности</p>
+  <p><span aria-hidden="true">III</span><span class="visually-hidden" role="presentation">3</span> группа инвалидности</p>
+
+  <h2>Способ с role="text" и aria-label (не рабочий, для примера)</h2>
+  <p><span role="text" aria-label="понедельник">Пн</span></p>
+  <p><span role="text" aria-label="далее">→</span></p>
+  <p><span role="text" aria-label="2">II</span> группа инвалидности</p>
+  
+  <h2>Способ с функцией attr() и псевдоэлементом</h2>
+  <p>Если важна индексация в поисковиках</p>
+  <p><span class="roman-digit" aria-hidden="true" data-number="I"></span><span class="visually-hidden" role="presentation" >1</span> группа инвалидности</p>
+  <p><span class="roman-digit" aria-hidden="true" data-number="II"></span><span class="visually-hidden" role="presentation" >2</span> группа инвалидности</p>
+  <p><span class="roman-digit" aria-hidden="true" data-number="III"></span><span class="visually-hidden" role="presentation" >3</span> группа инвалидности</p>
+  
+</body>
+</html>
