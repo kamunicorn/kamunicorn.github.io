@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интерактивные html-элементы</title>
+  <style>
+    p>*:first-child {
+      min-width: 100px;
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <p><a href="https://echo.htmlacademy.ru/" target="_blank" rel="noopener noreferrer">Ссылка откроется в новой вкладке</a></p>
+
+  <p><a href="https://echo.htmlacademy.ru/" rel="noopener noreferrer">Ссылка откроется в текущей вкладке</a></p>
+
+  <p><b>Форма</b></p>
+  <form action="https://echo.htmlacademy.ru/">
+    <p>
+      <label for="text">Текст</label>
+      <input type="text" name="text" id="text">
+    </p>    
+    <p>
+      <label for="number">Число</label>
+      <input type="number" name="number" id="number">
+    </p>
+    <p>
+      <label for="select">Селект</label>
+      <select name="select" id="select">
+        <option value="1">Первый</option>
+        <option value="2">Второй</option>
+        <option value="3">Третий</option>
+        <option value="4">Четвертый</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="color">Цвет</label>
+      <input type="color" name="color" id="color">
+    </p>
+    <p>
+      <label for="range">Ползунок</label>
+      <input type="range" name="range" id="range">
+    </p>
+    <p>
+      <label for="date">Дата</label>
+      <input type="date" name="date" id="date">
+    </p>
+    <p>
+      <label for="datetime-local">Дата-время</label>
+      <input type="datetime-local" name="datetime-local" id="datetime-local">
+    </p>
+    <p>
+      <label for="month">Месяц</label>
+      <input type="month" name="month" id="month">
+    </p>
+    <p>
+      <label for="week">Неделя</label>
+      <input type="week" name="week" id="week">
+    </p>
+    <p>
+      <label for="checkbox">Чекбокс</label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+    </p>
+    <p>
+      <label for="photo">Файл</label>
+      <input type="file" name="photo" id="photo">
+    </p>
+
+    <p>
+      <span>Радиокнопки</span>
+      <label><input type="radio" name="radio" value="1">1</label>
+      <label><input type="radio" name="radio" value="2">2</label>
+      <label><input type="radio" name="radio" value="3">3</label>
+    </p>
+
+    <p>
+      <label for="datalist">Datalist</label>
+      <input list="datalist" name="datalist" type="text">
+      <datalist id="datalist">
+        <option value="Первый">
+        <option value="Второй">
+        <option value="Третий">
+        <option value="Четвертый">
+      </datalist>
+    </p>
+
+    <p>
+      <label for="textarea">Текстовая область</label><br>
+      <textarea id="textarea"></textarea>
+    </p>
+
+    <button type="submit">Отправить данные формы</button>
+  </form>
+</body>
+</html>
